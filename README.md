@@ -16,21 +16,17 @@
 
 
 <h1 align = "center" id = "gamedesignDoc"> GAME DESIGN DOCUMENT </h1>
+<p align = "center"><img src="img/necromancer1.jpg" alt="Necromancer1"><p>
 <h2 align = "center" id = "gameDetails"> GAME DETAILS </h2>
 
 - <p> Name :        Project - NextRogue</p>
 - <p> Genre :       Action - RogueLike/Lite</p>
 - <p> Art Style :   2D - TopDown</p>
-<p align = "center"><img src="img/necromancer1.jpg" alt="Necromancer1"><p>
 <h2 align = "center" id = "gameplayElements"> GAMEPLAY ELEMENTS </h2>
+<p align = "center"><img src="img/Player%20Controller.png" alt="PlayerMechanics"><p>
 <h3 align = "center" id = "playermechanics" >PLAYER MECHANICS</h3>
 I want a fast gameplay so fluid character controller is mandatory. 
 <p id = "playerMovement" >Player Movement:</p>
-
-  - Dash
-      - Consumes stamina
-  - Heal
-      - Consumes Souls
 Main combat will be built on necromancy. So there is two types of basic atacks. 
 
 Melee one deals little or no damage. It's main purpose is to swing enemies back.
@@ -39,10 +35,6 @@ Ranged one is one touch one cast spell. Which means there will be no casting tim
 It deals little bit more damage than melee attack.
 <p id = "playerCombat" >Player Combat:</p>
 
-  - Basic Attack (melee)
-      - Consumes stamina
-  - Basic Attack (ranged)
-      - Consumes Souls
   - Spells
     - Necromancy 
       - _summonDeadEnemies
