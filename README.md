@@ -13,6 +13,7 @@
       - [Enemies](#enemies)
          - [Types](#enemyTypes)
          - [Skills](#enemySkills)
+ - [Development Flow](#developmentFlow)
 
 
 <h1 align = "center" id = "gamedesignDoc"> GAME DESIGN DOCUMENT </h1>
@@ -26,10 +27,6 @@
 - <p> Art Style :   2D - TopDown</p>
   
 <h2 align = "center" id = "gameplayElements"> GAMEPLAY ELEMENTS </h2>
-
-<p align = "center">
-<img src="img/Player%20Controller.png" width="500" height="500"  alt="PlayerMechanics">
-<p>
 
 <h3 align = "center" id = "playermechanics" >PLAYER MECHANICS</h3>
 
@@ -86,3 +83,15 @@ All enemies is summonable by a _summonDeadEnemies spell.
     - ?
     - ?
   
+
+<h1 align = "center" id = "developmentFlow"> DEVELOPMENT FLOW </h1>
+
+
+<h2 align = "center"> PLAYER CONTROLLER </h2>
+<p align = "center">
+<img src="img/Player%20Controller.png" width="400" height="400"  alt="PlayerMechanics">
+<p>
+<h2 align = "center"> ENEMY STATE HANDLER </h2>
+<p align = "center">
+<img src="img/Enemy%20State%20Handler.png" width="400" height="300"  alt="PlayerMechanics">
+<p>
