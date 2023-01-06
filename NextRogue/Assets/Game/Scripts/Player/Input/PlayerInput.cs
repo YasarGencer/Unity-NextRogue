@@ -44,6 +44,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BASIC ATTACK 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""f0f4a44d-5b43-4a1d-b20a-a1842539e169"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BASIC ATTACK 2"",
+                    ""type"": ""Button"",
+                    ""id"": ""5fe6c9c7-efc0-44b4-96ce-d7c97b73dd9c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +130,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""DASH"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1f69139-4d3d-4ed7-bb0e-cfa5f9ce66e7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BASIC ATTACK 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c8a1638-b84e-43c2-87b8-2a6e809791a3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BASIC ATTACK 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +162,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_OnMove = asset.FindActionMap("OnMove", throwIfNotFound: true);
         m_OnMove_MOVE = m_OnMove.FindAction("MOVE", throwIfNotFound: true);
         m_OnMove_DASH = m_OnMove.FindAction("DASH", throwIfNotFound: true);
+        m_OnMove_BASICATTACK1 = m_OnMove.FindAction("BASIC ATTACK 1", throwIfNotFound: true);
+        m_OnMove_BASICATTACK2 = m_OnMove.FindAction("BASIC ATTACK 2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,12 +225,16 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private IOnMoveActions m_OnMoveActionsCallbackInterface;
     private readonly InputAction m_OnMove_MOVE;
     private readonly InputAction m_OnMove_DASH;
+    private readonly InputAction m_OnMove_BASICATTACK1;
+    private readonly InputAction m_OnMove_BASICATTACK2;
     public struct OnMoveActions
     {
         private @PlayerInput m_Wrapper;
         public OnMoveActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @MOVE => m_Wrapper.m_OnMove_MOVE;
         public InputAction @DASH => m_Wrapper.m_OnMove_DASH;
+        public InputAction @BASICATTACK1 => m_Wrapper.m_OnMove_BASICATTACK1;
+        public InputAction @BASICATTACK2 => m_Wrapper.m_OnMove_BASICATTACK2;
         public InputActionMap Get() { return m_Wrapper.m_OnMove; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -204,6 +250,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @DASH.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnDASH;
                 @DASH.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnDASH;
                 @DASH.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnDASH;
+                @BASICATTACK1.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK1;
+                @BASICATTACK1.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK1;
+                @BASICATTACK1.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK1;
+                @BASICATTACK2.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK2;
+                @BASICATTACK2.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK2;
+                @BASICATTACK2.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK2;
             }
             m_Wrapper.m_OnMoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -214,6 +266,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @DASH.started += instance.OnDASH;
                 @DASH.performed += instance.OnDASH;
                 @DASH.canceled += instance.OnDASH;
+                @BASICATTACK1.started += instance.OnBASICATTACK1;
+                @BASICATTACK1.performed += instance.OnBASICATTACK1;
+                @BASICATTACK1.canceled += instance.OnBASICATTACK1;
+                @BASICATTACK2.started += instance.OnBASICATTACK2;
+                @BASICATTACK2.performed += instance.OnBASICATTACK2;
+                @BASICATTACK2.canceled += instance.OnBASICATTACK2;
             }
         }
     }
@@ -222,5 +280,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     {
         void OnMOVE(InputAction.CallbackContext context);
         void OnDASH(InputAction.CallbackContext context);
+        void OnBASICATTACK1(InputAction.CallbackContext context);
+        void OnBASICATTACK2(InputAction.CallbackContext context);
     }
 }

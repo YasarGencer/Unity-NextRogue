@@ -22,6 +22,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "BASIC ATTACK 1",
+                    "type": "Button",
+                    "id": "f0f4a44d-5b43-4a1d-b20a-a1842539e169",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BASIC ATTACK 2",
+                    "type": "Button",
+                    "id": "5fe6c9c7-efc0-44b4-96ce-d7c97b73dd9c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -88,6 +106,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "DASH",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1f69139-4d3d-4ed7-bb0e-cfa5f9ce66e7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BASIC ATTACK 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c8a1638-b84e-43c2-87b8-2a6e809791a3",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BASIC ATTACK 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
