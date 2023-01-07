@@ -7,13 +7,6 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     private bool _isInit = false;
-    [Header("MOVE")]
-    [SerializeField] private float _speed;
-    [Header("DASH")]
-    [SerializeField] private float _dashForce;
-    [SerializeField] private float _dashTime;
-    [SerializeField] private float _dashCooldown;
-    [SerializeField] private int _maxDashes;
     private int _availableDashes;
 
     InputManager _inputManager;
@@ -29,12 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
         _rb = _inputManager.Rb;
         _animator = _inputManager.Animator;
-                _availableDashes = _maxDashes;
+                _availableDashes = _inputManager.PlayerStats.MaxDashes;
 
         _isInit = true;
     }
     public void MoveRX(long l) {
-        transform.Translate(_direction * _speed * Time.deltaTime);
+        transform.Translate(_direction * _inputManager.PlayerStats.Speed * Time.deltaTime);
     }
     public void Direction(Vector2 direction) {
         _direction = direction;
@@ -61,10 +54,10 @@ public class PlayerMovement : MonoBehaviour
 
         //dash
         _availableDashes--;
-        _rb.velocity = _direction * _dashForce;
+        _rb.velocity = _direction * _inputManager.PlayerStats.DashForce;
 
         //visual effects and cooldowns
-        Invoke("StopDash", _dashTime);
+        Invoke("StopDash", _inputManager.PlayerStats.DashTime);
         StartCoroutine(DashEffect());
         StartCoroutine(DashTimer());
     }
@@ -90,15 +83,15 @@ public class PlayerMovement : MonoBehaviour
 
         Destroy(dashParticle, .25f);
 
-        yield return new WaitForSeconds(_dashTime / 7);
+        yield return new WaitForSeconds(_inputManager.PlayerStats.DashTime / 7);
         //check if dash should go on
         if (_rb.velocity != Vector2.zero)
             StartCoroutine(DashEffect());
     }
     IEnumerator DashTimer() {
-        if (_availableDashes >= _maxDashes)
+        if (_availableDashes >= _inputManager.PlayerStats.MaxDashes)
             yield return null;
-        yield return new WaitForSeconds(_dashCooldown);
+        yield return new WaitForSeconds(_inputManager.PlayerStats.DashCooldown);
         AddDash();
     }
     void AddDash() {

@@ -9,16 +9,13 @@ public class PlayerBasicAttacks : MonoBehaviour {
 
 
     IDisposable cooldownRX;
-    [SerializeField] float _cooldownTime;
-    [SerializeField] float _activeTimer;
+    float _activeTimer;
 
     [Header("MELEE")]
     [SerializeField] GameObject _mProjectile;
-    [SerializeField] float _mDamage;
 
     [Header("RANGED")]
     [SerializeField] GameObject _rProjectile;
-    [SerializeField] float _rDamage;
 
     [SerializeField]bool _canAttack;
     public bool CanAttack { get { return _canAttack; } }
@@ -52,19 +49,13 @@ public class PlayerBasicAttacks : MonoBehaviour {
         else
             Ranged();
     }
-    GameObject projectile;
-    void Melee() {
-        projectile = Instantiate(_mProjectile, this.transform.position, Quaternion.identity);
-        projectile.GetComponentInChildren<PlayerBasicMeleeProjectile>().Initialize(_inputManager.MousePosition);
-    }
-    void Ranged() {
-        projectile = Instantiate(_rProjectile, this.transform.position, Quaternion.identity);
-        projectile.GetComponentInChildren<PlayerBasicRangedProjectile>().Initialize(_inputManager.MousePosition);
-    }
+    void Melee() => Instantiate(_mProjectile, this.transform.position, Quaternion.identity).GetComponent<PlayerBasicMeleeProjectile>().Initialize(_inputManager.GetMousePos(),_inputManager.PlayerStats.Basic1Damage);
+
+    void Ranged() => Instantiate(_rProjectile, this.transform.position, Quaternion.identity).GetComponent<PlayerBasicRangedProjectile>().Initialize(_inputManager.GetMousePos(), _inputManager.PlayerStats.Basic2Damage);
     void Common() {
         _animator.SetTrigger("basic");
 
-        _activeTimer = _cooldownTime;
+        _activeTimer = _inputManager.PlayerStats.BasicCooldown;
 
         cooldownRX?.Dispose();
         cooldownRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(Cooldown);

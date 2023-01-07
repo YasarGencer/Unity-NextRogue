@@ -4,20 +4,24 @@ using UnityEngine;
 
 public abstract class APlayerBasicProjectile : MonoBehaviour
 {
-    Vector3 _mousePos;
-    public virtual void Initialize(Vector3 mousePos) {
+    protected Vector3 _mousePos;
+    protected float _damage;
+    public virtual void Initialize(Vector3 mousePos, float damage) {
         Destroy(gameObject, 4f);
 
+        _damage = damage;     
+        GetComponent<Damager>().Initialize(_damage);
+
         _mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        SetRotation(gameObject.transform);
+        SetRotation();
     }
-    void SetRotation(Transform target) {
+    void SetRotation() {
         _mousePos.z = 0f;
 
         _mousePos.x -= transform.position.x;
         _mousePos.y -= transform.position.y;
 
         float angle = Mathf.Atan2(_mousePos.y, _mousePos.x) * Mathf.Rad2Deg;
-        target.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }

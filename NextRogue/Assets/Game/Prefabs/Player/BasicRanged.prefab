@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8797521380335533865}
-  - component: {fileID: 4856699764973766749}
   - component: {fileID: 8797521380335533870}
   - component: {fileID: 8797521380335533871}
   - component: {fileID: 8797521380335533864}
+  - component: {fileID: 4856699764973766749}
+  - component: {fileID: 8092708830083267593}
   m_Layer: 6
   m_Name: BasicRanged
   m_TagString: PlaterProjectile
@@ -36,20 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4856699764973766749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797521380335533868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb59317604ea4fb41aec3105eef3d0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _main: {fileID: 8797521380335533868}
-  _explosion: {fileID: 22245156868370429, guid: 57e138d686861d54fae4bf585e2f5001, type: 3}
 --- !u!50 &8797521380335533870
 Rigidbody2D:
   serializedVersion: 4
@@ -70,7 +57,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &8797521380335533871
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -107,6 +94,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4856699764973766749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797521380335533868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb59317604ea4fb41aec3105eef3d0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosion: {fileID: 22245156868370429, guid: 57e138d686861d54fae4bf585e2f5001, type: 3}
+--- !u!114 &8092708830083267593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797521380335533868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8797521380783964106
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,18 +6,21 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     PlayerInput.OnMoveActions _inputOnMove;
-    
+
+    [HideInInspector]
+    public PlayerStats PlayerStats;
     [HideInInspector]
     public PlayerMovement PlayerMovement;
     [HideInInspector]
-    public PlayerBasicAttacks playerBasicAttacks;
+    public PlayerBasicAttacks PlayerBasicAttacks;
+    [HideInInspector]
+    public Health PlayerHealth;
 
     [HideInInspector]
     public Animator Animator;
     [HideInInspector]
     public Rigidbody2D Rb;
 
-    [HideInInspector] public Vector2 MousePosition;
 
     private void Awake() => Initialize();
     public void Initialize() {
@@ -27,10 +30,16 @@ public class InputManager : MonoBehaviour
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
+        PlayerStats = GetComponent<PlayerStats>();
+        PlayerBasicAttacks = GetComponent<PlayerBasicAttacks>();
         PlayerMovement = GetComponent<PlayerMovement>();
+        PlayerHealth = GetComponent<Health>();
+
+
+        PlayerStats.Initialize(this);
         PlayerMovement.Initialize(this);
-        playerBasicAttacks = GetComponent<PlayerBasicAttacks>();
-        playerBasicAttacks.Initialize(this);
+        PlayerBasicAttacks.Initialize(this);
+        PlayerHealth.Initialize();
 
         SetEvents();
     }
@@ -41,8 +50,8 @@ public class InputManager : MonoBehaviour
         _inputOnMove.BASICATTACK1.performed += input => Basic(1);
         _inputOnMove.BASICATTACK2.performed += input => Basic(2);
     }
-    private void Update() {
-        MousePosition = Mouse.current.position.ReadValue();
+    public Vector2 GetMousePos() {
+        return Mouse.current.position.ReadValue();
     }
 
     #region ENABLES
@@ -63,7 +72,7 @@ public class InputManager : MonoBehaviour
             PlayerMovement.Dash();
     }
     void Basic(int value) {
-        if (playerBasicAttacks)
-            playerBasicAttacks.Basic(value);
+        if (PlayerBasicAttacks)
+            PlayerBasicAttacks.Basic(value);
     }
 }

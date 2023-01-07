@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerBasicMeleeProjectile : APlayerBasicProjectile {
     bool _isHit;
-    public override void Initialize(Vector3 mousePos) {
-        base.Initialize(mousePos);
+    public override void Initialize(Vector3 mousePos, float damage) {
+        base.Initialize(mousePos, damage);
         StartCoroutine(IsHit());
     }
     IEnumerator IsHit() {
