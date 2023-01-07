@@ -13,6 +13,8 @@
       - [Enemies](#enemies)
          - [Types](#enemyTypes)
          - [Skills](#enemySkills)
+     - [Visuals](#visuals)
+       - [User Interface](#UI)
  - [Development Flow](#developmentFlow)
 
 
@@ -83,6 +85,15 @@ All enemies is summonable by a _summonDeadEnemies spell.
     - ?
     - ?
   
+
+<h1 align = "center" id = "visuals"> VISUALS </h1>
+
+<h2 align = "center" id = "UI"> USER INTERFACE </h2>
+
+<h3 align = "center"> GUI </h3>
+<p align = "center">
+<img src="img/GUI&HUD.png" width="500" alt="PlayerMechanics">
+<p>
 
 <h1 align = "center" id = "developmentFlow"> DEVELOPMENT FLOW </h1>
 
