@@ -6,10 +6,9 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool _isInit = false;
     private int _availableDashes;
 
-    InputManager _inputManager;
+    PlayerMainController _mainController;
     Rigidbody2D _rb;
     Animator _animator;
 
@@ -17,17 +16,15 @@ public class PlayerMovement : MonoBehaviour
     public Animator Animator { get { return _animator; } }
     private Vector2 _direction;
 
-    public void Initialize(InputManager inputManager) {
-        _inputManager = inputManager;
+    public void Initialize(PlayerMainController mainController) {
+        _mainController= mainController;
 
-        _rb = _inputManager.Rb;
-        _animator = _inputManager.Animator;
-                _availableDashes = _inputManager.PlayerStats.MaxDashes;
-
-        _isInit = true;
+        _rb = _mainController.Rb;
+        _animator = _mainController.Animator;
+                _availableDashes = _mainController.Stats.MaxDashes;
     }
     public void MoveRX(long l) {
-        transform.Translate(_direction * _inputManager.PlayerStats.Speed * Time.deltaTime);
+        transform.Translate(_direction * _mainController.Stats.Speed * Time.deltaTime);
     }
     public void Direction(Vector2 direction) {
         _direction = direction;
@@ -54,10 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
         //dash
         _availableDashes--;
-        _rb.velocity = _direction * _inputManager.PlayerStats.DashForce;
+        _rb.velocity = _direction * _mainController.Stats.DashForce;
 
         //visual effects and cooldowns
-        Invoke("StopDash", _inputManager.PlayerStats.DashTime);
+        Invoke("StopDash", _mainController.Stats.DashTime);
         StartCoroutine(DashEffect());
         StartCoroutine(DashTimer());
     }
@@ -83,15 +80,15 @@ public class PlayerMovement : MonoBehaviour
 
         Destroy(dashParticle, .25f);
 
-        yield return new WaitForSeconds(_inputManager.PlayerStats.DashTime / 7);
+        yield return new WaitForSeconds(_mainController.Stats.DashTime / 7);
         //check if dash should go on
         if (_rb.velocity != Vector2.zero)
             StartCoroutine(DashEffect());
     }
     IEnumerator DashTimer() {
-        if (_availableDashes >= _inputManager.PlayerStats.MaxDashes)
+        if (_availableDashes >= _mainController.Stats.MaxDashes)
             yield return null;
-        yield return new WaitForSeconds(_inputManager.PlayerStats.DashCooldown);
+        yield return new WaitForSeconds(_mainController.Stats.DashCooldown);
         AddDash();
     }
     void AddDash() {

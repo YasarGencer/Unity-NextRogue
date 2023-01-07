@@ -6,28 +6,21 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     bool _isPlayer;
-    PlayerStats playerStats;
-    EnemyStateHandler.Enemy _enemy;
+    AStats _stats;
     public void Initialize() {
         _isPlayer = gameObject.CompareTag("Player");
 
         if (!_isPlayer)
-            _enemy = GetComponent<EnemyStateHandler>().GetEnemy();
+            _stats = GetComponent<EnemyMainController>().Stats;
         else
-            playerStats = gameObject.GetComponent<InputManager>().PlayerStats;
+            _stats = GetComponent<PlayerMainController>().Stats;
     }
     public void GetDamage(float value, Transform source) {
 
-        if (_isPlayer) {
-            playerStats.Health -= value;
-            if (playerStats.Health <= 0)
-                Die();
-        } else {
-            _enemy.Health -= value;
-            if (_enemy.Health <= 0)
-                Die();
-            GetComponent<EnemyStateHandler>().SetEnemy(_enemy);
-        }
+        _stats.Health -= value;
+        if (_stats.Health <= 0)
+            Die();
+
         StartCoroutine(Push(source));
     }
     IEnumerator Push(Transform source) {
