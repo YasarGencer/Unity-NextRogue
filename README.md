@@ -89,9 +89,9 @@ All enemies is summonable by a _summonDeadEnemies spell.
 
 <h2 align = "center"> PLAYER CONTROLLER </h2>
 <p align = "center">
-<img src="img/Player%20Controller.png" width="400" height="400"  alt="PlayerMechanics">
+<img src="img/PlayerController.png" width="500" alt="PlayerMechanics">
 <p>
-<h2 align = "center"> ENEMY STATE HANDLER </h2>
+<h2 align = "center"> ENEMY CONTROLLER </h2>
 <p align = "center">
-<img src="img/Enemy%20State%20Handler.png" width="400" height="300"  alt="PlayerMechanics">
+<img src="img/EnemyController.png" width="500" alt="PlayerMechanics">
 <p>
