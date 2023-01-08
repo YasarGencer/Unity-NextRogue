@@ -14,6 +14,8 @@ public class PlayerMainController : MonoBehaviour {
     [HideInInspector]
     public PlayerBasicAttacks BasicAttacks;
     [HideInInspector]
+    public PlayerSpells Spells;
+    [HideInInspector]
     public Health Health;
 
     [HideInInspector]
@@ -30,12 +32,14 @@ public class PlayerMainController : MonoBehaviour {
         Stats = GetComponent<PlayerStats>();
         Movement = GetComponent<PlayerMovement>();
         BasicAttacks = GetComponent<PlayerBasicAttacks>();
+        Spells = GetComponent<PlayerSpells>();
         Health = GetComponent<Health>();
 
         this.Input.Initialize(this);
         Stats.Initialize();
         Movement.Initialize(this);
         BasicAttacks.Initialize(this);
+        Spells.Initialize(this);
         Health.Initialize();
     }
 }

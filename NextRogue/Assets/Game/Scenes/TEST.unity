@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: 1410774656}
   - component: {fileID: 1410774655}
   - component: {fileID: 1410774653}
+  - component: {fileID: 1410774658}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -701,9 +702,24 @@ MonoBehaviour:
   Stats: {fileID: 0}
   Movement: {fileID: 0}
   BasicAttacks: {fileID: 0}
+  Spells: {fileID: 0}
   Health: {fileID: 0}
   Animator: {fileID: 0}
   Rb: {fileID: 0}
+--- !u!114 &1410774658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410774646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50e105f2bd7e854cbd7e599180ef7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spellList: []
+  AllSpellList: {fileID: 11400000, guid: d24fdf3907467e64babc3dc1db8c1819, type: 2}
 --- !u!1 &1782176905
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +861,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 101
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1880716879, guid: ea8764414199fcb4aac44c08cfa677df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

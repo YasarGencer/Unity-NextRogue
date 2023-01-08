@@ -62,6 +62,51 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SPELL1"",
+                    ""type"": ""Button"",
+                    ""id"": ""7602c34a-ba56-4318-81c2-b1fe05d0bff9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SPELL2"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fe2c1f0-9672-4d05-b13a-202f2a015418"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SPELL3"",
+                    ""type"": ""Button"",
+                    ""id"": ""20bddcc5-c289-48c0-abc4-6e04d2fc752f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SPELL4"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0ab53b6-551a-4feb-9305-107524fe6e4d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SPELL5"",
+                    ""type"": ""Button"",
+                    ""id"": ""2573edd9-a3bd-4b92-885d-c29d4b64e8a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +197,61 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""BASIC ATTACK 2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6686dac8-3df0-4a5c-a9f0-6fae486d7455"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SPELL1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2d57398-702d-49b8-b2b9-9c95c3506aa8"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SPELL2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5876f89-6bab-4922-bd5a-a51176302d9f"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SPELL3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e27ec32-e6ec-4f8f-9928-0d77ae6d5b0a"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SPELL4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0e15029-1af6-4068-a685-a557712d4746"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SPELL5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +264,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_OnMove_DASH = m_OnMove.FindAction("DASH", throwIfNotFound: true);
         m_OnMove_BASICATTACK1 = m_OnMove.FindAction("BASIC ATTACK 1", throwIfNotFound: true);
         m_OnMove_BASICATTACK2 = m_OnMove.FindAction("BASIC ATTACK 2", throwIfNotFound: true);
+        m_OnMove_SPELL1 = m_OnMove.FindAction("SPELL1", throwIfNotFound: true);
+        m_OnMove_SPELL2 = m_OnMove.FindAction("SPELL2", throwIfNotFound: true);
+        m_OnMove_SPELL3 = m_OnMove.FindAction("SPELL3", throwIfNotFound: true);
+        m_OnMove_SPELL4 = m_OnMove.FindAction("SPELL4", throwIfNotFound: true);
+        m_OnMove_SPELL5 = m_OnMove.FindAction("SPELL5", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +332,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnMove_DASH;
     private readonly InputAction m_OnMove_BASICATTACK1;
     private readonly InputAction m_OnMove_BASICATTACK2;
+    private readonly InputAction m_OnMove_SPELL1;
+    private readonly InputAction m_OnMove_SPELL2;
+    private readonly InputAction m_OnMove_SPELL3;
+    private readonly InputAction m_OnMove_SPELL4;
+    private readonly InputAction m_OnMove_SPELL5;
     public struct OnMoveActions
     {
         private @PlayerInput m_Wrapper;
@@ -235,6 +345,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @DASH => m_Wrapper.m_OnMove_DASH;
         public InputAction @BASICATTACK1 => m_Wrapper.m_OnMove_BASICATTACK1;
         public InputAction @BASICATTACK2 => m_Wrapper.m_OnMove_BASICATTACK2;
+        public InputAction @SPELL1 => m_Wrapper.m_OnMove_SPELL1;
+        public InputAction @SPELL2 => m_Wrapper.m_OnMove_SPELL2;
+        public InputAction @SPELL3 => m_Wrapper.m_OnMove_SPELL3;
+        public InputAction @SPELL4 => m_Wrapper.m_OnMove_SPELL4;
+        public InputAction @SPELL5 => m_Wrapper.m_OnMove_SPELL5;
         public InputActionMap Get() { return m_Wrapper.m_OnMove; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -256,6 +371,21 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @BASICATTACK2.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK2;
                 @BASICATTACK2.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK2;
                 @BASICATTACK2.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnBASICATTACK2;
+                @SPELL1.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL1;
+                @SPELL1.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL1;
+                @SPELL1.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL1;
+                @SPELL2.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL2;
+                @SPELL2.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL2;
+                @SPELL2.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL2;
+                @SPELL3.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL3;
+                @SPELL3.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL3;
+                @SPELL3.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL3;
+                @SPELL4.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL4;
+                @SPELL4.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL4;
+                @SPELL4.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL4;
+                @SPELL5.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL5;
+                @SPELL5.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL5;
+                @SPELL5.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnSPELL5;
             }
             m_Wrapper.m_OnMoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -272,6 +402,21 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @BASICATTACK2.started += instance.OnBASICATTACK2;
                 @BASICATTACK2.performed += instance.OnBASICATTACK2;
                 @BASICATTACK2.canceled += instance.OnBASICATTACK2;
+                @SPELL1.started += instance.OnSPELL1;
+                @SPELL1.performed += instance.OnSPELL1;
+                @SPELL1.canceled += instance.OnSPELL1;
+                @SPELL2.started += instance.OnSPELL2;
+                @SPELL2.performed += instance.OnSPELL2;
+                @SPELL2.canceled += instance.OnSPELL2;
+                @SPELL3.started += instance.OnSPELL3;
+                @SPELL3.performed += instance.OnSPELL3;
+                @SPELL3.canceled += instance.OnSPELL3;
+                @SPELL4.started += instance.OnSPELL4;
+                @SPELL4.performed += instance.OnSPELL4;
+                @SPELL4.canceled += instance.OnSPELL4;
+                @SPELL5.started += instance.OnSPELL5;
+                @SPELL5.performed += instance.OnSPELL5;
+                @SPELL5.canceled += instance.OnSPELL5;
             }
         }
     }
@@ -282,5 +427,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnDASH(InputAction.CallbackContext context);
         void OnBASICATTACK1(InputAction.CallbackContext context);
         void OnBASICATTACK2(InputAction.CallbackContext context);
+        void OnSPELL1(InputAction.CallbackContext context);
+        void OnSPELL2(InputAction.CallbackContext context);
+        void OnSPELL3(InputAction.CallbackContext context);
+        void OnSPELL4(InputAction.CallbackContext context);
+        void OnSPELL5(InputAction.CallbackContext context);
     }
 }

@@ -40,6 +40,51 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SPELL1",
+                    "type": "Button",
+                    "id": "7602c34a-ba56-4318-81c2-b1fe05d0bff9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SPELL2",
+                    "type": "Button",
+                    "id": "1fe2c1f0-9672-4d05-b13a-202f2a015418",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SPELL3",
+                    "type": "Button",
+                    "id": "20bddcc5-c289-48c0-abc4-6e04d2fc752f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SPELL4",
+                    "type": "Button",
+                    "id": "c0ab53b6-551a-4feb-9305-107524fe6e4d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SPELL5",
+                    "type": "Button",
+                    "id": "2573edd9-a3bd-4b92-885d-c29d4b64e8a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -128,6 +173,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "BASIC ATTACK 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6686dac8-3df0-4a5c-a9f0-6fae486d7455",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SPELL1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2d57398-702d-49b8-b2b9-9c95c3506aa8",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SPELL2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5876f89-6bab-4922-bd5a-a51176302d9f",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SPELL3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e27ec32-e6ec-4f8f-9928-0d77ae6d5b0a",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SPELL4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0e15029-1af6-4068-a685-a557712d4746",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SPELL5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
