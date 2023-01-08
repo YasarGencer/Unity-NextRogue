@@ -55,6 +55,8 @@ public class PlayerBasicAttacks : MonoBehaviour {
         cooldownRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(Cooldown);
     }
     void Cooldown(long obj) {
+        _mainController.UI.SetSlider(_mainController.UI.MeleeSlider, _mainController.Stats.BasicCooldown, _mainController.Stats.BasicCooldown - _activeTimer);
+        _mainController.UI.SetSlider(_mainController.UI.RangedSlider, _mainController.Stats.BasicCooldown, _mainController.Stats.BasicCooldown - _activeTimer);
         if (_activeTimer <= 0)
             cooldownRX?.Dispose();
         _activeTimer -= 1 * Time.deltaTime;

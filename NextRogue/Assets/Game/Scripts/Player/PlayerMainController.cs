@@ -17,6 +17,8 @@ public class PlayerMainController : MonoBehaviour {
     public PlayerSpells Spells;
     [HideInInspector]
     public Health Health;
+    [HideInInspector]
+    public PlayerUI UI;
 
     [HideInInspector]
     public Animator Animator;
@@ -34,6 +36,7 @@ public class PlayerMainController : MonoBehaviour {
         BasicAttacks = GetComponent<PlayerBasicAttacks>();
         Spells = GetComponent<PlayerSpells>();
         Health = GetComponent<Health>();
+        UI = GetComponent<PlayerUI>();
 
         this.Input.Initialize(this);
         Stats.Initialize();
@@ -41,5 +44,6 @@ public class PlayerMainController : MonoBehaviour {
         BasicAttacks.Initialize(this);
         Spells.Initialize(this);
         Health.Initialize();
+        UI.Initialize(this);
     }
 }
