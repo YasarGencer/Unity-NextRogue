@@ -58,7 +58,7 @@ It deals little bit more damage than melee attack.
 
 <p id = "playerConsumables" >Player Consumables:</p>
 
-  - Stamina
+  - Stamina (CANCELLED)
     - Used On Physical Movement
     - Gained Over Time
   - Souls 

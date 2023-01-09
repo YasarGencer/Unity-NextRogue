@@ -12,11 +12,13 @@ public class PlayerInputManager : MonoBehaviour {
         SetEvents();
     }
     void SetEvents() {
-        _inputOnMove.DASH.performed += input => Dash();
         _inputOnMove.MOVE.performed += input => Direction(_inputOnMove.MOVE.ReadValue<Vector2>());
         _inputOnMove.MOVE.canceled += input => Direction(Vector2.zero);
+
+        _inputOnMove.DASH.performed += input => Basic(0);
         _inputOnMove.BASICATTACK1.performed += input => Basic(1);
         _inputOnMove.BASICATTACK2.performed += input => Basic(2);
+
         _inputOnMove.SPELL1.performed += input => Spell(0);
         _inputOnMove.SPELL2.performed += input => Spell(1);
         _inputOnMove.SPELL3.performed += input => Spell(2);
@@ -38,15 +40,11 @@ public class PlayerInputManager : MonoBehaviour {
     //EVENTS
     void Direction(Vector2 direction) {
         if (_mainController.Movement)
-            _mainController.Movement.Direction(direction);
-    }
-    void Dash() {
-        if (_mainController.Movement)
-            _mainController.Movement.Dash();
+            _mainController.Movement.GetDirection(direction);
     }
     void Basic(int value) {
-        if (_mainController.BasicAttacks)
-            _mainController.BasicAttacks.Basic(value);
+        if (_mainController.Spells)
+            _mainController.Spells.Basic(value);
     }
     void Spell(int value) {
         if (_mainController.Spells)

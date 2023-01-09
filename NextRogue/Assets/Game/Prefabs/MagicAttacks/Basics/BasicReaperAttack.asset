@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39db977b8be900b439f4a7677b7eb961, type: 3}
+  m_Name: BasicReaperAttack
+  m_EditorClassIdentifier: 
+  Index: 1
+  IsBasic: 1
+  Name: Reaper
+  ShortDesc: Summon the deaths reaper
+  Description: o
+  Icon: {fileID: 21300000, guid: 4d0945a30a8cd6c4689c0a582be7ea73, type: 3}
+  Spell: {fileID: 4386157602729246081, guid: e35a6693e49a9ca48926722ce5946c62, type: 3}
+  Damage: 15
+  CastingTime: 0
+  CooldownTime: 2
