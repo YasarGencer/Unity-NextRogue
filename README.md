@@ -45,6 +45,15 @@ It deals little bit more damage than melee attack.
 
 <p id = "playerCombat" >Player Combat:</p>
 
+  - Basics
+    - Dash 
+      - Dashes to a choosen direction
+    - Heal
+      - Heals player
+    - Reaper
+      - Instantiates a reaper that swings itself
+    - Dual Shot
+      - Shoots a dual projectile
   - Spells
     - Necromancy 
       - _summonDeadEnemies
