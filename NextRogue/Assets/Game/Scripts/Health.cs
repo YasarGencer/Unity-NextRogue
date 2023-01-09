@@ -23,6 +23,10 @@ public class Health : MonoBehaviour
 
         StartCoroutine(Push(source));
     }
+    public void GainHealth(float value) {
+        _stats.Health += value;
+        _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
+    }
     IEnumerator Push(Transform source) {
         Vector2 dir = source.position - transform.position;
         dir = -dir.normalized;

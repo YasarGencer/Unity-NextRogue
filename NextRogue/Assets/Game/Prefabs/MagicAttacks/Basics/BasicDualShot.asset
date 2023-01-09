@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39db977b8be900b439f4a7677b7eb961, type: 3}
   m_Name: BasicDualShot
   m_EditorClassIdentifier: 
-  Index: 2
+  Index: 3
   IsBasic: 1
   Name: Dual Shot
   ShortDesc: Shoot a dual projectile

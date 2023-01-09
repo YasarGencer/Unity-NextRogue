@@ -12,12 +12,13 @@ public class PlayerSpells : MonoBehaviour
     public void Initialize(PlayerMainController mainController) {
         _mainController= mainController;
         _spellList = new ASpell[5];
-        _basicList = new ASpell[3];
+        _basicList = new ASpell[4];
         AllSpellList.Initialize();
         //Temp
         SetBasic(0,0);
         SetBasic(1,1);
         SetBasic(2,2);
+        SetBasic(3,3);
 
         //(0, 0);
         //SetSpell(0, 1);

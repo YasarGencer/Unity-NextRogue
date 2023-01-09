@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Spells", menuName = "ScriptableObjects/Basics/BasicAttack", order = 1)]
+[CreateAssetMenu(fileName = "Spells", menuName = "ScriptableObjects/Basics/BasicAttack", order = 2)]
 public class BasicAttack : ASpell {
     public override void Initialize(PlayerMainController mainController, int value) {
         base.Initialize(mainController, value);

@@ -15,33 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "DASH",
-                    "type": "Button",
-                    "id": "9721b7d3-4f62-4061-92dc-faa0eadc4c32",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "BASIC ATTACK 1",
-                    "type": "Button",
-                    "id": "f0f4a44d-5b43-4a1d-b20a-a1842539e169",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "BASIC ATTACK 2",
-                    "type": "Button",
-                    "id": "5fe6c9c7-efc0-44b4-96ce-d7c97b73dd9c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "SPELL1",
                     "type": "Button",
                     "id": "7602c34a-ba56-4318-81c2-b1fe05d0bff9",
@@ -81,6 +54,42 @@
                     "name": "SPELL5",
                     "type": "Button",
                     "id": "2573edd9-a3bd-4b92-885d-c29d4b64e8a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BASIC1",
+                    "type": "Button",
+                    "id": "6f3ca25d-2e0f-4574-8932-8226b0b1e883",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BASIC2",
+                    "type": "Button",
+                    "id": "a2597aae-0b25-411c-b3d9-8cea5838a540",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BASIC3",
+                    "type": "Button",
+                    "id": "737f6384-0440-46f6-9e8b-f7df235b6874",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BASIC4",
+                    "type": "Button",
+                    "id": "e6015be6-d766-498f-89a8-a765582d3768",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -145,39 +154,6 @@
                 },
                 {
                     "name": "",
-                    "id": "de89ebff-b677-4d47-9ea1-aef449105eec",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DASH",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a1f69139-4d3d-4ed7-bb0e-cfa5f9ce66e7",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BASIC ATTACK 1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6c8a1638-b84e-43c2-87b8-2a6e809791a3",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BASIC ATTACK 2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6686dac8-3df0-4a5c-a9f0-6fae486d7455",
                     "path": "<Keyboard>/1",
                     "interactions": "",
@@ -228,6 +204,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "SPELL5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ac1d4eb-50fc-4cee-9ab2-bddf7e2505ca",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BASIC1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "437912ce-095b-4940-bfb3-1427441f4998",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BASIC2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba4a59fa-c873-4eca-a269-17c8083844b7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BASIC3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf86eeb6-5d76-4b3e-9c02-e3ab9367da66",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BASIC4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

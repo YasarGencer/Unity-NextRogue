@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39db977b8be900b439f4a7677b7eb961, type: 3}
   m_Name: BasicReaperAttack
   m_EditorClassIdentifier: 
-  Index: 1
+  Index: 2
   IsBasic: 1
   Name: Reaper
   ShortDesc: Summon the deaths reaper

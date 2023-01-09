@@ -9,27 +9,25 @@ public class PlayerUI : MonoBehaviour
 {
     PlayerMainController _mainController;
     public Slider HealthSlider, SoulSlider;
-    [System.Serializable]
-    public struct UIIcons {
-        public Slider Slider;
-        public TextMeshProUGUI Text;
-        public Image[] Icon;
-    }
-    public UIIcons[] basicIconList;
-    public UIIcons[] spellIconList;
+    public HUDSkillIcon[] basicIconList;
+    public HUDSkillIcon[] spellIconList;
 
     public void Initialize(PlayerMainController mainController) {
         _mainController = mainController;
         SetSlider(HealthSlider, _mainController.Stats.MaxHealth, _mainController.Stats.Health);
+        basicIconList[0].SetKey("l shift");
+        basicIconList[1].SetKey("q");
+        basicIconList[2].SetKey("l click");
+        basicIconList[3].SetKey("r click");
+        for (int i = 0; i < spellIconList.Length; i++) {
+            spellIconList[i].SetKey((i+1).ToString());
+        }
     }
     public void SetSlider(Slider slider, float max, float value) {
         slider.maxValue= max;
         slider.value= value;
     }
-    public void SetIcon(UIIcons[] list,int keyIndex, ASpell spell) {
-        foreach (var item in list[keyIndex].Icon) {
-            item.sprite= spell.Icon;
-        }
-        list[keyIndex].Text.text = spell.Name;
+    public void SetIcon(HUDSkillIcon[] list,int keyIndex, ASpell spell) {
+        list[keyIndex].SetIcon(spell);
     }
 }
