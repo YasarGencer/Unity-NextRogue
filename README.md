@@ -46,14 +46,22 @@ It deals little bit more damage than melee attack.
 <p id = "playerCombat" >Player Combat:</p>
 
   - Basics
-    - Dash 
-      - Dashes to a choosen direction
-    - Heal
-      - Heals player
-    - Reaper
-      - Instantiates a reaper that swings itself
-    - Dual Shot
-      - Shoots a dual projectile
+    - Primary Support
+      - Air Dash
+        - Dashes longer and throws enemies away
+      - Fire Dash
+        - Dashes and sets the path on fire
+    - Secondary Support
+      - Healh
+        - Heals player
+      - Shield
+        - Creates a one time use shield
+    - Primary Attack
+      - Reaper  
+        - Instantiates a reaper that swings itself
+    - Secondary Attack
+      - Dual Shot
+        - Shoots a dual projectile
   - Spells
     - Necromancy 
       - _summonDeadEnemies
@@ -64,6 +72,11 @@ It deals little bit more damage than melee attack.
         - Summons choosen creature to the mouse position
         - Consumes soul
         - Mid range
+    - Other
+      - _zacQ
+        - Throw a projectile to cursor
+        - On hit throw a secon one to different enemy
+        - If both hits different enemies projectiles hit enemies to eachother
 
 <p id = "playerConsumables" >Player Consumables:</p>
 
