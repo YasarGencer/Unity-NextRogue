@@ -87,7 +87,7 @@ It deals little bit more damage than melee attack.
     - Used On Spell Casting
     - Gained By Killing Humans
 
-<h3 align = "center" id = "summons"> SUMMONS</h3>
+<h3 align = "center" id = "summons"> NON PLAYERS</h3>
 
 Player summons different undead creatures to fight for itself. Some creatures will be able to directly controllable by the player after the spell some will wonder around by itself. There will be a lot of variety to creatures to summon.
 
