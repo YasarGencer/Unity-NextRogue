@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c210c9a5d66ae347beca4f41dbc2eae, type: 3}
+  m_Name: SpellSummonDeadAround
+  m_EditorClassIdentifier: 
+  Index: 1
+  Name: SummonDeadAround
+  ShortDesc: Summons From Dead Enemies
+  Description: Summons Friendly Creatures From Dead Enemies
+  Icon: {fileID: 0}
+  Spell: {fileID: 0}
+  CastingTime: 1
