@@ -15,15 +15,18 @@ public class EnemyStateMovement : AStates
 
     public override void ActivateState(NonPlayerMainController mainController) {
         base.ActivateState(mainController);
+        //CHANGES TARGET IN EVERY 2 SECS
         _mainController.StartCoroutine(CheckTarget());
     }
     public override void DeactivateState() {
         base.DeactivateState();
-        _mainController.Target = null;
+        _mainController.ChangeTarget(null);
     }
     public override void UpdateRX(long obj) {
+        //NO TARGET
         if (_mainController.Target == null)
             CheckClosest();
+        //TARGET TO CLOSE
         if (Vector2.Distance(_mainController.transform.position, _mainController.Target.transform.position) < _mainController.Stats.Range - .5f)
             return;
         Follow();
@@ -39,10 +42,10 @@ public class EnemyStateMovement : AStates
         _mainController.gameObject.transform.localScale = new Vector3(scale, 1, 1);
     }
     public void CheckClosest() {
-        _mainController.Target = _mainController.Player;
+        //SET PLAYER AS A TARGET AND IF THERE IS ANY SUMMON IS CLOSER SETS IT AS A TARGET
+        _mainController.ChangeTarget(_mainController.Player.gameObject);
         float minDist = Vector2.Distance(_mainController.Target.transform.position,_mainController.gameObject.transform.position);
-        GameObject[] summons = GameObject.FindGameObjectsWithTag("Summoned");
-        foreach (var item in summons) {
+        foreach (var item in GameObject.FindGameObjectsWithTag("Summoned")) {
             float dist = Vector2.Distance(item.transform.position, _mainController.gameObject.transform.position);
             if (minDist > dist) {
                 _mainController.ChangeTarget(item);
@@ -52,7 +55,7 @@ public class EnemyStateMovement : AStates
     }
     IEnumerator CheckTarget() {
         CheckClosest();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         _mainController.StartCoroutine(CheckTarget());
     }    
 }

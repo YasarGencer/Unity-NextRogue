@@ -5,18 +5,24 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "SummonMovementState", menuName = "ScriptableObjects/SummonStates/SummonMovementState")]
 public class SummonStateMovement : AStates {
-
     public override void ActivateState(NonPlayerMainController mainController) {
         base.ActivateState(mainController);
+        //CHANGES TARGET IN EVERY 2 SECS
         _mainController.StartCoroutine(CheckTarget());
     }
     public override void DeactivateState() {
         base.DeactivateState();
     }
     public override void UpdateRX(long obj) {
+        //NO TARGET
         if (_mainController.Target == null)
             CheckClosest();
-        if (Vector2.Distance(_mainController.transform.position, _mainController.Target.transform.position) < _mainController.Stats.Range - .5f)
+        float dist = Vector2.Distance(_mainController.transform.position, _mainController.Target.transform.position);
+        //TARGET IS AN ENEMY AN TO CLOSE
+        if (_mainController.Target != _mainController.Player.gameObject && dist < _mainController.Stats.Range - 1)
+            return;
+        //TARGET IS A PLAYER AN TO CLOSE
+        if (_mainController.Target == _mainController.Player.gameObject && dist < _mainController.Player.Stats.MinSummonControlRange)
             return;
         Follow();
     }
@@ -31,15 +37,28 @@ public class SummonStateMovement : AStates {
         _mainController.gameObject.transform.localScale = new Vector3(scale, 1, 1);
     }
     public void CheckClosest() {
-        float minDist = _mainController.Target == null ? 10000 : Vector2.Distance(_mainController.transform.position, _mainController.gameObject.transform.position);
-        GameObject[] summons = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (var item in summons) {
+        //CHECK IF PLAYER IS TOO FAR AWAY
+        if (Vector2.Distance(_mainController.transform.position, _mainController.Player.transform.position) > _mainController.Player.Stats.MaxSummonControlRange) {
+            _mainController.ChangeTarget(_mainController.Player.gameObject);
+            return;
+        }
+        //CHECK IF ENEMIES ARE TOO FAR AWAY
+        if (_mainController.Target != null)
+            if (_mainController.Target != _mainController.Player && Vector2.Distance(_mainController.transform.position, _mainController.Target.transform.position) > _mainController.Stats.EnemyRange) {
+                _mainController.ChangeTarget(_mainController.Player.gameObject);
+                return;
+            }
+        //IF TARGET IS NULL CHECKS 10 METER ROUND FOR TARGET IF NONE AVAILABLE SETS PLAYER AS A TARGET
+        float minDist = _mainController.Target == null ? _mainController.Stats.EnemyRange : Vector2.Distance(_mainController.transform.position, _mainController.Target.transform.position);
+        foreach (var item in GameObject.FindGameObjectsWithTag("Enemy")) {
             float dist = Vector2.Distance(item.transform.position, _mainController.gameObject.transform.position);
             if (minDist > dist) {
                 _mainController.ChangeTarget(item);
                 minDist = dist;
             }
         }
+        //IF THERE IS NO ENEMY
+        if (_mainController.Target == null) _mainController.ChangeTarget(_mainController.Player.gameObject);
     }
     IEnumerator CheckTarget() {
         CheckClosest();

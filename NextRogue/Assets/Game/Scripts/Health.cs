@@ -1,52 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] GameObject _corpse;
     bool _isPlayer;
     AStats _stats;
+    PlayerUI _ui;
     public void Initialize() {
 
         _isPlayer = gameObject.CompareTag("Player");
-        _stats = _isPlayer ? GetComponent<PlayerStats>() : GetComponent<NonPlayerStats>();
+        _stats = _isPlayer ? GetComponent<PlayerMainController>().Stats : GetComponent<NonPlayerMainController>().Stats;
+        _ui = _isPlayer ? GetComponent<PlayerMainController>().UI : null;
     }
     public void GetDamage(float value, Transform source) {
 
         _stats.Health -= value;
-        if (_stats.Health <= 0)
-            Die();
 
         GetComponent<Animator>().SetTrigger("hit");
 
-        //StartCoroutine(Push(source));
-        if (!_isPlayer)
-            GetComponent<NonPlayerMainController>().ChangeTarget(source.gameObject);
+        if (_isPlayer)
+            _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
         else
-            GetComponent<PlayerMainController>().UI.SetSlider(GetComponent<PlayerMainController>().UI.HealthSlider, GetComponent<PlayerMainController>().Stats.MaxHealth, GetComponent<PlayerMainController>().Stats.Health);
+            StartCoroutine(_stats.Clamp());
+
+        if (_stats.Health <= 0) 
+            Die();
     }
     public void GainHealth(float value) {
         _stats.Health += value;
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
+        if(_isPlayer)
+            _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
     }
-    IEnumerator Push(Transform source) {
-        Vector2 dir = source.position - transform.position;
-        dir = -dir.normalized;
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(dir * 150 * rb.mass);
-        yield return new WaitForSeconds(1f);
-        rb.velocity = Vector2.zero;
-    }
-    void Die() {
+    public void Die() {
         GetComponent<Animator>().SetTrigger("die");
-        if (_isPlayer) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Animator corpse = Instantiate(_corpse, transform.position, Quaternion.identity).GetComponent<Animator>();
+        corpse.SetTrigger("die");
+
+        if (this.CompareTag("Summoned")) {
+            corpse.gameObject.tag = "FriendlyCorpse";
+            Destroy(corpse.gameObject, 3f);
         }
-        else {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

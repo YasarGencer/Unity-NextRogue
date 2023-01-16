@@ -8,6 +8,8 @@ TagManager:
   - PlayerMelee
   - Summoned
   - Enemy
+  - Corpse
+  - FriendlyCorpse
   layers:
   - Default
   - TransparentFX

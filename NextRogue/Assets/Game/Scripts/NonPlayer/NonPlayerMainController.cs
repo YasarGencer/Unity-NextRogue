@@ -6,10 +6,8 @@ using UnityEngine;
 
 public class NonPlayerMainController : MonoBehaviour
 {
-    [HideInInspector] public GameObject Player;
-
-
-    [HideInInspector] public GameObject Target;
+    public PlayerMainController Player { get; private set; }
+    public GameObject Target { get; private set; }
 
     [HideInInspector]
     public Animator Animator;
@@ -26,12 +24,18 @@ public class NonPlayerMainController : MonoBehaviour
     [HideInInspector]
     public bool CanAttack = false;
 
+    float timer;
+    bool isInit;
+
     public void Awake() {
         Invoke("Initialize", 1f);
     }
     public void Initialize() {
 
-        Player = GameObject.FindGameObjectWithTag("Player");
+        timer = 0;
+        isInit= true;
+
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMainController>();
 
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
@@ -53,7 +57,7 @@ public class NonPlayerMainController : MonoBehaviour
         CanAttack = false;
         Animator.SetTrigger("attack");
         Invoke("Hit", .5f);
-        Invoke("SetAttack", .5f);
+        Invoke("SetAttack", Stats.AttackSpeed);
     }
     void Hit() {
         if(Target && Vector2.Distance(transform.position,Target.transform.position) < Stats.Range + 1)
@@ -61,5 +65,12 @@ public class NonPlayerMainController : MonoBehaviour
     }
     void SetAttack() {
         CanAttack = true;
+    }
+    private void Update() {
+        if (!isInit || !this.CompareTag("Summoned"))
+            return;
+        timer += Time.deltaTime;
+        if(timer > Stats.LifeSpan)
+            Health.Die();
     }
 }

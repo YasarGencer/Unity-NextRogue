@@ -22,6 +22,5 @@ public abstract class AStates : ScriptableObject {
         updateRX.Dispose();
     }
     public virtual void UpdateRX(long obj) {
-      
     }
 }
