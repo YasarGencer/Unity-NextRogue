@@ -132,10 +132,11 @@ MonoBehaviour:
   Health: 0
   MaxHealth: 50
   Speed: 3
-  Damage: 10
-  Range: 3
+  Damage: 15
+  Range: 4
   AttackSpeed: 1
   EnemyRange: 0
+  LifeSpan: 3
 --- !u!114 &4806134603982917483
 MonoBehaviour:
   m_ObjectHideFlags: 0

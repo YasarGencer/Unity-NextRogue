@@ -60,8 +60,11 @@ public class NonPlayerMainController : MonoBehaviour
         Invoke("SetAttack", Stats.AttackSpeed);
     }
     void Hit() {
-        if(Target && Vector2.Distance(transform.position,Target.transform.position) < Stats.Range + 1)
-            Target.GetComponent<Health>().GetDamage(Stats.Damage, transform);
+        Health health = null;
+        if (Target && Vector2.Distance(transform.position, Target.transform.position) < Stats.Range + 1)
+            Target.TryGetComponent<Health>(out health);
+        if(health != null)
+            health.GetDamage(Stats.Damage, transform);
     }
     void SetAttack() {
         CanAttack = true;

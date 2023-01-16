@@ -44,9 +44,9 @@ public class PlayerMainController : MonoBehaviour {
 
         this.Input.Initialize(this);
         Stats.Initialize();
+        UI.Initialize(this);
         Movement.Initialize(this);
         Spells.Initialize(this);
-        UI.Initialize(this);
         Stats.Initialize(); 
         Health.Initialize();
     }

@@ -96,6 +96,9 @@ Tere is two types of non player characters in the game. Summons and enemies. Pla
 <p align = "center">
 <img src="img/GUI&HUD.png" width="500" alt="PlayerMechanics">
 <p>
+<p align = "center">
+<img src="img/GUI&HUD2.png" width="500" alt="PlayerMechanics">
+<p>
 
 <h1 align = "center" id = "developmentFlow"> DEVELOPMENT FLOW </h1>
 

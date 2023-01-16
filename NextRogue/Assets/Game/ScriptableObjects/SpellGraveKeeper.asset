@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c210c9a5d66ae347beca4f41dbc2eae, type: 3}
+  m_Name: SpellGraveKeeper
+  m_EditorClassIdentifier: 
+  Index: 1
+  IsBasic: 0
+  Name: GRAVE KEEPER
+  ShortDesc: Revives Dead Around
+  Description: Revives Friendly Summons From Enemy Corpses
+  Icon: {fileID: 21300000, guid: d79dea5ed38a1184a88496e3c9acea59, type: 3}
+  Spell: {fileID: 7760740175969813846, guid: fa2c0acec36f0e3428e0b53d2f81ba50, type: 3}
+  Damage: 0
+  CastingTime: 0
+  CooldownTime: 5

@@ -86,7 +86,7 @@ public abstract class ASpell : ScriptableObject
             pos,
             Quaternion.identity
             ).GetComponent<APlayerProjectile>()
-            .Initialize(_mainController.Input.GetMousePos(),
+            .Initialize(_mainController.Input.GetMouseWolrdPos(),
             Damage, CooldownTime);
     }
 }

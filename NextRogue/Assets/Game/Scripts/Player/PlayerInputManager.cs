@@ -27,9 +27,12 @@ public class PlayerInputManager : MonoBehaviour {
         _inputOnMove.SPELL4.performed += input => Spell(3);
         _inputOnMove.SPELL5.performed += input => Spell(4);
     }
-    public Vector3 GetMousePos() {
+    public Vector3 GetMouseWolrdPos() {
         Vector3 pos = Mouse.current.position.ReadValue();
         return new Vector3(Camera.main.ScreenToWorldPoint(pos).x, Camera.main.ScreenToWorldPoint(pos).y, 0);
+    }
+    public Vector3 GetMouseScreenPos() {
+        return Mouse.current.position.ReadValue();
     }
 
     #region ENABLES

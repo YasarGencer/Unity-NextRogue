@@ -41,7 +41,7 @@ public class PlayerSpells : MonoBehaviour
                 }
         }
         _spellList[keyIndex] = AllSpellList.GetSpell(spellIndex);
-        _mainController.UI.SetIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
+        _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
     }
     public void SetBasic(int keyIndex, int spellIndex) {
         if (!CheckSpellKeyIndex(keyIndex)) {
@@ -54,7 +54,7 @@ public class PlayerSpells : MonoBehaviour
                 }
         }
         _basicList[keyIndex] = AllSpellList.GetBasic(spellIndex);
-        _mainController.UI.SetIcon(_mainController.UI.basicIconList, keyIndex, _basicList[keyIndex]);
+        _mainController.UI.SetSkillIcon(_mainController.UI.basicIconList, keyIndex, _basicList[keyIndex]);
     }
     public bool CheckSpellKeyIndex(int keyIndex) {
         return _spellList[keyIndex] == null;

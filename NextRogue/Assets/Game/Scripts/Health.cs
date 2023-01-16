@@ -18,7 +18,8 @@ public class Health : MonoBehaviour
         _ui = _isPlayer ? GetComponent<PlayerMainController>().UI : null;
     }
     public void GetDamage(float value, Transform source) {
-
+        if (!_stats)
+            return;
         _stats.Health -= value;
 
         GetComponent<Animator>().SetTrigger("hit");
