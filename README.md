@@ -9,10 +9,7 @@
           - [Movement](#playerMovement)
           - [Combat](#playerCombat)
           - [Consumables](#playerConsumables)
-      - [Summons](#summons)
-      - [Enemies](#enemies)
-         - [Types](#enemyTypes)
-         - [Skills](#enemySkills)
+      - [Non Players](#nonPlayers)
      - [Visuals](#visuals)
        - [User Interface](#UI)
  - [Development Flow](#developmentFlow)
@@ -87,26 +84,9 @@ It deals little bit more damage than melee attack.
     - Used On Spell Casting
     - Gained By Killing Humans
 
-<h3 align = "center" id = "summons"> NON PLAYERS</h3>
+<h3 align = "center" id = "nonPlayers"> NON PLAYERS</h3>
 
-Player summons different undead creatures to fight for itself. Some creatures will be able to directly controllable by the player after the spell some will wonder around by itself. There will be a lot of variety to creatures to summon.
-
-All enemies is summonable by a _summonDeadEnemies spell.
-
-<h3 align = "center" id = "enemies" >ENEMIES</h3>
-
-- <p id = "enemyTypes" >Enemy Types:</p>
-    
-    - ?
-    - ?
-    - ?
-
- - <p id = "enemySkills" >Enemy Skills:</p>
-
-    - ?
-    - ?
-    - ?
-  
+Tere is two types of non player characters in the game. Summons and enemies. Player can summon summons(obviously) and enemies spawns randomly on the map. Summons has a short lifespawn. When non playables die they leave a corpse on the map. The corpse of enemy can be summoned back as summon and fight beside the player against other enemies but it also will have short lifespan this time. 
 
 <h1 align = "center" id = "visuals"> VISUALS </h1>
 
