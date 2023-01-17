@@ -16,16 +16,16 @@ public class PlayerInputManager : MonoBehaviour {
         _inputOnMove.MOVE.performed += input => Direction(_inputOnMove.MOVE.ReadValue<Vector2>());
         _inputOnMove.MOVE.canceled += input => Direction(Vector2.zero);
 
-        _inputOnMove.BASIC1.performed += input => Basic(0);
-        _inputOnMove.BASIC2.performed += input => Basic(1);
-        _inputOnMove.BASIC3.performed += input => Basic(2);
-        _inputOnMove.BASIC4.performed += input => Basic(3);
+        _inputOnMove.BASIC1.performed += input => Spell(0);
+        _inputOnMove.BASIC2.performed += input => Spell(1);
+        _inputOnMove.BASIC3.performed += input => Spell(2);
+        _inputOnMove.BASIC4.performed += input => Spell(3);
 
-        _inputOnMove.SPELL1.performed += input => Spell(0);
-        _inputOnMove.SPELL2.performed += input => Spell(1);
-        _inputOnMove.SPELL3.performed += input => Spell(2);
-        _inputOnMove.SPELL4.performed += input => Spell(3);
-        _inputOnMove.SPELL5.performed += input => Spell(4);
+        _inputOnMove.SPELL1.performed += input => Spell(4);
+        _inputOnMove.SPELL2.performed += input => Spell(5);
+        _inputOnMove.SPELL3.performed += input => Spell(6);
+        _inputOnMove.SPELL4.performed += input => Spell(7);
+        _inputOnMove.SPELL5.performed += input => Spell(8);
     }
     public Vector3 GetMouseWolrdPos() {
         Vector3 pos = Mouse.current.position.ReadValue();
@@ -47,10 +47,6 @@ public class PlayerInputManager : MonoBehaviour {
     void Direction(Vector2 direction) {
         if (_mainController.Movement)
             _mainController.Movement.GetDirection(direction);
-    }
-    void Basic(int value) {
-        if (_mainController.Spells)
-            _mainController.Spells.Basic(value);
     }
     void Spell(int value) {
         if (_mainController.Spells)

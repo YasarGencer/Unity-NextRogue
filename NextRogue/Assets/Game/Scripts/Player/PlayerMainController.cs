@@ -23,9 +23,8 @@ public class PlayerMainController : MonoBehaviour {
     [HideInInspector]
     public PlayerMovement Movement;
     [HideInInspector]
-    public PlayerSpells Spells;
-    [HideInInspector]
-    public PlayerUI UI;
+    public PlayerSpellHandler Spells;
+    public MainGUIHUD UI;
 
     public void Awake() {
         Initialize();
@@ -39,8 +38,7 @@ public class PlayerMainController : MonoBehaviour {
         Stats = GetComponent<PlayerStats>();
         Health = GetComponent<Health>();
         Movement = GetComponent<PlayerMovement>();
-        Spells = GetComponent<PlayerSpells>();
-        UI = GetComponent<PlayerUI>();
+        Spells = GetComponent<PlayerSpellHandler>();
 
         this.Input.Initialize(this);
         Stats.Initialize();

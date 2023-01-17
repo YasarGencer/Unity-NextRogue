@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject _corpse;
     bool _isPlayer;
     AStats _stats;
-    PlayerUI _ui;
+    MainGUIHUD _ui;
     public void Initialize() {
 
         _isPlayer = gameObject.CompareTag("Player");

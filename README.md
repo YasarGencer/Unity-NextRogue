@@ -6,9 +6,9 @@
     - [Game Details](#gameDetails)
     - [Gameplay Elements](#gameplayElements)
       - [Player Mechanics](#playermechanics)
-          - [Movement](#playerMovement)
-          - [Combat](#playerCombat)
-          - [Consumables](#playerConsumables)
+        - [Spells](#playerSpells)
+        - [Consumables](#playerConsumables)
+      - [Playable Characters](#playableCharacters)
       - [Non Players](#nonPlayers)
      - [Visuals](#visuals)
        - [User Interface](#UI)
@@ -31,62 +31,75 @@
 
 I want a fast gameplay so fluid character controller is mandatory. 
 
-<p id = "playerMovement" >Player Movement:</p>
+Main combat will be built on wizardry. There will be more than 3 unlockable characters in the game. Player can open them by playing the game.
 
-Main combat will be built on necromancy. So there is two types of basic atacks. 
+There will be personality trait actives and passives.
 
-Melee one deals little or no damage. It's main purpose is to swing enemies back.
+Actives :
+  - Primary Support : PS
+  - Secondary Support : SS
+  - Primary Attack : PA 
+  - Seconray Attack : SA
 
-Ranged one is one touch one cast spell. Which means there will be no casting time.
-It deals little bit more damage than melee attack.
+There are no strict restrictions on passives so they will have different and quite unique passives. 
 
-<p id = "playerCombat" >Player Combat:</p>
 
-  - Basics
-    - Primary Support
-      - Air Dash
-        - Dashes longer and throws enemies away
-      - Fire Dash
-        - Dashes and sets the path on fire
-    - Secondary Support
-      - Healh
-        - Heals player
-      - Shield
-        - Creates a one time use shield
-    - Primary Attack
-      - Reaper  
-        - Instantiates a reaper that swings itself
-    - Secondary Attack
-      - Dual Shot
-        - Shoots a dual projectile
-  - Spells
-    - Necromancy 
-      - _summonDeadEnemies
-        - Summons friendly creatures from enemy bodies in range
-        - Doesn't consumes soul but has a cooldown.
-        - Low range
-      - _summonOnCursor
-        - Summons choosen creature to the mouse position
-        - Consumes soul
-        - Mid range
-    - Other
-      - _zacQ
-        - Throw a projectile to cursor
-        - On hit throw a secon one to different enemy
-        - If both hits different enemies projectiles hit enemies to eachother
+<h4 align = "center" id = "playerSpells">SPELLS</h4>
 
-<p id = "playerConsumables" >Player Consumables:</p>
+And there is spells. Any character has 5 skill slots which player can attach different spells on each run. Player will find new spells while on chests or they will be given on after boss fights.
 
-  - Stamina (CANCELLED)
-    - Used On Physical Movement
-    - Gained Over Time
+Oher characters attacks might be used as spells in game.
+
+Spell List :
+  - _zacQ
+    - Throw a projectile to cursor
+    - On hit throw a secon one to different enemy
+    - If both hits different enemies projectiles hit enemies to eachother
+  - _ice particles
+    - Throws 5 ice pieces in a 30 degrees between them
+    - Slowes enemies down on contact 
+
+<h4 align = "center" id = "playerConsumables" >PLAYER CONSUMABLES</h4>
+
   - Souls 
     - Used On Spell Casting
     - Gained By Killing Humans
 
+<h3 align = "center" id = "playableCharacters"> PLAYABLE CHARACTERS</h3>
+
+There will be different and unique wizards to play as i said before. So there is a list of them
+
+  - NECROMANCER:
+    - PS: Necrotic Dash
+      - It dashes more if there are dead bodies around
+    - SS: Consume
+      - Consumes alive enemies or summons to gain health
+    - PA: Summon Aid
+      - Summon [summons](#nonPlayers) to help the player
+      - Summons will die in a short time
+    - SA: Grave Keeper
+      - Revive [summons](#nonPlayers) from dead enemy bodies
+  - LIGHTNING:
+    - PS: Bolt Dash
+      - If player dashes to an enemy it will zap around other enemies
+      - Damages and shocks on contact
+    - SS: Elecrticity Aura
+      - Creates a aura that will dissapear on time.
+      - Enemies in the aura will get shocked
+    - PA: Lightning Streak
+      - Shoots lightning from players hand
+      - Attack will zap around other enemies on contact
+    - SA: Summon Thunderbolt
+      - Summons a thunderbolt that will do AOE to nearby enemies 
+
 <h3 align = "center" id = "nonPlayers"> NON PLAYERS</h3>
 
 Tere is two types of non player characters in the game. Summons and enemies. Player can summon summons(obviously) and enemies spawns randomly on the map. Summons has a short lifespawn. When non playables die they leave a corpse on the map. The corpse of enemy can be summoned back as summon and fight beside the player against other enemies but it also will have short lifespan this time. 
+
+Non player character list:
+  - Axe Skeleton
+  - Sword Skeleton
+  - Hunter
 
 <h1 align = "center" id = "visuals"> VISUALS </h1>
 
