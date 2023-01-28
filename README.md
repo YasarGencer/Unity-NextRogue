@@ -51,6 +51,10 @@ And there is spells. Any character has 5 skill slots which player can attach dif
 Oher characters attacks might be used as spells in game.
 
 Spell List :
+  - Reaper
+    - Summons a reaper that seings itself and damages the enemies on the way
+  - Dual Shot
+    - Shoots a dual projectile that explodes and give AoE on contact
   - _zacQ
     - Throw a projectile to cursor
     - On hit throw a secon one to different enemy
