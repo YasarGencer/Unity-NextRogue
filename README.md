@@ -59,8 +59,8 @@ Spell List :
     - Throw a projectile to cursor
     - On hit throw a secon one to different enemy
     - If both hits different enemies projectiles hit enemies to eachother
-  - _ice particles
-    - Throws 5 ice pieces in a 30 degrees between them
+  -  Ice Barrage
+    - Throws 5 ice pieces in a few inches between them
     - Slowes enemies down on contact 
 
 <h4 align = "center" id = "playerConsumables" >PLAYER CONSUMABLES</h4>
