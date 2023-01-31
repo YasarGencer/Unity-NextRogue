@@ -13,6 +13,7 @@ public class _HealingWardProjectile : APlayerProjectile
         Destroy(gameObject, time / 2);
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         StartFollow();
+        
     }
 
     void StartFollow() {
@@ -25,5 +26,16 @@ public class _HealingWardProjectile : APlayerProjectile
     void FollowRX(long obj) {
         this.transform.position = _player.position;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Check(collision.gameObject.tag);
+    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Check(collision.gameObject.tag);
+    }
+    void Check(String collision) {
+        if(collision == "Enemy" || collision == "EnemyProjectile") {
+            _player.GetComponent<PlayerMainController>().Health.GainHealth(UnityEngine.Random.Range(5f, 15f));
+            Destroy(gameObject);
+        }
+    }
 }
