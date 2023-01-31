@@ -49,12 +49,14 @@ public abstract class ASpell : ScriptableObject
         _currentTimeCast = CastingTime;
         _currentTimeCooldown= CooldownTime;
 
-        StartCasting();
-
+        if(CastingTime > 0)
+            StartCasting();
+        else
+            ActivateSpell();
         _isInit = true;
     }
     public virtual void ActivateSpell() {
-        if(_keyIndex <= 3)
+        if (_keyIndex <= 3)
             _mainController.Animator.SetTrigger("basic");
         else
             _mainController.Animator.SetTrigger("spell");

@@ -7,7 +7,8 @@ public abstract class APlayerProjectile : MonoBehaviour
     protected Vector3 _mousePos;
     protected float _damage;
     public virtual void Initialize(Vector3 mousePos, float damage, float time) {
-        Destroy(gameObject, time);
+        if(gameObject)
+            Destroy(gameObject, time);
 
         _damage = damage;
         if (_damage > 0) {

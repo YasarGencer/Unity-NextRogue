@@ -24,6 +24,7 @@ public class PlayerSpellHandler : MonoBehaviour
         SetSpell(4, AllSpellList.GetSpell(0));
         SetSpell(5, AllSpellList.GetSpell(1));
         SetSpell(6, AllSpellList.GetSpell(2));
+        SetSpell(7, AllSpellList.GetSpell(3));
     }
     public void Spell(int value) {
         _spellList[value].Initialize(_mainController, value);

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469d953010b8bbb47beaee255a09a348, type: 3}
   m_Name: NecromancerSummonAid
   m_EditorClassIdentifier: 
-  IsBasic: 1
   Name: SUMMON AID
   Description: Summons friendly cratures to help you
   Icon: {fileID: 21300000, guid: 165de5415dd5eb047a985658dcdf0d1e, type: 3}
