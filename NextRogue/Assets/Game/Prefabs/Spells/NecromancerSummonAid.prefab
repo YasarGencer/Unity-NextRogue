@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6545523380471205854}
   - component: {fileID: 6545523380471205852}
   m_Layer: 0
-  m_Name: NecromancerSummonAidProjectile
+  m_Name: NecromancerSummonAid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,4 @@ MonoBehaviour:
   SpellList:
   - {fileID: 11400000, guid: 0a8d89b82f2e2ac4ca17eb1f72af12f0, type: 2}
   - {fileID: 11400000, guid: 54de0d267eea7a644b4dba55019e0a15, type: 2}
-  - {fileID: 11400000, guid: 24d6a5ea040a3db4dbcaef5879dae8b5, type: 2}
-  - {fileID: 11400000, guid: ce7f0bcfb375cf84e867c894983aea75, type: 2}
-  - {fileID: 11400000, guid: 0e77875f3e1e841478ba505003688070, type: 2}
-  - {fileID: 11400000, guid: ed539dbd7521c2a4c8a4a8c5568ac249, type: 2}
+  - {fileID: 11400000, guid: 3aaada23fb2520747a3258313c0d337b, type: 2}

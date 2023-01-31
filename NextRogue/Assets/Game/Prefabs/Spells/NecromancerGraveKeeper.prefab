@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7760740175969813854}
   - component: {fileID: 7760740175969813855}
   m_Layer: 0
-  m_Name: NecromancerGraveKeeperProjectile
+  m_Name: NecromancerGraveKeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

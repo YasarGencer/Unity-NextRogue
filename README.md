@@ -59,7 +59,7 @@ Spell List :
     - Throw a projectile to cursor
     - On hit throw a secon one to different enemy
     - If both hits different enemies projectiles hit enemies to eachother
-  -  Ice Barrage
+  - Ice Barrage
     - Throws 5 ice pieces in a few inches between them
     - Slowes enemies down on contact 
 

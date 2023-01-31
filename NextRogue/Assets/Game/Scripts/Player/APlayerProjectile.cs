@@ -9,9 +9,12 @@ public abstract class APlayerProjectile : MonoBehaviour
     public virtual void Initialize(Vector3 mousePos, float damage, float time) {
         Destroy(gameObject, time);
 
-        _damage = damage;     
-        if(_damage > 0)
-            GetComponent<Damager>().Initialize(_damage);
+        _damage = damage;
+        if (_damage > 0) {
+            Damager damager = GetComponent<Damager>() as Damager;
+            if (damager)
+                GetComponent<Damager>().Initialize(_damage);
+        }
         if(mousePos != null) {
             _mousePos = mousePos;
             SetRotation();
