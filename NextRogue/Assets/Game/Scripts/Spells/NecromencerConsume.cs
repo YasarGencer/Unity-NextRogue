@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NecromancerConsume", menuName = "ScriptableObjects/Spells/NecromancerConsume")]
 public class NecromencerConsume : ASpell
 {
-    public override void Initialize(PlayerMainController mainController, int value) {
+    public override void Initialize(P_MainController mainController, int value) {
         base.Initialize(mainController, value);
     }
     public override void ActivateSpell() {

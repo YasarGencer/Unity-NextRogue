@@ -34,7 +34,7 @@ public class _HealingWardProjectile : APlayerProjectile
     }
     void Check(String collision) {
         if(collision == "Enemy" || collision == "EnemyProjectile") {
-            _player.GetComponent<PlayerMainController>().Health.GainHealth(UnityEngine.Random.Range(5f, 15f));
+            _player.GetComponent<P_MainController>().Health.GainHealth(UnityEngine.Random.Range(5f, 15f));
             Destroy(gameObject);
         }
     }

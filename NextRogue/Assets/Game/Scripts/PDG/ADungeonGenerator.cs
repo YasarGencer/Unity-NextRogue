@@ -4,16 +4,19 @@ using UnityEngine;
 
 public abstract class ADungeonGenerator : MonoBehaviour {
 
-    [SerializeField]
-    protected TilemapVisualizer _tilemapVisualizer;
+    protected PDGManager _manager;
     [SerializeField]
     protected Vector2Int _startPos = Vector2Int.zero;
+    public virtual void Initialize(PDGManager manager) {
+        _manager = manager;
+        GenerateDungeon();
+    }
     public void GenerateDungeon() {
         ClearDungeon();
         RunProceduralGeneration();
     }
     public void ClearDungeon() {
-        _tilemapVisualizer.Clear();
+        _manager.TilemapVisualizer.Clear();
     }
     protected abstract void RunProceduralGeneration();
 }

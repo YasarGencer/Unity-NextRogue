@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "SimpleRandomWalk_",menuName = "PDG/RandomWalkData")]
+[CreateAssetMenu(fileName = "SRW_",menuName = "PDG/RandomWalkData")]
 public class SimpleRandomWalkData : ScriptableObject
 {
     public int Iterations = 10;

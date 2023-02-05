@@ -14,8 +14,8 @@ public class Health : MonoBehaviour
     public void Initialize() {
 
         _isPlayer = gameObject.CompareTag("Player");
-        _stats = _isPlayer ? GetComponent<PlayerMainController>().Stats : GetComponent<NonPlayerMainController>().Stats;
-        _ui = _isPlayer ? GetComponent<PlayerMainController>().UI : null;
+        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NonPlayerMainController>().Stats;
+        _ui = _isPlayer ? GetComponent<P_MainController>().UI : null;
     }
     public void GetDamage(float value, Transform source) {
         if (!_stats)

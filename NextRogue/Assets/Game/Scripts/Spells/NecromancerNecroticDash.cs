@@ -11,7 +11,7 @@ public class NecromancerNecroticDash : ASpell
     [Header("DASH")]
     public float DashForce;
     public float DashTime;
-    public override void Initialize(PlayerMainController mainController, int value) {
+    public override void Initialize(P_MainController mainController, int value) {
         base.Initialize(mainController, value);
     }
     public override void ActivateSpell() {
@@ -35,7 +35,7 @@ class BasicDashMono : MonoBehaviour {
     public void CallStopDash(NecromancerNecroticDash basicDash, float time) {
         StartCoroutine(StopDash(basicDash, time));
     }
-    public void CallDashEffect(PlayerMainController mainController, float dashTime) {
+    public void CallDashEffect(P_MainController mainController, float dashTime) {
         StartCoroutine(DashEffect(mainController, dashTime));
     }
     IEnumerator StopDash(NecromancerNecroticDash basicDash, float time) {
@@ -43,7 +43,7 @@ class BasicDashMono : MonoBehaviour {
         basicDash.MainController.Rb.velocity = Vector2.zero;
         StopCoroutine(StopDash(basicDash, time));
     }
-    IEnumerator DashEffect(PlayerMainController mainController, float dashTime) {
+    IEnumerator DashEffect(P_MainController mainController, float dashTime) {
         //variables
         GameObject dashParticle = new GameObject();
         SpriteRenderer sprite;

@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class MainGUIHUD : MonoBehaviour
 {
-    PlayerMainController _mainController;
+    public static MainGUIHUD Instance = null;
+    P_MainController _mainController;
     public Slider HealthSlider, SoulSlider;
     public HUDSkillIcon[] spellIconList;
     public string[] spellKeys;
@@ -22,7 +23,10 @@ public class MainGUIHUD : MonoBehaviour
         public TextMeshProUGUI Cost;
         public Image Icon;
     }
-    public void Initialize(PlayerMainController mainController) {
+    public void Awake() {
+        Instance = this;
+    }
+    public void Initialize(P_MainController mainController) {
         _mainController = mainController;
         SpellDescription.GameObject.SetActive(false);
         SetSlider(HealthSlider, _mainController.Stats.MaxHealth, _mainController.Stats.Health);

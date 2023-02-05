@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HUDSkillIcon : MonoBehaviour {
-    PlayerMainController _mainController;
+    P_MainController _mainController;
     ASpell _spell;
 
     [SerializeField] Slider _slider;
@@ -11,7 +11,7 @@ public class HUDSkillIcon : MonoBehaviour {
     [SerializeField] TextMeshProUGUI _key;
     [SerializeField] Image[] _icon;
     public Slider Slider { get { return _slider; } }
-    public void Initialize(ASpell asell, PlayerMainController mainController) {
+    public void Initialize(ASpell asell, P_MainController mainController) {
         _spell= asell;
         _mainController = mainController;
         _slider.value = _slider.maxValue;

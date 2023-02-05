@@ -7,8 +7,8 @@ using System;
 
 public abstract class ASpell : ScriptableObject
 {
-    protected PlayerMainController _mainController;
-    public PlayerMainController MainController { get { return _mainController; } }
+    protected P_MainController _mainController;
+    public P_MainController MainController { get { return _mainController; } }
 
     int _index;
     int _keyIndex;
@@ -38,7 +38,7 @@ public abstract class ASpell : ScriptableObject
     IDisposable _cooldownRX;
 
 
-    public virtual void Initialize(PlayerMainController mainController, int value) {
+    public virtual void Initialize(P_MainController mainController, int value) {
         if (_isInit && _currentTimeCooldown < CooldownTime)
             return;
 

@@ -6,7 +6,7 @@ using UnityEngineInternal;
 [CreateAssetMenu(fileName = "JustCastOnPosition", menuName = "ScriptableObjects/Spells/JustCastOnPosition")]
 public class SpellJustCastOnPosition : ASpell {
 
-    public override void Initialize(PlayerMainController mainController, int value) {
+    public override void Initialize(P_MainController mainController, int value) {
         base.Initialize(mainController, value);
     }
     public override void ActivateSpell() {

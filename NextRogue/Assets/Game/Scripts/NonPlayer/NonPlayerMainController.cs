@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NonPlayerMainController : MonoBehaviour
 {
-    public PlayerMainController Player { get; private set; }
+    public P_MainController Player { get; private set; }
     public GameObject Target { get; private set; }
 
     [HideInInspector]
@@ -35,7 +35,7 @@ public class NonPlayerMainController : MonoBehaviour
         timer = 0;
         isInit= true;
 
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMainController>();
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
 
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
