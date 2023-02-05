@@ -52,7 +52,7 @@ class BasicDashMono : MonoBehaviour {
         //effects
         dashParticle.name = "dashParticle";
         dashParticle.transform.position = mainController.transform.GetChild(0).position;
-        dashParticle.transform.localScale = mainController.transform.localScale;
+        dashParticle.transform.localScale = mainController.transform.GetChild(0).localScale;
         dashParticle.AddComponent<SpriteRenderer>();
 
         sprite = dashParticle.GetComponent<SpriteRenderer>();

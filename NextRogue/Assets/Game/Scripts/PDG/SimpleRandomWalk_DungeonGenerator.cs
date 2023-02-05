@@ -10,7 +10,7 @@ public class SimpleRandomWalk_DungeonGenerator : ADungeonGenerator
     protected SimpleRandomWalkData _SRWData;
 
     private void Start() {
-        RunProceduralGeneration();
+        //RunProceduralGeneration();
     }
     protected override void RunProceduralGeneration() {
         HashSet<Vector2Int> floorPoses = RunRandomWalk(_SRWData, _startPos);

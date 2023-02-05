@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 6545523379897028682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.385402, y: 14.385402, z: 14.385402}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4.795133, y: 4.795133, z: 4.795133}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6545523380471205855}
   m_RootOrder: 0
@@ -152,5 +152,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summonableObjects:
   - {fileID: 3453847540060289921, guid: 0af4006b8bdd573469b6a301176facba, type: 3}
-  summonPos: {x: 3, y: 3}
+  summonPos: {x: 1, y: 1}
   summonCount: 3

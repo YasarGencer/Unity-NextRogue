@@ -97,7 +97,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.98
+  m_Radius: 0.47
 --- !u!114 &4806134603982917482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +133,11 @@ MonoBehaviour:
   Description: xs
   Health: 0
   MaxHealth: 35
-  Speed: 3
+  Speed: 1
   Damage: 10
-  Range: 3
+  Range: 1
   AttackSpeed: 1
-  EnemyRange: 20
+  EnemyRange: 6.6666665
   LifeSpan: 3
 --- !u!114 &4806134603982917483
 MonoBehaviour:
@@ -192,8 +192,8 @@ Transform:
   m_GameObject: {fileID: 4806134604499986737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4806134603982917490}
   m_RootOrder: 0
@@ -275,8 +275,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5844479944596078352}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.14, y: -1.36, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -0.061, y: -0.632, z: 0}
+  m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4806134603982917490}
@@ -351,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9173291971978604361, guid: 5dc99aa8ee6c10a47b898e1799ee2d78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 0.775
       objectReference: {fileID: 0}
     - target: {fileID: 9173291971978604361, guid: 5dc99aa8ee6c10a47b898e1799ee2d78, type: 3}
       propertyPath: m_LocalPosition.z

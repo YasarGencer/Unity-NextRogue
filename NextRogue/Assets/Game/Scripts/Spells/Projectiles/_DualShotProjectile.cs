@@ -14,7 +14,7 @@ public class _DualShotProjectile : APlayerProjectile {
         Move();
     }
     void Move() {
-        _rb.AddForce(transform.right * 1000 * _rb.mass);
+        _rb.AddForce(transform.right * 1000/3 * _rb.mass);
     }
     void Explode() {
         Damager damager = Instantiate(_explosion, transform.position, Quaternion.identity).GetComponent<Damager>();

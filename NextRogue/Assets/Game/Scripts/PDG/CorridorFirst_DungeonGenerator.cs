@@ -12,6 +12,9 @@ public class CorridorFirst_DungeonGenerator : SimpleRandomWalk_DungeonGenerator
     [SerializeField]
     [Range(0.1f, 1f)]
     private float _roomPercent = .8f;
+    private void Start() {
+        GenerateDungeon();
+    }
     protected override void RunProceduralGeneration() {
         CorridorFirstGeneration();
     }
@@ -47,7 +50,7 @@ public class CorridorFirst_DungeonGenerator : SimpleRandomWalk_DungeonGenerator
         List<Vector2Int> deadEnds = new();
         foreach (var pos in floorPoses) {
             int neighboursCount = 0;
-            foreach (var direction in Direction2D.DirectionList) {
+            foreach (var direction in Direction2D.CardinalDirectionList) {
                 if (floorPoses.Contains(pos + direction))
                     neighboursCount++;
             }

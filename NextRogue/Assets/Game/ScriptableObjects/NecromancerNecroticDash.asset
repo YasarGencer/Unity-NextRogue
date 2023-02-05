@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd9cfe7ac5e9944fb3c74c605f2d2b6, type: 3}
   m_Name: NecromancerNecroticDash
   m_EditorClassIdentifier: 
-  Index: 0
-  IsBasic: 1
   Name: NECROTIC DASH
-  ShortDesc: Dash away
   Description: Dash more if there are dead bodies around
   Icon: {fileID: 21300000, guid: 167a099875ba791438ad494458af00c1, type: 3}
   Spell: {fileID: 0}
   Damage: 0
   CastingTime: 0
   CooldownTime: 2
-  DashForce: 50
-  DashTime: 0.1
+  DashForce: 15
+  DashTime: 0.10000002

@@ -12,10 +12,10 @@ public class PDGEditor : Editor {
     }
     public override void OnInspectorGUI() {
         base.OnInspectorGUI();
-        if (GUILayout.Button("Create Dungon")) {
+        if (GUILayout.Button("Create Dungeon")) {
             generator.GenerateDungeon();
         }
-        if (GUILayout.Button("Clear Dungon")) {
+        if (GUILayout.Button("Clear Dungeon")) {
             generator.ClearDungeon();
         }
     }

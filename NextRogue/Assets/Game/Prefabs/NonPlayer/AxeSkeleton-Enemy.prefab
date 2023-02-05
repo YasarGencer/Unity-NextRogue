@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3453847538896156682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2194, y: 1.2194, z: 1.2194}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3453847540060289920}
   m_RootOrder: 0
@@ -178,9 +178,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.33, y: -0.2}
+  m_Offset: {x: -0.14, y: -0.17}
   serializedVersion: 2
-  m_Radius: 1.14
+  m_Radius: 0.37
 --- !u!114 &4819162773087873392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,12 +242,12 @@ MonoBehaviour:
   ShortDescription: xs
   Description: xs
   Health: 0
-  MaxHealth: 50
-  Speed: 3
-  Damage: 20
-  Range: 3
+  MaxHealth: 35
+  Speed: 1
+  Damage: 15
+  Range: 1
   AttackSpeed: 1
-  EnemyRange: 20
+  EnemyRange: 6.6666665
   LifeSpan: 3
 --- !u!1 &6006517710948229335
 GameObject:
@@ -274,8 +274,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6006517710948229335}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.4, y: -1.232, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -0.101, y: -0.45, z: 0}
+  m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3453847540060289920}
