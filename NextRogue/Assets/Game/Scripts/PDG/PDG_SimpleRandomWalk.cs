@@ -10,13 +10,17 @@ public class PDG_SimpleRandomWalk : ADungeonGenerator
     protected SimpleRandomWalkData _SRWData;
 
 
-    public override void Initialize(PDGManager manager) {
-        base.Initialize(manager);
+    public override void Initialize() {
+        base.Initialize();
     }
     protected override void RunProceduralGeneration() {
         HashSet<Vector2Int> floorPoses = RunRandomWalk(_SRWData, _startPos);
-        _manager.TilemapVisualizer.PaintFloorTiles(floorPoses);
-        WallGenerator.CreateWalls(floorPoses, _manager.TilemapVisualizer);
+
+
+        MainManager.Instance.PDGManager.TilemapVisualizer.PaintFloorTiles(floorPoses);
+        WallGenerator.CreateWalls(floorPoses, MainManager.Instance.PDGManager.TilemapVisualizer);
+
+        MainManager.Instance.PDGManager.Rooms.SaveRoom(floorPoses);
     }
 
     protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkData sRWData, Vector2Int pos) {
@@ -29,6 +33,8 @@ public class PDG_SimpleRandomWalk : ADungeonGenerator
                 currentPos = floorPeses.ElementAt(UnityEngine.Random.Range(0, floorPeses.Count));           
             }
         }
+
+        MainManager.Instance.PDGManager.Rooms.SaveRoom(floorPeses);
         return floorPeses;
     }
 }

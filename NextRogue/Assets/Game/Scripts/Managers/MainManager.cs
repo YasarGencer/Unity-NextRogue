@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    private static MainManager _instance;
+    private static MainManager _instance = null;
     public static MainManager Instance { get { return _instance; } }
 
     private P_MainController _mainController;
@@ -19,7 +19,10 @@ public class MainManager : MonoBehaviour
     }
     public void Initialize() {
         _instance = this;
+
         _mainController = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>() as P_MainController;
+
+
         _PDGManager.Initialize();
     }
 }

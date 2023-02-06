@@ -13,8 +13,8 @@ public class PDG_CorridorFirst : PDG_SimpleRandomWalk
     [Range(0.1f, 1f)]
     private float _roomPercent = .8f;
 
-    public override void Initialize(PDGManager manager) {
-        base.Initialize(manager);
+    public override void Initialize() {
+        base.Initialize();
     }
     protected override void RunProceduralGeneration() {
         CorridorFirstGeneration();
@@ -26,6 +26,7 @@ public class PDG_CorridorFirst : PDG_SimpleRandomWalk
 
         CreateCorridors(floorPoses, potentialRoomPoses);
 
+
         HashSet<Vector2Int> roomPoses = CreateRooms(potentialRoomPoses);
 
         List<Vector2Int> deadEnds = FindAllDeadEnds(floorPoses);
@@ -34,8 +35,9 @@ public class PDG_CorridorFirst : PDG_SimpleRandomWalk
 
         floorPoses.UnionWith(roomPoses);
 
-        _manager.TilemapVisualizer.PaintFloorTiles(floorPoses);
-        WallGenerator.CreateWalls(floorPoses, _manager.TilemapVisualizer);
+
+        //MainManager.Instance.PDGManager.TilemapVisualizer.PaintFloorTiles(floorPoses);
+        //WallGenerator.CreateWalls(floorPoses, MainManager.Instance.PDGManager.TilemapVisualizer);
     }
 
     private void CreateRoomsAtDeadEnds(List<Vector2Int> deadEnds, HashSet<Vector2Int> roomFloors) {
@@ -66,10 +68,13 @@ public class PDG_CorridorFirst : PDG_SimpleRandomWalk
         int roomToCreateCount = (int)MathF.Round(potentialRoomPoses.Count * _roomPercent);
 
         List<Vector2Int> roomsToCreate = potentialRoomPoses.OrderBy(x => Guid.NewGuid()).Take(roomToCreateCount).ToList();
+        
         if (!roomsToCreate.Contains(_startPos))
             roomsToCreate.Add(_startPos);
+
         foreach (var roomPos in roomsToCreate) {
             var roomFloor = RunRandomWalk(_SRWData, roomPos);
+
             roomPoses.UnionWith(roomFloor);
         }
         return roomPoses;
@@ -80,8 +85,14 @@ public class PDG_CorridorFirst : PDG_SimpleRandomWalk
         potentialRoomPoses.Add(currentPos);
         for (int i = 0; i < _corridorCount; i++) {
             var corridor = PDGAlgorithms.RandomWalkCorridor(currentPos, _corridorLength);
+
+            MainManager.Instance.PDGManager.Rooms.SaveCorridor(corridor);
+            
+
             currentPos = corridor[corridor.Count - 1];
+
             potentialRoomPoses.Add(currentPos);
+
             floorPoses.UnionWith(corridor);
         }
     }

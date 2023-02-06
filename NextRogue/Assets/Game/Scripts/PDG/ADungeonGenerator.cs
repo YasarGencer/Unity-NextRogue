@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public abstract class ADungeonGenerator : MonoBehaviour {
-
-    protected PDGManager _manager;
+    [Space(10f)]
     [SerializeField]
     protected Vector2Int _startPos = Vector2Int.zero;
-    public virtual void Initialize(PDGManager manager) {
-        _manager = manager;
+    public virtual void Initialize() {
         GenerateDungeon();
     }
     public void GenerateDungeon() {
-        ClearDungeon();
         RunProceduralGeneration();
-    }
-    public void ClearDungeon() {
-        _manager.TilemapVisualizer.Clear();
     }
     protected abstract void RunProceduralGeneration();
 }

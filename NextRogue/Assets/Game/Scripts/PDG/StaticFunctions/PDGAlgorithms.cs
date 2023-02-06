@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public static class PDGAlgorithms
@@ -30,7 +31,7 @@ public static class PDGAlgorithms
     }
 }
 
-public static class Direction2D {
+public static class Direction2D{
     public static List<Vector2Int> CardinalDirectionList = new List<Vector2Int>{
 
         new Vector2Int(0,1), //UP
@@ -39,7 +40,7 @@ public static class Direction2D {
         new Vector2Int(-1, 0) //LEFT
     };
     public static Vector2Int GetRandomCardinalDirection() {
-        return CardinalDirectionList[Random.Range(0, CardinalDirectionList.Count)];
+        return CardinalDirectionList[new System.Random().Next(0, CardinalDirectionList.Count)];
     }
     public static List<Vector2Int> DiagonalDirectionList = new List<Vector2Int>{
         new Vector2Int(1,1), //UP-RIGHT
@@ -48,7 +49,7 @@ public static class Direction2D {
         new Vector2Int(-1, 1) //LEFT-UP
     };
     public static Vector2Int GetRandomDiagonalDirection() {
-        return DiagonalDirectionList[Random.Range(0, DiagonalDirectionList.Count)];
+        return DiagonalDirectionList[new System.Random().Next(0, DiagonalDirectionList.Count)];
     }
     public static List<Vector2Int> EightDirectionList = new List<Vector2Int>{
 
