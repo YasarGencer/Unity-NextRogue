@@ -9,12 +9,20 @@ public class NonPlayerStateHandler : MonoBehaviour {
     NonPlayerMainController _mainController;
     [SerializeField] AStates _movementState;
     [SerializeField] AStates _attackState;
+    [SerializeField] AStates _patrolState;
+    private Room _room = null;
+    public Room Room { get { return _room; } } 
 
-
-    public void Initialize(NonPlayerMainController mainController) {
+    public void Initialize(NonPlayerMainController mainController, Room room) {
         _mainController = mainController;
+        if(room != null)
+            _room = room;
+        if(_movementState)
         Instantiate(_movementState).ActivateState(_mainController);
-        Instantiate(_attackState).ActivateState(_mainController);
+        if (_attackState)
+            Instantiate(_attackState).ActivateState(_mainController);
+        if (_patrolState)
+            Instantiate(_patrolState).ActivateState(_mainController);
     }
     /*
     [HideInInspector]

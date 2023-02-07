@@ -31,7 +31,8 @@ public class P_SpellHandler : MonoBehaviour
     }
     public void SetSpell(int keyIndex, ASpell spell) {
         _spellList[keyIndex] = spell;
-        _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
+        if(_mainController.UI)
+            _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
     }
     public bool CheckSpellKeyIndex(int keyIndex) {
         return _spellList[keyIndex] == null;

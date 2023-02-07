@@ -215,9 +215,9 @@ MonoBehaviour:
   ShortDescription: xs
   Description: xs
   Health: 0
-  MaxHealth: 35
-  Speed: 1
-  Damage: 10
+  MaxHealth: 100
+  Speed: 2
+  Damage: 19
   Range: 1
   AttackSpeed: 1
   EnemyRange: 6.6666665
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementState: {fileID: 11400000, guid: 875be1e7427a5744d8b2eb68c4c51ab0, type: 2}
   _attackState: {fileID: 11400000, guid: 1f7c307f0e7a84546bca64591b092d85, type: 2}
+  _patrolState: {fileID: 11400000, guid: aa5b681ff36564b408ed6a22f0e42667, type: 2}
 --- !u!114 &4806134603982917494
 MonoBehaviour:
   m_ObjectHideFlags: 0

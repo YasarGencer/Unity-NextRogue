@@ -43,6 +43,10 @@ public class TilemapVisualizer : MonoBehaviour
         var tilePosition = tilemap.WorldToCell((Vector3Int)position);
         tilemap.SetTile(tilePosition, tile);
     }
+    public void PaintSingleTile(Vector2Int position) {
+        var tilePosition = _floorTilemap.WorldToCell((Vector3Int)position);
+        _floorTilemap.SetTile(tilePosition, _def);
+    }
 
     internal void PaintSingleBasicWall(Vector2Int pos, string binaryType) {
         int typeAsInt = Convert.ToInt32(binaryType, 2);

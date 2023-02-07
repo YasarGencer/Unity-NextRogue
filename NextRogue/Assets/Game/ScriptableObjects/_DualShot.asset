@@ -18,4 +18,4 @@ MonoBehaviour:
   Spell: {fileID: 8797521380335533868, guid: 60f8763b2359f0544b9543544fbb45fe, type: 3}
   Damage: 10
   CastingTime: 0
-  CooldownTime: 5
+  CooldownTime: 10

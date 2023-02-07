@@ -18,6 +18,6 @@ MonoBehaviour:
   Spell: {fileID: 0}
   Damage: 0
   CastingTime: 0
-  CooldownTime: 2
+  CooldownTime: 3
   DashForce: 15
-  DashTime: 0.10000002
+  DashTime: 0.15

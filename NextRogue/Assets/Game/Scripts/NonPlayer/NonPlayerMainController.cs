@@ -7,7 +7,8 @@ using UnityEngine;
 public class NonPlayerMainController : MonoBehaviour
 {
     public P_MainController Player { get; private set; }
-    public GameObject Target { get; private set; }
+    public GameObject AttackTarget { get; private set; }
+    public Vector2 PatrolTarget { get; private set; }
 
     [HideInInspector]
     public Animator Animator;
@@ -24,16 +25,27 @@ public class NonPlayerMainController : MonoBehaviour
     [HideInInspector]
     public bool CanAttack = false;
 
-    float timer;
-    bool isInit;
-
-    public void Awake() {
-        Invoke("Initialize", 1f);
+    bool isInit = false;
+    public void Initialize(Room room) {
+        Init();
+        State.Initialize(this, room);
     }
     public void Initialize() {
-
-        timer = 0;
-        isInit= true;
+        Init();
+        State.Initialize(this, null);
+    }
+    public void Initialize(float time) {
+        StartCoroutine(InitOnTime(time));
+    }
+    IEnumerator InitOnTime(float time) {
+        yield return new WaitForSeconds(time);
+        Init();
+        State.Initialize(this, null);
+    }
+    void Init() {
+        if (isInit)
+            return;
+        isInit = true;
 
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
 
@@ -45,35 +57,18 @@ public class NonPlayerMainController : MonoBehaviour
         State = GetComponent<NonPlayerStateHandler>();
 
         Stats.Initialize();
-        State.Initialize(this);
         Health.Initialize();
 
         CanAttack = true;
     }
+    public float CheckDistance(Vector2 pos) {
+        return Vector2.Distance(transform.position, pos);
+    }
     public void ChangeTarget(GameObject target) {
-        Target = target;
+        AttackTarget = target;
     }
-    public void Attack() {
-        CanAttack = false;
-        Animator.SetTrigger("attack");
-        Invoke("Hit", .5f);
-        Invoke("SetAttack", Stats.AttackSpeed);
-    }
-    void Hit() {
-        Health health = null;
-        if (Target && Vector2.Distance(transform.position, Target.transform.position) < Stats.Range + 1)
-            Target.TryGetComponent<Health>(out health);
-        if(health != null)
-            health.GetDamage(Stats.Damage, transform);
-    }
-    void SetAttack() {
-        CanAttack = true;
-    }
-    private void Update() {
-        if (!isInit || !this.CompareTag("Summoned"))
-            return;
-        timer += Time.deltaTime;
-        if(timer > Stats.LifeSpan)
-            Health.Die();
+    public void ChangeTarget(Vector2 target) {
+        PatrolTarget = target;
+        AttackTarget = null;
     }
 }

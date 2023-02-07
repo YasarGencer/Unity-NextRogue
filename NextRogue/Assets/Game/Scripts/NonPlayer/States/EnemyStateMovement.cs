@@ -12,50 +12,30 @@ using System.Runtime.Serialization.Formatters;
 [CreateAssetMenu(fileName = "EnemyMovementState", menuName = "ScriptableObjects/EnemyStates/EnemyMovementState")]
 public class EnemyStateMovement : AStates
 {
-
+    
     public override void ActivateState(NonPlayerMainController mainController) {
         base.ActivateState(mainController);
-        //CHANGES TARGET IN EVERY 2 SECS
-        _mainController.StartCoroutine(CheckTarget());
     }
     public override void DeactivateState() {
         base.DeactivateState();
         _mainController.ChangeTarget(null);
     }
     public override void UpdateRX(long obj) {
-        //NO TARGET
-        if (_mainController.Target == null)
-            CheckClosest();
-        //TARGET TO CLOSE
-        if (Vector2.Distance(_mainController.transform.position, _mainController.Target.transform.position) < _mainController.Stats.Range - .5f)
-            return;
         Follow();
     }
     public void Follow() {
-        _mainController.gameObject.transform.position = Vector3.MoveTowards(_mainController.gameObject.transform.position, _mainController.Target.transform.position, _mainController.Stats.Speed * Time.deltaTime);
-        float dist = _mainController.gameObject.transform.position.x - _mainController.Target.transform.position.x;
+        Vector2 target = new();
+        target = _mainController.AttackTarget != null ? _mainController.AttackTarget.transform.position : _mainController.PatrolTarget;
+        if (_mainController.CheckDistance(target) < _mainController.Stats.Range - .5f)
+            return;
+        _mainController.gameObject.transform.position = Vector3.MoveTowards(_mainController.gameObject.transform.position, target, _mainController.Stats.Speed * Time.deltaTime);
+        float dist = _mainController.gameObject.transform.position.x - target.x;
         int scale = 1;
-        if (dist > .5f)
+        if (dist > 0f)
             scale = -1;
-        else if (dist < -.5f)
+        else if (dist < -.1f)
             scale = 1;
         _mainController.gameObject.transform.localScale = new Vector3(scale, 1, 1);
     }
-    public void CheckClosest() {
-        //SET PLAYER AS A TARGET AND IF THERE IS ANY SUMMON IS CLOSER SETS IT AS A TARGET
-        _mainController.ChangeTarget(_mainController.Player.gameObject);
-        float minDist = Vector2.Distance(_mainController.Target.transform.position,_mainController.gameObject.transform.position);
-        foreach (var item in GameObject.FindGameObjectsWithTag("Summoned")) {
-            float dist = Vector2.Distance(item.transform.position, _mainController.gameObject.transform.position);
-            if (minDist > dist) {
-                _mainController.ChangeTarget(item);
-                minDist = dist;
-            }
-        }
-    }
-    IEnumerator CheckTarget() {
-        CheckClosest();
-        yield return new WaitForSeconds(2f);
-        _mainController.StartCoroutine(CheckTarget());
-    }    
+   
 }

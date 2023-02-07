@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3453847538896156681}
   - component: {fileID: 3453847538896156680}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 792267351654082019}
   - component: {fileID: 2850729984088639237}
   - component: {fileID: 4269447035303913273}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: AxeSkeleton-Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementState: {fileID: 11400000, guid: 875be1e7427a5744d8b2eb68c4c51ab0, type: 2}
   _attackState: {fileID: 11400000, guid: 1f7c307f0e7a84546bca64591b092d85, type: 2}
+  _patrolState: {fileID: 11400000, guid: aa5b681ff36564b408ed6a22f0e42667, type: 2}
 --- !u!114 &2850729984088639237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,9 +243,9 @@ MonoBehaviour:
   ShortDescription: xs
   Description: xs
   Health: 0
-  MaxHealth: 35
-  Speed: 1
-  Damage: 15
+  MaxHealth: 100
+  Speed: 2
+  Damage: 19
   Range: 1
   AttackSpeed: 1
   EnemyRange: 6.6666665
@@ -259,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7617239198256782942}
   - component: {fileID: 7896281082418676595}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName = "TV_", menuName = "PDG/TV")]
+[CreateAssetMenu(fileName = "TV_", menuName = "ScriptableObjects/PDG/TV")]
 public class TilemapVisualizerData : ScriptableObject
 {
     public TileBase[] FloorTile;

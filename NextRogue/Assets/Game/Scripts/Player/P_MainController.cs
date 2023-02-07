@@ -44,7 +44,8 @@ public class P_MainController : MonoBehaviour {
 
         this.Input.Initialize(this);
         Stats.Initialize();
-        UI.Initialize(this);
+        if(UI)
+            UI.Initialize(this);
         Movement.Initialize(this);
         Spells.Initialize(this);
         Stats.Initialize(); 

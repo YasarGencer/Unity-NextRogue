@@ -45,7 +45,6 @@ public class MainGUIHUD : MonoBehaviour
         }
     }
     public void SetSpellDescription(ASpell spell) {
-        Debug.Log("b");
         SpellDescription.GameObject.SetActive(true);
 
         SpellDescription.GameObject.transform.position = _mainController.Input.GetMouseScreenPos() + new Vector3(0, 100, 0);

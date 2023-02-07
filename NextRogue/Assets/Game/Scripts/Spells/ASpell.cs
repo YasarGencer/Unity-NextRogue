@@ -56,7 +56,8 @@ public abstract class ASpell : ScriptableObject
         _isInit = true;
     }
     public virtual void ActivateSpell() {
-        if (_keyIndex <= 3)
+        if(_keyIndex <= 0) { }
+        else if (_keyIndex <= 3)
             _mainController.Animator.SetTrigger("basic");
         else
             _mainController.Animator.SetTrigger("spell");
@@ -80,10 +81,11 @@ public abstract class ASpell : ScriptableObject
         }
         _currentTimeCooldown -= Time.deltaTime;
 
-        _mainController.UI.SetSlider(
-            _mainController.UI.spellIconList[_keyIndex].Slider,
-            CooldownTime,
-            CooldownTime - _currentTimeCooldown);
+        if(_mainController.UI)
+            _mainController.UI.SetSlider(
+                _mainController.UI.spellIconList[_keyIndex].Slider,
+                CooldownTime,
+                CooldownTime - _currentTimeCooldown);
     }
     public void JustCast(Vector3 pos) {
         Instantiate(
