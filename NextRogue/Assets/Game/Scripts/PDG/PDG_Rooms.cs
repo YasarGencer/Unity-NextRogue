@@ -112,10 +112,10 @@ public class Room{
                 int enemyCount = Random.Range(5, 10);
                 for (int i = 0; i < enemyCount; i++) {
 
-                    NonPlayerMainController mainController = GameObject.Instantiate(
+                    NP_MainController mainController = GameObject.Instantiate(
                         props[Random.Range(0, props.Count)],
                         MainManager.Instance.Enemies
-                        ).GetComponent<NonPlayerMainController>();
+                        ).GetComponent<NP_MainController>();
 
                     mainController.transform.position = new Vector3(Center.x, Center.y, 0);
                     mainController.Initialize(this);

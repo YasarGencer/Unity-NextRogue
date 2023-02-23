@@ -62,4 +62,7 @@ public static class Direction2D{
         new Vector2Int(-1, 0), //LEFT
         new Vector2Int(-1, 1) //LEFT-UP
     };
+    public static Vector2Int GetRandomEightDirection() {
+        return EightDirectionList[new System.Random().Next(0, EightDirectionList.Count)];
+    }
 }

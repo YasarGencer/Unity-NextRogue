@@ -97,9 +97,11 @@ GameObject:
   - component: {fileID: 4806134603982917488}
   - component: {fileID: 4806134603982917489}
   - component: {fileID: 4806134603982917482}
-  - component: {fileID: 4806134603982917481}
-  - component: {fileID: 4806134603982917483}
   - component: {fileID: 4806134603982917494}
+  - component: {fileID: 3137496700108962562}
+  - component: {fileID: 142849531606225678}
+  - component: {fileID: 6194595242102021012}
+  - component: {fileID: 2434977955123592270}
   m_Layer: 10
   m_Name: Hunter-Enemy
   m_TagString: Enemy
@@ -197,46 +199,9 @@ MonoBehaviour:
   Rb: {fileID: 0}
   Health: {fileID: 0}
   Stats: {fileID: 0}
-  State: {fileID: 0}
-  CanAttack: 0
---- !u!114 &4806134603982917481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806134603982917500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab51f1e9829b5004ab81bd53c31d272c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Hunter
-  ShortDescription: xs
-  Description: xs
-  Health: 0
-  MaxHealth: 100
-  Speed: 2
-  Damage: 19
-  Range: 1
-  AttackSpeed: 1
-  EnemyRange: 6.6666665
-  LifeSpan: 3
---- !u!114 &4806134603982917483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806134603982917500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b97d35b93aa94419b9a964c7dce416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementState: {fileID: 11400000, guid: 875be1e7427a5744d8b2eb68c4c51ab0, type: 2}
-  _attackState: {fileID: 11400000, guid: 1f7c307f0e7a84546bca64591b092d85, type: 2}
-  _patrolState: {fileID: 11400000, guid: aa5b681ff36564b408ed6a22f0e42667, type: 2}
+  Target: {fileID: 0}
+  Movement: {fileID: 0}
+  Attack: {fileID: 0}
 --- !u!114 &4806134603982917494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +215,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _corpse: {fileID: 4806134603982917500, guid: 4b1837381fac4784ba8f35d2f80f18cb, type: 3}
+--- !u!114 &3137496700108962562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806134603982917500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Hunter
+  ShortDescription: x
+  Description: x
+  Health: 0
+  MaxHealth: 25
+  Speed: 2
+  NoticeRange: 4
+  AttackDamage: 5
+  AttackRange: 0.75
+  AttackSpeed: 0.75
+  LifeSpan: 5
+--- !u!114 &142849531606225678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806134603982917500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6767b798ebc78b64e8b2dbc346189f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+--- !u!114 &6194595242102021012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806134603982917500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2da8fc1c011414a9d4126268ba8712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2434977955123592270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806134603982917500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bbc3cde21f84c418bfde229f6f714b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4806134604499986737
 GameObject:
   m_ObjectHideFlags: 0

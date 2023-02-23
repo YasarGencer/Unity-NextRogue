@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public void Initialize() {
 
         _isPlayer = gameObject.CompareTag("Player");
-        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NonPlayerMainController>().Stats;
+        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats;
         _ui = _isPlayer ? GetComponent<P_MainController>().UI : null;
     }
     public void GetDamage(float value, Transform source) {
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
         GetComponent<Animator>().SetTrigger("hit");
 
-        if (_isPlayer)
+        if (_isPlayer || _ui)
             _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
         else
             StartCoroutine(_stats.Clamp());

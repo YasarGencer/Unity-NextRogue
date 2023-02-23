@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class NonPlayerMainController : MonoBehaviour
+public class NP_MainController : MonoBehaviour
 {
     public P_MainController Player { get; private set; }
     public GameObject AttackTarget { get; private set; }
@@ -18,29 +18,29 @@ public class NonPlayerMainController : MonoBehaviour
     [HideInInspector]
     public Health Health;
     [HideInInspector]
-    public NonPlayerStats Stats;
-    [HideInInspector]
-    public NonPlayerStateHandler State;
+    public NP_Stats Stats;
+
 
     [HideInInspector]
-    public bool CanAttack = false;
+    public ANP_Target Target;
+    [HideInInspector]
+    public ANP_Movement Movement;
+    [HideInInspector]
+    public ANP_Attack Attack;
 
     bool isInit = false;
-    public void Initialize(Room room) {
-        Init();
-        State.Initialize(this, room);
+    private void Start() {
+        Initialize(2f);
     }
-    public void Initialize() {
+    public void Initialize(Room? room) {
         Init();
-        State.Initialize(this, null);
     }
     public void Initialize(float time) {
-        StartCoroutine(InitOnTime(time));
+        StartCoroutine(InitializeOnTime(time));
     }
-    IEnumerator InitOnTime(float time) {
+    IEnumerator InitializeOnTime(float time) {
         yield return new WaitForSeconds(time);
         Init();
-        State.Initialize(this, null);
     }
     void Init() {
         if (isInit)
@@ -52,23 +52,21 @@ public class NonPlayerMainController : MonoBehaviour
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
-        Stats = GetComponent<NonPlayerStats>();
+        Stats = GetComponent<NP_Stats>();
         Health = GetComponent<Health>();
-        State = GetComponent<NonPlayerStateHandler>();
+        Target = GetComponent<ANP_Target>();
+        Movement = GetComponent<ANP_Movement>();
+        Attack = GetComponent<ANP_Attack>();
 
         Stats.Initialize();
         Health.Initialize();
+        Target.Initialize(this);
+        Movement.Initialize(this);
+        Attack.Initialize(this);
 
-        CanAttack = true;
     }
-    public float CheckDistance(Vector2 pos) {
-        return Vector2.Distance(transform.position, pos);
-    }
-    public void ChangeTarget(GameObject target) {
-        AttackTarget = target;
-    }
-    public void ChangeTarget(Vector2 target) {
-        PatrolTarget = target;
-        AttackTarget = null;
+    //COMMON FUNCTIONS
+    public float Distance(Transform target) {
+        return Vector2.Distance(transform.position, target.position);
     }
 }

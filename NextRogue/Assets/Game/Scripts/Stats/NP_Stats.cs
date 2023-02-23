@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UniRx.Triggers;
 using UnityEngine;
 
-public class NonPlayerStats : AStats {
+public class NP_Stats : AStats {
+    [Header("NOTICE")]
+    public float NoticeRange;
     [Header("DAMAGE")]
-    public float Damage;
-    public float Range;
+    public float AttackDamage;
+    public float AttackRange;
     public float AttackSpeed;
     [Header("ONLY FOR SUMMONS")]
-    public float EnemyRange;
     public float LifeSpan;
     public override void Initialize() {
         base.Initialize();
     }
     private void OnDrawGizmosSelected() {
-        Gizmos.DrawWireSphere(transform.position, Range);
-        Gizmos.DrawWireSphere(transform.position, EnemyRange);
+        Gizmos.DrawWireSphere(transform.position, NoticeRange);
+        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 } 

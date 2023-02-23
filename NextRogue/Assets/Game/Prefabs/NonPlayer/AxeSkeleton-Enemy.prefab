@@ -97,9 +97,11 @@ GameObject:
   - component: {fileID: 6650168171114843122}
   - component: {fileID: 187605618}
   - component: {fileID: 4819162773087873392}
-  - component: {fileID: 792267351654082019}
   - component: {fileID: 2850729984088639237}
-  - component: {fileID: 4269447035303913273}
+  - component: {fileID: 4275697790363234874}
+  - component: {fileID: 866853561045100568}
+  - component: {fileID: 6038353819331687911}
+  - component: {fileID: 7827364580951308281}
   m_Layer: 10
   m_Name: AxeSkeleton-Enemy
   m_TagString: Enemy
@@ -197,23 +199,9 @@ MonoBehaviour:
   Rb: {fileID: 0}
   Health: {fileID: 0}
   Stats: {fileID: 0}
-  State: {fileID: 0}
-  CanAttack: 0
---- !u!114 &792267351654082019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3453847540060289921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b97d35b93aa94419b9a964c7dce416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementState: {fileID: 11400000, guid: 875be1e7427a5744d8b2eb68c4c51ab0, type: 2}
-  _attackState: {fileID: 11400000, guid: 1f7c307f0e7a84546bca64591b092d85, type: 2}
-  _patrolState: {fileID: 11400000, guid: aa5b681ff36564b408ed6a22f0e42667, type: 2}
+  Target: {fileID: 0}
+  Movement: {fileID: 0}
+  Attack: {fileID: 0}
 --- !u!114 &2850729984088639237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _corpse: {fileID: 3453847540060289921, guid: 2eba70b878bb5134d82736bb166a711f, type: 3}
---- !u!114 &4269447035303913273
+--- !u!114 &4275697790363234874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,20 +224,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 3453847540060289921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab51f1e9829b5004ab81bd53c31d272c, type: 3}
+  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Axe Skeleton
-  ShortDescription: xs
-  Description: xs
+  ShortDescription: x
+  Description: x
   Health: 0
-  MaxHealth: 100
-  Speed: 2
-  Damage: 19
-  Range: 1
+  MaxHealth: 25
+  Speed: 3
+  NoticeRange: 4
+  AttackDamage: 5
+  AttackRange: 0.75
   AttackSpeed: 1
-  EnemyRange: 6.6666665
-  LifeSpan: 3
+  LifeSpan: 5
+--- !u!114 &866853561045100568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453847540060289921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6767b798ebc78b64e8b2dbc346189f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+--- !u!114 &6038353819331687911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453847540060289921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2da8fc1c011414a9d4126268ba8712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7827364580951308281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453847540060289921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bbc3cde21f84c418bfde229f6f714b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6006517710948229335
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,10 +17,10 @@ public class NecromancerSummonAidProjectile : APlayerProjectile {
     }
     IEnumerator SummonIEnum() {
         summoned++;
-        NonPlayerMainController mainController = Instantiate(
+        NP_MainController mainController = Instantiate(
             summonableObjects[Random.Range(0, summonableObjects.Length)],
             transform.position + new Vector3(Random.Range(-summonPos.x, summonPos.x), Random.Range(-summonPos.y, summonPos.y), 0),
-            Quaternion.identity).GetComponent<NonPlayerMainController>();
+            Quaternion.identity).GetComponent<NP_MainController>();
         mainController.Initialize(.5f);
         yield return new WaitForSeconds(.1f);
         if (summoned <= summonCount)

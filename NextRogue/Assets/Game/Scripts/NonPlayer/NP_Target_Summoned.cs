@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NP_Target_Summoned : ANP_Target
+{
+    public override void Initialize(NP_MainController mainController) {
+        base.Initialize(mainController);
+        StartCoroutine(ChangeTargetRec());
+    }
+    void ChangeTarget() {
+        float dist = 1000;
+        foreach (var item in FindEnemies()) {
+            if (dist > _mainController.Distance(item.transform)) {
+                dist = _mainController.Distance(item.transform);
+                Target = item;
+            }
+        }
+    }
+    IEnumerator ChangeTargetRec() {
+        ChangeTarget();
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ChangeTargetRec());
+    }
+}
