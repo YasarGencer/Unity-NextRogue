@@ -1,16 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class WallGenerator 
 {
-    public static void CreateWalls(HashSet<Vector2Int> floorPeses, TilemapVisualizer tilemapVisualizer) {
+    public static HashSet<Vector2Int> CreateWalls(HashSet<Vector2Int> floorPeses, TilemapVisualizer tilemapVisualizer) {
         var basicWallPoses = FindWallsInDirections(floorPeses, Direction2D.CardinalDirectionList);
         var cornerWallPoses = FindWallsInDirections(floorPeses, Direction2D.DiagonalDirectionList);
 
         CreateBasicWall(tilemapVisualizer, basicWallPoses, floorPeses);
         CreateCornerWall(tilemapVisualizer, cornerWallPoses, floorPeses);
+
+        var allWallPoses = new HashSet<Vector2Int>();
+        allWallPoses.UnionWith(basicWallPoses);
+        allWallPoses.UnionWith(cornerWallPoses);
+        return allWallPoses;
     }
 
     private static void CreateCornerWall(TilemapVisualizer tilemapVisualizer, HashSet<Vector2Int> cornerWallPoses, HashSet<Vector2Int> floorPeses) {

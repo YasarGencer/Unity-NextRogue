@@ -13,7 +13,7 @@ public class _IceBarrageProjectile : APlayerProjectile {
     async void InitChilds(Vector3 mousePos, float damage, float time) {
         for (int i = 0; i < transform.childCount; i++) {
             transform.GetChild(i).GetComponent<_IceBarrageProjectile_shard>().Initialize(mousePos, damage, time);
-            await Task.Delay(100);
+            await Task.Delay(10);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 using UnityEngine.Windows;
 
 public class P_MainController : MonoBehaviour {
@@ -27,15 +28,18 @@ public class P_MainController : MonoBehaviour {
     [HideInInspector]
     public MainGUIHUD UI;
 
+    GameObject _child;
+
     public void Start() {
-        Initialize();
+        StartCutscene();
     }
     public void Initialize() {
+        MainGUIHUD.Instance.gameObject.SetActive(true);
+
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
-
-        this.Input = GetComponent<P_InputManager>();
+        this.Input = gameObject.AddComponent<P_InputManager>();
         Stats = GetComponent<P_Stats>();
         Health = GetComponent<Health>();
         Movement = GetComponent<P_Movement>();
@@ -50,5 +54,16 @@ public class P_MainController : MonoBehaviour {
         Spells.Initialize(this);
         Stats.Initialize(); 
         Health.Initialize();
+    }
+    void StartCutscene() {
+        _child = transform.GetChild(0).gameObject;
+        _child.SetActive(false);
+        MainGUIHUD.Instance.gameObject.SetActive(false);
+        Invoke("StartCutsceneEnd", 1.5f);
+    }
+    void StartCutsceneEnd() {
+        _child.SetActive(true);
+        GetComponent<Animator>().SetTrigger("start");
+        Invoke("Initialize", 1f);
     }
 }

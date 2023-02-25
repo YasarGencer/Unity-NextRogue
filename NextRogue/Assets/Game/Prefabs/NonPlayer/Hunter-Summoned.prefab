@@ -148,12 +148,12 @@ MonoBehaviour:
   ShortDescription: x
   Description: x
   Health: 0
-  MaxHealth: 25
+  MaxHealth: 40
   Speed: 2
-  NoticeRange: 4
-  AttackDamage: 5
+  NoticeRange: 6
+  AttackDamage: 25
   AttackRange: 0.75
-  AttackSpeed: 0.75
+  AttackSpeed: 2
   LifeSpan: 5
 --- !u!114 &6116712629239746079
 MonoBehaviour:

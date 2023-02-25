@@ -18,7 +18,7 @@ public abstract class ANP_Attack : MonoBehaviour
         yield return new WaitForSeconds(_mainController.Stats.AttackSpeed);
         SetAttackTrue();
     }
-    protected virtual void SetAttackFalse() {
+    public virtual void SetAttackFalse() {
         _updateRX?.Dispose();
     }
     protected virtual void SetAttackTrue() {

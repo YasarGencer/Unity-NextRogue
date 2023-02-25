@@ -16,7 +16,8 @@ public class NecromancerGraveKeeperProjectile : APlayerProjectile {
     void Summon() {
         foreach (var item in GameObject.FindGameObjectsWithTag("Corpse")) {
             if (Vector2.Distance(item.transform.position, transform.position) < _range) {
-                Instantiate(item.GetComponent<Corpse>().GetCorpse(), item.transform.position, Quaternion.identity);
+                Instantiate(item.GetComponent<Corpse>().GetCorpse(), item.transform.position, Quaternion.identity)
+                    .GetComponent<NP_MainController>().Initialize(.5f);
                 Destroy(item.gameObject);
             }
         }

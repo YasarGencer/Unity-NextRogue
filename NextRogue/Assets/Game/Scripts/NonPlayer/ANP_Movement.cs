@@ -28,7 +28,7 @@ public abstract class ANP_Movement : MonoBehaviour
 
 
 
-    public virtual IEnumerator FreezeTime(float time) {
+    public virtual IEnumerator FreezeMovement(float time) {
         Freeze();
         yield return new WaitForSeconds(time);
         UnFreeze();
@@ -39,7 +39,7 @@ public abstract class ANP_Movement : MonoBehaviour
         UnSlow();
     }
 
-    protected virtual void Freeze() {
+    public virtual void Freeze() {
         _updateRX?.Dispose();
     }
     protected virtual void UnFreeze() {

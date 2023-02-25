@@ -11,9 +11,10 @@ public class NP_Attack_Melee : ANP_Attack {
             Attack();
     }
     private void Attack() {
+        StartCoroutine(_mainController.Movement.FreezeMovement(1));
         Invoke("CheckHit", .75f);
         _mainController.Animator.SetTrigger("attack");
-        AttackLimiter();
+        StartCoroutine(AttackLimiter());
     }
     void CheckHit() {
         if (_mainController.Target.Target == null)

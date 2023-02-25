@@ -18,12 +18,16 @@ public class Health : MonoBehaviour
         _ui = _isPlayer ? GetComponent<P_MainController>().UI : null;
     }
     public void GetDamage(float value, Transform source) {
+        if(GetComponent<Destructable>() != null) {
+            GetComponent<Destructable>().Destruct();
+            return;
+        }
         if (!_stats)
             return;
         _stats.Health -= value;
 
         GetComponent<Animator>().SetTrigger("hit");
-
+         
         if (_isPlayer || _ui)
             _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
         else
@@ -47,6 +51,6 @@ public class Health : MonoBehaviour
             corpse.gameObject.tag = "FriendlyCorpse";
             Destroy(corpse.gameObject, 3f);
         }
-        Destroy(gameObject);
+        GetComponent<NP_MainController>().Die();
     }
 }

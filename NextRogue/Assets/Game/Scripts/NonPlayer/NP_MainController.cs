@@ -64,9 +64,21 @@ public class NP_MainController : MonoBehaviour
         Movement.Initialize(this);
         Attack.Initialize(this);
 
+        if (this.CompareTag("Summoned"))
+            Invoke("EndSummonLife", Stats.LifeSpan);
+
     }
     //COMMON FUNCTIONS
     public float Distance(Transform target) {
         return Vector2.Distance(transform.position, target.position);
+    }
+    public void Die() {
+        Movement.Freeze();
+        Attack.SetAttackFalse();
+
+        Destroy(gameObject);
+    }
+    void EndSummonLife() {
+        Health.GetDamage(10000,this.transform);
     }
 }
