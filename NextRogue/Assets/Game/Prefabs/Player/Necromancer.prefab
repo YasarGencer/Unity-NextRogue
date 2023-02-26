@@ -458,8 +458,8 @@ MonoBehaviour:
   _basicList:
   - {fileID: 11400000, guid: 0e77875f3e1e841478ba505003688070, type: 2}
   - {fileID: 11400000, guid: 24d6a5ea040a3db4dbcaef5879dae8b5, type: 2}
+  - {fileID: 11400000, guid: 54de0d267eea7a644b4dba55019e0a15, type: 2}
   - {fileID: 11400000, guid: 9d4e38721e630ea47b25209e648bffe2, type: 2}
-  - {fileID: 11400000, guid: a37bcf599ca24ba4daae58da5bf0fa50, type: 2}
   AllSpellList: {fileID: 11400000, guid: d24fdf3907467e64babc3dc1db8c1819, type: 2}
 --- !u!1 &7023812855896096368
 GameObject:
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -559,8 +559,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 8
-  m_PointLightOuterRadius: 20
+  m_PointLightInnerRadius: 1
+  m_PointLightOuterRadius: 10
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

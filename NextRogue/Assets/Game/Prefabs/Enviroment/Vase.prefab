@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768645714354433748}
   - component: {fileID: 1768645714354433751}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768645715564284020}
   - component: {fileID: 1768645715564284023}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 1768645715921210106}
   - component: {fileID: 1768645715921210108}
   - component: {fileID: 1768645715921210109}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Vase
   m_TagString: Destructable
   m_Icon: {fileID: 0}

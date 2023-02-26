@@ -1,12 +1,6 @@
-using System;
-using System.Collections;
-using System.Threading;
-using TMPro;
-using UniRx;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class NecromancerGraveKeeperProjectile : APlayerProjectile {
+public class NecromancerGraveKeeperProjectile : AP_Projectile {
     [SerializeField] float _range;
     public override void Initialize(Vector3 mousePos, float damage, float time) {
         base.Initialize(mousePos, damage, time);

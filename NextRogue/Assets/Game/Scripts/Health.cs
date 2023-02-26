@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using TMPro;
-using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -43,7 +39,9 @@ public class Health : MonoBehaviour
             _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
     }
     public void Die() {
-        GetComponent<Animator>().SetTrigger("die");
+        if (transform.CompareTag("Player"))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //GetComponent<Animator>().SetTrigger("die");
         Animator corpse = Instantiate(_corpse, transform.position, Quaternion.identity).GetComponent<Animator>();
         corpse.SetTrigger("die");
 

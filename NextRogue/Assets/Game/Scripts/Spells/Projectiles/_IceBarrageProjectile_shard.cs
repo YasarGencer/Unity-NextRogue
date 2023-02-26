@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class _IceBarrageProjectile_shard : MonoBehaviour {
@@ -13,7 +11,7 @@ public class _IceBarrageProjectile_shard : MonoBehaviour {
 
         _damager.Initialize(damage);
 
-        Move();
+        Invoke("Move",.5f);
     }
     void Move() {
         _rb.AddForce(transform.right * 500 * _rb.mass);

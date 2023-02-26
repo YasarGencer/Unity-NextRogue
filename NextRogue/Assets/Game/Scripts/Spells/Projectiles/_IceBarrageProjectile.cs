@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class _IceBarrageProjectile : APlayerProjectile {
+public class _IceBarrageProjectile : AP_Projectile {
     public override void Initialize(Vector3 mousePos, float damage, float time) {
         base.Initialize(mousePos, damage, time);
         InitChilds(mousePos, damage, time);

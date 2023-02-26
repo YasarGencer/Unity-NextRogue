@@ -16,8 +16,8 @@ public class NecromancerNecroticDash : ASpell
     }
     public override void ActivateSpell() {
         base.ActivateSpell();
-
-        _mainController.Rb.velocity = _mainController.Movement.Direction * DashForce;
+        Vector2 direction = _mainController.Movement.Direction == Vector2.zero ? new Vector2(1, 0) : _mainController.Movement.Direction;
+        _mainController.Rb.velocity = direction * DashForce;
 
         //visual effects and cooldowns
         BasicDashMono.Initialize(CooldownTime);

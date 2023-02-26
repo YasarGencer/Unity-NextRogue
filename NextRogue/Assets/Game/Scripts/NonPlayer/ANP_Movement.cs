@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using VSCodeEditor;
 using UniRx;
-using UnityEngine.Rendering;
 
 public abstract class ANP_Movement : MonoBehaviour
 {
@@ -25,8 +22,6 @@ public abstract class ANP_Movement : MonoBehaviour
         yield return new WaitForSeconds(1f);
         StartCoroutine(PatrolPos());
     }
-
-
 
     public virtual IEnumerator FreezeMovement(float time) {
         Freeze();

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngineInternal;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpellJustCastOnCursor", menuName = "ScriptableObjects/Spells/SpellJustCastOnCursor")]
 public class SpellJustCastOnCursor : ASpell {

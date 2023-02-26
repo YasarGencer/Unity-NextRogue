@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Threading;
 using UnityEngine;
 
-public class NecromancerSummonAidProjectile : APlayerProjectile {
+public class NecromancerSummonAidProjectile : AP_Projectile {
     [SerializeField] GameObject[] summonableObjects;
     [SerializeField] Vector2 summonPos;
     [SerializeField] int summonCount;

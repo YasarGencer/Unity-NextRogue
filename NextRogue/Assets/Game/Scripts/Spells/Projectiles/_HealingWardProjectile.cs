@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using System;
 
-public class _HealingWardProjectile : APlayerProjectile
+public class _HealingWardProjectile : AP_Projectile
 {
     Transform _player;
     IDisposable _followRX;
@@ -35,6 +33,7 @@ public class _HealingWardProjectile : APlayerProjectile
     void Check(String collision) {
         if(collision == "Enemy" || collision == "EnemyProjectile") {
             _player.GetComponent<P_MainController>().Health.GainHealth(UnityEngine.Random.Range(5f, 15f));
+            StoplFollow();
             Destroy(gameObject);
         }
     }

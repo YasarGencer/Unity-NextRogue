@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8002826152254128498}
   - component: {fileID: 8002826152254128496}
   - component: {fileID: 8002826152254128499}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SwordShelf-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8002826152499053567}
   - component: {fileID: 8002826152499053564}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8002826153705121119}
   - component: {fileID: 8002826153705121116}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,12 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.U2D;
-using UnityEngine.Windows;
-
 public class P_MainController : MonoBehaviour {
     
     [HideInInspector]
@@ -31,10 +23,14 @@ public class P_MainController : MonoBehaviour {
     GameObject _child;
 
     public void Start() {
-        StartCutscene();
+        if (MainGUIHUD.Instance)
+            StartCutscene();
+        else
+            Initialize();
     }
     public void Initialize() {
-        MainGUIHUD.Instance.gameObject.SetActive(true);
+        if (MainGUIHUD.Instance)
+            MainGUIHUD.Instance.gameObject.SetActive(true);
 
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
@@ -64,6 +60,6 @@ public class P_MainController : MonoBehaviour {
     void StartCutsceneEnd() {
         _child.SetActive(true);
         GetComponent<Animator>().SetTrigger("start");
-        Invoke("Initialize", 1f);
+        Invoke("Initialize", .5f);
     }
 }

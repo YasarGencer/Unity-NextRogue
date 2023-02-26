@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8092708830083267593}
   m_Layer: 6
   m_Name: _DualShot
-  m_TagString: PlaterProjectile
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.21
 --- !u!95 &8797521380335533864
 Animator:
   serializedVersion: 4

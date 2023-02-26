@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using System;
-using Unity.VisualScripting;
 
 public class P_Movement : MonoBehaviour
 {

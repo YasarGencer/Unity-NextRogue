@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class APlayerProjectile : MonoBehaviour
+public abstract class AP_Projectile : MonoBehaviour
 {
     protected Vector3 _mousePos;
     protected float _damage;

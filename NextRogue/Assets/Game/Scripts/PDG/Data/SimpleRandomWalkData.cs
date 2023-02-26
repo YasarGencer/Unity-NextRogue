@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "SRW_",menuName = "ScriptableObjects/PDG/RandomWalkData")]
 public class SimpleRandomWalkData : ScriptableObject

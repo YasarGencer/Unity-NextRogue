@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class P_SpellHandler : MonoBehaviour
@@ -14,6 +11,7 @@ public class P_SpellHandler : MonoBehaviour
         _spellList = new ASpell[9];
 
         for (int i = 0; i < _basicList.Length; i++) {
+            _basicList[i].IsInit = false;
             SetSpell(i, _basicList[i]);
         }
         //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
@@ -24,10 +22,10 @@ public class P_SpellHandler : MonoBehaviour
         SetSpell(4, AllSpellList.GetSpell(0));
         SetSpell(5, AllSpellList.GetSpell(1));
         SetSpell(6, AllSpellList.GetSpell(2));
-        SetSpell(7, AllSpellList.GetSpell(3));
+        //SetSpell(7, AllSpellList.GetSpell(3));
     }
     public void Spell(int value) {
-        _spellList[value].Initialize(_mainController, value);
+        _spellList[value].Initialize(_mainController, value); 
     }
     public void SetSpell(int keyIndex, ASpell spell) {
         _spellList[keyIndex] = spell;

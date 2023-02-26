@@ -20,7 +20,6 @@ public class MainGUIHUD : MonoBehaviour
         public TextMeshProUGUI Name;
         public TextMeshProUGUI Desc;
         public TextMeshProUGUI Cooldown;
-        public TextMeshProUGUI Cost;
         public Image Icon;
     }
     public void Awake() {
@@ -51,8 +50,7 @@ public class MainGUIHUD : MonoBehaviour
         SpellDescription.Name.text = spell.Name;
         SpellDescription.Desc.text = spell.Description;
         SpellDescription.Cooldown.text = spell.CooldownTime.ToString();
-        SpellDescription.Cost.text = "unavaiable";
-
+         
         SpellDescription.Icon.sprite = spell.Icon;
     }
     public void CloseSpellDescription() {

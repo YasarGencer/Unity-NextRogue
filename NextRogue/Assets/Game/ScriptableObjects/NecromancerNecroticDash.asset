@@ -19,5 +19,5 @@ MonoBehaviour:
   Damage: 0
   CastingTime: 0
   CooldownTime: 3
-  DashForce: 15
+  DashForce: 7
   DashTime: 0.15

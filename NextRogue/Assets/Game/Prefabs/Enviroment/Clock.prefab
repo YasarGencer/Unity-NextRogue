@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3511542509295155992}
   - component: {fileID: 3511542509295155993}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3511542509848194626}
   - component: {fileID: 3511542509848194627}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 3511542510042498909}
   - component: {fileID: 3511542510042498911}
   - component: {fileID: 3511542510042498910}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Clock
   m_TagString: Destructable
   m_Icon: {fileID: 0}

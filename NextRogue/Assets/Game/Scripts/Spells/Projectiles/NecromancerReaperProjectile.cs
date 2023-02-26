@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class _ReaperProjectile : APlayerProjectile {
+public class NecromancerReaperProjectile : AP_Projectile {
     bool _isHit;
     public override void Initialize(Vector3 mousePos, float damage, float time) {
         base.Initialize(mousePos, damage, time);

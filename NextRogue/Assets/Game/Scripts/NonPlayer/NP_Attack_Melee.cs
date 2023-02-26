@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class NP_Attack_Melee : ANP_Attack {
     protected override void UpdateRX(long obj) {
         if (_mainController.Target.Target == null)
@@ -12,7 +7,7 @@ public class NP_Attack_Melee : ANP_Attack {
     }
     private void Attack() {
         StartCoroutine(_mainController.Movement.FreezeMovement(1));
-        Invoke("CheckHit", .75f);
+        Invoke("CheckHit", .25f);
         _mainController.Animator.SetTrigger("attack");
         StartCoroutine(AttackLimiter());
     }

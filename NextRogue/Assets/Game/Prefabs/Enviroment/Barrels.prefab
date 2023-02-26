@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9126180832688793930}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Barrels
   m_TagString: Destructable
   m_Icon: {fileID: 0}

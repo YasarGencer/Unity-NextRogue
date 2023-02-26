@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5192334267598672956}
   - component: {fileID: 5192334267598672959}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5192334268678273615}
   - component: {fileID: 5192334268678273614}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 5192334269144249815}
   - component: {fileID: 5192334269144249817}
   - component: {fileID: 5192334269144249814}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Create
   m_TagString: Destructable
   m_Icon: {fileID: 0}

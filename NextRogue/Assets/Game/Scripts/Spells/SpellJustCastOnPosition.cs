@@ -1,7 +1,4 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngineInternal;
 
 [CreateAssetMenu(fileName = "JustCastOnPosition", menuName = "ScriptableObjects/Spells/JustCastOnPosition")]
 public class SpellJustCastOnPosition : ASpell {

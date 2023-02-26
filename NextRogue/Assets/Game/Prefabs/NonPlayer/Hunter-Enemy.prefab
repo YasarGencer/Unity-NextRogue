@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4806134603982917490}
   - component: {fileID: 4806134603982917495}
   - component: {fileID: 4806134603982917488}
-  - component: {fileID: 4806134603982917489}
+  - component: {fileID: 2933776343201961071}
   - component: {fileID: 4806134603982917482}
   - component: {fileID: 4806134603982917494}
   - component: {fileID: 3137496700108962562}
@@ -167,8 +167,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &4806134603982917489
-CircleCollider2D:
+--- !u!70 &2933776343201961071
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -181,8 +181,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.44
+  m_Size: {x: 0.23, y: 0.82}
+  m_Direction: 0
 --- !u!114 &4806134603982917482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   MaxHealth: 40
   Speed: 2
   NoticeRange: 6
-  AttackDamage: 25
+  AttackDamage: 15
   AttackRange: 0.75
   AttackSpeed: 2
   LifeSpan: 5

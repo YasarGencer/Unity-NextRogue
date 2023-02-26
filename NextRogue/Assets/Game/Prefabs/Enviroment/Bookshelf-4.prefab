@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156146051318203018}
   - component: {fileID: 7156146051318203019}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7156146051649257167}
   - component: {fileID: 7156146051649257165}
   - component: {fileID: 7156146051649257164}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bookshelf-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156146051839498192}
   - component: {fileID: 7156146051839498193}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

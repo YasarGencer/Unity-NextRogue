@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class _DualShotProjectile : APlayerProjectile {
+public class _DualShotProjectile : AP_Projectile {
     Rigidbody2D _rb;
     [SerializeField] GameObject _explosion;
 
