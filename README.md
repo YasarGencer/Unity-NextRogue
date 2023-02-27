@@ -97,8 +97,7 @@ There will be different and unique wizards to play as i said before. So there is
             Heal Per Corpse : 3
   - PA: Reaper
     - Summons a reaper that seings itself and damages the enemies on the way
-    - 
-            STATS
+    -  
             Cooldown : 2
             Damage : 10
   - SA: Summon Aid
