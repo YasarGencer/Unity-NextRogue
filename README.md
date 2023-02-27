@@ -53,19 +53,16 @@ Spell List :
   - Dual Shot
     - Shoots a dual projectile that explodes and give AoE on contact eachother
     - 
-            STATS
             Cooldown : 15
             Damage : 50
   - Ice Barrage
     - Throws 5 ice pieces in a few inches between them
     - 
-            STATS
             Cooldown : 20
             Damage : 15
   - Healing Ward
     - Deflects all projectiles for 1 second and heals player
     - 
-            STATS
             Cooldown : 15
             Heal Per Hit : 2
   
@@ -81,14 +78,12 @@ There will be different and unique wizards to play as i said before. So there is
 
 - NECROMANCER:
   
-      STATS
       Health : 50
       Movement Speed : 2.5
 
   - PS: Necrotic Dash
     - It dashes more if there are dead bodies around
     - 
-            STATS
             Cooldown : 3
             Dash Force : 10
             Corpse Range : 5
@@ -96,7 +91,6 @@ There will be different and unique wizards to play as i said before. So there is
   - SS: Consume
     - Consumes alive enemies or summons to gain health
     - 
-            STATS
             Cooldown : 15
             Default Heal : 0
             Corpse Range : 5
@@ -113,7 +107,6 @@ There will be different and unique wizards to play as i said before. So there is
       - Melee
       - Follow
       - 
-            STATS
             Health : 20
             Movement Speed : 4
             Attack Damage : 10
@@ -140,7 +133,6 @@ There will be different and unique wizards to play as i said before. So there is
     - Melee
     - Follow
     - 
-          STATS
           Health : 40
           Movement Speed : 2.5
           Attack Damage : 20
@@ -150,7 +142,6 @@ There will be different and unique wizards to play as i said before. So there is
     - Dash
     - Keep Distance
     -
-          STATS
           Health : 15
           Movement Speed : 3
           Attack Damage : 15
@@ -160,7 +151,6 @@ There will be different and unique wizards to play as i said before. So there is
     - Ranged
     - Keep Distance
     - 
-          STATS
           Health : 20
           Movement Speed : 3.5
           Attack Damage : 5
