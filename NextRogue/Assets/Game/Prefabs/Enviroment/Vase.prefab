@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 1768645715921210109}
   m_Layer: 12
   m_Name: Vase
-  m_TagString: Destructable
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2cf239e302e6045a3ac79a0d0c0d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _corpse: {fileID: 0}
 --- !u!114 &1768645715921210109
 MonoBehaviour:
   m_ObjectHideFlags: 0

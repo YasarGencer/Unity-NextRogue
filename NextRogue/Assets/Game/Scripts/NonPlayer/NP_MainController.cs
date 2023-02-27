@@ -14,7 +14,6 @@ public class NP_MainController : MonoBehaviour
 
     [HideInInspector]
     public Health Health;
-    [HideInInspector]
     public NP_Stats Stats;
 
 
@@ -49,7 +48,6 @@ public class NP_MainController : MonoBehaviour
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
-        Stats = GetComponent<NP_Stats>();
         Health = GetComponent<Health>();
         Target = GetComponent<ANP_Target>();
         Movement = GetComponent<ANP_Movement>();
@@ -70,8 +68,8 @@ public class NP_MainController : MonoBehaviour
         return Vector2.Distance(transform.position, target.position);
     }
     public void Die() {
-        Movement.Freeze();
-        Attack.SetAttackFalse();
+        Movement.Die();
+        Attack.Die();
 
         Destroy(gameObject);
     }

@@ -12,6 +12,7 @@ TagManager:
   - Destructable
   - PlayerProjectile
   - EnemyProjectile
+  - Obstacle
   layers:
   - Default
   - TransparentFX

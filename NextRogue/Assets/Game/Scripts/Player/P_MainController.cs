@@ -9,7 +9,6 @@ public class P_MainController : MonoBehaviour {
 
     [HideInInspector]
     public P_InputManager Input;
-    [HideInInspector]
     public P_Stats Stats;
     [HideInInspector]
     public Health Health;
@@ -36,7 +35,6 @@ public class P_MainController : MonoBehaviour {
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
         this.Input = gameObject.AddComponent<P_InputManager>();
-        Stats = GetComponent<P_Stats>();
         Health = GetComponent<Health>();
         Movement = GetComponent<P_Movement>();
         Spells = GetComponent<P_SpellHandler>();

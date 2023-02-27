@@ -8,7 +8,7 @@ public class NP_Movement_Follow : ANP_Movement {
         if (_mainController.Target.Target == null ||
             _mainController.Distance(_mainController.Target.Target.transform) > _mainController.Stats.NoticeRange) {
             transform.position =
-                Vector2.MoveTowards(transform.position, _patrolPosition, _mainController.Stats.Speed * Time.deltaTime);
+                Vector2.MoveTowards(transform.position, _patrolPosition, _mainController.Stats.SpeelHolder * Time.deltaTime);
             Rotate(_patrolPosition.x);
             return;
         }
@@ -17,7 +17,10 @@ public class NP_Movement_Follow : ANP_Movement {
             return;
         //if everything is optimal
         transform.position = 
-            Vector2.MoveTowards(transform.position, _mainController.Target.Target.transform.position, _mainController.Stats.Speed * Time.deltaTime);
+            Vector2.MoveTowards(transform.position, _mainController.Target.Target.transform.position, _mainController.Stats.SpeelHolder * Time.deltaTime);
         Rotate(_mainController.Target.Target.transform.position.x);
+    }
+    public override void Die() {
+        base.Die();
     }
 }

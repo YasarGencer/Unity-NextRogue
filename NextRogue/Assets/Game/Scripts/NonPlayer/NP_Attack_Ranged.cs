@@ -6,7 +6,8 @@ public class NP_Attack_Ranged : ANP_Attack {
         if (_mainController.Target.Target == null)
             return;
         if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
-            Attack();
+            if(ShootRay())
+                Attack();
     }
     private void Attack() {
         StartCoroutine(AttackLimiter());

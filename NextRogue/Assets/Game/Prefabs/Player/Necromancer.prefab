@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 6753497417659572127}
   - component: {fileID: 6753497417659572126}
   - component: {fileID: 6753497417659572068}
-  - component: {fileID: 6753497417659572123}
   - component: {fileID: 6753497417659572125}
   - component: {fileID: 6753497417659572122}
   - component: {fileID: 6753497417659572071}
@@ -334,7 +333,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 0b09fb1b45dca1c40806ceb626de17ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -349,7 +348,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6753497417659572115}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -393,31 +392,11 @@ MonoBehaviour:
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Input: {fileID: 0}
-  Stats: {fileID: 0}
+  Stats: {fileID: 11400000, guid: 38844ca09589ad546a6b7ec27e6504d6, type: 2}
   Health: {fileID: 0}
   Movement: {fileID: 6753497417659572125}
   Spells: {fileID: 0}
   UI: {fileID: 0}
---- !u!114 &6753497417659572123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6753497417659572115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7420c8f6eaa84624ba24ce52e54c0bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: PLAYER
-  ShortDescription: PLAYER
-  Description: PLAYER
-  Health: 0
-  MaxHealth: 100
-  Speed: 3
-  MaxSummonControlRange: 25
-  MinSummonControlRange: 2
 --- !u!114 &6753497417659572125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2cf239e302e6045a3ac79a0d0c0d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _corpse: {fileID: 6753497417659572115, guid: cc28131093dd7d44eb3823846ffd0722, type: 3}
 --- !u!114 &6753497417659572071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,11 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50e105f2bd7e854cbd7e599180ef7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _basicList:
-  - {fileID: 11400000, guid: 0e77875f3e1e841478ba505003688070, type: 2}
-  - {fileID: 11400000, guid: 24d6a5ea040a3db4dbcaef5879dae8b5, type: 2}
-  - {fileID: 11400000, guid: 54de0d267eea7a644b4dba55019e0a15, type: 2}
-  - {fileID: 11400000, guid: 9d4e38721e630ea47b25209e648bffe2, type: 2}
   AllSpellList: {fileID: 11400000, guid: d24fdf3907467e64babc3dc1db8c1819, type: 2}
 --- !u!1 &7023812855896096368
 GameObject:

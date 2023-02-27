@@ -1,24 +1,22 @@
+using System.Linq;
 using UnityEngine;
 
 public class P_SpellHandler : MonoBehaviour
 {
     P_MainController _mainController;
     ASpell[] _spellList;
-    [SerializeField,Tooltip("0 PS, 1 SS, 2 PA, 3 SA")] ASpell[] _basicList;
     public AllSpells AllSpellList;
     public void Initialize(P_MainController mainController) {
         _mainController= mainController;
         _spellList = new ASpell[9];
 
-        for (int i = 0; i < _basicList.Length; i++) {
-            _basicList[i].IsInit = false;
-            SetSpell(i, _basicList[i]);
-        }
-        //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
-        // 4,5,6,7,8 ARE IN GAME SPELLS
-
         AllSpellList.Initialize();
 
+        //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
+        for (int i = 0; i < _mainController.Stats.Spells.Count(); i++)
+            SetSpell(i, _mainController.Stats.Spells[i]);
+
+        // 4,5,6,7,8 ARE IN GAME SPELLS
         SetSpell(4, AllSpellList.GetSpell(0));
         SetSpell(5, AllSpellList.GetSpell(1));
         SetSpell(6, AllSpellList.GetSpell(2));

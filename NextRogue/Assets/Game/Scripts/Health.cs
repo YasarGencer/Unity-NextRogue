@@ -1,9 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] GameObject _corpse;
     bool _isPlayer;
     AStats _stats;
     MainGUIHUD _ui;
@@ -26,8 +26,6 @@ public class Health : MonoBehaviour
          
         if (_isPlayer || _ui)
             _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
-        else
-            StartCoroutine(_stats.Clamp());
 
         if (_stats.Health <= 0) 
             Die();
@@ -42,13 +40,10 @@ public class Health : MonoBehaviour
         if (transform.CompareTag("Player"))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //GetComponent<Animator>().SetTrigger("die");
-        Animator corpse = Instantiate(_corpse, transform.position, Quaternion.identity).GetComponent<Animator>();
+        Animator corpse = Instantiate(_stats.Corpse, transform.position, Quaternion.identity).GetComponent<Animator>();
         corpse.SetTrigger("die");
 
-        if (this.CompareTag("Summoned")) {
-            corpse.gameObject.tag = "FriendlyCorpse";
-            Destroy(corpse.gameObject, 3f);
-        }
+        Destroy(corpse.gameObject, 5f);
         GetComponent<NP_MainController>().Die();
     }
 }

@@ -45,7 +45,7 @@ public class P_InputManager : MonoBehaviour {
     //EVENTS
     void Direction(Vector2 direction) {
         if (_mainController.Movement)
-            _mainController.Movement.GetDirection(direction);
+            _mainController.Movement.SetDirection(direction);
     }
     void Spell(int value) {
         if (_mainController.Spells)

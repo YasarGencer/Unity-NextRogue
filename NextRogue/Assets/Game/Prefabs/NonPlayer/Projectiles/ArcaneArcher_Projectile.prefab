@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 4842414113835465095}
   m_Layer: 13
   m_Name: shard (2)
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 965983850581170076}
   m_Layer: 13
   m_Name: shard (3)
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 2920169302614535439}
   m_Layer: 13
   m_Name: shard (1)
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 8476863778819964118}
   m_Layer: 13
   m_Name: shard
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2147,7 +2147,7 @@ GameObject:
   - component: {fileID: 6259843529289655865}
   m_Layer: 13
   m_Name: shard
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2351,7 +2351,7 @@ GameObject:
   - component: {fileID: 6790645350767817009}
   m_Layer: 13
   m_Name: shard
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

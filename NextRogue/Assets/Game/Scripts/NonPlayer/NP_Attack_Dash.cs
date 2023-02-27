@@ -11,7 +11,8 @@ public class NP_Attack_Dash : ANP_Attack {
         if (_mainController.Target.Target == null)
             return;
         if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
-            Attack();
+            if (ShootRay())
+                Attack();
     }
     private void Attack() {
         _checkRX?.Dispose();
@@ -46,13 +47,21 @@ public class NP_Attack_Dash : ANP_Attack {
     }
     void CheckCollision(long obj) {
         Collider2D[] collisions = Physics2D.OverlapCircleAll(gameObject.transform.GetChild(0).position, GetComponent<CapsuleCollider2D>().size.x);
-        foreach (var item in collisions)
-            if (item.GetComponent<Health>() as Health != null && item.tag != transform.tag && !_hitList.Contains(item.gameObject)){
+        foreach (var item in collisions) {
+            if (item)
+                if (item.GetComponent<Health>() as Health != null && item.tag != transform.tag && !_hitList.Contains(item.gameObject)) {
                     _hitList.Add(item.gameObject);
                     item.GetComponent<Health>().GetDamage(_mainController.Stats.AttackDamage, this.transform);
                 }
+        }
     }
     void ClearHitList() {
-        _hitList = new();
+        _hitList.Clear();
+    }
+    public override void Die() {
+        base.Die();
+        StopAllCoroutines();
+        _hitList.Clear();
+        _checkRX?.Dispose();
     }
 }

@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: NecromancerNecroticDash
   m_EditorClassIdentifier: 
   Name: NECROTIC DASH
-  Description: Dash more if there are dead bodies around
+  Description: Dashes more by consuming corpses
   Icon: {fileID: 21300000, guid: 167a099875ba791438ad494458af00c1, type: 3}
   Spell: {fileID: 0}
   Damage: 0
   CastingTime: 0
   CooldownTime: 3
-  DashForce: 7
-  DashTime: 0.15
+  DashForce: 10
+  DashTime: 0.2
+  CorpseRange: 5
+  ForceMultiplier: 1.2
+  Particle: {fileID: 6080914371881166770, guid: bcf401db94b8b8f4182a9e76005ac5b1, type: 3}

@@ -19,14 +19,6 @@ public class _DualShotProjectile : AP_Projectile {
         Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision) {
-        switch (collision.gameObject.tag) {
-            case "Enviroment":
-                break;
-            case "Enemy":
-                break;
-            default:
-                break;
-        }
         Explode();
     }
 }

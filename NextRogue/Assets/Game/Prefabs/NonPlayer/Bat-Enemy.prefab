@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 3676431166889549868}
   - component: {fileID: 1521252153206783348}
   - component: {fileID: 1521252153206783336}
-  - component: {fileID: 8945524969850865948}
   - component: {fileID: 6221093778989850896}
   - component: {fileID: 1895935035706635237}
   - component: {fileID: 2489010587562694}
@@ -199,7 +198,7 @@ MonoBehaviour:
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}
-  Stats: {fileID: 0}
+  Stats: {fileID: 11400000, guid: bba33395933108147a3bc8d3a58f12bb, type: 2}
   Target: {fileID: 0}
   Movement: {fileID: 0}
   Attack: {fileID: 0}
@@ -216,29 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _corpse: {fileID: 8813864115624344303, guid: 1d36e24a9dc9a0e42b9e9bbdd8fee738, type: 3}
---- !u!114 &8945524969850865948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521252153206783330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Bat
-  ShortDescription: x
-  Description: x
-  Health: 0
-  MaxHealth: 10
-  Speed: 3
-  NoticeRange: 6
-  AttackDamage: 25
-  AttackRange: 4
-  AttackSpeed: 3
-  LifeSpan: 5
 --- !u!114 &6221093778989850896
 MonoBehaviour:
   m_ObjectHideFlags: 0

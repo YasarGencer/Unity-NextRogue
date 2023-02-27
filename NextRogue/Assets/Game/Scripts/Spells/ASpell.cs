@@ -87,13 +87,15 @@ public abstract class ASpell : ScriptableObject
                 CooldownTime,
                 CooldownTime - _currentTimeCooldown);
     }
-    public void JustCast(Vector3 pos) {
-        Instantiate(
+    public GameObject JustCast(Vector3 pos) {
+        var projectile = Instantiate(
             Spell,
             pos,
             Quaternion.identity
-            ).GetComponent<AP_Projectile>()
+            );
+        projectile.GetComponent<AP_Projectile>()
             .Initialize(_mainController.Input.GetMouseWolrdPos(),
             Damage, CooldownTime);
+        return projectile;
     }
 }

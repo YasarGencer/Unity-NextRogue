@@ -1,27 +1,25 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class AStats : MonoBehaviour
+public abstract class AStats : ScriptableObject
 {
     [Header("DETAILS")]
     public string Name;
     public string ShortDescription;
     public string Description;
+    public GameObject Corpse;
     [Header("HEALTH")]
-    public float Health;
     public float MaxHealth;
+    [HideInInspector]
+    public float Health;
     [Header("MOVEMENT")]
     public float Speed;
-    float _speed;
+    [HideInInspector]
+    public float SpeelHolder;
 
     public virtual void Initialize() {
         Health = MaxHealth;
-        _speed= Speed;
-    }
-    public IEnumerator Clamp() {
-        Speed = 0;
-        yield return new WaitForSeconds(.5f);
-        Speed = _speed;
+        SpeelHolder = Speed;
     }
     
 }

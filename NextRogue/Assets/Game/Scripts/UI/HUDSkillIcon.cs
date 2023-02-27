@@ -28,10 +28,10 @@ public class HUDSkillIcon : MonoBehaviour {
     }
     public void TriggerEnter() {
         if (_spell != null)
-            _mainController.UI.SetSpellDescription(_spell);
+            _mainController.UI.Description.Show(_spell);
     }
     public void TriggerExit() {
         if (_spell != null)
-            _mainController.UI.CloseSpellDescription();
+            _mainController.UI.Description.Hide();
     }
 }

@@ -10,6 +10,7 @@ public class AllSpells : ScriptableObject
     public ASpell GetSpell(int index) {
         return SpellList[index];
     }
+    public int GetSpellCount() { return SpellList.Length; }
     public void Initialize() {
         foreach (var item in SpellList) {
             item.IsInit= false;

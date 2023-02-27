@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
-  m_Name: _HealingWard
+  m_Name: _DualShot
   m_EditorClassIdentifier: 
-  Name: HEALING WARD
-  Description: Creates a shield that protects from damage and heals the player if
-    hit
-  Icon: {fileID: 21300000, guid: c9010005c13c1ab47a59f0c42603ed2a, type: 3}
-  Spell: {fileID: 4222805922244990525, guid: f53e5922a3e6f694c95f0912eeb87c3b, type: 3}
-  Damage: 0
+  Name: DUAL SHOT
+  Description: Shoot dual projictiles that damages area on contact
+  Icon: {fileID: 21300000, guid: 0c8d6f28798756a4988d40c9f8d51428, type: 3}
+  Spell: {fileID: 8797521380335533868, guid: 60f8763b2359f0544b9543544fbb45fe, type: 3}
+  Damage: 50
   CastingTime: 0
   CooldownTime: 15

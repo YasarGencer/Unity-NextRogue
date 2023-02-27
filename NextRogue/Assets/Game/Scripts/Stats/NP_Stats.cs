@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Stats", menuName = "ScriptableObjects/Stats/NonPlayerStats", order = 1)]
 public class NP_Stats : AStats {
     [Header("NOTICE")]
     public float NoticeRange;
@@ -11,9 +12,5 @@ public class NP_Stats : AStats {
     public float LifeSpan;
     public override void Initialize() {
         base.Initialize();
-    }
-    private void OnDrawGizmosSelected() {
-        Gizmos.DrawWireSphere(transform.position, NoticeRange);
-        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 } 

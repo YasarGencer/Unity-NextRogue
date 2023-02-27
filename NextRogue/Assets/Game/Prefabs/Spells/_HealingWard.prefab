@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4222805921306603867}
   - component: {fileID: 4222805921306603866}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4222805921576771674}
   - component: {fileID: 4222805921576771672}
   - component: {fileID: 4222805921576771673}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: _particleEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4909,7 @@ GameObject:
   - component: {fileID: 4222805922244990514}
   - component: {fileID: 4222805922244990515}
   - component: {fileID: 3052323613309847517}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: _HealingWard
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}

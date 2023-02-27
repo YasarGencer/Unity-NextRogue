@@ -1,15 +1,12 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Stats", menuName = "ScriptableObjects/Stats/PlayerStats", order = 0)]
 public class P_Stats : AStats {
-
-    [Header("Summons")]
-    public float MaxSummonControlRange;
-    public float MinSummonControlRange;
+    [Header("Spell Set")]
+    public ASpell[] Spells;
     public override void Initialize() {
         base.Initialize();
-    }
-    private void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(transform.position, MaxSummonControlRange);
-        Gizmos.DrawWireSphere(transform.position, MinSummonControlRange);
-    }
+        foreach (var item in Spells)
+            item.IsInit = false;
+    } 
 }

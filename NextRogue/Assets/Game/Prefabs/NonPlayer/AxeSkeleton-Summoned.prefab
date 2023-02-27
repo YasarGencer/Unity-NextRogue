@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 7885946026804875810}
   - component: {fileID: 4819162773087873392}
   - component: {fileID: 2850729984088639237}
-  - component: {fileID: 9073206247621199465}
   - component: {fileID: 7573179973915006085}
   - component: {fileID: 5163387223652642361}
   - component: {fileID: 1448389872176083600}
@@ -283,7 +282,7 @@ MonoBehaviour:
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}
-  Stats: {fileID: 0}
+  Stats: {fileID: 11400000, guid: 82d1262392f74a943a452998be933592, type: 2}
   Target: {fileID: 0}
   Movement: {fileID: 0}
   Attack: {fileID: 0}
@@ -300,29 +299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _corpse: {fileID: 3453847540060289921, guid: 2eba70b878bb5134d82736bb166a711f, type: 3}
---- !u!114 &9073206247621199465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3453847540060289921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Axe Skeleton
-  ShortDescription: x
-  Description: x
-  Health: 0
-  MaxHealth: 20
-  Speed: 3
-  NoticeRange: 6
-  AttackDamage: 15
-  AttackRange: 0.4
-  AttackSpeed: 2
-  LifeSpan: 5
 --- !u!114 &7573179973915006085
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
-  m_Name: _DualShot
+  m_Name: _IcaBarrage
   m_EditorClassIdentifier: 
-  Name: DUAL SHOT
-  Description: Shoot dual projictiles that damages area on contact
-  Icon: {fileID: 21300000, guid: 0c8d6f28798756a4988d40c9f8d51428, type: 3}
-  Spell: {fileID: 8797521380335533868, guid: 60f8763b2359f0544b9543544fbb45fe, type: 3}
-  Damage: 50
+  Name: ICE BARRAGE
+  Description: Unleash a wall of sharp ice shards, damaging and slowing enemies in
+    their path.
+  Icon: {fileID: 21300000, guid: 32d647515f178064ca1a75ed2b9717df, type: 3}
+  Spell: {fileID: 1195071985698565550, guid: e31fa862f0d061141a4ba659bf3ce1af, type: 3}
+  Damage: 15
   CastingTime: 0
-  CooldownTime: 7
+  CooldownTime: 20

@@ -7,11 +7,9 @@ public abstract class ANP_Movement : MonoBehaviour
 {
     protected NP_MainController _mainController;
     protected IDisposable _updateRX;
-    protected float _speedHolder;
     protected Vector2 _patrolPosition;
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
-        _speedHolder = mainController.Stats.Speed;
         UnFreeze();
         StartCoroutine(PatrolPos());
     }
@@ -42,15 +40,18 @@ public abstract class ANP_Movement : MonoBehaviour
         _updateRX = Observable.EveryUpdate().Subscribe(UpdateRX);
     }
     protected virtual void Slow(float percentage) {
-        _mainController.Stats.Speed *= 1 - percentage;
+        _mainController.Stats.SpeelHolder = _mainController.Stats.Speed * (1 - percentage);
     }
     protected virtual void UnSlow() {
-        _mainController.Stats.Speed = _speedHolder;
+        _mainController.Stats.SpeelHolder = _mainController.Stats.Speed;
     }
     protected void Rotate(float posX) {
         if (posX > transform.position.x + 0.1f)
             transform.localScale = new Vector3(1, 1, 1);
         else if (posX < transform.position.x - 0.1f)
             transform.localScale = new Vector3(-1, 1, 1);
+    }
+    public virtual void Die() {
+        _updateRX?.Dispose();
     }
 }

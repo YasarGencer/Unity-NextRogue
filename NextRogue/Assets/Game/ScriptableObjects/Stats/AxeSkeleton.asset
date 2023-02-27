@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
+  m_Name: AxeSkeleton
+  m_EditorClassIdentifier: 
+  Name: Axe SKkeleton
+  ShortDescription: x
+  Description: x
+  Corpse: {fileID: 3453847540060289921, guid: 2eba70b878bb5134d82736bb166a711f, type: 3}
+  MaxHealth: 20
+  Health: -39980
+  Speed: 4
+  NoticeRange: 8
+  AttackDamage: 10
+  AttackRange: 0.5
+  AttackSpeed: 0.75
+  LifeSpan: 5

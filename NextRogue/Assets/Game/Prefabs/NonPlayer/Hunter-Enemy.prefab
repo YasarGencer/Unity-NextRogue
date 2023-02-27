@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 2933776343201961071}
   - component: {fileID: 4806134603982917482}
   - component: {fileID: 4806134603982917494}
-  - component: {fileID: 3137496700108962562}
   - component: {fileID: 142849531606225678}
   - component: {fileID: 6194595242102021012}
   - component: {fileID: 2434977955123592270}
@@ -198,7 +197,7 @@ MonoBehaviour:
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}
-  Stats: {fileID: 0}
+  Stats: {fileID: 11400000, guid: 838733d43e7e2b145afe10bfada4b3ab, type: 2}
   Target: {fileID: 0}
   Movement: {fileID: 0}
   Attack: {fileID: 0}
@@ -215,29 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _corpse: {fileID: 4806134603982917500, guid: 4b1837381fac4784ba8f35d2f80f18cb, type: 3}
---- !u!114 &3137496700108962562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806134603982917500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Hunter
-  ShortDescription: x
-  Description: x
-  Health: 0
-  MaxHealth: 40
-  Speed: 2
-  NoticeRange: 6
-  AttackDamage: 15
-  AttackRange: 0.75
-  AttackSpeed: 2
-  LifeSpan: 5
 --- !u!114 &142849531606225678
 MonoBehaviour:
   m_ObjectHideFlags: 0
