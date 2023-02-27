@@ -16,9 +16,10 @@ MonoBehaviour:
   ShortDescription: x
   Description: x
   Corpse: {fileID: 6753497417659572115, guid: cc28131093dd7d44eb3823846ffd0722, type: 3}
-  MaxHealth: 100
-  Health: 0
+  MaxHealth: 50
+  Health: 80
   Speed: 3
+  SpeelHolder: 3
   Spells:
   - {fileID: 11400000, guid: 0e77875f3e1e841478ba505003688070, type: 2}
   - {fileID: 11400000, guid: 24d6a5ea040a3db4dbcaef5879dae8b5, type: 2}

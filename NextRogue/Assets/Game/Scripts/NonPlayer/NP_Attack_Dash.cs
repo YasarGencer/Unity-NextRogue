@@ -19,10 +19,11 @@ public class NP_Attack_Dash : ANP_Attack {
         StartCoroutine(AttackLimiter());
         StartCoroutine(_mainController.Movement.FreezeMovement(1));
         StartCoroutine(Dash());
-        _mainController.Animator.SetTrigger("Charge");
     }
     IEnumerator Dash() {
         if (_mainController.Target != null) {
+            _mainController.Animator.SetTrigger("Charge"); 
+
             yield return new WaitForSeconds(1f);
 
             _mainController.Animator.SetTrigger("Dash");

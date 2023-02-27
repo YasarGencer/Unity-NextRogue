@@ -52,12 +52,23 @@ Oher characters attacks might be used as spells in game.
 Spell List :
   - Dual Shot
     - Shoots a dual projectile that explodes and give AoE on contact eachother
+    - 
+            STATS
+            Cooldown : 15
+            Damage : 50
   - Ice Barrage
     - Throws 5 ice pieces in a few inches between them
-    - Slowes enemies down on contact 
+    - 
+            STATS
+            Cooldown : 20
+            Damage : 15
   - Healing Ward
-    - Deflects 1 attack and heals the player
-
+    - Deflects all projectiles for 1 second and heals player
+    - 
+            STATS
+            Cooldown : 15
+            Heal Per Hit : 2
+  
 <h4 align = "center" id = "playerConsumables" >PLAYER CONSUMABLES</h4>
 
   - Souls 
@@ -68,44 +79,99 @@ Spell List :
 
 There will be different and unique wizards to play as i said before. So there is a list of them
 
-  - NECROMANCER:
-    - PS: Necrotic Dash
-      - It dashes more if there are dead bodies around
-    - SS: Consume
-      - Consumes alive enemies or summons to gain health
-    - PA: Reaper
-      - Summons a reaper that seings itself and damages the enemies on the way
-    - SA: Summon Aid
-      - Summon Axe Skeleton to help the player
-      - Summons will die in a short time
-    
-  - LIGHTNING:
-    - PS: Bolt Dash
-      - If player dashes to an enemy it will zap around other enemies
-      - Damages and shocks on contact
-    - SS: Elecrticity Aura
-      - Creates a aura that will dissapear on time.
-      - Enemies in the aura will get shocked
-    - PA: Lightning Streak
-      - Shoots lightning from players hand
-      - Attack will zap around other enemies on contact
-    - SA: Summon Thunderbolt
-      - Summons a thunderbolt that will do AOE to nearby enemies 
+- NECROMANCER:
+  
+      STATS
+      Health : 50
+      Movement Speed : 2.5
+
+  - PS: Necrotic Dash
+    - It dashes more if there are dead bodies around
+    - 
+            STATS
+            Cooldown : 3
+            Dash Force : 10
+            Corpse Range : 5
+            Corpse Multiplier : 1.2
+  - SS: Consume
+    - Consumes alive enemies or summons to gain health
+    - 
+            STATS
+            Cooldown : 15
+            Default Heal : 0
+            Corpse Range : 5
+            Heal Per Corpse : 3
+  - PA: Reaper
+    - Summons a reaper that seings itself and damages the enemies on the way
+    - 
+            STATS
+            Cooldown : 2
+            Damage : 10
+  - SA: Summon Aid
+    - Summon 4 Axe Skeleton to help the player
+    - Axe Skeleton:
+      - Melee
+      - Follow
+      - 
+            STATS
+            Health : 20
+            Movement Speed : 4
+            Attack Damage : 10
+            Attack Range : .5
+            Attack Speed : .75
+            Life Span : 5
+  
+- LIGHTNING:
+  - PS: Bolt Dash
+    - If player dashes to an enemy it will zap around other enemies
+    - Damages and shocks on contact
+  - SS: Elecrticity Aura
+    - Creates a aura that will dissapear on time.
+    - Enemies in the aura will get shocked
+  - PA: Lightning Streak
+    - Shoots lightning from players hand
+    - Attack will zap around other enemies on contact
+  - SA: Summon Thunderbolt
+    - Summons a thunderbolt that will do AOE to nearby enemies 
 
 <h3 align = "center" id = "enemies"> ENEMIES</h3>
 
 - Hunter:
     - Melee
     - Follow
+    - 
+          STATS
+          Health : 40
+          Movement Speed : 2.5
+          Attack Damage : 20
+          Attack Range : .75
+          Attack Speed : 1
 - Bat
     - Dash
     - Keep Distance
+    -
+          STATS
+          Health : 15
+          Movement Speed : 3
+          Attack Damage : 15
+          Attack Range : 5
+          Attack Speed : 3
 - Arcane Archer
     - Ranged
     - Keep Distance
+    - 
+          STATS
+          Health : 20
+          Movement Speed : 3.5
+          Attack Damage : 5
+          Attack Range : 4
+          Attack Speed : 2
   
 <h1 align = "center" id = "visuals"> VISUALS </h1>
-
+<h2 align = "center" id = "UI"> GAME </h2>
+<p align = "center">
+<img src="img/start%20area.jpg" width="500" alt="PlayerMechanics">
+<p>
 <h2 align = "center" id = "UI"> USER INTERFACE </h2>
 
 <h3 align = "center"> GUI </h3>

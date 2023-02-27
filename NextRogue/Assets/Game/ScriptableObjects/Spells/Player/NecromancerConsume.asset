@@ -16,10 +16,10 @@ MonoBehaviour:
   Description: Consumes nearby corpses amd heals
   Icon: {fileID: 21300000, guid: b5afc94ef3f9e844a90448fb3e507584, type: 3}
   Spell: {fileID: 0}
-  Damage: 15
+  Damage: 0
   CastingTime: 0
   CooldownTime: 15
   DefaultHeal: 0
-  HealPerCorpse: 10
+  HealPerCorpse: 3
   CorpseRange: 5
   Particle: {fileID: 6080914371881166770, guid: 64306d9cb01de314c982277e09b18e7a, type: 3}
