@@ -9,7 +9,7 @@
         - [Spells](#playerSpells)
         - [Consumables](#playerConsumables)
       - [Playable Characters](#playableCharacters)
-      - [Non Players](#nonPlayers)
+      - [Non Players](#enemies)
      - [Visuals](#visuals)
        - [User Interface](#UI)
  - [Development Flow](#developmentFlow)
@@ -17,7 +17,6 @@
 
 <h1 align = "center" id = "gamedesignDoc"> GAME DESIGN DOCUMENT </h1>
 
-<p align = "center"><img src="img/necromancer1.jpg" alt="Necromancer1"><p>
 
 <h2 align = "center" id = "gameDetails"> GAME DETAILS </h2>
 
@@ -51,17 +50,13 @@ And there is spells. Any character has 5 skill slots which player can attach dif
 Oher characters attacks might be used as spells in game.
 
 Spell List :
-  - Reaper
-    - Summons a reaper that seings itself and damages the enemies on the way
   - Dual Shot
-    - Shoots a dual projectile that explodes and give AoE on contact
-  - _zacQ
-    - Throw a projectile to cursor
-    - On hit throw a secon one to different enemy
-    - If both hits different enemies projectiles hit enemies to eachother
+    - Shoots a dual projectile that explodes and give AoE on contact eachother
   - Ice Barrage
     - Throws 5 ice pieces in a few inches between them
     - Slowes enemies down on contact 
+  - Healing Ward
+    - Deflects 1 attack and heals the player
 
 <h4 align = "center" id = "playerConsumables" >PLAYER CONSUMABLES</h4>
 
@@ -78,11 +73,12 @@ There will be different and unique wizards to play as i said before. So there is
       - It dashes more if there are dead bodies around
     - SS: Consume
       - Consumes alive enemies or summons to gain health
-    - PA: Summon Aid
-      - Summon [summons](#nonPlayers) to help the player
+    - PA: Reaper
+      - Summons a reaper that seings itself and damages the enemies on the way
+    - SA: Summon Aid
+      - Summon Axe Skeleton to help the player
       - Summons will die in a short time
-    - SA: Grave Keeper
-      - Revive [summons](#nonPlayers) from dead enemy bodies
+    
   - LIGHTNING:
     - PS: Bolt Dash
       - If player dashes to an enemy it will zap around other enemies
@@ -96,15 +92,18 @@ There will be different and unique wizards to play as i said before. So there is
     - SA: Summon Thunderbolt
       - Summons a thunderbolt that will do AOE to nearby enemies 
 
-<h3 align = "center" id = "nonPlayers"> NON PLAYERS</h3>
+<h3 align = "center" id = "enemies"> ENEMIES</h3>
 
-Tere is two types of non player characters in the game. Summons and enemies. Player can summon summons(obviously) and enemies spawns randomly on the map. Summons has a short lifespawn. When non playables die they leave a corpse on the map. The corpse of enemy can be summoned back as summon and fight beside the player against other enemies but it also will have short lifespan this time. 
-
-Non player character list:
-  - Axe Skeleton
-  - Sword Skeleton
-  - Hunter
-
+- Hunter:
+    - Melee
+    - Follow
+- Bat
+    - Dash
+    - Keep Distance
+- Arcane Archer
+    - Ranged
+    - Keep Distance
+  
 <h1 align = "center" id = "visuals"> VISUALS </h1>
 
 <h2 align = "center" id = "UI"> USER INTERFACE </h2>
