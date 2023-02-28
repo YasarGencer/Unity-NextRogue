@@ -9,6 +9,9 @@ public class MainManager : MonoBehaviour
     public P_MainController MainController { get { return _mainController; } }
 
     [SerializeField]
+    private EventManager _eventManager;
+    public EventManager EventManager { get { return _eventManager; } }
+    [SerializeField]
     private PDGManager _PDGManager;
     public PDGManager PDGManager { get { return _PDGManager; } }
 
@@ -37,7 +40,7 @@ public class MainManager : MonoBehaviour
 
         _mainController = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>() as P_MainController;
 
-
+        _eventManager.Initialize();
         _PDGManager.Initialize();
     }
 }

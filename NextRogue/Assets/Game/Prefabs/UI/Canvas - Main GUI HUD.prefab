@@ -658,7 +658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2883e3f6eb778c7438b1e8a6b5096c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 8028054652487698885}
+  _health: {fileID: 8028054652487698885}
+  _damagetext: {fileID: 110808881695371967, guid: dfab4af4f0b91614e8767cc9581df47f, type: 3}
   spellIconList:
   - {fileID: 9188051756376097928}
   - {fileID: 9188051754989955836}

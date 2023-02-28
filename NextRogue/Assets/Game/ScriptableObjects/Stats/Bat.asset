@@ -16,9 +16,10 @@ MonoBehaviour:
   ShortDescription: x
   Description: x
   Corpse: {fileID: 8813864115624344303, guid: 1d36e24a9dc9a0e42b9e9bbdd8fee738, type: 3}
-  MaxHealth: 15
+  MaxHealth: 10
   Health: -35
   Speed: 3
+  SpeelHolder: 0
   NoticeRange: 6
   AttackDamage: 15
   AttackRange: 5

@@ -6,12 +6,10 @@ public class Health : MonoBehaviour
 {
     bool _isPlayer;
     AStats _stats;
-    MainGUIHUD _ui;
     public void Initialize() {
 
         _isPlayer = gameObject.CompareTag("Player");
-        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats;
-        _ui = _isPlayer ? GetComponent<P_MainController>().UI : null;
+        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats; 
     }
     public void GetDamage(float value, Transform source) {
         if(GetComponent<Destructable>() != null) {
@@ -22,19 +20,21 @@ public class Health : MonoBehaviour
             return;
         _stats.Health -= value;
 
-        GetComponent<Animator>().SetTrigger("hit");
-         
-        if (_isPlayer || _ui)
-            _ui.SetHealth();
+        MainGUIHUD.Instance.DamageText(true, value.ToString(), transform.position);
 
+        GetComponent<Animator>().SetTrigger("hit");
+
+        if (_isPlayer)
+            MainGUIHUD.Instance.SetHealth(_stats.Health);
         if (_stats.Health <= 0) 
             Die();
     }
     public void GainHealth(float value) {
         _stats.Health += value;
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
-        if(_isPlayer)
-            _ui.SetHealth();
+        MainGUIHUD.Instance.DamageText(false, value.ToString(), transform.position);
+        if (_isPlayer)
+            MainGUIHUD.Instance.SetHealth(_stats.Health);
     }
     public void Die() {
         if (transform.CompareTag("Player"))

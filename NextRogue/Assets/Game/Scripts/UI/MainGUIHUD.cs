@@ -12,7 +12,9 @@ public class MainGUIHUD : MonoBehaviour
     P_MainController _mainController;
 
     [SerializeField]
-    HUDHealthBar Health;
+    HUDHealthBar _health;
+    [SerializeField]
+    GameObject _damagetext;
 
     public HUDSkillIcon[] spellIconList;
     public string[] spellKeys;
@@ -25,13 +27,13 @@ public class MainGUIHUD : MonoBehaviour
     public void Initialize(P_MainController mainController) {
         _mainController = mainController;
         Description.Hide();
-        Health.Initialize(_mainController);
+        _health.Initialize(_mainController, _mainController.Stats.MaxHealth);
         for (int i = 0; i < spellKeys.Length; i++) {
             spellIconList[i].SetKey(spellKeys[i]);
         }
     }
-    public void SetHealth() {
-        Health.SetHealth();
+    public void SetHealth(float value) {
+        _health.SetHealth(value);
     }
     public void SetSlider(Slider slider, float max, float value) {
         slider.maxValue= max;
@@ -39,5 +41,8 @@ public class MainGUIHUD : MonoBehaviour
     }
     public void SetSkillIcon(HUDSkillIcon[] list,int keyIndex, ASpell spell) {
         list[keyIndex].Initialize(spell, _mainController);
+    }
+    public void DamageText(bool damage,string text,Vector2 pos) {
+        Instantiate(_damagetext, pos, Quaternion.identity).GetComponent<WORLDDamageText>().Initialize(damage,text);
     }
 }

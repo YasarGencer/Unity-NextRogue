@@ -45,8 +45,7 @@ public class P_MainController : MonoBehaviour {
         if(UI)
             UI.Initialize(this);
         Movement.Initialize(this);
-        Spells.Initialize(this);
-        Stats.Initialize(); 
+        Spells.Initialize(this); 
         Health.Initialize();
     }
     void StartCutscene() {

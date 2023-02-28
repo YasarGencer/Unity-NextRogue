@@ -14,8 +14,9 @@ public class NP_MainController : MonoBehaviour
 
     [HideInInspector]
     public Health Health;
-    public NP_Stats Stats;
-
+    [SerializeField]
+    NP_Stats _stats;
+    public NP_Stats Stats { get; private set; }
 
     [HideInInspector]
     public ANP_Target Target;
@@ -52,6 +53,7 @@ public class NP_MainController : MonoBehaviour
         Target = GetComponent<ANP_Target>();
         Movement = GetComponent<ANP_Movement>();
         Attack = GetComponent<ANP_Attack>();
+        Stats = Instantiate(_stats);
 
         Stats.Initialize();
         Health.Initialize();

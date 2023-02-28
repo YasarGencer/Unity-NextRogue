@@ -282,7 +282,7 @@ MonoBehaviour:
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}
-  Stats: {fileID: 11400000, guid: 82d1262392f74a943a452998be933592, type: 2}
+  _stats: {fileID: 11400000, guid: 82d1262392f74a943a452998be933592, type: 2}
   Target: {fileID: 0}
   Movement: {fileID: 0}
   Attack: {fileID: 0}
@@ -298,7 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2cf239e302e6045a3ac79a0d0c0d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _corpse: {fileID: 3453847540060289921, guid: 2eba70b878bb5134d82736bb166a711f, type: 3}
 --- !u!114 &7573179973915006085
 MonoBehaviour:
   m_ObjectHideFlags: 0
