@@ -11,6 +11,7 @@ public abstract class ANP_Attack : MonoBehaviour
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
         SetAttackTrue();
+        RegisterEvents();
     }
     protected abstract void UpdateRX(long obj);
     public virtual IEnumerator AttackLimiter() {
@@ -22,8 +23,10 @@ public abstract class ANP_Attack : MonoBehaviour
         _updateRX?.Dispose();
     }
     protected virtual void SetAttackTrue() {
+        if (_isPaused)
+            return;
         _updateRX?.Dispose();
-        _updateRX = Observable.EveryUpdate().Subscribe(UpdateRX);
+        _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
     }
     public virtual void Die() {
         _updateRX?.Dispose();
@@ -43,5 +46,19 @@ public abstract class ANP_Attack : MonoBehaviour
         var targetPos = _mainController.Target.Target.transform.position;
         var direction = targetPos - transform.position;
         return direction;
+    }
+    // EVENTS
+    protected bool _isPaused = false;
+    void RegisterEvents() {
+        MainManager.Instance.EventManager.onGamePause += OnGamePause;
+        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+    }
+    protected virtual void OnGamePause() {
+        SetAttackFalse();
+        _isPaused = true;
+    }
+    protected virtual void OnGameUnPause() {
+        _isPaused = false;
+        SetAttackTrue(); 
     }
 }

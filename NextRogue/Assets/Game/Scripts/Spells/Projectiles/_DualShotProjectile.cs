@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class _DualShotProjectile : AP_Projectile {
-    Rigidbody2D _rb;
+public class _DualShotProjectile : AP_Projectile { 
     [SerializeField] GameObject _explosion;
 
     public override void Initialize(Vector3 mousePos, float damage, float time) {
         base.Initialize(mousePos, damage, time);
-        _rb = GetComponent<Rigidbody2D>();
-        Move();
+        _speed = 1000 / 3;
+        Move(_speed);
     }
-    void Move() {
-        _rb.AddForce(transform.right * 1000/3 * _rb.mass);
+    protected override void Move(float speed) {
+        base.Move(speed);
     }
     void Explode() {
         Damager damager = Instantiate(_explosion, transform.position, Quaternion.identity).GetComponent<Damager>();

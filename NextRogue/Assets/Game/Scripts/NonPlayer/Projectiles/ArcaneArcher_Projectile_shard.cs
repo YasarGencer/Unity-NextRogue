@@ -1,21 +1,23 @@
+using UnityEditor;
 using UnityEngine;
 
-public class ArcaneArcher_Projectile_shard : MonoBehaviour
+public class ArcaneArcher_Projectile_shard : ANP_Projectile
 {
-    Rigidbody2D _rb;
     Damager _damager;
-    public void Initialize(float damage) {
-        _rb = GetComponent<Rigidbody2D>();
+    public override void Initialize(Vector3 targetPos, float damage, float time) {
+        base.Initialize(Vector3.zero, damage, time);
         _damager = GetComponent<Damager>();
 
         _damager.Initialize(damage);
-
-        Invoke("Move",.5f);
+        _speed = 750;
+        Invoke("Mover",.5f);
     }
-    void Move() {
-        _rb.AddForce(transform.right * 750 * _rb.mass);
+    void Mover() {
+        if(_isPaused)
+            return;
+        Move(_speed);
     }
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Destroy(gameObject);
+    protected override void Move(float speed) {
+        base.Move(speed);
     }
 }

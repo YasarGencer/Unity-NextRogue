@@ -4,11 +4,17 @@ using UnityEngine;
 public class P_InputManager : MonoBehaviour {
     P_MainController _mainController;
     PlayerInput.OnMoveActions _inputOnMove;
+    bool _isPaused = false;
     private void Awake() {
-        _inputOnMove = new PlayerInput().OnMove;
+        var playerInput = new PlayerInput();
+        _inputOnMove = playerInput.OnMove;
     }
     public void Initialize(P_MainController mainController) {
         _mainController = mainController;
+
+        MainManager.Instance.EventManager.onGamePause += OnGamePause;
+        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+        
         SetEvents();
     }
     void SetEvents() {
@@ -25,6 +31,8 @@ public class P_InputManager : MonoBehaviour {
         _inputOnMove.SPELL3.performed += input => Spell(6);
         _inputOnMove.SPELL4.performed += input => Spell(7);
         _inputOnMove.SPELL5.performed += input => Spell(8);
+
+        _inputOnMove.PAUSE.performed += input => RunPause();
     }
     public Vector3 GetMouseWolrdPos() {
         Vector3 pos = Mouse.current.position.ReadValue();
@@ -44,11 +52,30 @@ public class P_InputManager : MonoBehaviour {
     #endregion
     //EVENTS
     void Direction(Vector2 direction) {
+        if (CheckIfPaused())
+            return;
         if (_mainController.Movement)
             _mainController.Movement.SetDirection(direction);
     }
     void Spell(int value) {
+        if (CheckIfPaused())
+            return;
         if (_mainController.Spells)
             _mainController.Spells.Spell(value);
+    }
+    void RunPause() {
+        if(CheckIfPaused())
+            MainManager.Instance.EventManager.RunOnGameUnPuase();
+        else
+            MainManager.Instance.EventManager.RunOnGamePause();
+    }
+    void OnGamePause() {
+        _isPaused = true;
+    }
+    void OnGameUnPause() {
+        _isPaused = false;
+    }
+    bool CheckIfPaused() {
+        return _isPaused;
     }
 }

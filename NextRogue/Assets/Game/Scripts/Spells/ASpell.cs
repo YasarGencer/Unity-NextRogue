@@ -41,6 +41,8 @@ public abstract class ASpell : ScriptableObject
     public virtual void Initialize(P_MainController mainController, int value) {
         if (_isInit && _currentTimeCooldown < CooldownTime)
             return;
+        
+        RegisterEvents();
 
         _keyIndex = value;
         _mainController = mainController;
@@ -97,5 +99,18 @@ public abstract class ASpell : ScriptableObject
             .Initialize(_mainController.Input.GetMouseWolrdPos(),
             Damage, CooldownTime);
         return projectile;
+    }
+
+
+    //EVENTS
+    void RegisterEvents() { 
+        MainManager.Instance.EventManager.onGamePause += OnGamePause;   
+        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+    }
+    void OnGamePause() {
+        _cooldownRX?.Dispose(); 
+    }
+    void OnGameUnPause() {
+        StartCooldown();
     }
 }

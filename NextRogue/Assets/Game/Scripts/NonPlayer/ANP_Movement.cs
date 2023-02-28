@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UniRx;
+using static EventManager;
+using UnityEngine.UIElements;
 
 public abstract class ANP_Movement : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public abstract class ANP_Movement : MonoBehaviour
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
         UnFreeze();
+        RegisterEvents();
         StartCoroutine(PatrolPos());
     }
 
@@ -36,8 +39,10 @@ public abstract class ANP_Movement : MonoBehaviour
         _updateRX?.Dispose();
     }
     protected virtual void UnFreeze() {
+        if (_gamePaused)
+            return;
         _updateRX?.Dispose();
-        _updateRX = Observable.EveryUpdate().Subscribe(UpdateRX);
+        _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
     }
     protected virtual void Slow(float percentage) {
         _mainController.Stats.SpeelHolder = _mainController.Stats.Speed * (1 - percentage);
@@ -53,5 +58,19 @@ public abstract class ANP_Movement : MonoBehaviour
     }
     public virtual void Die() {
         _updateRX?.Dispose();
+    }
+    // EVENTS
+    bool _gamePaused = false;
+    void RegisterEvents() { 
+        MainManager.Instance.EventManager.onGamePause += OnGamePause;
+        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+    }
+    void OnGamePause() {
+        Freeze();
+        _gamePaused = true;
+    }
+    void OnGameUnPause() {
+        _gamePaused = false;
+        UnFreeze();
     }
 }

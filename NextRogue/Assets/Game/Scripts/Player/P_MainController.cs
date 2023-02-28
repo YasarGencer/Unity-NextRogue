@@ -2,34 +2,26 @@ using UnityEngine;
 public class P_MainController : MonoBehaviour {
     
     [HideInInspector]
-    public Animator Animator;
+    public Animator Animator { get; private set; }
     [HideInInspector]
-    public Rigidbody2D Rb;
+    public Rigidbody2D Rb { get; private set; }
 
-
-    [HideInInspector]
-    public P_InputManager Input;
+     
+    public P_InputManager Input { get; private set; }
     public P_Stats Stats;
-    [HideInInspector]
-    public Health Health;
-    [HideInInspector]
-    public P_Movement Movement;
-    [HideInInspector]
-    public P_SpellHandler Spells;
-    [HideInInspector]
-    public MainGUIHUD UI;
+    public Health Health { get; private set; } 
+    public P_Movement Movement { get; private set; } 
+    public P_SpellHandler Spells { get; private set; } 
+    public Canvas_Player_GUI_HUD UI { get; private set; }
 
-    GameObject _child;
-
+    GameObject _child; 
     public void Start() {
-        if (MainGUIHUD.Instance)
+        if (MainManager.Instance.CanvasManager.Player_GUI_HUD)
             StartCutscene();
         else
             Initialize();
     }
     public void Initialize() {
-        if (MainGUIHUD.Instance)
-            MainGUIHUD.Instance.gameObject.SetActive(true);
 
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
@@ -38,12 +30,10 @@ public class P_MainController : MonoBehaviour {
         Health = GetComponent<Health>();
         Movement = GetComponent<P_Movement>();
         Spells = GetComponent<P_SpellHandler>();
-        UI = MainGUIHUD.Instance;
+        UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
 
         this.Input.Initialize(this);
         Stats.Initialize();
-        if(UI)
-            UI.Initialize(this);
         Movement.Initialize(this);
         Spells.Initialize(this); 
         Health.Initialize();
@@ -51,7 +41,6 @@ public class P_MainController : MonoBehaviour {
     void StartCutscene() {
         _child = transform.GetChild(0).gameObject;
         _child.SetActive(false);
-        MainGUIHUD.Instance.gameObject.SetActive(false);
         Invoke("StartCutsceneEnd", 1.5f);
     }
     void StartCutsceneEnd() {

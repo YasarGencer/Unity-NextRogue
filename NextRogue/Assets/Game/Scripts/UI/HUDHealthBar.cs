@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +10,13 @@ public class HUDHealthBar : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _text;
     Slider _slider;
-    public void Initialize(P_MainController mainController, float maxHealth) {
+    public void Initialize(P_MainController mainController) {
         _mainController = mainController;
         _show.SetActive(false);
         _slider = GetComponent<Slider>();
-
-        _slider.maxValue = maxHealth;
-        _slider.value = _slider.maxValue;
+        var maxhealth = _mainController.Stats.MaxHealth;
+        _slider.maxValue = maxhealth;
+        SetHealth(maxhealth);
     }
     public void TriggerEnter() {
         _show.SetActive(true);

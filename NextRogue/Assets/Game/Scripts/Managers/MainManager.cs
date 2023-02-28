@@ -5,15 +5,16 @@ public class MainManager : MonoBehaviour
     private static MainManager _instance = null;
     public static MainManager Instance { get { return _instance; } }
 
-    private P_MainController _mainController;
-    public P_MainController MainController { get { return _mainController; } }
-
     [SerializeField]
     private EventManager _eventManager;
-    public EventManager EventManager { get { return _eventManager; } }
     [SerializeField]
     private PDGManager _PDGManager;
+    [SerializeField]
+    private CanvasManager _canvasManager;
+
+    public EventManager EventManager { get { return _eventManager; } }
     public PDGManager PDGManager { get { return _PDGManager; } }
+    public CanvasManager CanvasManager { get { return _canvasManager; } }
 
     [Space(15f)]
     [Header("Scene Managers")]
@@ -38,9 +39,8 @@ public class MainManager : MonoBehaviour
     public void Initialize() {
         _instance = this;
 
-        _mainController = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>() as P_MainController;
-
         _eventManager.Initialize();
         _PDGManager.Initialize();
+        _canvasManager.Initialize();
     }
 }

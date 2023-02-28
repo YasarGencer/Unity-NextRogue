@@ -7,10 +7,9 @@ public class _HealingWardProjectile : AP_Projectile
     Transform _player;
     IDisposable _followRX;
     public override void Initialize(Vector3 mousePos, float damage, float time) {
-        base.Initialize(mousePos, damage, time);
+        base.Initialize(mousePos, damage, 1);
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         StartFollow();
-        Invoke("Destroy",1f);
     }
     void StartFollow() {
         _followRX?.Dispose();
@@ -33,9 +32,5 @@ public class _HealingWardProjectile : AP_Projectile
             Destroy(collision.gameObject);
             _player.GetComponent<P_MainController>().Health.GainHealth(_damage);
         }
-    }
-    void Destroy() {
-        Destroy(gameObject);
-        StoplFollow();
     }
 }

@@ -20,21 +20,21 @@ public class Health : MonoBehaviour
             return;
         _stats.Health -= value;
 
-        MainGUIHUD.Instance.DamageText(true, value.ToString(), transform.position);
+        MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);
 
         GetComponent<Animator>().SetTrigger("hit");
 
         if (_isPlayer)
-            MainGUIHUD.Instance.SetHealth(_stats.Health);
+            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth(_stats.Health);
         if (_stats.Health <= 0) 
             Die();
     }
     public void GainHealth(float value) {
         _stats.Health += value;
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
-        MainGUIHUD.Instance.DamageText(false, value.ToString(), transform.position);
+        MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(false, value.ToString(), transform.position);
         if (_isPlayer)
-            MainGUIHUD.Instance.SetHealth(_stats.Health);
+            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth(_stats.Health);
     }
     public void Die() {
         if (transform.CompareTag("Player"))
