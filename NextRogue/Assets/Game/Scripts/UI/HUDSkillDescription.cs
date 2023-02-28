@@ -7,7 +7,6 @@ public class HUDSkillDescription : MonoBehaviour {
     public TextMeshProUGUI Desc;
     public TextMeshProUGUI Cooldown;
     public Image Icon;
-
     public void Show(ASpell spell) {
         gameObject.SetActive(true);
 

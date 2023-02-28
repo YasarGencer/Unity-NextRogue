@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
         GetComponent<Animator>().SetTrigger("hit");
          
         if (_isPlayer || _ui)
-            _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
+            _ui.SetHealth();
 
         if (_stats.Health <= 0) 
             Die();
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         _stats.Health += value;
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
         if(_isPlayer)
-            _ui.SetSlider(_ui.HealthSlider, _stats.MaxHealth, _stats.Health);
+            _ui.SetHealth();
     }
     public void Die() {
         if (transform.CompareTag("Player"))

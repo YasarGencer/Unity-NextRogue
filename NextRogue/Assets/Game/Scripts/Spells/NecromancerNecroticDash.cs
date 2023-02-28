@@ -29,9 +29,7 @@ public class NecromancerNecroticDash : ASpell
         dashforce = UnityEngine.Mathf.Clamp(dashforce, 0, DashForce * 3);
 
         var force = direction * dashforce * rb.mass;
-        rb.AddForce(force,ForceMode2D.Impulse);
-
-        Debug.Log(direction + "   " + dashforce);
+        rb.AddForce(force,ForceMode2D.Impulse); 
 
         DashEffect();
 
@@ -84,8 +82,7 @@ class BasicDashMono : MonoBehaviour {
         StartCoroutine(StopDash(mainController,time));
     }
     IEnumerator StopDash(P_MainController mainController, float time) {
-        yield return new WaitForSeconds(time);
-        Debug.Log("a");
+        yield return new WaitForSeconds(time); 
         mainController.Rb.velocity = Vector2.zero;
     }
     
