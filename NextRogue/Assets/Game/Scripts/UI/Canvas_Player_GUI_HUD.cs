@@ -5,12 +5,11 @@ public class Canvas_Player_GUI_HUD : AUI
     P_MainController _mainController;
 
     [SerializeField]
-    HUDHealthBar _health;
+    HUDSlider _health, _level;
     [SerializeField]
     GameObject _damagetext;
 
-    public HUDSkillIcon[] spellIconList;
-    public string[] spellKeys;
+    public HUDSkillIcon[] spellIconList; 
 
     [Header("SPELL DESCRIPTION")]
     public HUDSkillDescription Description; 
@@ -18,12 +17,10 @@ public class Canvas_Player_GUI_HUD : AUI
         base.Initialize();
         _mainController = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
         
-        Description.Hide(); 
-        _health.Initialize(_mainController);
-
-        for (int i = 0; i < spellKeys.Length; i++) {
-            spellIconList[i].SetKey(spellKeys[i]);
-        }
+        Description.Hide();
+        Invoke("SetKeys", .5f);
+        _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth,0);
+        _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
         Close();
     }
     public override void Open() {
@@ -31,10 +28,19 @@ public class Canvas_Player_GUI_HUD : AUI
     }
     public override void Close() {
         base.Close();
+    } 
+    void SetKeys() {
+        var text = _mainController.Input.GetKeyInfo();
+        var textPart = text.Split("/");
+        for (int i = 0; i < textPart.Length; i++) {
+            spellIconList[i].SetKey(textPart[i]);
+        }
     }
-
-    public void SetHealth(float value) {
-        _health.SetHealth(value);
+    public void SetHealth() {
+        _health.SetValue(_mainController.Stats.Health);
+    }
+    public void SetLevel() {
+        _level.SetValue(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
     }
     public void SetSkillIcon(HUDSkillIcon[] list,int keyIndex, ASpell spell) {
         list[keyIndex].Initialize(spell, _mainController);

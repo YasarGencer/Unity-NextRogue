@@ -18,6 +18,8 @@ MonoBehaviour:
   Corpse: {fileID: 8813864115624344303, guid: 1d36e24a9dc9a0e42b9e9bbdd8fee738, type: 3}
   MaxHealth: 10
   Health: -35
+  HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
+  EXPOrb: {fileID: 7945365704232343530, guid: be95fc16fbc389f48a04613702f0cd2a, type: 3}
   Speed: 3
   SpeelHolder: 0
   NoticeRange: 6

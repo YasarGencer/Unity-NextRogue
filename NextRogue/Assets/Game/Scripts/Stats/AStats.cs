@@ -11,6 +11,8 @@ public abstract class AStats : ScriptableObject
     public float MaxHealth;
     [HideInInspector]
     public float Health;
+    public GameObject HitParticle;
+    public GameObject EXPOrb;
     [Header("MOVEMENT")]
     public float Speed;
     [HideInInspector]

@@ -3,15 +3,15 @@ using UnityEngine;
 public class Destructable : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] _drops;
-    [SerializeField]
-    private int _dropsCount = 0;
+    private GameObject[] _drops; 
+    [SerializeField, Range(0.1f,1)]
+    private float _dropRate = 0;
     public void Destruct() {
         GetComponent<Animator>().SetTrigger("Destroy");
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<CircleCollider2D>());
-        for (int i = 0; i < _dropsCount; i++) {
-            Instantiate(_drops[UnityEngine.Random.Range(0, _drops.Length)], transform.position, Quaternion.identity);
-        }
+        var drop = Random.Range(0, 100) <= _dropRate * 100; 
+        if(drop) 
+            Instantiate(_drops[UnityEngine.Random.Range(0, _drops.Length)], transform.position, Quaternion.identity); 
     }
 }

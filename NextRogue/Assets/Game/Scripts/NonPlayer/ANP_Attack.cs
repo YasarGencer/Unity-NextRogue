@@ -23,7 +23,7 @@ public abstract class ANP_Attack : MonoBehaviour
         _updateRX?.Dispose();
     }
     protected virtual void SetAttackTrue() {
-        if (_isPaused)
+        if (MainManager.Instance.GameManager.GamePaused)
             return;
         _updateRX?.Dispose();
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
@@ -47,18 +47,15 @@ public abstract class ANP_Attack : MonoBehaviour
         var direction = targetPos - transform.position;
         return direction;
     }
-    // EVENTS
-    protected bool _isPaused = false;
+    // EVENTS 
     void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
     }
     protected virtual void OnGamePause() {
-        SetAttackFalse();
-        _isPaused = true;
+        SetAttackFalse(); 
     }
-    protected virtual void OnGameUnPause() {
-        _isPaused = false;
+    protected virtual void OnGameUnPause() { 
         SetAttackTrue(); 
     }
 }

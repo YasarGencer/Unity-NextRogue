@@ -13,11 +13,14 @@ public class ArcaneArcher_Projectile_shard : ANP_Projectile
         Invoke("Mover",.5f);
     }
     void Mover() {
-        if(_isPaused)
+        if(MainManager.Instance.GameManager.GamePaused)
             return;
         Move(_speed);
     }
     protected override void Move(float speed) {
         base.Move(speed);
+    }
+    private void OnCollisionEnter2D(Collision2D collision) { 
+        Destroy(gameObject);
     }
 }

@@ -8,10 +8,13 @@ public class MainManager : MonoBehaviour
     [SerializeField]
     private EventManager _eventManager;
     [SerializeField]
+    private GameManager _gameManager;
+    [SerializeField]
     private PDGManager _PDGManager;
     [SerializeField]
     private CanvasManager _canvasManager;
 
+    public GameManager GameManager { get { return _gameManager; } }
     public EventManager EventManager { get { return _eventManager; } }
     public PDGManager PDGManager { get { return _PDGManager; } }
     public CanvasManager CanvasManager { get { return _canvasManager; } }
@@ -42,5 +45,6 @@ public class MainManager : MonoBehaviour
         _eventManager.Initialize();
         _PDGManager.Initialize();
         _canvasManager.Initialize();
+        _gameManager.Initialize();
     }
 }

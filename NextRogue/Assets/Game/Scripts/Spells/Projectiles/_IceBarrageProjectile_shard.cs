@@ -14,14 +14,14 @@ public class _IceBarrageProjectile_shard : AP_Projectile {
         Invoke("Mover", .5f);
     }
     void Mover() {
-        if (_isPaused)
+        if (MainManager.Instance.GameManager.GamePaused)
             return;
         Move(_speed);
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if(_animator)
             _animator.SetTrigger("hit");
-
+        _rb.velocity = Vector2.zero;
         Destroy(gameObject,.4f);
     }
 }

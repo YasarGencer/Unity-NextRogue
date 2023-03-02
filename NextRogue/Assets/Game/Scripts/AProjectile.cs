@@ -13,8 +13,7 @@ public class AProjectile : MonoBehaviour
     protected float _currentTime;
     protected float _speed;
 
-    bool _secondChance = false;
-    protected bool _isPaused = false;
+    bool _secondChance = false; 
     private void Awake() {
         RegisterEvents(); 
         _rb =GetComponent<Rigidbody2D>() as Rigidbody2D;
@@ -70,9 +69,7 @@ public class AProjectile : MonoBehaviour
                 _secondChance = true;
         } 
 
-        _destroyRX?.Dispose();
-
-        _isPaused= true;
+        _destroyRX?.Dispose(); 
     }
     protected virtual void OnGameUnPause() {
         //if its moving
@@ -85,8 +82,6 @@ public class AProjectile : MonoBehaviour
         }
 
         _destroyRX?.Dispose();
-        _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX);
-
-        _isPaused= false;
+        _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX); 
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class NP_MainController : MonoBehaviour
@@ -30,40 +31,39 @@ public class NP_MainController : MonoBehaviour
         Initialize(2f);
     }
     public void Initialize(Room? room) {
-        Init();
+        StartCoroutine(Init(0));
     }
-    public void Initialize(float time) {
-        StartCoroutine(InitializeOnTime(time));
-    }
-    IEnumerator InitializeOnTime(float time) {
+    public void Initialize(float time) { 
+        StartCoroutine(Init(time));
+    } 
+    IEnumerator Init(float time) {
         yield return new WaitForSeconds(time);
-        Init();
-    }
-    void Init() {
-        if (isInit)
-            return;
-        isInit = true;
+        if (!isInit && !MainManager.Instance.GameManager.GamePaused) {
+            isInit = true;
 
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
+            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
 
-        Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
-        Animator = Animator == null ? GetComponent<Animator>() : Animator;
+            Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
+            Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
-        Health = GetComponent<Health>();
-        Target = GetComponent<ANP_Target>();
-        Movement = GetComponent<ANP_Movement>();
-        Attack = GetComponent<ANP_Attack>();
-        Stats = Instantiate(_stats);
+            Health = GetComponent<Health>();
+            Target = GetComponent<ANP_Target>();
+            Movement = GetComponent<ANP_Movement>();
+            Attack = GetComponent<ANP_Attack>();
+            Stats = Instantiate(_stats);
 
-        Stats.Initialize();
-        Health.Initialize();
-        Target.Initialize(this);
-        Movement.Initialize(this);
-        Attack.Initialize(this);
+            Stats.Initialize();
+            Health.Initialize();
+            Target.Initialize(this);
+            Movement.Initialize(this);
+            Attack.Initialize(this);
 
-        if (this.CompareTag("Summoned"))
-            Invoke("EndSummonLife", Stats.LifeSpan);
-
+            if (this.CompareTag("Summoned"))
+                Invoke("EndSummonLife", Stats.LifeSpan);
+        }
+        yield return new WaitForEndOfFrame();
+        if(!isInit)
+            StartCoroutine(Init(0)); 
     }
     //COMMON FUNCTIONS
     public float Distance(Transform target) {

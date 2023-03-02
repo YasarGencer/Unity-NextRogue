@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     bool _isPlayer;
-    AStats _stats;
+    AStats _stats; 
     public void Initialize() {
 
         _isPlayer = gameObject.CompareTag("Player");
@@ -21,11 +21,12 @@ public class Health : MonoBehaviour
         _stats.Health -= value;
 
         MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);
+        Destroy(Instantiate(_stats.HitParticle, transform.position, Quaternion.identity), 5f);
 
         GetComponent<Animator>().SetTrigger("hit");
 
         if (_isPlayer)
-            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth(_stats.Health);
+            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
         if (_stats.Health <= 0) 
             Die();
     }
@@ -34,7 +35,7 @@ public class Health : MonoBehaviour
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
         MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(false, value.ToString(), transform.position);
         if (_isPlayer)
-            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth(_stats.Health);
+            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
     }
     public void Die() {
         if (transform.CompareTag("Player"))
@@ -42,7 +43,12 @@ public class Health : MonoBehaviour
         //GetComponent<Animator>().SetTrigger("die");
         Animator corpse = Instantiate(_stats.Corpse, transform.position, Quaternion.identity).GetComponent<Animator>();
         corpse.SetTrigger("die");
-
+        GameObject obj = _stats.EXPOrb;
+        if (obj != null) { 
+            var drop = Random.Range(0, 100) <= 50;
+            if (drop)
+                Instantiate(obj, transform.position, Quaternion.identity);
+        }
         Destroy(corpse.gameObject, 5f);
         GetComponent<NP_MainController>().Die();
     }

@@ -13,6 +13,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Obstacle
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Enemy-Fly
   - Obstacle
   - EnemyProjectile
-  - 
+  - Collectable
   - 
   - 
   - 

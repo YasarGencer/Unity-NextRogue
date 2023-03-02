@@ -10,7 +10,7 @@ public class Damager : MonoBehaviour
         if (collision.gameObject.CompareTag(this.gameObject.tag))
             return;
         if (collision.gameObject.GetComponent<Health>() as Health != null)
-            collision.gameObject.GetComponent<Health>().GetDamage(_value, transform);
+            collision.gameObject.GetComponent<Health>().GetDamage(_value, transform); 
     }
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.CompareTag(this.gameObject.tag))

@@ -39,7 +39,7 @@ public abstract class ANP_Movement : MonoBehaviour
         _updateRX?.Dispose();
     }
     protected virtual void UnFreeze() {
-        if (_gamePaused)
+        if (MainManager.Instance.GameManager.GamePaused)
             return;
         _updateRX?.Dispose();
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
@@ -59,18 +59,15 @@ public abstract class ANP_Movement : MonoBehaviour
     public virtual void Die() {
         _updateRX?.Dispose();
     }
-    // EVENTS
-    bool _gamePaused = false;
+    // EVENTS 
     void RegisterEvents() { 
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
     }
     void OnGamePause() {
-        Freeze();
-        _gamePaused = true;
+        Freeze(); 
     }
-    void OnGameUnPause() {
-        _gamePaused = false;
+    void OnGameUnPause() { 
         UnFreeze();
     }
 }

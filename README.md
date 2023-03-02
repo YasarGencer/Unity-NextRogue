@@ -7,8 +7,10 @@
     - [Gameplay Elements](#gameplayElements)
       - [Player Mechanics](#playermechanics)
         - [Spells](#playerSpells)
-        - [Consumables](#playerConsumables)
       - [Playable Characters](#playableCharacters)
+        - [Necromancer](#necromancer) 
+        - [Hemomancer](#hemomancer) 
+        - [Rogue](#rogue) 
       - [Non Players](#enemies)
      - [Visuals](#visuals)
        - [User Interface](#UI)
@@ -18,15 +20,15 @@
 <h1 align = "center" id = "gamedesignDoc"> GAME DESIGN DOCUMENT </h1>
 
 
-<h2 align = "center" id = "gameDetails"> GAME DETAILS </h2>
+<h1 align = "center" id = "gameDetails"> GAME DETAILS </h1>
 
 - <p> Name :        Project - NextRogue</p>
 - <p> Genre :       Action - RogueLike/Lite</p>
 - <p> Art Style :   2D - TopDown</p>
   
-<h2 align = "center" id = "gameplayElements"> GAMEPLAY ELEMENTS </h2>
+<h1 align = "center" id = "gameplayElements"> GAMEPLAY ELEMENTS </h1>
 
-<h3 align = "center" id = "playermechanics" >PLAYER MECHANICS</h3>
+<h2 align = "center" id = "playermechanics" >PLAYER MECHANICS</h2>
 
 I want a fast gameplay so fluid character controller is mandatory. 
 
@@ -43,7 +45,7 @@ Actives :
 There are no strict restrictions on passives so they will have different and quite unique passives. 
 
 
-<h4 align = "center" id = "playerSpells">SPELLS</h4>
+<h3 align = "center" id = "playerSpells">SPELLS</h3>
 
 And there is spells. Any character has 5 skill slots which player can attach different spells on each run. Player will find new spells while on chests or they will be given on after boss fights.
 
@@ -65,21 +67,18 @@ Spell List :
     - 
             Cooldown : 15
             Heal Per Hit : 2
-  
-<h4 align = "center" id = "playerConsumables" >PLAYER CONSUMABLES</h4>
 
-  - Souls 
-    - Used On Spell Casting
-    - Gained By Killing Humans
+<h2 align = "center" id = "playableCharacters"> PLAYABLE CHARACTERS</h2>
 
-<h3 align = "center" id = "playableCharacters"> PLAYABLE CHARACTERS</h3>
 
-There will be different and unique wizards to play as i said before. So there is a list of them
+<h3 align = "center" id = "necromancer"> NECROMANCER</h3> 
 
-- NECROMANCER:
-  
-      Health : 50
-      Movement Speed : 2.5
+  <p align = "center">
+  <img src="" width="500" alt="imagepending">
+  <p>
+
+    Health : 75
+    Movement Speed : 3
 
   - PS: Necrotic Dash
     - It dashes more if there are dead bodies around
@@ -88,20 +87,25 @@ There will be different and unique wizards to play as i said before. So there is
             Dash Force : 10
             Corpse Range : 5
             Corpse Multiplier : 1.2
+
   - SS: Consume
-    - Consumes alive enemies or summons to gain health
+    - Consumes corpses to heal
     - 
             Cooldown : 15
             Default Heal : 0
             Corpse Range : 5
             Heal Per Corpse : 3
+
   - PA: Reaper
     - Summons a reaper that seings itself and damages the enemies on the way
     -  
             Cooldown : 2
             Damage : 10
+
   - SA: Summon Aid
     - Summon 4 Axe Skeleton to help the player
+    - 
+            Cooldown : 10
     - Axe Skeleton:
       - Melee
       - Follow
@@ -112,22 +116,97 @@ There will be different and unique wizards to play as i said before. So there is
             Attack Range : .5
             Attack Speed : .75
             Life Span : 5
-  
-- LIGHTNING:
-  - PS: Bolt Dash
-    - If player dashes to an enemy it will zap around other enemies
-    - Damages and shocks on contact
-  - SS: Elecrticity Aura
-    - Creates a aura that will dissapear on time.
-    - Enemies in the aura will get shocked
-  - PA: Lightning Streak
-    - Shoots lightning from players hand
-    - Attack will zap around other enemies on contact
-  - SA: Summon Thunderbolt
-    - Summons a thunderbolt that will do AOE to nearby enemies 
+
+<h3 align = "center" id = "hemomancer"> HEMOMANCER</h3>  
+
+  <p align = "center">
+  <img src="" width="500" alt="imagepending">
+  <p>
+
+    Health : 100
+    Movement Speed : 2.5
+
+  - PS: Hemomorphosis
+    - Gets in to a blood lake and becomes invincable while gaining speed for a short amount of time
+    - Speed and Time increases with the Cell Vial stacks
+    - 
+            Cooldown : 3
+            Speed Multiplier : 2
+            Invincible Time : 3 
+            - Blood Vial Speed Increase : +.2
+            - Blood Vial Invincible Time Increase : +.1
+            - Max Speed : 3
+            - Max Invincible Time : 3.5
+
+  - SS: Cell Vial
+    - Consumes nearby blood drops as cell stacks
+    - 
+            Cooldown : 2 
+            Blood Range : 5 
+            Max Stacks : 5
+
+  - PA: Blood Bolt
+    - Shoots a projectile to cursor position
+    -  
+            Cooldown : .5
+            Damage : 5
+
+  - SA: Blood Bolt
+    - Shoots a projectile that uses Cell Vial stacks as damage
+    -  
+            Cooldown : 7
+            Damage : 0
+              - Blood Vial Damage Increase : +15
+              - Max Damage : 75
+
+
+<h3 align = "center" id = "rogue"> ROGUE</h3>  
+
+  <p align = "center">
+  <img src="" width="500" alt="imagepending">
+  <p>
+
+      Health : 50
+      Movement Speed : 3.5
+
+  - PS: Shadow Step
+    - Teleport to the closest enemy to the cursor 
+    - Starts a timer to crit
+    - 
+            Cooldown : 3
+            Crit Timer : .75
+            Crit Multiplier : 4
+
+  - SS: Mirror Illusionary 
+    - Creates a clone of itself to distract enemies
+    - 
+            Cooldown : 15
+    - Clone:
+      - Melee
+      - Stay
+      - 
+            Health : 100
+            Movement Speed : 0
+            Attack Damage : 0
+            Attack Range : 0
+            Attack Speed : 0
+            Life Span : 10
+
+  - PA: Night Strike
+    - Melee attack that doesn't hit area
+    - Can be multiplied by crit
+    -  
+            Cooldown : .75
+            Damage : 15
+            Crit Damage : 60
+
+  - SA: Death's Knife
+    - Throws a knife
+    -  
+            Cooldown : 1
+            Damage : 5
 
 <h3 align = "center" id = "enemies"> ENEMIES</h3>
-
 - Hunter:
     - Melee
     - Follow
@@ -157,28 +236,24 @@ There will be different and unique wizards to play as i said before. So there is
           Attack Speed : 2
   
 <h1 align = "center" id = "visuals"> VISUALS </h1>
-<h2 align = "center" id = "UI"> GAME </h2>
-<p align = "center">
-<img src="img/start%20area.jpg" width="500" alt="PlayerMechanics">
-<p>
-<h2 align = "center" id = "UI"> USER INTERFACE </h2>
-
-<h3 align = "center"> GUI </h3>
-<p align = "center">
-<img src="img/GUI&HUD.png" width="500" alt="PlayerMechanics">
-<p>
-<p align = "center">
-<img src="img/GUI&HUD2.png" width="500" alt="PlayerMechanics">
-<p>
+  <h2 align = "center" id = "UI"> GAME </h2>
+  <p align = "center">
+  <img src="img/start%20area.jpg" width="500" alt="PlayerMechanics">
+  <p>
+  <h2 align = "center" id = "UI"> USER INTERFACE </h2>
+  <p align = "center">
+  <img src="img/GUI&HUD.png" width="500" alt="PlayerMechanics">
+  <p>
+  <p align = "center">
+  <img src="img/GUI&HUD2.png" width="500" alt="PlayerMechanics">
+  <p>
 
 <h1 align = "center" id = "developmentFlow"> DEVELOPMENT FLOW </h1>
-
-
-<h2 align = "center"> PLAYER CONTROLLER </h2>
-<p align = "center">
-<img src="img/PlayerController.png" width="500" alt="PlayerMechanics">
-<p>
-<h2 align = "center"> ENEMY CONTROLLER </h2>
-<p align = "center">
-<img src="img/EnemyController.png" width="500" alt="PlayerMechanics">
-<p>
+  <h2 align = "center"> PLAYER CONTROLLER </h2>
+  <p align = "center">
+  <img src="img/PlayerController.png" width="500" alt="PlayerMechanics">
+  <p>
+  <h2 align = "center"> ENEMY CONTROLLER </h2>
+  <p align = "center">
+  <img src="img/EnemyController.png" width="500" alt="PlayerMechanics">
+  <p>
