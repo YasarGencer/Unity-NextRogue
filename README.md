@@ -207,6 +207,7 @@ Spell List :
             Damage : 5
 
 <h3 align = "center" id = "enemies"> ENEMIES</h3>
+
 - Hunter:
     - Melee
     - Follow
