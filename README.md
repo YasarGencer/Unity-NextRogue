@@ -52,6 +52,7 @@ And there is spells. Any character has 5 skill slots which player can attach dif
 Oher characters attacks might be used as spells in game.
 
 Spell List :
+
   - Dual Shot
     - Shoots a dual projectile that explodes and give AoE on contact eachother
     - 
@@ -66,7 +67,56 @@ Spell List :
     - Deflects all projectiles for 1 second and heals player
     - 
             Cooldown : 15
-            Heal Per Hit : 2
+            Heal Per Hit : 2 
+  - Berserker Throw
+    - Throws an axe
+    - Can pick it up to reset cooldown
+    -  
+            Cooldown : 10
+            Damage : 10
+  - Overclock
+    - Reesets all cooldowns
+    -  
+            Cooldown : 30 
+  - Stitched Fortress
+    - Creates a wall
+    -  
+            Cooldown : 15
+            LifeSpan : 5
+  - Subjugate Will
+    - Enchant targets will to get it to your side
+    -  
+            Cooldown : 20  
+
+  - Arcane Infusion
+    - Reduce cooldown and increase power of character skills
+    -  
+            Cooldown : 15
+            Cooldown Reduce : %25
+            Power Increase : %15
+            Time : 5
+
+  - Shrapnel Strike
+    - Shoot a projectile that turns into little ones on impact
+    -  
+            Cooldown : 15
+            Damage : 10
+            Shard Damage : 2
+
+  - Celestial Blast 
+    - Create a shield if it does not break on time it explodes
+    -  
+            Cooldown : 20
+            Shield Health : 25
+            Damage : 5
+            Lifespan : 5 
+
+  - Impailing Shot
+    - Shoot a piercing projetile
+    -  
+            Cooldown : 15
+            Damage : 25
+
 
 <h2 align = "center" id = "playableCharacters"> PLAYABLE CHARACTERS</h2>
 
@@ -118,7 +168,6 @@ Spell List :
             Life Span : 5
 
 <h3 align = "center" id = "hemomancer"> HEMOMANCER</h3>  
-
   <p align = "center">
   <img src="" width="500" alt="imagepending">
   <p>
@@ -130,7 +179,7 @@ Spell List :
     - Gets in to a blood lake and becomes invincable while gaining speed for a short amount of time
     - Speed and Time increases with the Cell Vial stacks
     - 
-            Cooldown : 3
+            Cooldown : 10
             Speed Multiplier : 2
             Invincible Time : 3 
             - Blood Vial Speed Increase : +.2
@@ -205,7 +254,6 @@ Spell List :
     -  
             Cooldown : 1
             Damage : 5
-
 <h3 align = "center" id = "enemies"> ENEMIES</h3>
 
 - Hunter:
@@ -244,10 +292,7 @@ Spell List :
   <h2 align = "center" id = "UI"> USER INTERFACE </h2>
   <p align = "center">
   <img src="img/GUI&HUD.png" width="500" alt="PlayerMechanics">
-  <p>
-  <p align = "center">
-  <img src="img/GUI&HUD2.png" width="500" alt="PlayerMechanics">
-  <p>
+  <p> 
 
 <h1 align = "center" id = "developmentFlow"> DEVELOPMENT FLOW </h1>
   <h2 align = "center"> PLAYER CONTROLLER </h2>
