@@ -42,9 +42,9 @@ public class MainManager : MonoBehaviour
     public void Initialize() {
         _instance = this;
 
+        _gameManager.Initialize();
         _eventManager.Initialize();
         _PDGManager.Initialize();
         _canvasManager.Initialize();
-        _gameManager.Initialize();
     }
 }

@@ -18,9 +18,11 @@ public class Canvas_Player_GUI_HUD : AUI
         _mainController = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
         
         Description.Hide();
-        Invoke("SetKeys", .5f);
-        _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth,0);
-        _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
+        if (_mainController) {
+            _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth, 0);
+            _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
+            Invoke("SetKeys", .5f);
+        }
         Close();
     }
     public override void Open() {

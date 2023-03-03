@@ -5,22 +5,14 @@ public class P_SpellHandler : MonoBehaviour
 {
     P_MainController _mainController;
     ASpell[] _spellList;
-    public AllSpells AllSpellList;
     public void Initialize(P_MainController mainController) {
         _mainController= mainController;
         _spellList = new ASpell[9];
 
-        AllSpellList.Initialize();
 
         //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
         for (int i = 0; i < _mainController.Stats.Spells.Count(); i++)
             SetSpell(i, _mainController.Stats.Spells[i]);
-
-        // 4,5,6,7,8 ARE IN GAME SPELLS
-        SetSpell(4, AllSpellList.GetSpell(0));
-        SetSpell(5, AllSpellList.GetSpell(1));
-        SetSpell(6, AllSpellList.GetSpell(2));
-        //SetSpell(7, AllSpellList.GetSpell(3));
     }
     public void Spell(int value) {
         _spellList[value].Initialize(_mainController, value); 

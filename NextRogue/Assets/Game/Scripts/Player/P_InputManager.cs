@@ -10,7 +10,7 @@ public class P_InputManager : MonoBehaviour {
         _inputOnMove = playerInput.OnMove;
     }
     public void Initialize(P_MainController mainController) {
-        _mainController = mainController;  
+        _mainController = mainController;
         SetEvents();
     }
     void SetEvents() {

@@ -240,17 +240,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0ac1d4eb-50fc-4cee-9ab2-bddf7e2505ca"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BASIC1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""437912ce-095b-4940-bfb3-1427441f4998"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
@@ -290,6 +279,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PAUSE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fedc5ea8-22c3-4b2f-a133-8150b770bfff"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BASIC1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
