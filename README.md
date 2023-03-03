@@ -68,7 +68,7 @@ Spell List :
     - 
             Cooldown : 15
             Heal Per Hit : 2 
-  - Berserker Throw
+  - Berserk Throw
     - Throws an axe
     - Can pick it up to reset cooldown
     -  

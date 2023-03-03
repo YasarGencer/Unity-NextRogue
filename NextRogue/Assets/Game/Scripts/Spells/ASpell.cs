@@ -34,7 +34,7 @@ public abstract class ASpell : ScriptableObject
     IDisposable _castRX;
 
     public float CooldownTime;
-    float _currentTimeCooldown;
+    protected float _currentTimeCooldown;
     IDisposable _cooldownRX;
 
 
@@ -101,6 +101,9 @@ public abstract class ASpell : ScriptableObject
         return projectile;
     }
 
+    public void RetrieveCooldown() {
+        _currentTimeCooldown = .1f;
+    }
 
     //EVENTS
     void RegisterEvents() { 

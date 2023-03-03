@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8016411417066722987}
   - component: {fileID: 8016411417066722988}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8016411418176918825}
   - component: {fileID: 8016411418176918826}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 8016411418404678452}
   - component: {fileID: 8016411418404678451}
   - component: {fileID: 8016411418404678450}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Flag-2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

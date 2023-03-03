@@ -5,6 +5,7 @@ public class P_SpellHandler : MonoBehaviour
 {
     P_MainController _mainController;
     ASpell[] _spellList;
+    public ASpell[] SpellList { get { return _spellList; } }
     public void Initialize(P_MainController mainController) {
         _mainController= mainController;
         _spellList = new ASpell[9];
@@ -24,7 +25,7 @@ public class P_SpellHandler : MonoBehaviour
     }
     public bool CheckSpellKeyIndex(int keyIndex) {
         return _spellList[keyIndex] == null;
-    }
+    } 
     /*
     public void SetSpell(int keyIndex, int spellIndex) {
         if (!CheckSpellKeyIndex(keyIndex)) {

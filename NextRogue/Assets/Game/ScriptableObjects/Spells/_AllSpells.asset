@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: _AllSpells
   m_EditorClassIdentifier: 
   SpellList:
+  - {fileID: 11400000, guid: 716a5e747e7883e4eb1262009fff95ec, type: 2}
   - {fileID: 11400000, guid: 0a8d89b82f2e2ac4ca17eb1f72af12f0, type: 2}
-  - {fileID: 11400000, guid: 3aaada23fb2520747a3258313c0d337b, type: 2}
   - {fileID: 11400000, guid: afd3d228ee924fa44a90e8d4a17adca3, type: 2}
+  - {fileID: 11400000, guid: 3aaada23fb2520747a3258313c0d337b, type: 2}
+  - {fileID: 11400000, guid: 6ef58b0776118d54d809df52171a5fc3, type: 2}
