@@ -13,12 +13,10 @@ public class _BerserkerThrowProjectile : AP_Projectile {
     public _BerserkerThrow BerserkThrow;
     [SerializeField]
     GameObject _particle;
-    public override void Initialize(Vector3 mousePos, float damage, float time) {
-        base.Initialize(mousePos, damage, time);
-        _speed = 350;
+    public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
+        base.Initialize(mousePos, damage, time, speed);
         _timer = 0;
         _isStop = false;
-        Move(_speed);
         _stopRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(StopRX);
         transform.GetChild(0).GetComponent<Rigidbody2D>().AddTorque(-700f);
     }
@@ -46,9 +44,7 @@ public class _BerserkerThrowProjectile : AP_Projectile {
             BerserkThrow.RetrieveCooldown();
             Destroy(gameObject);
         }
-    }
-     
-
+    } 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == 15)
             Stop();

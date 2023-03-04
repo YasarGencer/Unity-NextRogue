@@ -15,7 +15,8 @@ public class P_MainController : MonoBehaviour {
     public P_InputManager Input { get; private set; }
     [SerializeField]
     P_Stats _stats;
-    [HideInInspector] public P_Stats Stats;
+    [HideInInspector] 
+    public P_Stats Stats;
     public Health Health { get; private set; } 
     public P_Movement Movement { get; private set; } 
     public P_SpellHandler Spells { get; private set; } 
@@ -49,6 +50,8 @@ public class P_MainController : MonoBehaviour {
             Spells = GetComponent<P_SpellHandler>();
         if (this.UI == null)
             UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
+         
+        Stats.Initialize();
 
         yield return new WaitForSeconds(1.5f); 
 
@@ -60,7 +63,6 @@ public class P_MainController : MonoBehaviour {
         canPlay = true;
 
         this.Input.Initialize(this);
-        Stats.Initialize();
         Level.Initialize(this);
         Movement.Initialize(this);
         Spells.Initialize(this);

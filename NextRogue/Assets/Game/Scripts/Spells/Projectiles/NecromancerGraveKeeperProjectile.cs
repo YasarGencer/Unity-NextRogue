@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class NecromancerGraveKeeperProjectile : AP_Projectile {
     [SerializeField] float _range;
-    public override void Initialize(Vector3 mousePos, float damage, float time) {
-        base.Initialize(mousePos, damage, time);
+    public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
+        base.Initialize(mousePos, damage, time, speed);
         transform.localScale = new Vector3(_range, _range, _range);
         Summon();
     }

@@ -26,7 +26,7 @@ public class NP_MainController : MonoBehaviour
     [HideInInspector]
     public ANP_Attack Attack;
 
-    bool isInit = false;
+    bool _isInit = false;
     private void Start() {
         Initialize(2f);
     }
@@ -38,8 +38,8 @@ public class NP_MainController : MonoBehaviour
     } 
     IEnumerator Init(float time) {
         yield return new WaitForSeconds(time);
-        if (!isInit && !MainManager.Instance.GameManager.GamePaused) {
-            isInit = true;
+        if (!_isInit && !MainManager.Instance.GameManager.GamePaused) {
+            _isInit = true;
 
             Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
 
@@ -62,7 +62,7 @@ public class NP_MainController : MonoBehaviour
                 Invoke("EndSummonLife", Stats.LifeSpan);
         }
         yield return new WaitForEndOfFrame();
-        if(!isInit)
+        if(!_isInit)
             StartCoroutine(Init(0)); 
     }
     //COMMON FUNCTIONS

@@ -16,8 +16,8 @@ MonoBehaviour:
   ShortDescription: x
   Description: x
   Corpse: {fileID: 6753497417659572115, guid: cc28131093dd7d44eb3823846ffd0722, type: 3}
-  MaxHealth: 50
-  Health: 25
+  MaxHealth: 75
+  Health: 50
   HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
   EXPOrb: {fileID: 0}
   Speed: 3

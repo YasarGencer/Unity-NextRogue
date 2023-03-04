@@ -26,4 +26,5 @@ MonoBehaviour:
   AttackDamage: 5
   AttackRange: 4
   AttackSpeed: 2
-  LifeSpan: 0
+  ProjectileSpeed: 250
+  LifeSpan: 5

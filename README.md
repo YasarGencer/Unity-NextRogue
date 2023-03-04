@@ -91,10 +91,10 @@ Spell List :
   - Arcane Infusion
     - Reduce cooldown and increase power of character skills
     -  
-            Cooldown : 15
+            Cooldown : 20
             Cooldown Reduce : %25
             Power Increase : %15
-            Time : 5
+            Time : 10
 
   - Shrapnel Strike
     - Shoot a projectile that turns into little ones on impact
@@ -176,31 +176,33 @@ Spell List :
     Movement Speed : 2.5
 
   - PS: Hemomorphosis
-    - Gets in to a blood lake and becomes invincable while gaining speed for a short amount of time
+    - Gets in to a blood lake and becomes invincable while gaining speed for a short amount of time and heal
     - Speed and Time increases with the Cell Vial stacks
     - 
             Cooldown : 10
             Speed Multiplier : 2
-            Invincible Time : 3 
+            Invincible Time : 1 
             - Blood Vial Speed Increase : +.2
-            - Blood Vial Invincible Time Increase : +.1
+            - Blood Vial Invincible Time Increase : +.2
             - Max Speed : 3
-            - Max Invincible Time : 3.5
+            - Max Invincible Time : 3
+            - Heal Increase : 1
+            - Max Heal : 5
 
   - SS: Cell Vial
     - Consumes nearby blood drops as cell stacks
     - 
             Cooldown : 2 
-            Blood Range : 5 
+            Blood Range : 10 
             Max Stacks : 5
 
-  - PA: Blood Bolt
+  - PA: Blood Shot
     - Shoots a projectile to cursor position
     -  
             Cooldown : .5
             Damage : 5
 
-  - SA: Blood Bolt
+  - SA: Drain Bolt
     - Shoots a projectile that uses Cell Vial stacks as damage
     -  
             Cooldown : 7
@@ -287,19 +289,25 @@ Spell List :
 <h1 align = "center" id = "visuals"> VISUALS </h1>
   <h2 align = "center" id = "UI"> GAME </h2>
   <p align = "center">
-  <img src="img/start%20area.jpg" width="500" alt="PlayerMechanics">
+  <img src="img/start%20area.jpg" width="500">
   <p>
   <h2 align = "center" id = "UI"> USER INTERFACE </h2>
   <p align = "center">
-  <img src="img/GUI&HUD.png" width="500" alt="PlayerMechanics">
+  <img src="img/GUI&HUD.png" width="500">
+  <p>  
+  <p align = "center">
+  <img src="img/SkillSelection.png" width="500">
+  <p>   
+  <p align = "center">
+  <img src="img/SlotSelection.png" width="500"> 
   <p> 
 
 <h1 align = "center" id = "developmentFlow"> DEVELOPMENT FLOW </h1>
   <h2 align = "center"> PLAYER CONTROLLER </h2>
   <p align = "center">
-  <img src="img/PlayerController.png" width="500" alt="PlayerMechanics">
+  <img src="img/PlayerController.png" width="500">
   <p>
   <h2 align = "center"> ENEMY CONTROLLER </h2>
   <p align = "center">
-  <img src="img/EnemyController.png" width="500" alt="PlayerMechanics">
+  <img src="img/EnemyController.png" width="500">
   <p>

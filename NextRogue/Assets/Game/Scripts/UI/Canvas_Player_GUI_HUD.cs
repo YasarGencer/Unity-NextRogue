@@ -5,7 +5,7 @@ public class Canvas_Player_GUI_HUD : AUI
     P_MainController _mainController;
 
     [SerializeField]
-    HUDSlider _health, _level;
+    HUDSlider _health, _level, _secondary;
     [SerializeField]
     GameObject _damagetext;
 
@@ -26,6 +26,8 @@ public class Canvas_Player_GUI_HUD : AUI
             _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth, 0);
             _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
             Invoke("SetKeys", .5f);
+            if (_mainController.Stats.SecondaryBar)
+                InitializeSecondary(0, 1, 0);
         }
     }
     public override void Open() {
@@ -46,6 +48,16 @@ public class Canvas_Player_GUI_HUD : AUI
     }
     public void SetLevel() {
         _level.SetValue(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
+    }
+    public void InitializeSecondary(float value, float maxValue,float constant) {
+        _secondary.gameObject.SetActive(true);
+        _secondary.Initialize(value, maxValue, constant);
+    }
+    public void SetSecondary(float value, float maxValue) {
+        _secondary.SetValue(value, maxValue);
+    }
+    public void SetSecondary(float value) {
+        _secondary.SetValue(value);
     }
     public void SetSkillIcon(HUDSkillIcon[] list,int keyIndex, ASpell spell) {
         list[keyIndex].Initialize(spell, _mainController);

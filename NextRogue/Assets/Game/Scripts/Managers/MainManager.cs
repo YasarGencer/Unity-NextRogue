@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -39,6 +40,7 @@ public class MainManager : MonoBehaviour
     public Transform Enemies { get { return _enemies; } }
     private void Awake() {
         Initialize();
+        Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = Player.GetChild(0);
     }
     public void Initialize() {
         _instance = this;

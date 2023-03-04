@@ -390,8 +390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6e161005dc02840b0334236cac5cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlay: 0
   _stats: {fileID: 11400000, guid: 38844ca09589ad546a6b7ec27e6504d6, type: 2}
-  Stats: {fileID: 11400000, guid: 38844ca09589ad546a6b7ec27e6504d6, type: 2}
+  Stats: {fileID: 0}
 --- !u!114 &6753497417659572125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50e105f2bd7e854cbd7e599180ef7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllSpellList: {fileID: 11400000, guid: d24fdf3907467e64babc3dc1db8c1819, type: 2}
 --- !u!114 &331086094214727345
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UniRx;
 using System;
+using System.Runtime.CompilerServices;
 
 public abstract class ASpell : ScriptableObject
 {
@@ -28,6 +29,7 @@ public abstract class ASpell : ScriptableObject
     protected GameObject Instantiated;
 
     public float Damage;
+    public float Speed;
 
     public float CastingTime;
     float _currentTimeCast;
@@ -95,14 +97,20 @@ public abstract class ASpell : ScriptableObject
             pos,
             Quaternion.identity
             );
-        projectile.GetComponent<AP_Projectile>()
+        projectile.GetComponent<AProjectile>()
             .Initialize(_mainController.Input.GetMouseWolrdPos(),
-            Damage, CooldownTime);
+            Damage, CooldownTime, Speed);
         return projectile;
     }
 
     public void RetrieveCooldown() {
-        _currentTimeCooldown = 0;
+        _currentTimeCooldown = CooldownTime;
+        StopCooldown();
+        if (_mainController.UI)
+            _mainController.UI.SetSlider(
+                _mainController.UI.spellIconList[_keyIndex].Slider,
+                CooldownTime,
+                CooldownTime);
     }
 
     //EVENTS

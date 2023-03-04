@@ -17,5 +17,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 0c8d6f28798756a4988d40c9f8d51428, type: 3}
   Spell: {fileID: 8797521380335533868, guid: 60f8763b2359f0544b9543544fbb45fe, type: 3}
   Damage: 50
+  Speed: 350
   CastingTime: 0
   CooldownTime: 15

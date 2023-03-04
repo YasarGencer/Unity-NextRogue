@@ -18,10 +18,13 @@ public abstract class AStats : ScriptableObject
     public float Speed;
     [HideInInspector]
     public float SpeelHolder;
+    [HideInInspector]
+    public bool IsInvincable = false;
 
     public virtual void Initialize() { 
         Health = MaxHealth;
         SpeelHolder = Speed;
+        IsInvincable = false;
     }
 
     public virtual void ResetStats() {

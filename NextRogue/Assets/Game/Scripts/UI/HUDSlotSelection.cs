@@ -21,7 +21,7 @@ public class HUDSlotSelection : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
     void Init(bool value) {
-        GetComponent<Button>().interactable = !value;
+        //GetComponent<Button>().interactable = !value;
         _text.gameObject.SetActive(!value);
         _icon.gameObject.SetActive(value);
     }

@@ -33,11 +33,14 @@ public class HUDSlider : MonoBehaviour {
         else
             _showText.SetText(value.ToString());
     }
-    public void SetConstant(float value) {
-        if(_constantText)
-            _constantText.SetText(value.ToString());
+    public void SetValue(float value, float maxValue) {
+        _slider.value = value;
+        _slider.maxValue = maxValue;
+        if (_showWithMax)
+            _showText.SetText(value + " / " + _slider.maxValue);
+        else
+            _showText.SetText(value.ToString());
     }
-
     internal void SetValue(float value, float maxValue, int constant) {
         _slider.maxValue = maxValue;
         _slider.value = value;
@@ -47,4 +50,9 @@ public class HUDSlider : MonoBehaviour {
             _showText.SetText(value.ToString());
         SetConstant(constant);
     }
+    public void SetConstant(float value) {
+        if (_constantText)
+            _constantText.SetText(value.ToString());
+    }
+
 }

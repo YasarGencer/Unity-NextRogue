@@ -21,6 +21,9 @@ public class Health : MonoBehaviour {
         }
         if (!_stats)
             return;
+        if (_stats.IsInvincable)
+            return;
+
         _stats.Health -= value;
 
         MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);

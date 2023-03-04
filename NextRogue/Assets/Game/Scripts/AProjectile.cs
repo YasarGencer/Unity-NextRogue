@@ -1,6 +1,9 @@
-using System; 
+using System;
+using System.Collections;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.UI.CanvasScaler;
 
 public class AProjectile : MonoBehaviour
 {
@@ -8,6 +11,7 @@ public class AProjectile : MonoBehaviour
     protected Vector2 currentVel;
     protected Rigidbody2D _rb;
 
+    protected bool _isInit = false;
     protected float _damage;
     protected float _time;
     protected float _currentTime;
@@ -16,10 +20,17 @@ public class AProjectile : MonoBehaviour
     bool _secondChance = false; 
     private void Awake() {
         RegisterEvents(); 
-        _rb =GetComponent<Rigidbody2D>() as Rigidbody2D;
     }
-    public virtual void Initialize(Vector3 targetPos, float damage, float time) {
-        _time = time;
+    public virtual void Initialize(Vector3 targetPos, float damage, float time, float speed) {
+        StartCoroutine(Init(targetPos, damage, time, speed));
+    }
+    protected IEnumerator Init(Vector3 targetPos, float damage, float time, float speed) {
+        if (!_isInit && !MainManager.Instance.GameManager.GamePaused)
+            _isInit = true;
+
+        _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;
+        _speed = speed;
+        _time = time >= 1 ? time : 1;
         _damage = damage;
         _currentTime = _time;
 
@@ -31,8 +42,14 @@ public class AProjectile : MonoBehaviour
             if (damager)
                 GetComponent<Damager>().Initialize(_damage);
         }
-        if(targetPos != Vector3.zero)
-        SetRotation(targetPos);
+        if (targetPos != Vector3.zero)
+            SetRotation(targetPos);
+        if (_speed >= 0 && _rb != null)
+            Move(_speed);
+
+        yield return new WaitForEndOfFrame();
+        if(!_isInit)
+            StartCoroutine(Init(targetPos, damage, time, speed)); 
     }
     void SetRotation(Vector3 targetPos) {
         targetPos.z = 0f;
@@ -53,7 +70,7 @@ public class AProjectile : MonoBehaviour
     }
     protected virtual void Move(float speed) {
         _rb.AddForce(transform.right * _rb.mass * speed);
-    }
+    }  
     // EVENTS
     void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;

@@ -3,13 +3,8 @@ using UnityEngine;
 public class _DualShotProjectile : AP_Projectile { 
     [SerializeField] GameObject _explosion;
 
-    public override void Initialize(Vector3 mousePos, float damage, float time) {
-        base.Initialize(mousePos, damage, time);
-        _speed = 1000 / 3;
-        Move(_speed);
-    }
-    protected override void Move(float speed) {
-        base.Move(speed);
+    public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
+        base.Initialize(mousePos, damage, time, speed);
     }
     void Explode() {
         Damager damager = Instantiate(_explosion, transform.position, Quaternion.identity).GetComponent<Damager>();

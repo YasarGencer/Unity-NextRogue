@@ -26,4 +26,4 @@ MonoBehaviour:
   AttackDamage: 15
   AttackRange: 5
   AttackSpeed: 3
-  LifeSpan: 0
+  LifeSpan: 5

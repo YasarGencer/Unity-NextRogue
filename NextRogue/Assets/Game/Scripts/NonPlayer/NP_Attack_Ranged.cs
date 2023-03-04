@@ -16,7 +16,7 @@ public class NP_Attack_Ranged : ANP_Attack {
         Spawn();
     }
     void Spawn() {
-        Instantiate(_projectile, transform.position, Quaternion.identity).GetComponent<ANP_Projectile>()
-            .Initialize(_mainController.Target.Target.transform.position, _mainController.Stats.AttackDamage, _mainController.Stats.AttackSpeed * 0.75f);
+        Instantiate(_projectile, transform.position, Quaternion.identity).GetComponent<AProjectile>()
+            .Initialize(_mainController.Target.Target.transform.position, _mainController.Stats.AttackDamage, _mainController.Stats.AttackSpeed * 0.75f, _mainController.Stats.ProjectileSpeed);
     }
 }
