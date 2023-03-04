@@ -5,29 +5,18 @@ using UnityEngine;
 
 public class PDG_Rooms : MonoBehaviour
 {
-    private List<HashSet<Vector2Int>> _floorPoses = new();
-    private List<IEnumerable<Vector2Int>> _corridorPoses = new();
-    private HashSet<Vector2Int> _allCorridors = new ();
-    private HashSet<Vector2Int> _allWalls = new();
+    private List<HashSet<Vector2Int>> _floorPoses;
+    private List<IEnumerable<Vector2Int>> _corridorPoses;
+    private HashSet<Vector2Int> _allCorridors;
+    private HashSet<Vector2Int> _allWalls;
     [SerializeField]
-    private List<Room> _rooms = new();
+    private List<Room> _rooms;
 
-    [Space(15f)]
-    [Header("Room Props")]
     [SerializeField]
-    private List<GameObject> _startRoom;
-    [SerializeField]
-    private List<GameObject> _enemyRoom;
-    [SerializeField]
-    private List<GameObject> _exitRoom;
-    [Space(15f)]
-    [Header("Obstacles")]
-    [SerializeField]
-    private List<GameObject> _centerProps;
-    [SerializeField]
-    private List<GameObject> _wallProps;
+    private PDG_RoomProps _roomProps;
 
     public void Initialize() {
+        MainManager.Instance.PDGManager.TilemapVisualizer.SetTVData(_roomProps.Data); 
         CreateRooms();
         SortRooms();
         RoomTypes();
@@ -35,6 +24,13 @@ public class PDG_Rooms : MonoBehaviour
     }
     public void SaveRoom(HashSet<Vector2Int> item) { _floorPoses.Add(item); }
     public void SaveCorridor(IEnumerable<Vector2Int> item) { _corridorPoses.Add(item); }
+    public void ResetValues() {    
+        _floorPoses = new();
+        _corridorPoses = new();
+        _allCorridors = new();
+        _allWalls = new();
+        _rooms = new();
+    }
     public void CreateRooms() {
         HashSet<Vector2Int> allTiles = new HashSet<Vector2Int>();
 
@@ -65,19 +61,21 @@ public class PDG_Rooms : MonoBehaviour
         foreach (var item in _rooms) {
             switch (item.RoomType) {
                 case RoomType.Start:
-                    item.DecorateWalls(_wallProps, _allWalls);
+                    item.DecorateWalls(_roomProps.WallProps, _allWalls);
                     break;
                 case RoomType.Enemy:
-                    item.DecorateCenter(_centerProps, _allWalls);
-                    item.DecorateWalls(_wallProps, _allWalls);
-                    item.DecorateEnemyRoom(_enemyRoom);
+                    item.DecorateCenter(_roomProps.CenterProps, _allWalls);
+                    item.DecorateWalls(_roomProps.WallProps, _allWalls);
+                    item.DecorateEnemyRoom(_roomProps.EnemyRoom);
                     break;
                 case RoomType.Treasure:
-                    item.DecorateWalls(_wallProps, _allWalls);
+                    item.DecorateWalls(_roomProps.WallProps, _allWalls);
                     break;
                 case RoomType.Key:
                     break;
                 case RoomType.Exit:
+                    item.DecorateWalls(_roomProps.WallProps, _allWalls);
+                    item.DecorateExitRoom(_roomProps.ExitRoom);
                     break;
                 case RoomType.Boss:
                     break;
@@ -120,6 +118,15 @@ public class Room {
             mainController.transform.position = new Vector3(Center.x, Center.y, 0);
             mainController.Initialize(this);
         }
+    }
+    public void DecorateExitRoom(List<GameObject> props) {
+        foreach (var item in props) {
+            GameObject.Instantiate(
+                props[Random.Range(0, props.Count)],
+                MainManager.Instance.Enviroment
+                ).transform.position = new(Center.x, Center.y, 0);
+        }
+
     }
     public void DecorateCenter(List<GameObject> props, HashSet<Vector2Int> walls) {
         int propCount = Random.Range(3,7);

@@ -10,6 +10,10 @@ public class EventManager : MonoBehaviour
     public event OnGamePuase onGamePause;
     public delegate void OnGameUnPuase();
     public event OnGameUnPuase onGameUnPause;
+    public delegate void OnGameStart();
+    public event OnGameStart onGameStart;
+    public delegate void OnInteract();
+    public event OnInteract onInteract;
 
     public void Initialize() {
     }
@@ -18,5 +22,11 @@ public class EventManager : MonoBehaviour
     }
     public void RunOnGameUnPuase() {
         onGameUnPause();
+    }
+    public void RunOnGameStart() {
+        onGameStart();
+    }
+    public void RunOnInteract() {
+        onInteract();
     }
 }

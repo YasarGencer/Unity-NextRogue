@@ -1,7 +1,9 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System;
 
 public class P_InputManager : MonoBehaviour {
+    bool _isInit;
     P_MainController _mainController;
     PlayerInput.OnMoveActions _inputOnMove;
     bool _isPaused = false;
@@ -10,6 +12,9 @@ public class P_InputManager : MonoBehaviour {
         _inputOnMove = playerInput.OnMove;
     }
     public void Initialize(P_MainController mainController) {
+        if (_isInit)
+            return;
+        _isInit = true;
         _mainController = mainController;
         SetEvents();
     }
@@ -29,21 +34,40 @@ public class P_InputManager : MonoBehaviour {
         _inputOnMove.SPELL5.performed += input => Spell(8);
 
         _inputOnMove.PAUSE.performed += input => RunPause();
+        _inputOnMove.INTERACT.performed += input => RunInteract();
     }
+
+
     public string GetKeyInfo() {
-        var b1 = _inputOnMove.BASIC1.GetBindingDisplayString();
-        var b2 = _inputOnMove.BASIC2.GetBindingDisplayString();
-        var b3 = _inputOnMove.BASIC3.GetBindingDisplayString();
-        var b4 = _inputOnMove.BASIC4.GetBindingDisplayString();
-
-        var c1 = _inputOnMove.SPELL1.GetBindingDisplayString();
-        var c2 = _inputOnMove.SPELL2.GetBindingDisplayString();
-        var c3 = _inputOnMove.SPELL3.GetBindingDisplayString();
-        var c4 = _inputOnMove.SPELL4.GetBindingDisplayString();
-        var c5 = _inputOnMove.SPELL5.GetBindingDisplayString();
-
         var s = "/";
-        return b1 + s + b2 + s + b3 + s + b4 + s + c1 + s + c2 + s + c3 + s + c4 + s + c5;
+        string skillText = "";
+        for (int i = 0; i < 9; i++)
+            skillText += GetSkillKey(i) + s; 
+        return skillText;
+    }
+    public string GetSkillKey(int value) {
+        switch (value) {
+            case 0:
+                return _inputOnMove.BASIC1.GetBindingDisplayString();
+            case 1:
+                return _inputOnMove.BASIC2.GetBindingDisplayString();
+            case 2:
+                return _inputOnMove.BASIC3.GetBindingDisplayString();
+            case 3:
+                return _inputOnMove.BASIC4.GetBindingDisplayString();
+            case 4:
+                return _inputOnMove.SPELL1.GetBindingDisplayString();
+            case 5:
+                return _inputOnMove.SPELL2.GetBindingDisplayString();
+            case 6:
+                return _inputOnMove.SPELL3.GetBindingDisplayString();
+            case 7:
+                return _inputOnMove.SPELL4.GetBindingDisplayString();
+            case 8:
+                return _inputOnMove.SPELL5.GetBindingDisplayString();
+            default:
+                return null;
+        }
     }
     public Vector3 GetMouseWolrdPos() {
         Vector3 pos = Mouse.current.position.ReadValue();
@@ -62,22 +86,30 @@ public class P_InputManager : MonoBehaviour {
     }
     #endregion
     //EVENTS
-    void Direction(Vector2 direction) {
+    void Direction(Vector2 direction) { 
         if (MainManager.Instance.GameManager.GamePaused)
             return;
-        if (_mainController.Movement)
+        if (_mainController.canPlay)
+            if (_mainController.Movement)
             _mainController.Movement.SetDirection(direction);
     }
-    void Spell(int value) {
+    void Spell(int value) { 
         if (MainManager.Instance.GameManager.GamePaused)
             return;
-        if (_mainController.Spells)
+        if (_mainController.canPlay)
+            if (_mainController.Spells)
             _mainController.Spells.Spell(value);
     }
     void RunPause() {
-        if(MainManager.Instance.GameManager.GamePaused)
-            MainManager.Instance.EventManager.RunOnGameUnPuase();
-        else
-            MainManager.Instance.EventManager.RunOnGamePause();
-    }  
+        if (_mainController.canPlay) {
+            if (MainManager.Instance.GameManager.GamePaused)
+                MainManager.Instance.EventManager.RunOnGameUnPuase();
+            else
+                MainManager.Instance.EventManager.RunOnGamePause();
+        }
+    }
+    private void RunInteract() {
+        MainManager.Instance.EventManager.RunOnInteract();
+    }
+
 }

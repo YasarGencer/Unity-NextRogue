@@ -18,9 +18,8 @@ public class HUDSkillIcon : MonoBehaviour {
         SetIcon();
     }
     public void SetIcon() {
-        foreach (var item in _icon) {
-            item.sprite = _spell.Icon;
-        }
+        foreach (var item in _icon)
+            item.sprite = _spell.Icon; 
         _name.text = _spell.Name;
     }
     public void SetKey(string key) {

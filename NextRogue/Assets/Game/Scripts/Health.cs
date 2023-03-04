@@ -2,11 +2,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
-{
+public class Health : MonoBehaviour {
+    bool _isInit;
     bool _isPlayer;
     AStats _stats; 
     public void Initialize() {
+        if (_isInit)
+            return;
+        _isInit = true;
 
         _isPlayer = gameObject.CompareTag("Player");
         _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats; 
@@ -38,8 +41,11 @@ public class Health : MonoBehaviour
             MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
     }
     public void Die() {
-        if (transform.CompareTag("Player"))
+        if (transform.CompareTag("Player")) {
+            _stats.ResetStats();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            return;
+        }
         //GetComponent<Animator>().SetTrigger("die");
         Animator corpse = Instantiate(_stats.Corpse, transform.position, Quaternion.identity).GetComponent<Animator>();
         corpse.SetTrigger("die");

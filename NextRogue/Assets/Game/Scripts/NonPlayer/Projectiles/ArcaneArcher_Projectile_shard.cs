@@ -5,7 +5,7 @@ public class ArcaneArcher_Projectile_shard : ANP_Projectile
 {
     Damager _damager;
     public override void Initialize(Vector3 targetPos, float damage, float time) {
-        base.Initialize(Vector3.zero, damage, time);
+        base.Initialize(Vector3.zero, damage, 1f);
         _damager = GetComponent<Damager>();
 
         _damager.Initialize(damage);

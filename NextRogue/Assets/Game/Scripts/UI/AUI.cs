@@ -21,9 +21,13 @@ public class AUI : MonoBehaviour
     protected virtual void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+        MainManager.Instance.EventManager.onGameStart += OnGameStart;
     }
     protected virtual void OnGamePause() {
     }
     protected virtual void OnGameUnPause() {
+    }
+    protected virtual void OnGameStart() {
+
     }
 }

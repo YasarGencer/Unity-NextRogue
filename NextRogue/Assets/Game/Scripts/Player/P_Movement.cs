@@ -3,8 +3,8 @@ using UniRx;
 using System;
 using static EventManager;
 
-public class P_Movement : MonoBehaviour
-{
+public class P_Movement : MonoBehaviour {
+    bool _isInit;
     P_MainController _mainController;
     Animator _animator;
 
@@ -14,13 +14,18 @@ public class P_Movement : MonoBehaviour
     public Vector2 Direction { get { return _direction; } }
 
     public void Initialize(P_MainController mainController) {
+        if (_isInit)
+            return;
+        _isInit = true;
+
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
         _mainController = mainController;
         _animator = _mainController.Animator;
     }
-    public void MoveRX(long l) { 
-        transform.Translate(_direction * _mainController.Stats.Speed * Time.deltaTime);
+    public void MoveRX(long l) {
+        if (_mainController.canPlay)
+            transform.Translate(_direction * _mainController.Stats.Speed * Time.deltaTime);
     }
     public void SetDirection(Vector2 direction) {
         _direction = direction;

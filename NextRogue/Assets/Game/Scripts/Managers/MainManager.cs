@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class MainManager : MonoBehaviour
 {
@@ -44,7 +45,22 @@ public class MainManager : MonoBehaviour
 
         _gameManager.Initialize();
         _eventManager.Initialize();
-        _PDGManager.Initialize();
-        _canvasManager.Initialize();
+        
+        StartGame();
     }
+    public void StartGame() {
+        for (int i = 0; i < Enemies.childCount; i++)
+            Destroy(Enemies.GetChild(i).gameObject);
+        for (int i = 0; i < Enviroment.childCount; i++)
+            Destroy(Enviroment.GetChild(i).gameObject);
+
+        _PDGManager.Rooms.ResetValues();
+        _PDGManager.Initialize();
+
+        _canvasManager.Initialize();
+
+        _player.GetComponentInChildren<P_MainController>().Initialize(); 
+
+        _eventManager.RunOnGameStart();
+    } 
 }

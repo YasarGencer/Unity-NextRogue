@@ -23,7 +23,7 @@ TagManager:
   - UI
   - PlayerProjectile
   - PlayerMelee
-  - Enviroment
+  - 
   - Summoned
   - Enemy
   - Enemy-Fly

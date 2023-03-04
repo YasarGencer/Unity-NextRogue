@@ -125,6 +125,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""INTERACT"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e94e061-1bca-4c06-be3e-b1fcc12ead65"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -292,6 +301,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""BASIC1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd88ea29-036b-45bb-9d61-6f232d56bee5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""INTERACT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -311,6 +331,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_OnMove_BASIC3 = m_OnMove.FindAction("BASIC3", throwIfNotFound: true);
         m_OnMove_BASIC4 = m_OnMove.FindAction("BASIC4", throwIfNotFound: true);
         m_OnMove_PAUSE = m_OnMove.FindAction("PAUSE", throwIfNotFound: true);
+        m_OnMove_INTERACT = m_OnMove.FindAction("INTERACT", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -381,6 +402,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnMove_BASIC3;
     private readonly InputAction m_OnMove_BASIC4;
     private readonly InputAction m_OnMove_PAUSE;
+    private readonly InputAction m_OnMove_INTERACT;
     public struct OnMoveActions
     {
         private @PlayerInput m_Wrapper;
@@ -396,6 +418,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @BASIC3 => m_Wrapper.m_OnMove_BASIC3;
         public InputAction @BASIC4 => m_Wrapper.m_OnMove_BASIC4;
         public InputAction @PAUSE => m_Wrapper.m_OnMove_PAUSE;
+        public InputAction @INTERACT => m_Wrapper.m_OnMove_INTERACT;
         public InputActionMap Get() { return m_Wrapper.m_OnMove; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -438,6 +461,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @PAUSE.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnPAUSE;
                 @PAUSE.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnPAUSE;
                 @PAUSE.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnPAUSE;
+                @INTERACT.started -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnINTERACT;
+                @INTERACT.performed -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnINTERACT;
+                @INTERACT.canceled -= m_Wrapper.m_OnMoveActionsCallbackInterface.OnINTERACT;
             }
             m_Wrapper.m_OnMoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -475,6 +501,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @PAUSE.started += instance.OnPAUSE;
                 @PAUSE.performed += instance.OnPAUSE;
                 @PAUSE.canceled += instance.OnPAUSE;
+                @INTERACT.started += instance.OnINTERACT;
+                @INTERACT.performed += instance.OnINTERACT;
+                @INTERACT.canceled += instance.OnINTERACT;
             }
         }
     }
@@ -492,5 +521,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnBASIC3(InputAction.CallbackContext context);
         void OnBASIC4(InputAction.CallbackContext context);
         void OnPAUSE(InputAction.CallbackContext context);
+        void OnINTERACT(InputAction.CallbackContext context);
     }
 }

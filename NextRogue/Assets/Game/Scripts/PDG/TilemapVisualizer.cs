@@ -6,12 +6,13 @@ using UnityEngine.Tilemaps;
 public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap _floorTilemap, _wallTilemap;
-    [SerializeField]
+    private Tilemap _floorTilemap, _wallTilemap; 
     private TilemapVisualizerData _TVData;
     [SerializeField]
     private TileBase _def;
-
+    public void SetTVData(TilemapVisualizerData data) {
+        _TVData = data;
+    }
     public void Initialize() {
         Clear();
     }
@@ -86,5 +87,9 @@ public class TilemapVisualizer : MonoBehaviour
 
         if (tile != null)
             PaintSingleTile(_wallTilemap, tile, pos);
+    }
+
+    internal void SetTVData(object data) {
+        throw new NotImplementedException();
     }
 }

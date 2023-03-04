@@ -15,15 +15,18 @@ public class Canvas_Player_GUI_HUD : AUI
     public HUDSkillDescription Description; 
     public override void Initialize() {
         base.Initialize();
+        Description.Hide();
+        Close();
+    }
+    protected override void OnGameStart() {
+        base.OnGameStart();
         _mainController = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
-        
         Description.Hide();
         if (_mainController) {
             _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth, 0);
             _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
             Invoke("SetKeys", .5f);
         }
-        Close();
     }
     public override void Open() {
         base.Open();
@@ -34,7 +37,7 @@ public class Canvas_Player_GUI_HUD : AUI
     void SetKeys() {
         var text = _mainController.Input.GetKeyInfo();
         var textPart = text.Split("/");
-        for (int i = 0; i < textPart.Length; i++) {
+        for (int i = 0; i < textPart.Length - 1; i++) {
             spellIconList[i].SetKey(textPart[i]);
         }
     }

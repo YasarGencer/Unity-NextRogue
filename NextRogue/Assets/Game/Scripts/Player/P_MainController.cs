@@ -1,8 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using static Cinemachine.DocumentationSortingAttribute;
+using static EventManager;
 
 public class P_MainController : MonoBehaviour {
-    
+    [HideInInspector]
+    public bool canPlay = false;
     [HideInInspector]
     public Animator Animator { get; private set; }
     [HideInInspector]
@@ -19,30 +22,43 @@ public class P_MainController : MonoBehaviour {
     public P_LevelHandler Level { get; private set; } 
     public Canvas_Player_GUI_HUD UI { get; private set; }
 
-    GameObject _child; 
-    public void Start() {
-        if (MainManager.Instance.CanvasManager.Player_GUI_HUD)
-            StartCutscene();
-        else
-            Initialize();
-    }
-    public void Initialize() {
-        InitializeFirstPart();
-        InitializeSecondPart();
-    }
-    public void InitializeFirstPart() {
+    GameObject _child;  
+    public void Initialize() => StartCoroutine(InitializeCoroutine());
+    public IEnumerator InitializeCoroutine() { 
+
+        transform.position = Vector3.zero;
+        _child = transform.GetChild(0).gameObject;
+        _child.SetActive(false);
+
+        canPlay = false;
+
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
+        if(this.Input== null)
         this.Input = gameObject.AddComponent<P_InputManager>();
-        Health = GetComponent<Health>();
-        Level = GetComponent<P_LevelHandler>();
-        Stats = Instantiate(_stats);
-        Movement = GetComponent<P_Movement>();
-        Spells = GetComponent<P_SpellHandler>();
-        UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
-    }
-    public void InitializeSecondPart() {
+        if (this.Health == null)
+            Health = GetComponent<Health>();
+        if (this.Level == null)
+            Level = GetComponent<P_LevelHandler>();
+        if (this.Stats == null)
+            Stats = Instantiate(_stats);
+        if (this.Movement == null)
+            Movement = GetComponent<P_Movement>();
+        if (this.Spells == null)
+            Spells = GetComponent<P_SpellHandler>();
+        if (this.UI == null)
+            UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
+
+        yield return new WaitForSeconds(1.5f); 
+
+        _child.SetActive(true);
+        GetComponent<Animator>().SetTrigger("start");
+
+        yield return new WaitForSeconds(.5f);
+
+        canPlay = true;
+
         this.Input.Initialize(this);
         Stats.Initialize();
         Level.Initialize(this);
@@ -50,15 +66,5 @@ public class P_MainController : MonoBehaviour {
         Spells.Initialize(this);
         Health.Initialize();
     }
-    void StartCutscene() {
-        InitializeFirstPart();
-        _child = transform.GetChild(0).gameObject;
-        _child.SetActive(false);
-        Invoke("StartCutsceneEnd", 1.5f);
-    }
-    void StartCutsceneEnd() {
-        _child.SetActive(true);
-        GetComponent<Animator>().SetTrigger("start");
-        Invoke("InitializeSecondPart", .5f);
-    }
+ 
 }

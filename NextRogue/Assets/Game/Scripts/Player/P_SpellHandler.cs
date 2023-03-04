@@ -1,15 +1,20 @@
+using System;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
-public class P_SpellHandler : MonoBehaviour
-{
+public class P_SpellHandler : MonoBehaviour {
+    bool _isInit;
     P_MainController _mainController;
     ASpell[] _spellList;
     public ASpell[] SpellList { get { return _spellList; } }
     public void Initialize(P_MainController mainController) {
-        _mainController= mainController;
-        _spellList = new ASpell[9];
+        if (_isInit)
+            return;
+        _isInit = true;
 
+        _mainController = mainController;
+        _spellList = new ASpell[9]; 
 
         //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
         for (int i = 0; i < _mainController.Stats.Spells.Count(); i++)
@@ -23,22 +28,28 @@ public class P_SpellHandler : MonoBehaviour
         if(_mainController.UI)
             _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
     }
+    public ASpell GetSpell(int value) {
+        if (CheckSpellKeyIndex(value))
+            return _spellList[value];
+        else
+            return null;
+    }
     public bool CheckSpellKeyIndex(int keyIndex) {
-        return _spellList[keyIndex] == null;
+        return _spellList[keyIndex] != null;
     } 
     /*
-    public void SetSpell(int keyIndex, int spellIndex) {
-        if (!CheckSpellKeyIndex(keyIndex)) {
-            ASpell spell = _spellList[keyIndex];
-            for (int i = 0; i < _spellList.Length - 1; i++)
-                if (CheckSpellKeyIndex(i)) {
-                    _spellList[keyIndex] = null;
-                    _spellList[i] = spell;
-                    break;
-                }
-        }
-        _spellList[keyIndex] = AllSpellList.GetSpell(spellIndex);
-        _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
-    }
-    */
+public void SetSpell(int keyIndex, int spellIndex) {
+   if (!CheckSpellKeyIndex(keyIndex)) {
+       ASpell spell = _spellList[keyIndex];
+       for (int i = 0; i < _spellList.Length - 1; i++)
+           if (CheckSpellKeyIndex(i)) {
+               _spellList[keyIndex] = null;
+               _spellList[i] = spell;
+               break;
+           }
+   }
+   _spellList[keyIndex] = AllSpellList.GetSpell(spellIndex);
+   _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
+}
+*/
 }

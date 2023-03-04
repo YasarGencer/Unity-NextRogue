@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class AStats : ScriptableObject
@@ -18,9 +19,13 @@ public abstract class AStats : ScriptableObject
     [HideInInspector]
     public float SpeelHolder;
 
-    public virtual void Initialize() {
+    public virtual void Initialize() { 
         Health = MaxHealth;
         SpeelHolder = Speed;
     }
-    
+
+    public virtual void ResetStats() {
+        Health = MaxHealth;
+        SpeelHolder = Speed;
+    }
 }

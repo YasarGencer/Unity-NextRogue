@@ -102,7 +102,7 @@ public abstract class ASpell : ScriptableObject
     }
 
     public void RetrieveCooldown() {
-        _currentTimeCooldown = .1f;
+        _currentTimeCooldown = 0;
     }
 
     //EVENTS
