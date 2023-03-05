@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: HemomancerBloodShot
   m_EditorClassIdentifier: 
+  _isInit: 0
   Name: Blood Shot
   Description: 'Shoot a fast projectile '
   Icon: {fileID: 21300000, guid: 4d8ee7f44356657479a3665fc114076a, type: 3}

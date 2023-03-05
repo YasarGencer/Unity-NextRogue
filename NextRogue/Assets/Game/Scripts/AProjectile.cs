@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using UniRx;
-using Unity.VisualScripting;
-using UnityEngine;
-using static UnityEngine.UI.CanvasScaler;
+using UnityEngine; 
 
 public class AProjectile : MonoBehaviour
 {

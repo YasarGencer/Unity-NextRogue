@@ -13,10 +13,13 @@ public abstract class ASpell : ScriptableObject
 
     int _index;
     int _keyIndex;
-    bool _isInit;
+    [SerializeField]
+    bool _isInit = false;
+    bool _isChoosen = false;
     public int Index { get { return _index; } set { _index = value; } }
     public int KeyIndex { get { return _keyIndex; } set { _keyIndex = value; } }
     public bool IsInit { get { return _isInit; } set { _isInit = value; } }
+    public bool IsChoosen { get { return _isChoosen; } set { _isChoosen = value; } }
 
     //public bool IsBasic;
     public string Name;
@@ -40,10 +43,10 @@ public abstract class ASpell : ScriptableObject
     IDisposable _cooldownRX;
 
 
-    public virtual void Initialize(P_MainController mainController, int value) {
+    public virtual void Initialize(P_MainController mainController, int value) { 
         if (_isInit && _currentTimeCooldown < CooldownTime)
             return;
-        
+        Debug.Log(Name);
         RegisterEvents();
 
         _keyIndex = value;

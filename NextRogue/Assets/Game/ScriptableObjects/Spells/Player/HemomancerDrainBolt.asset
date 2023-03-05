@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: HemomancerDrainBolt
   m_EditorClassIdentifier: 
+  _isInit: 0
   Name: Drain Bolt
   Description: Shoots a projectile that uses Cell Vial stacks as damage multiplier
   Icon: {fileID: 21300000, guid: 1c0c72a85b58b5243b328f8b765e97b2, type: 3}

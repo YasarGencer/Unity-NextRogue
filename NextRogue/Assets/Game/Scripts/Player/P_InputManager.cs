@@ -98,7 +98,7 @@ public class P_InputManager : MonoBehaviour {
             return;
         if (_mainController.canPlay)
             if (_mainController.Spells)
-            _mainController.Spells.Spell(value);
+                _mainController.Spells.Spell(value);  
     }
     void RunPause() {
         if (_mainController.canPlay) {

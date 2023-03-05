@@ -19,12 +19,15 @@ public class P_SpellHandler : MonoBehaviour {
         //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
         for (int i = 0; i < _mainController.Stats.Spells.Count(); i++)
             SetSpell(i, _mainController.Stats.Spells[i]);
+
+
     }
-    public void Spell(int value) {
+    public void Spell(int value) { 
         _spellList[value].Initialize(_mainController, value); 
     }
     public void SetSpell(int keyIndex, ASpell spell) {
         _spellList[keyIndex] = spell;
+        _spellList[keyIndex].IsChoosen = true;
         if(_mainController.UI)
             _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
     }

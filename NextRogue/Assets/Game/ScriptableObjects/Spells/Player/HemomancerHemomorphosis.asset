@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdec837b3c225343a90a0e8585ff8c1, type: 3}
   m_Name: HemomancerHemomorphosis
   m_EditorClassIdentifier: 
+  _isInit: 0
   Name: Hemomorphosis
   Description: 'Become invincable and gain speed for a showt amount of time.
 
@@ -27,3 +28,4 @@ MonoBehaviour:
   _timer: 1
   _speedMultiplier: 0.2
   _timerMultiplier: 0.2
+  _healMultiplier: 1

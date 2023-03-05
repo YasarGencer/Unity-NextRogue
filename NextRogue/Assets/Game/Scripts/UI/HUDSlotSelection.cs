@@ -1,5 +1,4 @@
-using TMPro;
-using Unity.VisualScripting;
+using TMPro; 
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,17 +14,17 @@ public class HUDSlotSelection : MonoBehaviour
         Init(true);
         _icon.sprite = spell.Icon;
     }
-    public void Initialize() {
+    public void Initialize() { 
         Init(false);
         _text.SetText(MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Input.GetSkillKey(_keyIndex + 4));
-        GetComponent<Button>().onClick.AddListener(OnClick);
+ 
     }
     void Init(bool value) {
         //GetComponent<Button>().interactable = !value;
         _text.gameObject.SetActive(!value);
         _icon.gameObject.SetActive(value);
     }
-    void OnClick() {
+    public void OnClick() { 
         MainManager.Instance.CanvasManager.SkillSelection.SaveButton(_keyIndex);
     }
 }

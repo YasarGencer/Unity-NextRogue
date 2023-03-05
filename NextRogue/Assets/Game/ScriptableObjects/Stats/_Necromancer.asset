@@ -17,16 +17,19 @@ MonoBehaviour:
   Description: x
   Corpse: {fileID: 6753497417659572115, guid: cc28131093dd7d44eb3823846ffd0722, type: 3}
   MaxHealth: 75
-  Health: 50
+  Health: 75
   HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
   EXPOrb: {fileID: 0}
   Speed: 3
   SpeelHolder: 3
+  IsInvincable: 0
   Spells:
   - {fileID: 11400000, guid: 0e77875f3e1e841478ba505003688070, type: 2}
   - {fileID: 11400000, guid: 24d6a5ea040a3db4dbcaef5879dae8b5, type: 2}
   - {fileID: 11400000, guid: 54de0d267eea7a644b4dba55019e0a15, type: 2}
   - {fileID: 11400000, guid: 9d4e38721e630ea47b25209e648bffe2, type: 2}
+  SecondaryBar: 0
+  SecondaryValue: 0
   Level: 0
   EXP: 0
   EXPRequired: 100

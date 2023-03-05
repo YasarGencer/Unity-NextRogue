@@ -1,4 +1,5 @@
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -40,7 +41,14 @@ public class MainManager : MonoBehaviour
     public Transform Enemies { get { return _enemies; } }
     private void Awake() {
         Initialize();
-        Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = Player.GetChild(0);
+        var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
+        cinemachine.Follow = Player.GetChild(0);
+        var defSize = cinemachine.m_Lens.OrthographicSize;
+        float size = 2;
+        DOTween.To(() => size, x => size = x, defSize, 2)
+        .OnUpdate(() => {
+            cinemachine.m_Lens.OrthographicSize = size;
+        }).SetEase(Ease.InCirc);
     }
     public void Initialize() {
         _instance = this;

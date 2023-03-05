@@ -29,7 +29,7 @@ public class AllSpells : ScriptableObject
         List<ASpell> aSpells = new List<ASpell>();
 
         foreach (var item in GetAllSpells())
-            if (item.IsInit == false)
+            if (item.IsChoosen == false)
                 aSpells.Add(item); 
 
         List<int> count = new List<int>();
@@ -44,7 +44,8 @@ public class AllSpells : ScriptableObject
     }
     public void Initialize() {
         foreach (var item in SpellList) {
-            item.IsInit= false;
+            item.IsInit = false;
+            item.IsChoosen= false;
             item.Index = indexer;
             item.KeyIndex = -1;
             indexer++;

@@ -1,7 +1,8 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Stats", menuName = "ScriptableObjects/Stats/PlayerStats", order = 0)]
-public class P_Stats : AStats { 
+public class P_Stats : AStats {
     [Header("Spell Set")]
     public ASpell[] Spells;
     public bool SecondaryBar;
@@ -21,9 +22,12 @@ public class P_Stats : AStats {
     }
     public override void ResetStats() {
         base.ResetStats();
+        foreach (var item in Spells)
+            item.IsInit = false;
         Level = 0;
         EXP = 0;
-        EXPRequired = _expRequired;
+        if(_expRequired != 0)
+            EXPRequired = _expRequired;
         _expRequired = 0;
     } 
     public void SetSecondaryValue(int value) {

@@ -15,14 +15,17 @@ public class CanvasManager : AUI
     public Canvas_Skill_Selection SkillSelection { get { return _skillSelection; } }
 
     public override void Initialize() {
-        base.Initialize();
+        RegisterEvents();
+
         _playerHud.Initialize();
         _pauseScreen.Initialize();
         _skillSelection.Initialize();
+
         if (_isInit)
             Invoke("OpenPlayerHud", 2f);
         else
             Invoke("OpenSkillSelection", 2f);
+
         _isInit = true;
     }
     protected override void OnGamePause() {
