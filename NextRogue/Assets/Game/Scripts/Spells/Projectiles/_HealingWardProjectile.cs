@@ -7,7 +7,7 @@ public class _HealingWardProjectile : AP_Projectile
     Transform _player;
     IDisposable _followRX;
     public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
-        base.Initialize(mousePos, damage, 1, speed);
+        base.Initialize(mousePos, damage, 2, speed);
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         StartFollow();
     }

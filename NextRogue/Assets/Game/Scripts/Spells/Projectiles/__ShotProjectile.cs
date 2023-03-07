@@ -8,8 +8,5 @@ public class __ShotProjectile : AProjectile {
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         Destroy(gameObject, .05F);
-    }
-    private void OnTriggerEnter2D(Collider2D collision) {
-        Destroy(gameObject, .05f);
-    }
+    } 
 }

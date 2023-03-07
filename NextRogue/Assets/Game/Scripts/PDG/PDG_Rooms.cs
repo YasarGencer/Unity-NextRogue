@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
+using System.Linq; 
 using UnityEngine;
 
 public class PDG_Rooms : MonoBehaviour
@@ -55,7 +54,7 @@ public class PDG_Rooms : MonoBehaviour
     public void RoomTypes() { 
         _rooms[0].RoomType = RoomType.Start;
         _rooms[_rooms.Count - 1].RoomType = RoomType.Exit;
-        _rooms[Random.Range(2, _rooms.Count - 1)].RoomType = RoomType.Treasure;
+        //_rooms[Random.Range(2, _rooms.Count - 1)].RoomType = RoomType.Treasure;
     }
     public void DecorateRooms() {
         foreach (var item in _rooms) {

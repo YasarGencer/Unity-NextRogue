@@ -14,7 +14,7 @@ public class _BerserkerThrowProjectile : AP_Projectile {
     [SerializeField]
     GameObject _particle;
     public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
-        base.Initialize(mousePos, damage, time, speed);
+        base.Initialize(mousePos, damage, time * 2, speed);
         _timer = 0;
         _isStop = false;
         _stopRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(StopRX);

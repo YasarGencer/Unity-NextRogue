@@ -1,7 +1,5 @@
 using System.Collections;
-using UnityEngine;
-using static Cinemachine.DocumentationSortingAttribute;
-using static EventManager;
+using UnityEngine; 
 
 public class P_MainController : MonoBehaviour {
     [HideInInspector]

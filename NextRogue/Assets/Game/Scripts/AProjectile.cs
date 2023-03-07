@@ -28,7 +28,7 @@ public class AProjectile : MonoBehaviour
 
         _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;
         _speed = speed;
-        _time = time >= 1 ? time : 1;
+        _time = time >= 1 ? time/2 : 1;
         _damage = damage;
         _currentTime = _time;
 

@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System; 
 using UnityEngine;
 
 public class EventManager : MonoBehaviour

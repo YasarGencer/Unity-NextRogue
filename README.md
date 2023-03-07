@@ -117,6 +117,11 @@ Spell List :
             Cooldown : 15
             Damage : 25
 
+  - Spike Trap
+    - Create spikes to damage enemies
+    -  
+            Cooldown : 10
+            Damage : 10
 
 <h2 align = "center" id = "playableCharacters"> PLAYABLE CHARACTERS</h2>
 
@@ -179,7 +184,7 @@ Spell List :
     - Gets in to a blood lake and becomes invincable while gaining speed for a short amount of time and heal
     - Speed and Time increases with the Cell Vial stacks
     - 
-            Cooldown : 10
+            Cooldown : 5
             Speed Multiplier : 2
             Invincible Time : 1 
             - Blood Vial Speed Increase : +.2

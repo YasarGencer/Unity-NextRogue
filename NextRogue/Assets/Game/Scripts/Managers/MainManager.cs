@@ -1,7 +1,6 @@
 using Cinemachine;
 using DG.Tweening;
-using UnityEngine;
-using static UnityEditor.Progress;
+using UnityEngine; 
 
 public class MainManager : MonoBehaviour
 {
