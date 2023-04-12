@@ -1,26 +1,26 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class GameManager : MonoBehaviour {
-    bool _gamePaused;
-    public bool GamePaused { get { return _gamePaused; } set { _gamePaused = value; } }
 
     [SerializeField] AllSpells _spellList;
     [SerializeField] PlayerList _playerList;
     public AllSpells AllSpells { get { return _spellList; }}
-    public PlayerList PlayerList { get { return _playerList; }}
+    public PlayerList PlayerList { get { return _playerList; }} 
     public void Initialize() { 
-        MainManager.Instance.EventManager.onGamePause += OnGamePause;
-        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
 
         _spellList.Initialize();
 
-        Instantiate(_playerList.GetPlayer(PlayerPrefs.GetInt("Player", 0)).Player, MainManager.Instance.Player);
-
+        LoadScene(2);
     }
-    void OnGamePause() {
-        _gamePaused = true;
+    public void LoadScene(int index, int unload = 0) {
+        if(unload != 0)
+            UnloadScene(unload);
+        SceneManager.LoadScene(index, LoadSceneMode.Additive); 
     }
-    void OnGameUnPause() {
-        _gamePaused = false;
-    }
+    public void UnloadScene(int index) {
+        MainManager.Instance.EventManager.RunOnLoad();
+        SceneManager.UnloadSceneAsync(index);
+    } 
 }

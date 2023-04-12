@@ -21,15 +21,8 @@ public class AUI : MonoBehaviour
         _child.localPosition = new(0, -50, 0);
         _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc);
 
-        var alpha = GetComponent<CanvasGroup>();
-        float alphaValue = 0; 
-
-        alpha.alpha = 0;
-
-        DOTween.To(() => alphaValue, x => alphaValue = x, 1, 1)
-        .OnUpdate(() => {
-            alpha.alpha = alphaValue;
-        }).SetEase(Ease.InCirc);
+        GetComponent<CanvasGroup>().DOFade(0, 0);
+        GetComponent<CanvasGroup>().DOFade(1, 1).SetEase(Ease.InCirc);
 
     }
     public virtual void Close() {
@@ -40,13 +33,9 @@ public class AUI : MonoBehaviour
     protected virtual void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
-        MainManager.Instance.EventManager.onGameStart += OnGameStart;
     }
     protected virtual void OnGamePause() {
     }
     protected virtual void OnGameUnPause() {
-    }
-    protected virtual void OnGameStart() {
-
     }
 }

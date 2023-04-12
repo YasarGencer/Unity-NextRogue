@@ -47,7 +47,7 @@ public class P_MainController : MonoBehaviour {
         if (this.Spells == null)
             Spells = GetComponent<P_SpellHandler>();
         if (this.UI == null)
-            UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
+            UI = InGameManager.Instance.CanvasManager.Player_GUI_HUD; 
          
         Stats.Initialize();
 

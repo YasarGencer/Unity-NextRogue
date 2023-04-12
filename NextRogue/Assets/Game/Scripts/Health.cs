@@ -26,22 +26,22 @@ public class Health : MonoBehaviour {
 
         _stats.Health -= value;
 
-        MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);
+        InGameManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);
         Destroy(Instantiate(_stats.HitParticle, transform.position, Quaternion.identity), 5f);
 
         GetComponent<Animator>().SetTrigger("hit");
 
         if (_isPlayer)
-            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
+            InGameManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
         if (_stats.Health <= 0) 
             Die();
     }
     public void GainHealth(float value) {
         _stats.Health += value;
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
-        MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(false, value.ToString(), transform.position);
+        InGameManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(false, value.ToString(), transform.position);
         if (_isPlayer)
-            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
+            InGameManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
     }
     public void Die() {
         if (transform.CompareTag("Player")) {

@@ -23,7 +23,7 @@ public class AProjectile : MonoBehaviour
         StartCoroutine(Init(targetPos, damage, time, speed));
     }
     protected IEnumerator Init(Vector3 targetPos, float damage, float time, float speed) {
-        if (!_isInit && !MainManager.Instance.GameManager.GamePaused)
+        if (!_isInit && !InGameManager.Instance.GamePaused)
             _isInit = true;
 
         _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;

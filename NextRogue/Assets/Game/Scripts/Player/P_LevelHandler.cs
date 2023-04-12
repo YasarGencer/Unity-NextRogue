@@ -18,11 +18,11 @@ public class P_LevelHandler : MonoBehaviour {
         _mainController.Stats.EXP += value;
         if(_mainController.Stats.EXP >= _mainController.Stats.EXPRequired)
             LevelUp();
-        MainManager.Instance.CanvasManager.Player_GUI_HUD.SetLevel();
+        InGameManager.Instance.CanvasManager.Player_GUI_HUD.SetLevel();
     }
     public void LevelUp() {
         _mainController.Stats.EXP -= _mainController.Stats.EXPRequired;
         _mainController.Stats.Level++;
-        MainManager.Instance.CanvasManager.OpenSkillSelection();
+        InGameManager.Instance.CanvasManager.OpenSkillSelection();
     }
 }

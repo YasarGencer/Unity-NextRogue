@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
-using Unity.VisualScripting;
+using System.Linq; 
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SubjugateWill", menuName = "ScriptableObjects/Spells/SubjugateWill")]
@@ -36,7 +34,7 @@ public class _SubjugateWill : ASpell {
     }
     Transform[] FindClosest(int value) {
         var allEnemies = new List<Transform>(); 
-        foreach (UnityEngine.Transform item in MainManager.Instance.Enemies)
+        foreach (UnityEngine.Transform item in InGameManager.Instance.Enemies)
             allEnemies.Add(item);
         var nClosest = allEnemies.OrderBy(t => (t.position - _mainController.transform.position).sqrMagnitude)
                            .Take(value)   //or use .FirstOrDefault();  if you need just one

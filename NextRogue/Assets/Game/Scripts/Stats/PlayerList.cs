@@ -15,6 +15,9 @@ public class PlayerList : ScriptableObject
     public PlayerElement GetPlayer(int index) {
         return _list[index];
     }
+    public PlayerElement GetActivePlayer() {
+        return _list[PlayerPrefs.GetInt("Player", 0)];
+    }
     [System.Serializable]
     public struct  PlayerElement {
         public P_Stats Stat;

@@ -118,7 +118,7 @@ Spell List :
             Damage : 25
 
   - Spike Trap
-    - Create spikes to damage enemies
+    - Create spikes that damages everything
     -  
             Cooldown : 10
             Damage : 10

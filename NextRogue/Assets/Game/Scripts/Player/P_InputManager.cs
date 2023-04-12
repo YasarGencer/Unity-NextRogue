@@ -87,14 +87,14 @@ public class P_InputManager : MonoBehaviour {
     #endregion
     //EVENTS
     void Direction(Vector2 direction) { 
-        if (MainManager.Instance.GameManager.GamePaused)
+        if (InGameManager.Instance.GamePaused)
             return;
         if (_mainController.canPlay)
             if (_mainController.Movement)
             _mainController.Movement.SetDirection(direction);
     }
     void Spell(int value) { 
-        if (MainManager.Instance.GameManager.GamePaused)
+        if (InGameManager.Instance.GamePaused)
             return;
         if (_mainController.canPlay)
             if (_mainController.Spells)
@@ -102,7 +102,7 @@ public class P_InputManager : MonoBehaviour {
     }
     void RunPause() {
         if (_mainController.canPlay) {
-            if (MainManager.Instance.GameManager.GamePaused)
+            if (InGameManager.Instance.GamePaused)
                 MainManager.Instance.EventManager.RunOnGameUnPuase();
             else
                 MainManager.Instance.EventManager.RunOnGamePause();

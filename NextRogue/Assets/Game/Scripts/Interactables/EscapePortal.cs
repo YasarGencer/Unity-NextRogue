@@ -9,11 +9,11 @@ public class EscapePortal : AInteract {
     float _animationRange;
     protected override void OnStart() {
         base.OnStart();
-        _player = MainManager.Instance.Player.GetChild(0);
+        _player = GameObject.FindObjectOfType<P_MainController>().transform;
         StartCoroutine(Animation());
     }
-    protected override void Interact() {
-        MainManager.Instance.StartGame();
+    protected override void Interact() { 
+        MainManager.Instance.GameManager.LoadScene(2,2);
     }
     private void OnDrawGizmos() {
         UnityEngine.Gizmos.DrawWireSphere(transform.position, _animationRange);

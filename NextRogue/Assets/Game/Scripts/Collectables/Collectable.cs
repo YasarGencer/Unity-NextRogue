@@ -18,7 +18,7 @@ public class Collectable : MonoBehaviour {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     protected virtual void Update() {
-        if (MainManager.Instance.GameManager.GamePaused)
+        if (InGameManager.Instance.GamePaused)
             return;
         var dist = Vector2.Distance(_player.position, transform.position);
         if(dist < _range)

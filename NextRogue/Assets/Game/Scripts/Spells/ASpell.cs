@@ -45,8 +45,7 @@ public abstract class ASpell : ScriptableObject
 
     public virtual void Initialize(P_MainController mainController, int value) { 
         if (_isInit && _currentTimeCooldown < CooldownTime)
-            return;
-        Debug.Log(Name);
+            return; 
         RegisterEvents();
 
         _keyIndex = value;

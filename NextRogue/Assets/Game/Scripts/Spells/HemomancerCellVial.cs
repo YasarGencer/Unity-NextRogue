@@ -17,7 +17,7 @@ public class HemomancerCellVial : ASpell{
         _mainController.Stats.SecondaryValue += CheckBloods();
         if(_mainController.Stats.SecondaryValue > MaxCell)
             _mainController.Stats.SecondaryValue = MaxCell; 
-        MainManager.Instance.CanvasManager.Player_GUI_HUD.SetSecondary(_mainController.Stats.SecondaryValue, MaxCell);
+        InGameManager.Instance.CanvasManager.Player_GUI_HUD.SetSecondary(_mainController.Stats.SecondaryValue, MaxCell);
     }
     int CheckBloods() {
         var bloods = GameObject.FindGameObjectsWithTag("Blood");

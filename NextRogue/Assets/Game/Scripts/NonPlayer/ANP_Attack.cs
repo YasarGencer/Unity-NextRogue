@@ -23,7 +23,7 @@ public abstract class ANP_Attack : MonoBehaviour
         _updateRX?.Dispose();
     }
     protected virtual void SetAttackTrue() {
-        if (MainManager.Instance.GameManager.GamePaused)
+        if (InGameManager.Instance.GamePaused)
             return;
         _updateRX?.Dispose();
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);

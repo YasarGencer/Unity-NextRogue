@@ -25,7 +25,7 @@ public class NP_Attack_Dash : ANP_Attack {
             _mainController.Animator.SetTrigger("Charge"); 
 
             yield return new WaitForSeconds(1f);
-            if (!MainManager.Instance.GameManager.GamePaused) {
+            if (!InGameManager.Instance.GamePaused) {
                 _mainController.Animator.SetTrigger("Dash");
 
                 ClearHitList();
