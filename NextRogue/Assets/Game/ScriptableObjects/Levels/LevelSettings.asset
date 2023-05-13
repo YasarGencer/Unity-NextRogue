@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb31ccca2749b74f94cd66c3146973c, type: 3}
+  m_Name: LevelSettings
+  m_EditorClassIdentifier: 
+  levels:
+  - Name: Purple Dungeon
+    Description: First Room
+    DungeonLevel:
+      IsRandomDungeon: 1
+      SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
+      CorridorLength: 15
+      CorridorCount: 15
+      RoomPercent: 1
+      RoomProps: {fileID: 11400000, guid: 7399deefaf11161449f36422cfbcec0f, type: 2}
+      TilemapVisualizerData: {fileID: 11400000, guid: f68668e3de164594488b94ec184dc988, type: 2}
+    TutorialLevel:
+      IsTutorial: 0
+      TutorialMap: {fileID: 0}
+  tutorialLevels:
+  - Name: TUTORIAL - NECROMANCER
+    Description: NecromancerTutorial
+    DungeonLevel:
+      IsRandomDungeon: 0
+      SRWData: {fileID: 0}
+      CorridorLength: 0
+      CorridorCount: 0
+      RoomPercent: 0
+      RoomProps: {fileID: 0}
+      TilemapVisualizerData: {fileID: 0}
+    TutorialLevel:
+      IsTutorial: 1
+      TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}

@@ -30,7 +30,7 @@ public class NP_MainController : MonoBehaviour
     private void Start() {
         Initialize(2f);
     }
-    public void Initialize(Room? room) {
+    public void Initialize() {
         StartCoroutine(Init(0));
     }
     public void Initialize(float time) { 

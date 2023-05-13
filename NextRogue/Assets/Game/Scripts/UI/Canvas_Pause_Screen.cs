@@ -27,8 +27,7 @@ public class Canvas_Pause_Screen : AUI {
     void MainMenu() {
         SceneManager.LoadScene(0);
     }
-    void Restart() {
-        MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.ResetStats();
+    void Restart() { 
         SceneManager.LoadScene(1);
     }
     void Unpause() {

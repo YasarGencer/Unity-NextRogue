@@ -12,7 +12,11 @@ public class EscapePortal : AInteract {
         _player = MainManager.Instance.Player.GetChild(0);
         StartCoroutine(Animation());
     }
-    protected override void Interact() {
+    protected override void Interact() { 
+        base.Interact();
+        LevelSettings.SetIfTutorial();
+        MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.SetTutorial(1);
+        MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.DeleteMainSpells();
         MainManager.Instance.StartGame();
     }
     private void OnDrawGizmos() {

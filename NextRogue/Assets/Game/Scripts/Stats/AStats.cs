@@ -27,9 +27,4 @@ public abstract class AStats : ScriptableObject
         IsInvincable = false;
     }
 
-    public virtual void ResetStats() {
-        Health = MaxHealth;
-        SpeelHolder = Speed;
-        IsInvincable = false;
-    }
 }

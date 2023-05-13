@@ -12,13 +12,15 @@ public class MainManager : MonoBehaviour
     [SerializeField]
     private GameManager _gameManager;
     [SerializeField]
+    private LevelManager _levelManager;
+    [SerializeField]
     private PDGManager _PDGManager;
     [SerializeField]
     private CanvasManager _canvasManager;
 
     public GameManager GameManager { get { return _gameManager; } }
     public EventManager EventManager { get { return _eventManager; } }
-    public PDGManager PDGManager { get { return _PDGManager; } }
+    public LevelManager LevelManager { get { return _levelManager; } }
     public CanvasManager CanvasManager { get { return _canvasManager; } }
 
     [Space(15f)]
@@ -54,7 +56,8 @@ public class MainManager : MonoBehaviour
 
         _gameManager.Initialize();
         _eventManager.Initialize();
-        
+        _levelManager.Initialize();
+
         StartGame();
     }
     public void StartGame() {
@@ -63,13 +66,12 @@ public class MainManager : MonoBehaviour
         for (int i = 0; i < Enviroment.childCount; i++)
             Destroy(Enviroment.GetChild(i).gameObject);
 
-        _PDGManager.Rooms.ResetValues();
-        _PDGManager.Initialize();
+        _canvasManager?.Initialize();
+        _player?.GetComponentInChildren<P_MainController>().Initialize();
 
-        _canvasManager.Initialize();
+        _levelManager.NextLevel();  
 
-        _player.GetComponentInChildren<P_MainController>().Initialize(); 
+        _eventManager?.RunOnGameStart();
 
-        _eventManager.RunOnGameStart();
     } 
 }

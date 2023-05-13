@@ -5,8 +5,7 @@ using System;
 public class P_InputManager : MonoBehaviour {
     bool _isInit;
     P_MainController _mainController;
-    PlayerInput.OnMoveActions _inputOnMove;
-    bool _isPaused = false;
+    PlayerInput.OnMoveActions _inputOnMove; 
     private void Awake() {
         var playerInput = new PlayerInput();
         _inputOnMove = playerInput.OnMove;

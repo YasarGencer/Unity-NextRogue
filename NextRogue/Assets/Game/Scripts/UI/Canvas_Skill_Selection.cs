@@ -25,14 +25,9 @@ public class Canvas_Skill_Selection : AUI
         gameObject.SetActive(true); 
         _child.gameObject.SetActive(true);
         _child1.gameObject.SetActive(false);
-        //alpha
-        var alpha = GetComponent<CanvasGroup>();
-        float alphaValue = 0; 
-        alpha.alpha = 0; 
-        DOTween.To(() => alphaValue, x => alphaValue = x, 1, 1)
-        .OnUpdate(() => {
-            alpha.alpha = alphaValue;
-        }).SetEase(Ease.InCirc); 
+        //alpha 
+        GetComponent<CanvasGroup>().alpha = 0; 
+        GetComponent<CanvasGroup>().DOFade(1,1);         
         //header 
         var header = _child.GetChild(0).GetComponent<RectTransform>();
         var value = 0;

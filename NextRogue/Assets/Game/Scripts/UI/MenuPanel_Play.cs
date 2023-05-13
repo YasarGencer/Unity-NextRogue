@@ -91,12 +91,9 @@ public class MenuPanel_Play : AUI {
         _prevButton.interactable = true;
         _nextButton.interactable = true;
     }
+
     void StartGame() {
-        PlayerPrefs.SetInt("Player", _index);
-
-        foreach (var item in _playerList.GetList())
-            item.Stat.ResetStats();
-
+        GameManager.SetPlayerIndex(_index);
         SceneManager.LoadScene(1);
     }
 }

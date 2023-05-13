@@ -49,7 +49,7 @@ public class P_MainController : MonoBehaviour {
         if (this.UI == null)
             UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
          
-        Stats.Initialize();
+         
 
         yield return new WaitForSeconds(1.5f); 
 
@@ -65,6 +65,11 @@ public class P_MainController : MonoBehaviour {
         Movement.Initialize(this);
         Spells.Initialize(this);
         Health.Initialize();
+
+        yield return new WaitForSeconds(.25f);
+
+        MainManager.Instance.EventManager.PlayerInitialized();
+        GameObject.FindObjectOfType<TutorialManager>()?.OnPlayerInitialized();
     }
  
 }

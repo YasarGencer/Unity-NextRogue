@@ -10,20 +10,18 @@ public class P_SpellHandler : MonoBehaviour {
         if (_isInit)
             return;
         _isInit = true;
-
         _mainController = mainController;
         _spellList = new ASpell[9]; 
 
         //SET 0,1,2,3 AS WIZARD SPESIFIC SPELLS
         for (int i = 0; i < _mainController.Stats.Spells.Count(); i++)
-            SetSpell(i, _mainController.Stats.Spells[i]);
-
-
+            SetSpell(i, _mainController.Stats.Spells[i]); 
     }
     public void Spell(int value) { 
-        _spellList[value].Initialize(_mainController, value); 
+        _spellList[value]?.Initialize(_mainController, value); 
     }
     public void SetSpell(int keyIndex, ASpell spell) {
+        Debug.Log(spell.Name);
         _spellList[keyIndex] = spell;
         _spellList[keyIndex].IsChoosen = true;
         if(_mainController.UI)
@@ -38,6 +36,15 @@ public class P_SpellHandler : MonoBehaviour {
     public bool CheckSpellKeyIndex(int keyIndex) {
         return _spellList[keyIndex] != null;
     } 
+    public void DeleteMainSpells() {
+        foreach (var item in _spellList)
+            if (item != null) {
+                item.RetrieveCooldown();
+                item.IsInit = false;
+            } 
+        _spellList = new ASpell[9];
+        _isInit = false;
+    }
     /*
 public void SetSpell(int keyIndex, int spellIndex) {
    if (!CheckSpellKeyIndex(keyIndex)) {

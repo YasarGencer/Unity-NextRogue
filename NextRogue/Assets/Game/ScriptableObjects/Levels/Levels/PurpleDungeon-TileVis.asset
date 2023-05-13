@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e700bbfef266dd647bbb75f1b8d7843d, type: 3}
+  m_Name: PurpleDungeon-TileVis
+  m_EditorClassIdentifier: 
+  FloorTile:
+  - {fileID: 11400000, guid: 50cf10ad4e222124e9f2ee94ba17de2f, type: 2}
+  - {fileID: 11400000, guid: 131c84af5ffdef043a7be30f5964ce21, type: 2}
+  - {fileID: 11400000, guid: 2b7f853efd3708f4fbcad851a68ea012, type: 2}
+  - {fileID: 11400000, guid: a5fbe44baa70dbf4d98bb09ffea36d13, type: 2}
+  - {fileID: 11400000, guid: 6411dd7a0e6ee8c419c3e22891f19c2e, type: 2}
+  - {fileID: 11400000, guid: 2dd9704a4990218428d475ab90bcaf6b, type: 2}
+  Top: {fileID: 11400000, guid: 1789b2dd9f854ca4e800c3cafb0fb759, type: 2}
+  Right: {fileID: 11400000, guid: 11f952b167b825a4da245c616ed246b8, type: 2}
+  Left: {fileID: 11400000, guid: 347d385a7fb23d342829b7667c896382, type: 2}
+  Bottom: {fileID: 11400000, guid: 4e4c84cb20e15e5488ea1cad0397798d, type: 2}
+  Full: {fileID: 11400000, guid: b828158e518c1bf4886f552af16d642d, type: 2}
+  CornerDownLeft: {fileID: 11400000, guid: 769af92191e1dfa428b852c5d6ae574d, type: 2}
+  CornerDownRight: {fileID: 11400000, guid: 2caadebd165eb74428c582e7d17ae5fe, type: 2}
+  DownLeft: {fileID: 11400000, guid: c2da6e576e7c38941a041f7fa5facd7a, type: 2}
+  DownRight: {fileID: 11400000, guid: c449bd29af164cc4c9ec64cffe4c3b02, type: 2}
+  UpLeft: {fileID: 11400000, guid: afe09a4b680f4d142857060b6f6e9ce7, type: 2}
+  UpRight: {fileID: 11400000, guid: d4569d37cc3f72a4fb13c8331733284a, type: 2}

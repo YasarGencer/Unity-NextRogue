@@ -44,8 +44,7 @@ public class Health : MonoBehaviour {
             MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
     }
     public void Die() {
-        if (transform.CompareTag("Player")) {
-            _stats.ResetStats();
+        if (transform.CompareTag("Player")) { 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             return;
         }
