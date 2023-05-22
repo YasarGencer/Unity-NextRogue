@@ -107,12 +107,11 @@ public abstract class ASpell : ScriptableObject
 
     public void RetrieveCooldown() {
         _currentTimeCooldown = CooldownTime;
-        StopCooldown();
-        if (_mainController.UI)
-            _mainController.UI.SetSlider(
-                _mainController.UI.spellIconList[_keyIndex].Slider,
-                1,
-                1);
+        StopCooldown(); 
+        _mainController?.UI?.SetSlider(
+            _mainController.UI.spellIconList[_keyIndex].Slider,
+            1,
+            1);
     }
 
     //EVENTS
