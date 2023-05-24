@@ -1,17 +1,18 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UniRx;
-using static EventManager;
-using UnityEngine.UIElements;
+using UniRx; 
 
 public abstract class ANP_Movement : MonoBehaviour
 {
     protected NP_MainController _mainController;
     protected IDisposable _updateRX;
     protected Vector2 _patrolPosition;
+    protected AudioSource _audioSource;
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = _mainController.Stats.WalkSound;
         UnFreeze();
         RegisterEvents();
         StartCoroutine(PatrolPos());
@@ -37,6 +38,9 @@ public abstract class ANP_Movement : MonoBehaviour
 
     public virtual void Freeze() {
         _updateRX?.Dispose();
+        WalkSound(false);
+        if (_mainController != null && _mainController.Animator != null)
+            _mainController?.Animator?.SetBool("Idle", true);
     }
     protected virtual void UnFreeze() {
         if (MainManager.Instance.GameManager.GamePaused)
@@ -69,5 +73,17 @@ public abstract class ANP_Movement : MonoBehaviour
     }
     void OnGameUnPause() { 
         UnFreeze();
+    }
+    protected void WalkSound(bool value) {
+        if (_audioSource == null || _audioSource.clip == null)
+            return;
+        _audioSource.volume = AudioManager.GetVolume(AudioManager.AudioVolume.sfx);
+        if(value == false) {
+            _audioSource.Stop();
+            return;
+        } else {
+            if(_audioSource.isPlaying == false)
+                _audioSource.Play();
+        }
     }
 }

@@ -1,9 +1,8 @@
 using System.Collections;
-using UnityEngine; 
+using UnityEngine;
 
 public class P_MainController : MonoBehaviour {
-    [HideInInspector]
-    public bool canPlay = false;
+    public bool canPlay { get; private set;}
     [HideInInspector]
     public Animator Animator { get; private set; }
     [HideInInspector]

@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d8e7c5260cad342a77dc7a38f72263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: b9f77240984e5d045a98e2425cc5b303, type: 3}
+  _pickUpClip: {fileID: 8300000, guid: a795826674a3d6e44939e63973d01d55, type: 3}
   BerserkThrow: {fileID: 0}
   _particle: {fileID: 3955868922285827117, guid: 7b29768757c3a064e8b4e3710007119a, type: 3}
 --- !u!1 &8226698738418401089

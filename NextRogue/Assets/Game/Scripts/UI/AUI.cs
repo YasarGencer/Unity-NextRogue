@@ -24,8 +24,13 @@ public class AUI : MonoBehaviour
         GetComponent<CanvasGroup>().alpha = 0;
         GetComponent<CanvasGroup>().DOFade(1,1);  
     }
-    public virtual void Close() {
-        gameObject.SetActive(false);
+    public virtual void Close(float time = 0) {
+        _child.gameObject.SetActive(true);
+        _child.localPosition = new(0, -50, 0);
+        _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc);
+
+        GetComponent<CanvasGroup>().alpha = 1;
+        GetComponent<CanvasGroup>().DOFade(0, time).OnComplete(()=> gameObject.SetActive(false));
     }
 
     // EVENTS 

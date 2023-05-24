@@ -14,6 +14,11 @@ public abstract class AStats : ScriptableObject
     public float Health;
     public GameObject HitParticle;
     public GameObject EXPOrb;
+    [Header("SOUND")]
+    public AudioClip HitSound;
+    public AudioClip HealSound;
+    public AudioClip AttackSound;
+    public AudioClip WalkSound;
     [Header("MOVEMENT")]
     public float Speed;
     [HideInInspector]

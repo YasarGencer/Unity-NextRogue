@@ -20,8 +20,7 @@ public class P_SpellHandler : MonoBehaviour {
     public void Spell(int value) { 
         _spellList[value]?.Initialize(_mainController, value); 
     }
-    public void SetSpell(int keyIndex, ASpell spell) {
-        Debug.Log(spell.Name);
+    public void SetSpell(int keyIndex, ASpell spell) { 
         _spellList[keyIndex] = spell;
         _spellList[keyIndex].IsChoosen = true;
         if(_mainController.UI)

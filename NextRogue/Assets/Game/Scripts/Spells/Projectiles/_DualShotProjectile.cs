@@ -7,6 +7,7 @@ public class _DualShotProjectile : AP_Projectile {
         base.Initialize(mousePos, damage, time, speed);
     }
     void Explode() {
+        PlaySound();
         Damager damager = Instantiate(_explosion, transform.position, Quaternion.identity).GetComponent<Damager>();
         damager.Initialize(_damage);
         Destroy(damager.gameObject, 1f);

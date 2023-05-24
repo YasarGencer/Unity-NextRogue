@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: _IcaBarrage
   m_EditorClassIdentifier: 
+  _isInit: 0
   Name: ICE BARRAGE
   Description: Unleash a wall of sharp ice shards, damaging and slowing enemies in
     their path.
   Icon: {fileID: 21300000, guid: 32d647515f178064ca1a75ed2b9717df, type: 3}
+  Sound: {fileID: 8300000, guid: 314c2feedbefa6546ac398ace0216076, type: 3}
   Spell: {fileID: 1195071985698565550, guid: e31fa862f0d061141a4ba659bf3ce1af, type: 3}
   Damage: 15
   Speed: 350

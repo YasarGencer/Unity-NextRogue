@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UniRx;
-using System;
-using System.Runtime.CompilerServices;
+using System; 
 
 public abstract class ASpell : ScriptableObject
 {
@@ -27,6 +23,8 @@ public abstract class ASpell : ScriptableObject
     public string Description;
 
     public Sprite Icon;
+
+    public AudioClip Sound;
 
     public GameObject Spell;
     protected GameObject Instantiated;
@@ -62,11 +60,15 @@ public abstract class ASpell : ScriptableObject
         _isInit = true;
     }
     public virtual void ActivateSpell() {
-        if(_keyIndex <= 0) { }
+
+        if (_keyIndex <= 0) { }
         else if (_keyIndex <= 3)
             _mainController.Animator.SetTrigger("basic");
         else
-            _mainController.Animator.SetTrigger("spell");
+            _mainController.Animator.SetTrigger("spell"); 
+
+        if(Sound)
+            AudioManager.PlaySound(Sound);
         StartCooldown();
     }
     public void StartCasting() { _castRX?.Dispose(); _castRX = Observable.EveryUpdate().TakeUntilDisable(_mainController).Subscribe(CastingTimer); }
@@ -104,7 +106,6 @@ public abstract class ASpell : ScriptableObject
             Damage, CooldownTime, Speed);
         return projectile;
     }
-
     public void RetrieveCooldown() {
         _currentTimeCooldown = CooldownTime;
         StopCooldown(); 

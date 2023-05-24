@@ -36,8 +36,9 @@ public class CanvasManager : AUI
         _skillSelection.Close(); 
     }
     protected override void OnPlayerInitialized() {
-        base.OnPlayerInitialized(); 
-        if (MainManager.Instance.LevelManager.GetLevel() == 0 && MainManager.Instance.LevelManager.ActiveLevelSetting.TutorialLevel.IsTutorial == false)
+        base.OnPlayerInitialized();
+
+        if (MainManager.Instance.IsTest == false &&MainManager.Instance.LevelManager.GetLevel() == 0 && MainManager.Instance.LevelManager.ActiveLevelSetting.TutorialLevel.IsTutorial == false)
             OpenSkillSelection();
         else
             OpenPlayerHud();

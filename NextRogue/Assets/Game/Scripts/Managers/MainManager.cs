@@ -1,12 +1,16 @@
 using Cinemachine;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine; 
 
 public class MainManager : MonoBehaviour
 {
+    public bool IsTest;
     private static MainManager _instance = null;
     public static MainManager Instance { get { return _instance; } }
 
+    [SerializeField]
+    private TestManager _testManager;
     [SerializeField]
     private EventManager _eventManager;
     [SerializeField]
@@ -16,12 +20,13 @@ public class MainManager : MonoBehaviour
     [SerializeField]
     private PDGManager _PDGManager;
     [SerializeField]
-    private CanvasManager _canvasManager;
+    private CanvasManager _canvasManager; 
 
+    public TestManager TestManager { get { return _testManager; } }
     public GameManager GameManager { get { return _gameManager; } }
     public EventManager EventManager { get { return _eventManager; } }
     public LevelManager LevelManager { get { return _levelManager; } }
-    public CanvasManager CanvasManager { get { return _canvasManager; } }
+    public CanvasManager CanvasManager { get { return _canvasManager; } } 
 
     [Space(15f)]
     [Header("Scene Managers")]
@@ -51,27 +56,31 @@ public class MainManager : MonoBehaviour
             cinemachine.m_Lens.OrthographicSize = size;
         }).SetEase(Ease.InCirc);
     }
-    public void Initialize() {
+    public void Initialize() { 
+        AudioManager.CreateAudioManager();
+
         _instance = this;
 
-        _gameManager.Initialize();
-        _eventManager.Initialize();
-        _levelManager.Initialize();
-
+        _gameManager?.Initialize(); 
+        _eventManager?.Initialize(); 
+        _levelManager?.Initialize();
         StartGame();
     }
-    public void StartGame() {
-        for (int i = 0; i < Enemies.childCount; i++)
-            Destroy(Enemies.GetChild(i).gameObject);
-        for (int i = 0; i < Enviroment.childCount; i++)
-            Destroy(Enviroment.GetChild(i).gameObject);
+    public void StartGame() { 
+        if(Enemies!= null)
+            for (int i = 0; i < Enemies.childCount; i++)
+                Destroy(Enemies.GetChild(i).gameObject);
+        if (Enviroment != null)
+            for (int i = 0; i < Enviroment.childCount; i++)
+                Destroy(Enviroment.GetChild(i).gameObject);
 
         _canvasManager?.Initialize();
         _player?.GetComponentInChildren<P_MainController>().Initialize();
-
-        _levelManager.NextLevel();  
+         
+        _levelManager?.NextLevel();  
 
         _eventManager?.RunOnGameStart();
 
+        _testManager?.Initialize();
     } 
 }

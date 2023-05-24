@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e735ca6ee6e06348968966ebff5ae24, type: 3}
   m_Name: _Overclock
   m_EditorClassIdentifier: 
+  _isInit: 0
   Name: Overclock
   Description: Resets cooldowns of every other skill
   Icon: {fileID: 21300000, guid: eb8a423bc9a440b4da39ee14dbb34c00, type: 3}
+  Sound: {fileID: 8300000, guid: 2a2701ec6b96065438a970d19fe91a2f, type: 3}
   Spell: {fileID: 6772048588485438942, guid: 036172622b70c614a8879eaef6ac66c2, type: 3}
   Damage: 0
+  Speed: 0
   CastingTime: 0
   CooldownTime: 30

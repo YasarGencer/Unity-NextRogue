@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour {
         foreach (var item in _playerList.GetList())
             item.Stat.Initialize();
 
+        if (MainManager.Instance.IsTest)
+            return;
+
+
         Instantiate(_playerList.GetPlayer(GetPlayerIndex()).Player, MainManager.Instance.Player);
 
         if (_playerList.GetPlayer(GetPlayerIndex()).Stat.GetTutorial() == false)

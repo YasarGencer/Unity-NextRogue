@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: _ImpailingShot
   m_EditorClassIdentifier: 
-  _isInit: 1
+  _isInit: 0
   Name: ImpailingShot
   Description: A projectile that pierces through enemies
   Icon: {fileID: 21300000, guid: b89e32b16f5f5554cb815ccf8c149fdf, type: 3}
+  Sound: {fileID: 8300000, guid: f357b5e2da3616441872d7b6f48e1bba, type: 3}
   Spell: {fileID: 2479547150415471430, guid: 238e8e5226189ba448a74a0eec5a5e46, type: 3}
   Damage: 25
   Speed: 500
