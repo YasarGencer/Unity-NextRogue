@@ -20,6 +20,9 @@ MonoBehaviour:
   Health: 100
   HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
   EXPOrb: {fileID: 0}
+  HitSound: {fileID: 8300000, guid: c8c4dc9ec4fab6945a661946c9441b1d, type: 3}
+  HealSound: {fileID: 0}
+  WalkSound: {fileID: 0}
   Speed: 2.5
   SpeelHolder: 2.5
   IsInvincable: 0

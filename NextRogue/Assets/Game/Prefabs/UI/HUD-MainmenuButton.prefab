@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Line: {fileID: 3137660304518036521}
   _Button: {fileID: 3137660303796165995}
+  _clickSound: {fileID: 0}
 --- !u!1 &3137660303796165989
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +290,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3137660303796165994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3137660303414972477}
+        m_TargetAssemblyTypeName: HUDMainmenuButton, Assembly-CSharp
+        m_MethodName: TriggerExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3137660303796165992
 MonoBehaviour:
   m_ObjectHideFlags: 0

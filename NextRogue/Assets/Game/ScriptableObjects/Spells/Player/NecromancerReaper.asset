@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: NecromancerReaper
   m_EditorClassIdentifier: 
-  _isInit: 0
+  _isInit: 1
   Name: REAPER
   Description: Creates a reaper that swings itself to damage enemies on the area
   Icon: {fileID: 21300000, guid: 4d0945a30a8cd6c4689c0a582be7ea73, type: 3}
+  Sound: {fileID: 8300000, guid: 45b3c02662d103e4782f18c91d5cfb7b, type: 3}
   Spell: {fileID: 4386157602729246081, guid: e35a6693e49a9ca48926722ce5946c62, type: 3}
   Damage: 10
   Speed: 0

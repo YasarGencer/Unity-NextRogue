@@ -21,10 +21,6 @@ public class CanvasManager : AUI
         _pauseScreen.Initialize();
         _skillSelection.Initialize();
 
-        if (_isInit)
-            Invoke("OpenPlayerHud", 2f);
-        else
-            Invoke("OpenSkillSelection", 2f);
 
         _isInit = true;
     }
@@ -38,7 +34,15 @@ public class CanvasManager : AUI
         _playerHud.Open();
         _pauseScreen.Close(); 
         _skillSelection.Close(); 
-    } 
+    }
+    protected override void OnPlayerInitialized() {
+        base.OnPlayerInitialized();
+
+        if (MainManager.Instance.IsTest == false &&MainManager.Instance.LevelManager.GetLevel() == 0 && MainManager.Instance.LevelManager.ActiveLevelSetting.TutorialLevel.IsTutorial == false)
+            OpenSkillSelection();
+        else
+            OpenPlayerHud();
+    }
     public void OpenSkillSelection() { 
         MainManager.Instance.EventManager.RunOnGamePause();
         _pauseScreen.Close(); 

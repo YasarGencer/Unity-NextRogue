@@ -31,6 +31,7 @@ public class _HealingWardProjectile : AP_Projectile
         if(collision.tag == "EnemyProjectile") {
             Destroy(collision.gameObject);
             _player.GetComponent<P_MainController>().Health.GainHealth(_damage);
+            PlaySound();
         }
     }
 }

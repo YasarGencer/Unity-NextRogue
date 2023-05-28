@@ -19,21 +19,18 @@ public class AUI : MonoBehaviour
 
         _child.gameObject.SetActive(true);
         _child.localPosition = new(0, -50, 0);
+        _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc); 
+
+        GetComponent<CanvasGroup>().alpha = 0;
+        GetComponent<CanvasGroup>().DOFade(1,1);  
+    }
+    public virtual void Close(float time = 0) {
+        _child.gameObject.SetActive(true);
+        _child.localPosition = new(0, -50, 0);
         _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc);
 
-        var alpha = GetComponent<CanvasGroup>();
-        float alphaValue = 0; 
-
-        alpha.alpha = 0;
-
-        DOTween.To(() => alphaValue, x => alphaValue = x, 1, 1)
-        .OnUpdate(() => {
-            alpha.alpha = alphaValue;
-        }).SetEase(Ease.InCirc);
-
-    }
-    public virtual void Close() {
-        gameObject.SetActive(false);
+        GetComponent<CanvasGroup>().alpha = 1;
+        GetComponent<CanvasGroup>().DOFade(0, time).OnComplete(()=> gameObject.SetActive(false));
     }
 
     // EVENTS 
@@ -41,12 +38,14 @@ public class AUI : MonoBehaviour
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
         MainManager.Instance.EventManager.onGameStart += OnGameStart;
+        MainManager.Instance.EventManager.onPlayerInitialized += OnPlayerInitialized;
     }
     protected virtual void OnGamePause() {
     }
     protected virtual void OnGameUnPause() {
     }
-    protected virtual void OnGameStart() {
-
+    protected virtual void OnGameStart() { 
+    }
+    protected virtual void OnPlayerInitialized() { 
     }
 }

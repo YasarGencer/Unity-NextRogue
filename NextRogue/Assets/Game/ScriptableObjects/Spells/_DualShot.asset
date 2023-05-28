@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: _DualShot
   m_EditorClassIdentifier: 
+  _isInit: 0
   Name: DUAL SHOT
   Description: Shoot dual projictiles that damages area on contact
   Icon: {fileID: 21300000, guid: 0c8d6f28798756a4988d40c9f8d51428, type: 3}
+  Sound: {fileID: 8300000, guid: c662c266d0c49864e8174875222bcdbc, type: 3}
   Spell: {fileID: 8797521380335533868, guid: 60f8763b2359f0544b9543544fbb45fe, type: 3}
   Damage: 50
   Speed: 350

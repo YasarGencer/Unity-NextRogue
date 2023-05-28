@@ -7,6 +7,8 @@ public class __ShotProjectile : AProjectile {
         base.Initialize(mousePos, damage, time, speed);
     }
     private void OnCollisionEnter2D(Collision2D collision) {
-        Destroy(gameObject, .05F);
+        PlaySound();
+        gameObject.SetActive(false);
+        Destroy(gameObject, 1F);
     } 
 }

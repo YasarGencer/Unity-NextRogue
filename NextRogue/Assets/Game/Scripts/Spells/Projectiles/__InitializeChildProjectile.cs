@@ -8,9 +8,12 @@ public class __InitializeChildProjectile : AP_Projectile {
     }
     async void InitChilds(Vector3 targetPos, float damage, float time, float speed) {
         for (int i = 0; i < transform.childCount; i++) {
-            var projectile = transform.GetChild(i).GetComponent<AProjectile>();
-            projectile.Initialize(targetPos, damage, time, speed); 
-            await Task.Delay(50);
+            await Task.Delay(100);
+            if (transform.GetChild(0) != null) {
+                var projectile = transform.GetChild(0).GetComponent<AProjectile>();
+                projectile.Initialize(targetPos, damage, time, speed);
+                projectile.transform.SetParent(null);
+            }
         }
     }
 }

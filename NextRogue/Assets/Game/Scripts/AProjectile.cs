@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AProjectile : MonoBehaviour
 {
+    [SerializeField] protected AudioClip clip;
     IDisposable _destroyRX;
     protected Vector2 currentVel;
     protected Rigidbody2D _rb;
@@ -98,5 +99,10 @@ public class AProjectile : MonoBehaviour
 
         _destroyRX?.Dispose();
         _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX); 
+    }
+    protected void PlaySound() {
+        if (clip == null)
+            return;
+        AudioManager.PlaySound(clip);
     }
 }

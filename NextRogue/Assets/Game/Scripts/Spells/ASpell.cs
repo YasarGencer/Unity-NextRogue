@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UniRx;
-using System;
-using System.Runtime.CompilerServices;
+using System; 
 
 public abstract class ASpell : ScriptableObject
 {
@@ -28,6 +24,8 @@ public abstract class ASpell : ScriptableObject
 
     public Sprite Icon;
 
+    public AudioClip Sound;
+
     public GameObject Spell;
     protected GameObject Instantiated;
 
@@ -45,8 +43,7 @@ public abstract class ASpell : ScriptableObject
 
     public virtual void Initialize(P_MainController mainController, int value) { 
         if (_isInit && _currentTimeCooldown < CooldownTime)
-            return;
-        Debug.Log(Name);
+            return; 
         RegisterEvents();
 
         _keyIndex = value;
@@ -63,11 +60,15 @@ public abstract class ASpell : ScriptableObject
         _isInit = true;
     }
     public virtual void ActivateSpell() {
-        if(_keyIndex <= 0) { }
+
+        if (_keyIndex <= 0) { }
         else if (_keyIndex <= 3)
             _mainController.Animator.SetTrigger("basic");
         else
-            _mainController.Animator.SetTrigger("spell");
+            _mainController.Animator.SetTrigger("spell"); 
+
+        if(Sound)
+            AudioManager.PlaySound(Sound);
         StartCooldown();
     }
     public void StartCasting() { _castRX?.Dispose(); _castRX = Observable.EveryUpdate().TakeUntilDisable(_mainController).Subscribe(CastingTimer); }
@@ -105,15 +106,13 @@ public abstract class ASpell : ScriptableObject
             Damage, CooldownTime, Speed);
         return projectile;
     }
-
     public void RetrieveCooldown() {
         _currentTimeCooldown = CooldownTime;
-        StopCooldown();
-        if (_mainController.UI)
-            _mainController.UI.SetSlider(
-                _mainController.UI.spellIconList[_keyIndex].Slider,
-                CooldownTime,
-                CooldownTime);
+        StopCooldown(); 
+        _mainController?.UI?.SetSlider(
+            _mainController.UI.spellIconList[_keyIndex].Slider,
+            1,
+            1);
     }
 
     //EVENTS

@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: CONSUME
   Description: Consumes nearby corpses amd heals
   Icon: {fileID: 21300000, guid: b5afc94ef3f9e844a90448fb3e507584, type: 3}
+  Sound: {fileID: 8300000, guid: 601f962d8cc8fae43a012415d02b5429, type: 3}
   Spell: {fileID: 0}
   Damage: 0
   Speed: 0

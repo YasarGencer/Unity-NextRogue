@@ -21,7 +21,9 @@ public abstract class AInteract : MonoBehaviour {
             if (_isInteractable)
                 Interact();
     }
-    protected abstract void Interact();
+    protected virtual void Interact() {
+        Info(false);
+    }
 
     private void OnDrawGizmos() { 
     }

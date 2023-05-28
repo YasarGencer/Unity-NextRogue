@@ -1,12 +1,14 @@
 using UnityEngine;
 using UniRx;
-using System;
-using static EventManager;
+using System; 
+using System.Collections.Generic;
+using System.Collections;
 
 public class P_Movement : MonoBehaviour {
     bool _isInit;
     P_MainController _mainController;
     Animator _animator;
+    AudioSource _audioSource;
 
     IDisposable _moveRX;
     public Animator Animator { get { return _animator; } }
@@ -21,6 +23,12 @@ public class P_Movement : MonoBehaviour {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
         _mainController = mainController;
+
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = _mainController.Stats.WalkSound;
+        _audioSource.volume = 0;
+        _audioSource.Play();
+
         _animator = _mainController.Animator;
     }
     public void MoveRX(long l) {
@@ -42,6 +50,7 @@ public class P_Movement : MonoBehaviour {
         _moveRX?.Dispose();
         if (_direction != Vector2.zero)
             _moveRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(MoveRX);
+        WalkSound(_direction);
     }
     void OnGamePause() {
         _moveRX?.Dispose();
@@ -50,4 +59,28 @@ public class P_Movement : MonoBehaviour {
         _moveRX?.Dispose();
         _moveRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(MoveRX);
     }
+    protected void WalkSound(Vector2 direction) {
+        if (_audioSource.clip == null)
+            return;
+        if (direction == Vector2.zero || _mainController.canPlay == false) {
+            StartCoroutine(StartFade(_audioSource, .25f, 0));
+            return;
+        }
+        StartCoroutine(StartFade(_audioSource, .25f, AudioManager.GetVolume(AudioManager.AudioVolume.sfx)));
+    }
+    IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume) {
+        float currentTime = 0;
+        float start = audioSource.volume;
+         
+        //var volumeDifference = Mathf.Abs(targetVolume - _audioSource.volume);
+        //var adjustedDuration = volumeDifference * duration / MainManager.Instance.AudioManager.sfxVolume;
+
+        while (currentTime < duration) {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
+
 }

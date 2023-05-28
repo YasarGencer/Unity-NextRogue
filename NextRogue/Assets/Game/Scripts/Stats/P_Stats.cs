@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Stats", menuName = "ScriptableObjects/Stats/PlayerStats", order = 0)]
@@ -8,29 +9,26 @@ public class P_Stats : AStats {
     public int SecondaryValue = 0; 
     [Header("Level")]
     public int Level;
-    public int EXP, EXPRequired;
-    private int _expRequired = 0;
+    public int EXP, EXPRequired; 
     public override void Initialize() {
         base.Initialize();
         foreach (var item in Spells)
-            item.IsInit = false;
-        if (_expRequired == 0)
-            _expRequired = EXPRequired;
+            item.IsInit = false; 
         if (SecondaryBar)
             SecondaryValue = 0;
-    }
-    public override void ResetStats() {
-        base.ResetStats();
-        foreach (var item in Spells)
-            item.IsInit = false;
         Level = 0;
         EXP = 0;
-        if(_expRequired != 0)
-            EXPRequired = _expRequired;
-        _expRequired = 0;
+        EXPRequired = 100; 
     } 
     public void SetSecondaryValue(int value) {
         SecondaryValue = value;
         MainManager.Instance.CanvasManager.Player_GUI_HUD.SetSecondary(value);
     }
+    public void SetTutorial(int index = 0) {
+        PlayerPrefs.SetInt(Name + "tutorial", index);
+        Initialize(); 
+    }
+    public bool GetTutorial() {
+        return PlayerPrefs.GetInt(Name + "tutorial", 0) == 0? false: true;
+    } 
 }

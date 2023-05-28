@@ -6,6 +6,8 @@ using UniRx;
 using Unity.VisualScripting;
 
 public class _BerserkerThrowProjectile : AP_Projectile {
+    [SerializeField]
+    AudioClip _pickUpClip;
     IDisposable _stopRX;
     float _timer = 0;
     bool _isStop;
@@ -32,16 +34,19 @@ public class _BerserkerThrowProjectile : AP_Projectile {
     void Stop() {
         _stopRX?.Dispose();
         _isStop= true;
+        PlaySound();
         GetComponent<CircleCollider2D>().isTrigger = false;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Destroy(GetComponent<Damager>());
         gameObject.layer = 0;
         transform.GetChild(0).GetComponent<Rigidbody2D>().freezeRotation = true;
         Destroy(Instantiate(_particle, transform.position, Quaternion.identity), 5f);
+
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.transform.CompareTag("Player")){
             BerserkThrow.RetrieveCooldown();
+            AudioManager.PlaySound(_pickUpClip);
             Destroy(gameObject);
         }
     } 

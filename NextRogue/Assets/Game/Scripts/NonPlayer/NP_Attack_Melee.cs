@@ -13,6 +13,7 @@ public class NP_Attack_Melee : ANP_Attack {
         StartCoroutine(AttackLimiter());
     }
     void CheckHit() {
+        AudioManager.PlaySound(_mainController.Stats.AttackSound);
         if (_mainController.Target.Target == null)
             return;
         if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)

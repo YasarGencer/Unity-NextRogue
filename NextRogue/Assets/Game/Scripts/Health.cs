@@ -26,6 +26,8 @@ public class Health : MonoBehaviour {
 
         _stats.Health -= value;
 
+        AudioManager.PlaySound(_stats.HitSound, transform);
+
         MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);
         Destroy(Instantiate(_stats.HitParticle, transform.position, Quaternion.identity), 5f);
 
@@ -34,7 +36,7 @@ public class Health : MonoBehaviour {
         if (_isPlayer)
             MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
         if (_stats.Health <= 0) 
-            Die();
+            Die(); 
     }
     public void GainHealth(float value) {
         _stats.Health += value;
@@ -44,8 +46,7 @@ public class Health : MonoBehaviour {
             MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
     }
     public void Die() {
-        if (transform.CompareTag("Player")) {
-            _stats.ResetStats();
+        if (transform.CompareTag("Player")) { 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             return;
         }

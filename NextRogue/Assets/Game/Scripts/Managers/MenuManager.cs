@@ -1,5 +1,4 @@
-using UnityEngine; 
-using UnityEngine.UI;
+using UnityEngine;  
 
 public class MenuManager : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class MenuManager : MonoBehaviour
     [Header("PANELS")]
     [SerializeField] MenuPanel_Start _startPanel;
     [SerializeField] MenuPanel_Play _playPanel;
-
+    [SerializeField] MenuPanel_Options _optionsPanel;
     CurrentPanel _currentPanel;
     enum CurrentPanel {
         START,
@@ -21,8 +20,12 @@ public class MenuManager : MonoBehaviour
 
         _startPanel.Initialize(Play, Options, Quit);
         _playPanel.Initialize(_playerStatList, Back);
+        _optionsPanel.Initialize(Back);
         _startPanel.Open();
         _playPanel.gameObject.SetActive(false);
+
+        AudioManager.CreateAudioManager();
+
     }
     void Play() {
         _currentPanel = CurrentPanel.PLAY;
@@ -34,7 +37,7 @@ public class MenuManager : MonoBehaviour
         _currentPanel = CurrentPanel.OPTIONS;
 
         _startPanel.Close();
-        //_optionsPanel.gameObject.SetActive(true); 
+        _optionsPanel.Open(); 
     }
     void Back() {
         switch (_currentPanel) {
@@ -46,6 +49,7 @@ public class MenuManager : MonoBehaviour
                 break;
             case CurrentPanel.OPTIONS: 
                 _startPanel.Open();
+                _optionsPanel.Close();
                 break;
             default:
                 break;
