@@ -17,7 +17,7 @@ public abstract class AInteract : MonoBehaviour {
         _animator = GetComponent<Animator>();
     }
     protected void CheckInteraction() {
-        if (!InGameManager.Instance.GamePaused)
+        if (!MainManager.Instance.GameManager.GamePaused)
             if (_isInteractable)
                 Interact();
     }

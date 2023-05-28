@@ -30,7 +30,7 @@ public class NP_MainController : MonoBehaviour
     private void Start() {
         Initialize(2f);
     }
-    public void Initialize(Room? room) { 
+    public void Initialize(Room? room) {
         StartCoroutine(Init(0));
     }
     public void Initialize(float time) { 
@@ -38,7 +38,7 @@ public class NP_MainController : MonoBehaviour
     } 
     IEnumerator Init(float time) {
         yield return new WaitForSeconds(time);
-        if (!_isInit && !InGameManager.Instance.GamePaused) {
+        if (!_isInit && !MainManager.Instance.GameManager.GamePaused) {
             _isInit = true;
 
             Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();

@@ -24,10 +24,11 @@ public class HUDMainmenuPlayer : AUI
     }
     public override void Close() {
         var alpha = GetComponent<CanvasGroup>();
-        float alphaValue = alpha.alpha;
+        float alphaValue = alpha.alpha; 
 
-
-        GetComponent<CanvasGroup>().DOFade(1, 0);
-        GetComponent<CanvasGroup>().DOFade(0, 1).SetEase(Ease.InCirc);
+        DOTween.To(() => alphaValue, x => alphaValue = x, 0, .5f)
+        .OnUpdate(() => {
+            alpha.alpha = alphaValue;
+        }).SetEase(Ease.InCirc);
     }
 }

@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class HemomancerDrainBolt : AProjectile {
     public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
-        var cellVial = GameObject.FindObjectOfType<P_MainController>().Stats.SecondaryValue;
-        GameObject.FindObjectOfType<P_MainController>().Stats.SetSecondaryValue(0);
+        var cellVial = MainManager.Instance.Player.GetChild(0).GetComponent<P_MainController>().Stats.SecondaryValue;
+        MainManager.Instance.Player.GetChild(0).GetComponent<P_MainController>().Stats.SetSecondaryValue(0);
         base.Initialize(mousePos, damage * cellVial, time, speed);
     }
     private void OnCollisionEnter2D(Collision2D collision) {

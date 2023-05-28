@@ -31,6 +31,6 @@ public class P_Stats : AStats {
     } 
     public void SetSecondaryValue(int value) {
         SecondaryValue = value;
-        InGameManager.Instance.CanvasManager.Player_GUI_HUD.SetSecondary(value);
+        MainManager.Instance.CanvasManager.Player_GUI_HUD.SetSecondary(value);
     }
 }

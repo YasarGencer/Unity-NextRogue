@@ -16,7 +16,7 @@ public class HUDSlotSelection : MonoBehaviour
     }
     public void Initialize() { 
         Init(false);
-        _text.SetText(GameObject.FindObjectOfType<P_MainController>().Input.GetSkillKey(_keyIndex + 4));
+        _text.SetText(MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Input.GetSkillKey(_keyIndex + 4));
  
     }
     void Init(bool value) {
@@ -24,7 +24,7 @@ public class HUDSlotSelection : MonoBehaviour
         _text.gameObject.SetActive(!value);
         _icon.gameObject.SetActive(value);
     }
-    public void OnClick() {
-        InGameManager.Instance.CanvasManager.SkillSelection.SaveButton(_keyIndex);
+    public void OnClick() { 
+        MainManager.Instance.CanvasManager.SkillSelection.SaveButton(_keyIndex);
     }
 }

@@ -39,7 +39,7 @@ public abstract class ANP_Movement : MonoBehaviour
         _updateRX?.Dispose();
     }
     protected virtual void UnFreeze() {
-        if (InGameManager.Instance.GamePaused)
+        if (MainManager.Instance.GameManager.GamePaused)
             return;
         _updateRX?.Dispose();
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
