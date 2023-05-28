@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 14f290b511e0b384d802ccc7b7072a8e, type: 3}
 --- !u!95 &4842414113835465095
 Animator:
   serializedVersion: 4
@@ -388,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 14f290b511e0b384d802ccc7b7072a8e, type: 3}
 --- !u!95 &965983850581170076
 Animator:
   serializedVersion: 4
@@ -508,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 14f290b511e0b384d802ccc7b7072a8e, type: 3}
 --- !u!95 &2920169302614535439
 Animator:
   serializedVersion: 4
@@ -2027,6 +2030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 14f290b511e0b384d802ccc7b7072a8e, type: 3}
 --- !u!95 &8476863778819964118
 Animator:
   serializedVersion: 4
@@ -2231,6 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 14f290b511e0b384d802ccc7b7072a8e, type: 3}
 --- !u!95 &6259843529289655865
 Animator:
   serializedVersion: 4
@@ -2435,6 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 14f290b511e0b384d802ccc7b7072a8e, type: 3}
 --- !u!95 &6790645350767817009
 Animator:
   serializedVersion: 4
@@ -2589,6 +2595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bde8c7d4e8f2a4693cf4d1077cbee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
 --- !u!1 &9081227584080958764
 GameObject:
   m_ObjectHideFlags: 0
