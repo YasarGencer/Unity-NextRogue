@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PauseScreenPanel_Control : AUI {
+    [SerializeField] HUDKeys keys;
     public override void Initialize() {
         base.Initialize();
-        Close();
+        Close(); 
     }
     public override void Open() {
         base.Open();

@@ -16,8 +16,8 @@ public class HUDSlotSelection : MonoBehaviour
     }
     public void Initialize() { 
         Init(false);
-        _text.SetText(MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Input.GetSkillKey(_keyIndex + 4));
- 
+        _text.SetText(MainManager.Instance.InputManager.GetSkillKeys(_keyIndex + 4));
+
     }
     void Init(bool value) {
         //GetComponent<Button>().interactable = !value;

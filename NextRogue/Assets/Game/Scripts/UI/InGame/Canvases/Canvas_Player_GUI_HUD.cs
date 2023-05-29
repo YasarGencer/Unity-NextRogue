@@ -39,7 +39,7 @@ public class Canvas_Player_GUI_HUD : AUI
             InitializeSecondary(0, 1, 0);
     }
     void SetKeys() {
-        var text = _mainController.Input.GetKeyInfo();
+        var text = MainManager.Instance.InputManager    .GetKeyInfo();
         var textPart = text.Split("/");
         for (int i = 0; i < textPart.Length - 1; i++)
             spellIconList[i].SetKey(textPart[i]);  

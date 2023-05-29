@@ -102,7 +102,7 @@ public abstract class ASpell : ScriptableObject
             Quaternion.identity
             );
         projectile.GetComponent<AProjectile>()
-            .Initialize(_mainController.Input.GetMouseWolrdPos(),
+            .Initialize(MainManager.Instance.InputManager.GetMouseWolrdPos(),
             Damage, CooldownTime, Speed);
         return projectile;
     }

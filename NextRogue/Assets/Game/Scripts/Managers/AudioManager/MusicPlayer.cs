@@ -51,7 +51,7 @@ public class MusicPlayer : MonoBehaviour {
     public void ChangeTrack() {
         isInit = false;
         List<AudioClip> currentMusicList = musicLists[currentListIndex];
-        var random = Random.Range(0, currentMusicList.Count - 1);
+        var random = Random.Range(1, currentMusicList.Count - 1);
         currentTrackIndex = (currentTrackIndex + random) % currentMusicList.Count;
         FadeOutAndPlayNext();
     }

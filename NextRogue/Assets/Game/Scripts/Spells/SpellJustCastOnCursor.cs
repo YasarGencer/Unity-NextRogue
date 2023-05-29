@@ -8,7 +8,7 @@ public class SpellJustCastOnCursor : ASpell {
     }
     public override void ActivateSpell() {
         base.ActivateSpell();
-        JustCast(_mainController.Input.GetMouseWolrdPos());
+        JustCast(MainManager.Instance.InputManager.GetMouseWolrdPos());
     }
 
 }

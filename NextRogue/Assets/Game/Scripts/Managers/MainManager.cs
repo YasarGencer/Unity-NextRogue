@@ -19,13 +19,16 @@ public class MainManager : MonoBehaviour
     [SerializeField]
     private PDGManager _PDGManager;
     [SerializeField]
-    private CanvasManager _canvasManager; 
+    private CanvasManager _canvasManager;
+    [SerializeField]
+    private InputManager _inputManager;
 
     public TestManager TestManager { get { return _testManager; } }
     public GameManager GameManager { get { return _gameManager; } }
     public EventManager EventManager { get { return _eventManager; } }
     public LevelManager LevelManager { get { return _levelManager; } }
     public CanvasManager CanvasManager { get { return _canvasManager; } } 
+    public InputManager InputManager { get { return _inputManager; } } 
 
     [Space(15f)]
     [Header("Scene Managers")]
@@ -82,4 +85,9 @@ public class MainManager : MonoBehaviour
 
         _testManager?.Initialize();
     } 
+    public void PlayerInitialized() {
+        MainManager.Instance.EventManager.PlayerInitialized();
+        GameObject.FindObjectOfType<TutorialManager>()?.OnPlayerInitialized();
+        _inputManager.Initialize();
+    }
 }

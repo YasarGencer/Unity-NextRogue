@@ -8,8 +8,6 @@ public class P_MainController : MonoBehaviour {
     [HideInInspector]
     public Rigidbody2D Rb { get; private set; }
 
-     
-    public P_InputManager Input { get; private set; }
     [SerializeField]
     P_Stats _stats;
     [HideInInspector] 
@@ -33,8 +31,6 @@ public class P_MainController : MonoBehaviour {
         Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
         Animator = Animator == null ? GetComponent<Animator>() : Animator;
 
-        if(this.Input== null)
-        this.Input = gameObject.AddComponent<P_InputManager>();
         if (this.Health == null)
             Health = GetComponent<Health>();
         if (this.Level == null)
@@ -59,7 +55,6 @@ public class P_MainController : MonoBehaviour {
 
         canPlay = true;
 
-        this.Input.Initialize(this);
         Level.Initialize(this);
         Movement.Initialize(this);
         Spells.Initialize(this);
@@ -67,8 +62,7 @@ public class P_MainController : MonoBehaviour {
 
         yield return new WaitForSeconds(.25f);
 
-        MainManager.Instance.EventManager.PlayerInitialized();
-        GameObject.FindObjectOfType<TutorialManager>()?.OnPlayerInitialized();
+        MainManager.Instance?.PlayerInitialized();
     }
  
 }
