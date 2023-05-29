@@ -12,7 +12,7 @@ public abstract class ANP_Movement : MonoBehaviour
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
         _audioSource = GetComponent<AudioSource>();
-        _audioSource.clip = _mainController.Stats.WalkSound;
+        _audioSource.clip = _mainController.Stats.WalkSound != null? _mainController.Stats.WalkSound: null;
         UnFreeze();
         RegisterEvents();
         StartCoroutine(PatrolPos());

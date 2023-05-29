@@ -1,19 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
+using TMPro; 
+using DG.Tweening;
 
 public class Canvas_Pause_Screen : AUI {
     [SerializeField] Button[] _buttons;
+    [SerializeField] VerticalLayoutGroup _buttonsParent;
+
+    [SerializeField] AUI _optionsPanel, _controlPanel, _mapPanel;
+
+    float _buttonYScale; 
     public override void Initialize() {
         base.Initialize();
 
+        _optionsPanel.Initialize();
+        _controlPanel.Initialize();
+        _mapPanel.Initialize();
+
+        _buttonsParent.childControlHeight = false;
+        _buttonYScale = _buttons[0].transform.localScale.y; 
+
         _buttons[0].onClick.AddListener(MainMenu);
-        _buttons[0].transform.parent.GetComponent<TextMeshProUGUI>().SetText("mainmenu");
-        _buttons[1].onClick.AddListener(Restart);
-        _buttons[1].transform.parent.GetComponent<TextMeshProUGUI>().SetText("restart");
-        _buttons[2].onClick.AddListener(Unpause);
-        _buttons[2].transform.parent.GetComponent<TextMeshProUGUI>().SetText("unpause");
+        _buttons[1].onClick.AddListener(delegate { OpenAsPage(_controlPanel, 1); _optionsPanel.Close(.5f); }); 
+        _buttons[2].onClick.AddListener(delegate { OpenAsPage(_optionsPanel, 2); _controlPanel.Close(.5f); });
+        _buttons[3].onClick.AddListener(Unpause); 
 
         Close();
     }
@@ -21,7 +32,7 @@ public class Canvas_Pause_Screen : AUI {
         base.Open();
     }
     public override void Close(float time = 0) {
-        base.Close();
+        base.Close(time);
     }
 
     void MainMenu() {
@@ -32,5 +43,25 @@ public class Canvas_Pause_Screen : AUI {
     }
     void Unpause() {
         MainManager.Instance.EventManager.RunOnGameUnPuase();
+    } 
+    void OpenAsPage(AUI panel,int index) { 
+        panel.ButtonPressed();
+        if (panel.isOpen) {
+            if (_mapPanel.isOpen)
+                _mapPanel.Close(.5f);
+            for (int i = 0; i < _buttons.Length; i++)
+                if (i != index) {
+                    _buttons[i].transform.DOScaleY(_buttonYScale / 1.25f, 1);
+                }
+            _buttons[index].transform.DOScaleY(_buttonYScale * 1.25f, 1);
+        } else {
+            if (_mapPanel.isOpen == false)
+                _mapPanel.Open();
+            for (int i = 0; i < _buttons.Length; i++)
+                if (i != index) {
+                    _buttons[i].transform.DOScaleY(_buttonYScale, 1);
+                }
+            _buttons[index].transform.DOScaleY(_buttonYScale, 1);
+        }
     }
 }

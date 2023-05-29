@@ -5,6 +5,7 @@ using DG.Tweening;
 public class AUI : MonoBehaviour
 { 
     protected Transform _child;
+    public bool isOpen { get; protected set; }
     public virtual void Initialize() {
         RegisterEvents();
         _child = transform.GetChild(0); 
@@ -16,6 +17,7 @@ public class AUI : MonoBehaviour
     }
     public virtual void Open() {
         gameObject.SetActive(true);
+        isOpen = true;
 
         _child.gameObject.SetActive(true);
         _child.localPosition = new(0, -50, 0);
@@ -31,8 +33,19 @@ public class AUI : MonoBehaviour
 
         GetComponent<CanvasGroup>().alpha = 1;
         GetComponent<CanvasGroup>().DOFade(0, time).OnComplete(()=> gameObject.SetActive(false));
+        isOpen = false;
     }
-
+    public virtual void ButtonPressed(Image buttonSprite = null) {
+        if (buttonSprite) {
+            var color = buttonSprite.color;
+            color.a = isOpen == true ? 0.25f : 1;
+            buttonSprite.color = color;
+        }
+        if (isOpen)
+            Close(); 
+        else
+            Open();  
+    }
     // EVENTS 
     protected virtual void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;

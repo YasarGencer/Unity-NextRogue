@@ -14,6 +14,6 @@ public class MenuPanel_Options : AUI {
         base.Open();
     }
     public override void Close(float time = 0) {
-        base.Close();
+        base.Close(time);
     }  
 }

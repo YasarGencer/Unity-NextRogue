@@ -1,6 +1,5 @@
 using Cinemachine;
-using DG.Tweening;
-using Unity.VisualScripting;
+using DG.Tweening; 
 using UnityEngine; 
 
 public class MainManager : MonoBehaviour
