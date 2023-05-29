@@ -49,14 +49,7 @@ public class MainManager : MonoBehaviour
     public Transform Enemies { get { return _enemies; } }
     private void Awake() {
         Initialize();
-        var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
-        cinemachine.Follow = Player.GetChild(0);
-        var defSize = cinemachine.m_Lens.OrthographicSize;
-        float size = 2;
-        DOTween.To(() => size, x => size = x, defSize, 2)
-        .OnUpdate(() => {
-            cinemachine.m_Lens.OrthographicSize = size;
-        }).SetEase(Ease.InCirc);
+        OpeningAnim();
     }
     public void Initialize() { 
         AudioManager.CreateAudioManager();
@@ -89,5 +82,15 @@ public class MainManager : MonoBehaviour
         MainManager.Instance.EventManager.PlayerInitialized();
         GameObject.FindObjectOfType<TutorialManager>()?.OnPlayerInitialized();
         _inputManager.Initialize();
+        GameObject.FindObjectOfType<CameraTarget>().Initialize();
+    }
+    void OpeningAnim() {
+        var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
+        var defSize = cinemachine.m_Lens.OrthographicSize;
+        float size = 2;
+        DOTween.To(() => size, x => size = x, defSize, 2)
+        .OnUpdate(() => {
+            cinemachine.m_Lens.OrthographicSize = size;
+        }).SetEase(Ease.InCirc);
     }
 }

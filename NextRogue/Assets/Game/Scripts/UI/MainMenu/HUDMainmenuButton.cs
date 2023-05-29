@@ -22,24 +22,28 @@ public class HUDMainmenuButton : MonoBehaviour
         var value = _Line.sizeDelta.x;
         DOTween.To(() => value, x => value = x, _lineX, .3f)
         .OnUpdate(() => {
+            if(_Line)
             _Line.sizeDelta = new Vector2(value, _Line.sizeDelta.y);
         });
         var value2 = _text.fontSize;
         DOTween.To(() => value2, x => value2 = x, _textSize * 1.5f, .3f)
         .OnUpdate(() => {
-            _text.fontSize = value2;
+            if (_text)
+                _text.fontSize = value2;
         });
     }
     public void TriggerExit() {
         var value = _Line.sizeDelta.x;
         DOTween.To(() => value, x => value = x, 0, .3f)
         .OnUpdate(() => {
-            _Line.sizeDelta = new Vector2(value, _Line.sizeDelta.y);
+            if (_Line)
+                _Line.sizeDelta = new Vector2(value, _Line.sizeDelta.y);
         });
         var value2 = _text.fontSize;
         DOTween.To(() => value2, x => value2 = x, _textSize, .3f)
         .OnUpdate(() => {
-            _text.fontSize = value2;
+            if (_text)
+                _text.fontSize = value2;
         });
     }
     void ClickSound() {
