@@ -22,5 +22,6 @@ MonoBehaviour:
   Speed: 0
   CastingTime: 0
   CooldownTime: 20
+  stopAudio: 1
   _subjugateCount: 1
   _subhugateHeader: {fileID: 9173291971978604375, guid: 520dadc0557bd5f4c9ae5049de928cd9, type: 3}

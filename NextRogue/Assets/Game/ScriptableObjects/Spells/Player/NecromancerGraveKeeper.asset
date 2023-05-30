@@ -16,8 +16,10 @@ MonoBehaviour:
   Name: GRAVE KEEPER
   Description: Revive frinedly creatures from dead enemy bodies
   Icon: {fileID: 21300000, guid: d79dea5ed38a1184a88496e3c9acea59, type: 3}
+  Sound: {fileID: 0}
   Spell: {fileID: 7760740175969813846, guid: fa2c0acec36f0e3428e0b53d2f81ba50, type: 3}
   Damage: 0
   Speed: 0
   CastingTime: 0
   CooldownTime: 10
+  stopAudio: 1

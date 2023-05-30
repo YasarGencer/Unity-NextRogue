@@ -36,7 +36,8 @@ public abstract class ANP_Attack : MonoBehaviour
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
     }
     public virtual void Die() {
-        _updateRX?.Dispose();
+        UnRegisterEvents();
+        _updateRX?.Dispose(); 
     }
     protected bool ShootRay() {
         var direction = GetDir();
@@ -58,6 +59,10 @@ public abstract class ANP_Attack : MonoBehaviour
     void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+    }
+    void UnRegisterEvents() {
+        MainManager.Instance.EventManager.onGamePause -= OnGamePause;
+        MainManager.Instance.EventManager.onGameUnPause -= OnGameUnPause;
     }
     protected virtual void OnGamePause() {
         SetAttackFalse(); 

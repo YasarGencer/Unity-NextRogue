@@ -22,3 +22,4 @@ MonoBehaviour:
   Speed: 0
   CastingTime: 0
   CooldownTime: 10
+  stopAudio: 1

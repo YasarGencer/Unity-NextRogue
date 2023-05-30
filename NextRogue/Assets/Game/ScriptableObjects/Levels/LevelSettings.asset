@@ -40,3 +40,17 @@ MonoBehaviour:
     TutorialLevel:
       IsTutorial: 1
       TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
+  - Name: TUTORIAL - NECROMANCER
+    Description: NecromancerTutorial
+    DungeonLevel:
+      IsRandomDungeon: 0
+      SRWData: {fileID: 0}
+      CorridorLength: 0
+      CorridorCount: 0
+      RoomPercent: 0
+      RoomProps: {fileID: 0}
+      TilemapVisualizerData: {fileID: 0}
+    TutorialLevel:
+      IsTutorial: 1
+      TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
+  activeLevelIndex: -1

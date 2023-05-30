@@ -6,9 +6,12 @@ using UnityEngine;
 public class AProjectile : MonoBehaviour
 {
     [SerializeField] protected AudioClip clip;
+    [SerializeField] protected bool stopAnim;
     IDisposable _destroyRX;
-    protected Vector2 currentVel;
+    protected Vector2 _currentVel;
     protected Rigidbody2D _rb;
+    protected Animator _animator;
+    protected AudioSource _audioSource;
 
     protected bool _isInit = false;
     protected float _damage;
@@ -23,11 +26,16 @@ public class AProjectile : MonoBehaviour
     public virtual void Initialize(Vector3 targetPos, float damage, float time, float speed) {
         StartCoroutine(Init(targetPos, damage, time, speed));
     }
+
     protected IEnumerator Init(Vector3 targetPos, float damage, float time, float speed) {
         if (!_isInit && !MainManager.Instance.GameManager.GamePaused)
             _isInit = true;
+
+        _animator = GetComponent<Animator>() as Animator;
+        _audioSource = GetComponent<AudioSource>() as AudioSource;
+        _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;
+
         if (_isInit) {
-            _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;
             _speed = speed;
             _time = time >= 1 ? time / 2 : 1;
             _damage = damage;
@@ -86,19 +94,22 @@ public class AProjectile : MonoBehaviour
     protected virtual void OnGamePause() {
         //if its moving
         if (_rb) {
-            currentVel = _rb.velocity;
+            _currentVel = _rb.velocity;
             _rb.velocity = Vector2.zero;
             //if its supposed to move but hasnt initialized yet
-            if (currentVel == Vector2.zero)
+            if (_currentVel == Vector2.zero)
                 _secondChance = true;
         } 
 
-        _destroyRX?.Dispose(); 
+        _destroyRX?.Dispose();
+
+        if (stopAnim)
+            _animator.speed = 0;
     }
     protected virtual void OnGameUnPause() {
         //if its moving
         if (_rb)  
-            _rb.velocity = currentVel;
+            _rb.velocity = _currentVel;
         //if its supposed to move but hasnt initialized yet
         if (_secondChance) {
             _secondChance = false;
@@ -106,7 +117,10 @@ public class AProjectile : MonoBehaviour
         }
 
         _destroyRX?.Dispose();
-        _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX); 
+        _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX);
+
+        if (stopAnim)
+            _animator.speed = 1;
     }
     protected void PlaySound() {
         if (clip == null)

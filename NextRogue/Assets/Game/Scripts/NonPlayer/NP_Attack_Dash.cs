@@ -101,7 +101,8 @@ public class NP_Attack_Dash : ANP_Attack {
     }
     protected override void OnGameUnPause() {
         base.OnGameUnPause();
-        if (isDashing)
-            StartCoroutine(DashUnPause());
+        if (_mainController)
+            if (isDashing)
+                StartCoroutine(DashUnPause());
     }
 }

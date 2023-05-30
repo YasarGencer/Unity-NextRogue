@@ -28,16 +28,13 @@ public class AudioManager : MonoBehaviour {
         music,
         sfx
     }
-    public static void PlaySound(AudioClip clip, Transform position = null) {
+    public static void PlaySound(AudioClip clip, Transform position = null, bool value = false) {
         if (clip == null)
             return;
         GameObject soundObject = new GameObject("sound");
-        soundObject.transform.position = position == null ? soundObject.transform.position : position.position;
-        AudioSource audio = soundObject.AddComponent<AudioSource>();
-        audio.volume = GetVolume(AudioVolume.sfx);
-        audio.clip = clip;
-        audio.Play();
-        Destroy(soundObject, clip.length);
+        soundObject.transform.position = position == null ? soundObject.transform.position : position.position; 
+        AudioController controller = soundObject.AddComponent<AudioController>();
+        controller.Initialize(clip, value);
     }
     public static void CreateAudioManager() {
         if (GameObject.FindObjectOfType<AudioManager>())

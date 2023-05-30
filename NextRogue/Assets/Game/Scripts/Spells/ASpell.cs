@@ -17,6 +17,8 @@ public abstract class ASpell : ScriptableObject
     public bool IsInit { get { return _isInit; } set { _isInit = value; } }
     public bool IsChoosen { get { return _isChoosen; } set { _isChoosen = value; } }
 
+    
+
     //public bool IsBasic;
     public string Name;
     [TextArea]
@@ -39,6 +41,8 @@ public abstract class ASpell : ScriptableObject
     public float CooldownTime;
     protected float _currentTimeCooldown;
     IDisposable _cooldownRX;
+
+    [SerializeField] protected bool stopAudio;
 
 
     public virtual void Initialize(P_MainController mainController, int value) { 
@@ -68,7 +72,7 @@ public abstract class ASpell : ScriptableObject
             _mainController.Animator.SetTrigger("spell"); 
 
         if(Sound)
-            AudioManager.PlaySound(Sound);
+            AudioManager.PlaySound(Sound, _mainController.transform, stopAudio);
         StartCooldown();
     }
     public void StartCasting() { _castRX?.Dispose(); _castRX = Observable.EveryUpdate().TakeUntilDisable(_mainController).Subscribe(CastingTimer); }
