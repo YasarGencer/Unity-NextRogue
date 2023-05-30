@@ -27,13 +27,16 @@ public class AUI : MonoBehaviour
         GetComponent<CanvasGroup>().DOFade(1,1);  
     }
     public virtual void Close(float time = 0) {
-        _child.gameObject.SetActive(true);
+        isOpen = false;
+        if (time == 0) {
+            gameObject.SetActive(false);
+            _child.localPosition = new(0, 0, 0);
+            return;
+        }
         _child.localPosition = new(0, -50, 0);
         _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc);
-
-        GetComponent<CanvasGroup>().alpha = 1;
+         
         GetComponent<CanvasGroup>().DOFade(0, time).OnComplete(()=> gameObject.SetActive(false));
-        isOpen = false;
     }
     public virtual void ButtonPressed(Image buttonSprite = null) {
         if (buttonSprite) {

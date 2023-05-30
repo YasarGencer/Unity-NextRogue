@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2615142995590341863}
   - component: {fileID: 2615142995590341860}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4469097417545704142}
   - component: {fileID: 3574634666015544647}
   - component: {fileID: 1009093168134677512}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Bat-Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3555108632543480325}
   - component: {fileID: 3555108632543480322}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: _sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,9 +9,10 @@ public class __InitializeChildProjectile : AP_Projectile {
     async void InitChilds(Vector3 targetPos, float damage, float time, float speed) {
         var count = transform.childCount;
         for (int i = 0; i < count; i++) {
-            await Task.Delay(100);
-            if (transform.GetChild(0) != null) {
+            await Task.Delay(50);
+            if (transform.childCount > 0) {
                 var projectile = transform.GetChild(0).GetComponent<AProjectile>();
+                projectile.gameObject.SetActive(true);
                 projectile.Initialize(targetPos, damage, time, speed);
                 projectile.transform.SetParent(null);
             }

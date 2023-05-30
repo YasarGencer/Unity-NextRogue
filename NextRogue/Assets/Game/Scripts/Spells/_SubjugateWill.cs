@@ -20,7 +20,7 @@ public class _SubjugateWill : ASpell {
             var subjugate = Instantiate(item.gameObject, item.transform.position, Quaternion.identity);
             
             subjugate.tag = "Summoned";
-            subjugate.layer = 9;
+            subjugate.layer = 8;
 
             Destroy(Instantiate(Spell, subjugate.transform), 2f);
             Destroy(subjugate.GetComponent<ANP_Target>());

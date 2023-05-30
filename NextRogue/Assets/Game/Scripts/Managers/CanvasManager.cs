@@ -43,8 +43,8 @@ public class CanvasManager : AUI
         else
             OpenPlayerHud();
     }
-    public void OpenSkillSelection() { 
-        MainManager.Instance.EventManager.RunOnGamePause();
+    public void OpenSkillSelection() {
+        MainManager.Instance.EventManager.RunOnGamePause(); 
         _pauseScreen.Close(); 
         _skillSelection.Open();
     }

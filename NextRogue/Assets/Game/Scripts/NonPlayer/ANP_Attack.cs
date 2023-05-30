@@ -7,16 +7,24 @@ public abstract class ANP_Attack : MonoBehaviour
 {
     protected NP_MainController _mainController;
     protected IDisposable _updateRX;
+    protected float _attackTime = 0;
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
         SetAttackTrue();
         RegisterEvents();
     }
-    protected abstract void UpdateRX(long obj);
-    public virtual IEnumerator AttackLimiter() {
-        SetAttackFalse();
-        yield return new WaitForSeconds(_mainController.Stats.AttackSpeed);
-        SetAttackTrue();
+    protected virtual void UpdateRX(long obj) {
+        if (_mainController.Target.Target == null)
+            return; 
+        if (_attackTime <= 0)
+            if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
+                if (ShootRay())
+                    Attack();
+        AttackLimiter();
+    }
+    protected abstract void Attack();
+    protected virtual void AttackLimiter() { 
+        _attackTime -= Time.deltaTime * Time.timeScale;
     }
     public virtual void SetAttackFalse() {
         _updateRX?.Dispose();
@@ -54,7 +62,7 @@ public abstract class ANP_Attack : MonoBehaviour
     protected virtual void OnGamePause() {
         SetAttackFalse(); 
     }
-    protected virtual void OnGameUnPause() { 
+    protected virtual void OnGameUnPause() {
         SetAttackTrue(); 
     }
 }

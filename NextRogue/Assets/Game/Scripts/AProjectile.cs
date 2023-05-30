@@ -26,25 +26,26 @@ public class AProjectile : MonoBehaviour
     protected IEnumerator Init(Vector3 targetPos, float damage, float time, float speed) {
         if (!_isInit && !MainManager.Instance.GameManager.GamePaused)
             _isInit = true;
+        if (_isInit) {
+            _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;
+            _speed = speed;
+            _time = time >= 1 ? time / 2 : 1;
+            _damage = damage;
+            _currentTime = _time;
 
-        _rb = GetComponent<Rigidbody2D>() as Rigidbody2D;
-        _speed = speed;
-        _time = time >= 1 ? time/2 : 1;
-        _damage = damage;
-        _currentTime = _time;
+            _destroyRX?.Dispose();
+            _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX);
 
-        _destroyRX?.Dispose();
-        _destroyRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(DestroyRX);
-
-        if (_damage > 0) {
-            Damager damager = GetComponent<Damager>() as Damager;
-            if (damager)
-                GetComponent<Damager>().Initialize(_damage);
+            if (_damage > 0) {
+                Damager damager = GetComponent<Damager>() as Damager;
+                if (damager)
+                    GetComponent<Damager>().Initialize(_damage);
+            }
+            if (targetPos != Vector3.zero)
+                SetRotation(targetPos);
+            if (_speed >= 0 && _rb != null)
+                Move(_speed);
         }
-        if (targetPos != Vector3.zero)
-            SetRotation(targetPos);
-        if (_speed >= 0 && _rb != null)
-            Move(_speed);
 
         yield return new WaitForEndOfFrame();
         if(!_isInit)
@@ -67,13 +68,20 @@ public class AProjectile : MonoBehaviour
         }
         _currentTime -= Time.deltaTime;
     }
-    protected virtual void Move(float speed) {
-        _rb.AddForce(transform.right * _rb.mass * speed);
+    private void OnDestroy() {
+        UnRegisterEvents();
+    }
+    protected virtual void Move(float speed) { 
+        _rb?.AddForce(transform.right * _rb.mass * speed);
     }  
     // EVENTS
     void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+    }
+    void UnRegisterEvents() {
+        MainManager.Instance.EventManager.onGamePause -= OnGamePause;
+        MainManager.Instance.EventManager.onGameUnPause -= OnGameUnPause;
     }
     protected virtual void OnGamePause() {
         //if its moving

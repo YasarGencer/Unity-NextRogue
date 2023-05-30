@@ -5,9 +5,9 @@ using UnityEngine;
 public class PDG_Rooms : MonoBehaviour
 {
     private List<HashSet<Vector2Int>> _floorPoses;
-    private List<IEnumerable<Vector2Int>> _corridorPoses;
-    private HashSet<Vector2Int> _allCorridors;
-    private HashSet<Vector2Int> _allWalls;
+    private List<IEnumerable<Vector2Int>> _corridorPoses; 
+    public HashSet<Vector2Int> AllCorridors { get; private set; }
+    public HashSet<Vector2Int> AllWalls { get; private set; }
     [SerializeField]
     private List<Room> _rooms; 
 
@@ -23,9 +23,9 @@ public class PDG_Rooms : MonoBehaviour
     public void SaveCorridor(IEnumerable<Vector2Int> item) { _corridorPoses.Add(item); }
     public void ResetValues() {    
         _floorPoses = new();
-        _corridorPoses = new();
-        _allCorridors = new();
-        _allWalls = new();
+        _corridorPoses = new(); 
+        AllCorridors = new();
+        AllWalls = new();
         _rooms = new();
     }
     public void CreateRooms() {
@@ -33,13 +33,14 @@ public class PDG_Rooms : MonoBehaviour
 
         foreach (var item in _corridorPoses) {
             allTiles.UnionWith(item);
-            _allCorridors.UnionWith(item);
+            AllCorridors.UnionWith(item);
         }
-        foreach (var item in _floorPoses)
-            allTiles.UnionWith(item);
-
+        foreach (var item in _floorPoses) {
+            allTiles.UnionWith(item); 
+        }
+        GameObject.FindObjectOfType<MapCamera>().GetTiles(allTiles);
         MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer.PaintFloorTiles(allTiles);
-        _allWalls = WallGenerator.CreateWalls(allTiles, MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer);
+        AllWalls = WallGenerator.CreateWalls(allTiles, MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer);
 
         for (int i = 0; i < _floorPoses.Count; i++)
             _rooms.Add(new(_floorPoses[i], _corridorPoses[i]));
@@ -57,13 +58,13 @@ public class PDG_Rooms : MonoBehaviour
     public void DecorateRooms() {
         PDG_RoomProps room_props = MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.RoomProps;
         foreach (var item in _rooms) {
-            item.DecorateWalls(room_props.WallProps, _allWalls);
+            item.DecorateWalls(room_props.WallProps, AllWalls);
             switch (item.RoomType) {
                 case RoomType.Start:
                     item.DecorateStartRoom(room_props.StartRoom);
                     break;
                 case RoomType.Enemy: 
-                    item.DecorateCenter(room_props.CenterProps, _allWalls);
+                    item.DecorateCenter(room_props.CenterProps, AllWalls);
                     item.DecorateEnemyRoom(room_props.EnemyRoom);
                     break;
                 case RoomType.Treasure: 
@@ -78,7 +79,9 @@ public class PDG_Rooms : MonoBehaviour
                 default:
                     break;
             }
+
         }
+        GameObject.FindObjectOfType<MapCamera>().GetGameObjects();
     }
 }
 [System.Serializable]

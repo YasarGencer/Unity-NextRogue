@@ -18,7 +18,6 @@ public class Canvas_Pause_Screen : AUI {
         _controlPanel.Initialize();
         _mapPanel.Initialize();
 
-        _buttonsParent.childControlHeight = false;
         _buttonYScale = _buttons[0].transform.localScale.y; 
 
         _buttons[0].onClick.AddListener(MainMenu);
@@ -44,7 +43,8 @@ public class Canvas_Pause_Screen : AUI {
     void Unpause() {
         MainManager.Instance.EventManager.RunOnGameUnPuase();
     } 
-    void OpenAsPage(AUI panel,int index) { 
+    void OpenAsPage(AUI panel,int index) {
+        _buttonsParent.childControlHeight = false;
         panel.ButtonPressed();
         if (panel.isOpen) {
             if (_mapPanel.isOpen)

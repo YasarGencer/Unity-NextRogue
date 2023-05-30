@@ -3,14 +3,12 @@ using UnityEngine;
 public class NP_Attack_Ranged : ANP_Attack {
     [SerializeField] GameObject _projectile;
     protected override void UpdateRX(long obj) {
-        if (_mainController.Target.Target == null)
-            return;
-        if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
-            if(ShootRay())
-                Attack();
+        base.UpdateRX(obj);
     }
-    private void Attack() {
-        StartCoroutine(AttackLimiter());
+    protected override void Attack() {
+        if (MainManager.Instance.GameManager.GamePaused)
+            return;
+        _attackTime = _mainController.Stats.AttackSpeed;
         StartCoroutine(_mainController.Movement.FreezeMovement(1));
         _mainController.Animator.SetTrigger("Charge");
         Spawn();

@@ -15,6 +15,7 @@ TagManager:
   - Obstacle
   - Collectable
   - Blood
+  - Minimap
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - PlayerProjectile
   - PlayerMelee
-  - 
+  - Summoned-Fly
   - Summoned
   - Enemy
   - Enemy-Fly
@@ -34,7 +35,7 @@ TagManager:
   - Enviroment
   - EnemyStoper
   - 
-  - 
+  - Minimap
   - 
   - 
   - 

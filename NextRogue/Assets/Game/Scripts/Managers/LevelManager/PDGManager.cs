@@ -21,8 +21,8 @@ public class PDGManager : MonoBehaviour
 
         await Task.Run(() => {
             _corridorFirst?.Initialize();
-        }); 
-
-        _rooms?.Initialize();
+        });
+         
+        _rooms?.Initialize();  
     }
 }

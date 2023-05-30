@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 public class TilemapVisualizerData : ScriptableObject
 {
     public TileBase[] FloorTile;
-
+    public TileBase MinimapTile;
 
     [Header("Wall")]
     public TileBase

@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEditor.PlayerSettings;
+using UnityEngine.WSA;
 
 public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap _floorTilemap, _wallTilemap; 
+    private Tilemap _floorTilemap, _wallTilemap, _minimapTilemap; 
     private TilemapVisualizerData _TVData;
     [SerializeField]
     private TileBase _def;
@@ -18,12 +20,19 @@ public class TilemapVisualizer : MonoBehaviour
     public void Clear() {
         _floorTilemap.ClearAllTiles();
         _wallTilemap.ClearAllTiles();
+        _minimapTilemap.ClearAllTiles();
     }
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPoses) {
         PaintTiles(floorPoses, _floorTilemap, _TVData.FloorTile);
     }
     public void PaintDefaulToFloor(IEnumerable<Vector2Int> floorPoses) {
         PaintTiles(floorPoses, _floorTilemap, _def);
+    }
+    public void PaintMinimap(IEnumerable<Vector2Int> allTiles) {
+        PaintTiles(allTiles, _minimapTilemap, _TVData.MinimapTile);
+    }
+    public void PaintMinimapPart(Vector2Int tile) {
+        PaintSingleTile(_minimapTilemap, _TVData.MinimapTile, tile);
     }
 
     public void PaintTiles(IEnumerable<Vector2Int> floorPoses, Tilemap tilemap, TileBase tile) {
@@ -88,7 +97,4 @@ public class TilemapVisualizer : MonoBehaviour
             PaintSingleTile(_wallTilemap, tile, pos);
     }
 
-    internal void SetTVData(object data) {
-        throw new NotImplementedException();
-    }
 }
