@@ -294,7 +294,7 @@ Spell List :
           Attack Damage : 12
           Attack Range : 3
           Attack Speed : 3
-- Marksmen:
+- Marksman:
     - Ranged
     - Keep Distance
     - Shoots three arrows on normal cooldown. After that waits for 3 times more as normal.
@@ -403,7 +403,7 @@ PHASE 2 SKILLS:
           - Condition : 
           - Cooldown :    
 
-The castle doors will be lowered and player will get the portal inside after phase 2. From that portal game will contuniue in the orc controlled area.
+The castle doors will be lowered and player will get the portal inside after phase 2. From that portal game will contuniue in the orc controlledarea.
 
 
 <h3 align = "left" id = "orcboss"> ORC BOSS</h3> 
