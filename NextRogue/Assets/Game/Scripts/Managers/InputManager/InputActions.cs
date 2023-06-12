@@ -134,6 +134,24 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CHANGEPLAYER"",
+                    ""type"": ""Button"",
+                    ""id"": ""9575222a-d819-4db0-85f5-dbbd87dfff37"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CHANGEMAP"",
+                    ""type"": ""Button"",
+                    ""id"": ""98954c88-8fc8-47a0-9217-7bb0f1302874"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -312,6 +330,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""INTERACT"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a35bf38-e86b-4398-b8b3-df1f744320e6"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CHANGEPLAYER"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fc9c3c2-22d2-42a8-9773-8ba0119dc16d"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CHANGEMAP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -332,6 +372,8 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Game_BASIC4 = m_Game.FindAction("BASIC4", throwIfNotFound: true);
         m_Game_PAUSE = m_Game.FindAction("PAUSE", throwIfNotFound: true);
         m_Game_INTERACT = m_Game.FindAction("INTERACT", throwIfNotFound: true);
+        m_Game_CHANGEPLAYER = m_Game.FindAction("CHANGEPLAYER", throwIfNotFound: true);
+        m_Game_CHANGEMAP = m_Game.FindAction("CHANGEMAP", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -403,6 +445,8 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Game_BASIC4;
     private readonly InputAction m_Game_PAUSE;
     private readonly InputAction m_Game_INTERACT;
+    private readonly InputAction m_Game_CHANGEPLAYER;
+    private readonly InputAction m_Game_CHANGEMAP;
     public struct GameActions
     {
         private @InputActions m_Wrapper;
@@ -419,6 +463,8 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @BASIC4 => m_Wrapper.m_Game_BASIC4;
         public InputAction @PAUSE => m_Wrapper.m_Game_PAUSE;
         public InputAction @INTERACT => m_Wrapper.m_Game_INTERACT;
+        public InputAction @CHANGEPLAYER => m_Wrapper.m_Game_CHANGEPLAYER;
+        public InputAction @CHANGEMAP => m_Wrapper.m_Game_CHANGEMAP;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -464,6 +510,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @INTERACT.started -= m_Wrapper.m_GameActionsCallbackInterface.OnINTERACT;
                 @INTERACT.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnINTERACT;
                 @INTERACT.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnINTERACT;
+                @CHANGEPLAYER.started -= m_Wrapper.m_GameActionsCallbackInterface.OnCHANGEPLAYER;
+                @CHANGEPLAYER.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnCHANGEPLAYER;
+                @CHANGEPLAYER.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnCHANGEPLAYER;
+                @CHANGEMAP.started -= m_Wrapper.m_GameActionsCallbackInterface.OnCHANGEMAP;
+                @CHANGEMAP.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnCHANGEMAP;
+                @CHANGEMAP.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnCHANGEMAP;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -504,6 +556,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @INTERACT.started += instance.OnINTERACT;
                 @INTERACT.performed += instance.OnINTERACT;
                 @INTERACT.canceled += instance.OnINTERACT;
+                @CHANGEPLAYER.started += instance.OnCHANGEPLAYER;
+                @CHANGEPLAYER.performed += instance.OnCHANGEPLAYER;
+                @CHANGEPLAYER.canceled += instance.OnCHANGEPLAYER;
+                @CHANGEMAP.started += instance.OnCHANGEMAP;
+                @CHANGEMAP.performed += instance.OnCHANGEMAP;
+                @CHANGEMAP.canceled += instance.OnCHANGEMAP;
             }
         }
     }
@@ -522,5 +580,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnBASIC4(InputAction.CallbackContext context);
         void OnPAUSE(InputAction.CallbackContext context);
         void OnINTERACT(InputAction.CallbackContext context);
+        void OnCHANGEPLAYER(InputAction.CallbackContext context);
+        void OnCHANGEMAP(InputAction.CallbackContext context);
     }
 }

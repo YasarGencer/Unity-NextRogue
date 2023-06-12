@@ -1,4 +1,3 @@
-using System;
 using UnityEngine; 
 
 public class LevelManager : MonoBehaviour
@@ -21,6 +20,9 @@ public class LevelManager : MonoBehaviour
     }
     public int GetLevel() {
         return _levelSettings.GetLevel();
+    }
+    public void SetLevel(int level) {
+        _levelSettings.SetLevel(level);
     }
     public void NextLevel() {
 

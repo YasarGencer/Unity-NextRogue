@@ -1,4 +1,3 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -7,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] AllSpells _spellList;
     [SerializeField] PlayerList _playerList;
+    [SerializeField] AudioClip _openingClip;
     public AllSpells AllSpells { get { return _spellList; }}
     public PlayerList PlayerList { get { return _playerList; }}
     public void Initialize() { 
@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour {
             return;
 
 
-        Instantiate(_playerList.GetPlayer(GetPlayerIndex()).Player, MainManager.Instance.Player);
+        Instantiate(_playerList.GetPlayer(GetPlayerIndex() % _playerList.GetCount()).Player, MainManager.Instance.Player);
 
-        if (_playerList.GetPlayer(GetPlayerIndex()).Stat.GetTutorial() == false)
-            LevelSettings.SetIfTutorial(GetPlayerIndex());
+        if (_playerList.GetPlayer(GetPlayerIndex() % _playerList.GetCount()).Stat.GetTutorial() == false)
+            LevelSettings.SetIfTutorial(GetPlayerIndex() % _playerList.GetCount());
     }
     void OnGamePause() {
         _gamePaused = true;
@@ -38,5 +38,8 @@ public class GameManager : MonoBehaviour {
     }
     public static void SetPlayerIndex(int value) {
         PlayerPrefs.SetInt("Player", value);
+    }
+    public void PlayOpening() {
+        AudioManager.PlaySound(_openingClip, null, AudioManager.AudioVolume.environment, false);
     }
 }

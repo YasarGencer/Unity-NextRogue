@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdec837b3c225343a90a0e8585ff8c1, type: 3}
+  m_Name: BloodshaperHemomorphosis
+  m_EditorClassIdentifier: 
+  _isInit: 1
+  Name: Hemomorphosis
+  Description: 'Become invincable and gain speed for a showt amount of time.
+
+    Effected
+    by cell stacks'
+  Icon: {fileID: 21300000, guid: f0a07a0862ed8b943bde895cdf9de26b, type: 3}
+  Sound: {fileID: 8300000, guid: 6bf6dab280c69c745bb89532ca537691, type: 3}
+  Spell: {fileID: 0}
+  Damage: 0
+  Speed: 0
+  CastingTime: 0
+  CooldownTime: 5
+  stopAudio: 1
+  _speed: 2
+  _timer: 1
+  _speedMultiplier: 0.2
+  _timerMultiplier: 0.2
+  _healMultiplier: 1

@@ -1,23 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic; 
 using UnityEngine; 
 
 public class AudioController : MonoBehaviour
 {
     AudioSource _source;
-    public void Initialize(AudioClip clip, bool value = false) {
+    public void Initialize(AudioClip clip, AudioManager.AudioVolume volumeType = AudioManager.AudioVolume.sfx, bool value = false) {
         if (value) {
             MainManager.Instance.EventManager.onGamePause += OnGamePause;
             MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
         }
-
-        _source = gameObject.AddComponent<AudioSource>();
-        _source.volume = AudioManager.GetVolume(AudioManager.AudioVolume.sfx);
+        if(_source == null)
+            _source = gameObject.AddComponent<AudioSource>();
+        _source.volume = AudioManager.GetVolume(volumeType);
         _source.clip = clip;
         _source.Play(); 
-    }
-
+    } 
     private void OnGameUnPause() {
         _source.UnPause();
     }

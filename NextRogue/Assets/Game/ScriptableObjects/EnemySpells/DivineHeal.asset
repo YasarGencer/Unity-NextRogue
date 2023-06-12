@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e46aaf4729318447bac669f78cf5b52, type: 3}
+  m_Name: DivineHeal
+  m_EditorClassIdentifier: 
+  _isInit: 1
+  Name: Divine Heal
+  Description: Heals Self on half hp
+  Sound: {fileID: 8300000, guid: 4fda5c0f98ed67c4085414150dfad121, type: 3}
+  Spell: {fileID: 4291766495697725894, guid: 01a180bdd7bd14f4691073c69119c81f, type: 3}
+  Damage: 0
+  Speed: 0
+  UseRange: 3
+  CastingTime: 0
+  CooldownTime: 5
+  stopAudio: 1

@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.Analytics;
-using UnityEngine.Tilemaps;
-using static UnityEngine.Rendering.DebugUI;
+﻿using UnityEngine; 
 
 [CreateAssetMenu(fileName = "LevelSettings", menuName = "ScriptableObjects/LevelSettings", order = 0)]
 public class LevelSettings : ScriptableObject {
@@ -19,7 +16,7 @@ public class LevelSettings : ScriptableObject {
             return levels[GetLevel()];
     }
     public int GetLevel() {
-        return activeLevelIndex;
+        return activeLevelIndex % levels.Length;
     }
     public static int GetActiveLevel() { 
         return PlayerPrefs.GetInt("activeLevel", -1);
@@ -52,6 +49,7 @@ public class LevelSettings : ScriptableObject {
 [System.Serializable]
 public class LevelSetting {
     public string Name;
+    [TextArea]
     public string Description;
     [Space(10f)] 
     public DungeonLevel DungeonLevel;

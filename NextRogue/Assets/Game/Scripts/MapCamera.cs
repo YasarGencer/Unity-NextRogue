@@ -1,9 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using static UnityEditor.Progress;
 
 public class MapCamera : MonoBehaviour
 {
@@ -21,6 +17,8 @@ public class MapCamera : MonoBehaviour
         if (_minimapObjects == null)
             return;
         foreach (var item in _minimapObjects) {
+            if (item == null)
+                return;
             if (Vector2.Distance(_follow.position, item.transform.position) <= _range) {
                 Color color = item.GetComponent<SpriteRenderer>().color;
                 color.a = 1;
@@ -43,8 +41,7 @@ public class MapCamera : MonoBehaviour
     }
     public void GetGameObjects() {
         _minimapObjects = GameObject.FindGameObjectsWithTag("Minimap");
-        foreach (var item in _minimapObjects) {
-            Debug.Log(item.name);
+        foreach (var item in _minimapObjects) { 
             Color color = item.GetComponent<SpriteRenderer>().color;
             color.a = 0;
             item.GetComponent<SpriteRenderer>().color = color;

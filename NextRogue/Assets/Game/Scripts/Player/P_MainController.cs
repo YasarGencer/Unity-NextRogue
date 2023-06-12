@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-
 public class P_MainController : MonoBehaviour {
     public bool canPlay { get; private set;}
     [HideInInspector]
@@ -20,7 +19,11 @@ public class P_MainController : MonoBehaviour {
 
     GameObject _child;  
     public void Initialize() => StartCoroutine(InitializeCoroutine());
-    public IEnumerator InitializeCoroutine() { 
+    public IEnumerator InitializeCoroutine() {
+
+        var color = GetComponentInChildren<SpriteRenderer>().color;
+        color.a = 1;
+        GetComponentInChildren<SpriteRenderer>().color = color;
 
         transform.position = Vector3.zero;
         _child = transform.GetChild(0).gameObject;

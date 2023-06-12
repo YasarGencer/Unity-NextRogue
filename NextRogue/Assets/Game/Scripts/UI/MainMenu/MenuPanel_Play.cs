@@ -5,7 +5,8 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuPanel_Play : AUI { 
+public class MenuPanel_Play : AUI {
+    [SerializeField] AudioClip _deletePlayer, _createPlayer;
     [Header("CAMERA")]
     [SerializeField] Camera _cam;
     [SerializeField] float2 _camScale;
@@ -14,7 +15,7 @@ public class MenuPanel_Play : AUI {
     [SerializeField] Button _prevButton, _nextButton, _startButton;
 
     [Header("Panel")]
-    [SerializeField] HUDMainmenuPlayer _playerPanel;
+    [SerializeField] HUDMainmenuPlayer _playerPanel; 
 
     int _index = 0;
     GameObject _player;
@@ -42,6 +43,7 @@ public class MenuPanel_Play : AUI {
         }).SetEase(Ease.InCirc);
 
         CreatePlayer();
+         
     }
     public override void Close(float time = 0) {
         base.Close(time);
@@ -57,9 +59,11 @@ public class MenuPanel_Play : AUI {
     void CreatePlayer() {
         _player = Instantiate(_playerList.GetPlayer(_index).PlayerForUI, Vector2.zero, Quaternion.identity);
         _playerPanel.Open(_playerList.GetPlayer(_index).Stat);
+        AudioManager.PlaySound(_createPlayer, null, AudioManager.AudioVolume.ui, false);
     }
     void DestroyPlayer() {
         _player.GetComponent<Animator>().SetTrigger("die");
+        AudioManager.PlaySound(_deletePlayer, null, AudioManager.AudioVolume.ui, false);
         Destroy(_player, .5f);
         _playerPanel.Close();
     }

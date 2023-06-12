@@ -22,6 +22,7 @@ MonoBehaviour:
   EXPOrb: {fileID: 0}
   HitSound: {fileID: 8300000, guid: c8c4dc9ec4fab6945a661946c9441b1d, type: 3}
   HealSound: {fileID: 0}
+  AttackSound: {fileID: 0}
   WalkSound: {fileID: 8300000, guid: fe3389749e802644497287e2993226fd, type: 3}
   Speed: 3
   SpeelHolder: 3

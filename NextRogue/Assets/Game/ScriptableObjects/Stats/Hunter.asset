@@ -24,11 +24,11 @@ MonoBehaviour:
   HealSound: {fileID: 0}
   AttackSound: {fileID: 8300000, guid: 9dbe1a81b1163ff48a687273c8f02e19, type: 3}
   WalkSound: {fileID: 8300000, guid: 7edc9a71c19cb5648ab7db9475f6b4a5, type: 3}
-  Speed: 2.5
+  Speed: 1.5
   SpeelHolder: 0
   IsInvincable: 0
   NoticeRange: 6
-  AttackDamage: 20
+  AttackDamage: 5
   AttackRange: 0.75
   AttackSpeed: 1
   ProjectileSpeed: 0

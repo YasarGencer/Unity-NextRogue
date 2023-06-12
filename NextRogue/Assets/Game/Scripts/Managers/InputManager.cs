@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -65,6 +63,10 @@ public class InputManager : MonoBehaviour
         _input.SPELL3.performed += inGame => Spell(6);
         _input.SPELL4.performed += inGame => Spell(7);
         _input.SPELL5.performed += inGame => Spell(8);
+
+
+        _input.CHANGEMAP.performed += inGame => ChangeMap();
+        _input.CHANGEPLAYER.performed += inGame => ChangeCharacter();
 
     }
     #region KEY INFO
@@ -139,5 +141,16 @@ public class InputManager : MonoBehaviour
     private void RunInteract() {
         if(_mainController.canPlay)
             MainManager.Instance.EventManager.RunOnInteract();
+    }
+    void ChangeMap() {
+#if UNITY_EDITOR 
+        GameObject.FindObjectOfType<EscapePortal>().InteractPublic();
+#endif
+    }
+    void ChangeCharacter() {
+#if UNITY_EDITOR 
+        GameManager.SetPlayerIndex((GameManager.GetPlayerIndex() + 1));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+#endif
     }
 }

@@ -55,14 +55,17 @@ public class NP_Attack_Dash : ANP_Attack {
             _mainController.Animator.SetTrigger("Dash");
 
             ClearHitList();
-            _checkRX = Observable.EveryUpdate().Subscribe(CheckCollision);
+            if (gameObject) {
+                _checkRX?.Dispose();
+                _checkRX = Observable.EveryUpdate().Subscribe(CheckCollision);
 
-            Vector3 difference = _mainController.Target.Target.transform.position - transform.position;
-            difference = difference.normalized;
-            float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
+                Vector3 difference = _mainController.Target.Target.transform.position - transform.position;
+                difference = difference.normalized;
+                float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 
-            _mainController.Rb.AddForce(dir * 30000 * Time.fixedDeltaTime);
+                _mainController.Rb.AddForce(dir * 30000 * Time.fixedDeltaTime);
+            }
         }
         yield return new WaitForSeconds(.6f);
 

@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
-
 [CreateAssetMenu(fileName = "NecromancerConsume", menuName = "ScriptableObjects/Spells/NecromancerConsume")]
 public class NecromencerConsume : ASpell {
     [Header("Consume")]

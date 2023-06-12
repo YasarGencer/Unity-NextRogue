@@ -1,12 +1,9 @@
-using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening; 
+using UnityEngine; 
 
 public class Canvas_Skill_Selection : AUI
 {
+    [SerializeField] AudioClip _selectedSkill;
     Transform _child1;
 
     [SerializeField]
@@ -25,6 +22,10 @@ public class Canvas_Skill_Selection : AUI
         gameObject.SetActive(true); 
         _child.gameObject.SetActive(true);
         _child1.gameObject.SetActive(false);
+
+        if (_openClip)
+            AudioManager.PlaySound(_openClip, null, AudioManager.AudioVolume.ui, false);
+
         //alpha 
         GetComponent<CanvasGroup>().alpha = 0; 
         GetComponent<CanvasGroup>().DOFade(1,1);         
@@ -61,7 +62,10 @@ public class Canvas_Skill_Selection : AUI
         }
     }
     public void SaveSelected(ASpell spell) {
+
         _spell = spell;
+        if (_selectedSkill)
+            AudioManager.PlaySound(_selectedSkill, null, AudioManager.AudioVolume.ui, false);
         SetSlots();
         NextPage();
     }  
@@ -91,6 +95,8 @@ public class Canvas_Skill_Selection : AUI
         }).SetEase(Ease.InCirc);
     }
     public void SaveButton(int value) {
+        if (_selectedSkill)
+            AudioManager.PlaySound(_selectedSkill, null, AudioManager.AudioVolume.ui, false);
         MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.SetSpell(value + 4, _spell);
         MainManager.Instance.EventManager.RunOnGameUnPuase();
     }

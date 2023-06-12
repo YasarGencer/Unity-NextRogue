@@ -1,4 +1,7 @@
+using DG.Tweening;
 using System;
+using TMPro;
+using UniRx;
 using UnityEngine;
 
 public class CanvasManager : AUI
@@ -14,6 +17,9 @@ public class CanvasManager : AUI
     public Canvas_Pause_Screen PauseScreen { get { return _pauseScreen; } }
     public Canvas_Skill_Selection SkillSelection { get { return _skillSelection; } }
 
+    [SerializeField] CanvasGroup _track;
+    [SerializeField] TextMeshProUGUI _trackName, _trackLength; 
+
     public override void Initialize() {
         RegisterEvents();
 
@@ -21,6 +27,10 @@ public class CanvasManager : AUI
         _pauseScreen.Initialize();
         _skillSelection.Initialize();
 
+        if (!_isInit) {
+            EventManager.onTrackStart += ShowTackInfo; 
+        } 
+        _track.DOFade(0, 0);
 
         _isInit = true;
     }
@@ -51,4 +61,20 @@ public class CanvasManager : AUI
     void OpenPlayerHud() {
         _playerHud.Open();
     }  
+    void ShowTackInfo(AudioClip clip) { 
+        var name = clip.name;
+        name = name.Split('-')[1];
+        _trackName.SetText(name);
+        var duration = TimeSpan.FromSeconds(clip.length);
+        float f = (float)(duration.Minutes + duration.Seconds / 100f); 
+        var length = f.ToString().Split(',')[0] + ":" + f.ToString().Split(",")[1];
+        _trackLength.SetText(length);
+
+        _track.DOFade(0, 0);
+        _track.DOFade(1, .5f);
+        Observable.Timer(TimeSpan.FromSeconds(3f)).TakeUntilDisable(this).Subscribe(l => {
+            _track.DOFade(0, 1);
+        });
+    }
+
 }

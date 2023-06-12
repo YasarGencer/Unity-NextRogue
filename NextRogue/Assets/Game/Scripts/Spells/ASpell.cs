@@ -72,7 +72,7 @@ public abstract class ASpell : ScriptableObject
             _mainController.Animator.SetTrigger("spell"); 
 
         if(Sound)
-            AudioManager.PlaySound(Sound, _mainController.transform, stopAudio);
+            AudioManager.PlaySound(Sound, _mainController.transform, AudioManager.AudioVolume.sfx, stopAudio);
         StartCooldown();
     }
     public void StartCasting() { _castRX?.Dispose(); _castRX = Observable.EveryUpdate().TakeUntilDisable(_mainController).Subscribe(CastingTimer); }
@@ -111,8 +111,7 @@ public abstract class ASpell : ScriptableObject
         return projectile;
     }
     public void RetrieveCooldown() {
-        _currentTimeCooldown = CooldownTime;
-        StopCooldown(); 
+        StopCooldown();  
         _mainController?.UI?.SetSlider(
             _mainController.UI.spellIconList[_keyIndex].Slider,
             1,
@@ -122,12 +121,12 @@ public abstract class ASpell : ScriptableObject
     //EVENTS
     void RegisterEvents() { 
         MainManager.Instance.EventManager.onGamePause += OnGamePause;   
-        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
+        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause; 
     }
     void OnGamePause() {
         _cooldownRX?.Dispose(); 
     }
     void OnGameUnPause() {
         StartCooldown();
-    }
+    } 
 }

@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
-using Unity.VisualScripting;
 
 public class _BerserkerThrowProjectile : AP_Projectile {
     [SerializeField]

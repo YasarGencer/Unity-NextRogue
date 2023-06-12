@@ -9,7 +9,7 @@ public class Destructable : MonoBehaviour
     [SerializeField, Range(0.1f,1)]
     private float _dropRate = 0;
     public void Destruct() {
-        AudioManager.PlaySound(_clip, transform);
+        AudioManager.PlaySound(_clip, transform,AudioManager.AudioVolume.environment);
 
         GetComponent<Animator>().SetTrigger("Destroy");
         Destroy(GetComponent<Rigidbody2D>());

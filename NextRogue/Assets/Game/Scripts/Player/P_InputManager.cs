@@ -1,6 +1,5 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-using System;
 
 public class P_InputManager : MonoBehaviour {
     bool _isInit;

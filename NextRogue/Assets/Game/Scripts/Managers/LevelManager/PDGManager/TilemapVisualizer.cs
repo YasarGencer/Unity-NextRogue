@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
-using UnityEngine.WSA;
+using UnityEngine.Tilemaps; 
 
 public class TilemapVisualizer : MonoBehaviour
 {

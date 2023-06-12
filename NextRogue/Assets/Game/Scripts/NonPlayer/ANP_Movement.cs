@@ -42,11 +42,13 @@ public abstract class ANP_Movement : MonoBehaviour
         if (_mainController != null && _mainController.Animator != null)
             _mainController?.Animator?.SetBool("Idle", true);
     }
-    protected virtual void UnFreeze() {
+    public virtual void UnFreeze() {
         if (MainManager.Instance.GameManager.GamePaused)
             return;
         _updateRX?.Dispose();
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(UpdateRX);
+        if (_mainController.Animator != null)
+            _mainController.Animator.speed = 1;
     }
     protected virtual void Slow(float percentage) {
         _mainController.Stats.SpeelHolder = _mainController.Stats.Speed * (1 - percentage);
@@ -54,7 +56,7 @@ public abstract class ANP_Movement : MonoBehaviour
     protected virtual void UnSlow() {
         _mainController.Stats.SpeelHolder = _mainController.Stats.Speed;
     }
-    protected void Rotate(float posX) {
+    public void Rotate(float posX) {
         if (posX > transform.position.x + 0.1f)
             transform.localScale = new Vector3(1, 1, 1);
         else if (posX < transform.position.x - 0.1f)

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class AStats : ScriptableObject
@@ -29,7 +28,7 @@ public abstract class AStats : ScriptableObject
     public virtual void Initialize() { 
         Health = MaxHealth;
         SpeelHolder = Speed;
-        IsInvincable = false;
+        IsInvincable = false; 
     }
 
 }

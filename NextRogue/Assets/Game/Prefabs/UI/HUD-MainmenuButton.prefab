@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Line: {fileID: 3137660304518036521}
   _Button: {fileID: 3137660303796165995}
-  _clickSound: {fileID: 0}
+  _clickSound: {fileID: 8300000, guid: 626108ebc6bd22247b5cb587ea913fa1, type: 3}
 --- !u!1 &3137660303796165989
 GameObject:
   m_ObjectHideFlags: 0

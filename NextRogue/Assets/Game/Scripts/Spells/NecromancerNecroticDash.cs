@@ -1,11 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UniRx.Triggers;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "NecromancerNecroticDash", menuName = "ScriptableObjects/Spells/NecromancerNecroticDash")]
 public class NecromancerNecroticDash : ASpell

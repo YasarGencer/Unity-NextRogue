@@ -1,7 +1,6 @@
 using UnityEngine;
 using UniRx;
 using System; 
-using System.Collections.Generic;
 using System.Collections;
 
 public class P_Movement : MonoBehaviour {
@@ -81,6 +80,10 @@ public class P_Movement : MonoBehaviour {
             yield return null;
         }
         yield break;
+    }
+    private void OnDestroy() {
+        MainManager.Instance.EventManager.onGamePause -= OnGamePause;
+        MainManager.Instance.EventManager.onGameUnPause -= OnGameUnPause;
     }
 
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class __ShotProjectile : AProjectile {
@@ -8,7 +6,6 @@ public class __ShotProjectile : AProjectile {
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         PlaySound();
-        gameObject.SetActive(false);
-        Destroy(gameObject, 1F);
+        gameObject.SetActive(false); 
     } 
 }

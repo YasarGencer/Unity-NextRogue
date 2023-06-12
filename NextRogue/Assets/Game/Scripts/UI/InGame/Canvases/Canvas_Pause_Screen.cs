@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro; 
 using DG.Tweening;
 
 public class Canvas_Pause_Screen : AUI {
+    [SerializeField] AudioClip _clickClip;
     [SerializeField] Button[] _buttons;
     [SerializeField] VerticalLayoutGroup _buttonsParent;
 
@@ -20,18 +20,31 @@ public class Canvas_Pause_Screen : AUI {
 
         _buttonYScale = _buttons[0].transform.localScale.y; 
 
-        _buttons[0].onClick.AddListener(MainMenu);
-        _buttons[1].onClick.AddListener(delegate { OpenAsPage(_controlPanel, 1); _optionsPanel.Close(.5f); }); 
-        _buttons[2].onClick.AddListener(delegate { OpenAsPage(_optionsPanel, 2); _controlPanel.Close(.5f); });
-        _buttons[3].onClick.AddListener(Unpause); 
+        _buttons[0].onClick.AddListener(delegate { Click(); MainMenu(); });
+        _buttons[1].onClick.AddListener(delegate { Click(); OpenAsPage(_controlPanel, 1); _optionsPanel.Close(.5f); }); 
+        _buttons[2].onClick.AddListener(delegate { Click(); OpenAsPage(_optionsPanel, 2); _controlPanel.Close(.5f); });
+        _buttons[3].onClick.AddListener(delegate { Click(); Unpause(); }); 
 
         Close();
     }
     public override void Open() {
         base.Open();
+
+        _controlPanel.DOKill();
+        _optionsPanel.DOKill();
+        _mapPanel.DOKill();
+
+        _controlPanel.Close();
+        _optionsPanel.Close();
+        _mapPanel.Open();
+
+        foreach (var item in _buttons) {
+            item.transform.DOKill();
+            item.transform.DOScaleY(_buttonYScale, 0);
+        }
     }
     public override void Close(float time = 0) {
-        base.Close(time);
+        base.Close(time);  
     }
 
     void MainMenu() {
@@ -43,7 +56,7 @@ public class Canvas_Pause_Screen : AUI {
     void Unpause() {
         MainManager.Instance.EventManager.RunOnGameUnPuase();
     } 
-    void OpenAsPage(AUI panel,int index) {
+    void OpenAsPage(AUI panel,int index) { 
         _buttonsParent.childControlHeight = false;
         panel.ButtonPressed();
         if (panel.isOpen) {
@@ -62,6 +75,11 @@ public class Canvas_Pause_Screen : AUI {
                     _buttons[i].transform.DOScaleY(_buttonYScale, 1);
                 }
             _buttons[index].transform.DOScaleY(_buttonYScale, 1);
+        }
+    }
+    void Click() {
+        if (_clickClip) {
+            AudioManager.PlaySound(_clickClip, null, AudioManager.AudioVolume.ui, false);
         }
     }
 }

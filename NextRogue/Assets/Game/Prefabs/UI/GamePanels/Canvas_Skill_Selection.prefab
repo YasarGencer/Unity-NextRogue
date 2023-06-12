@@ -287,6 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc96b6abe5d8b44288fb5ffbb2d59cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _openClip: {fileID: 8300000, guid: 50c30b7b4b351ca419ee2a6e0002bc6a, type: 3}
+  _closeClip: {fileID: 0}
+  _selectedSkill: {fileID: 8300000, guid: e2a675ad816f0ee40af4843d5207b0c6, type: 3}
   _skillSelection:
   - {fileID: 9011227348679057954}
   - {fileID: 1769275522436255373}

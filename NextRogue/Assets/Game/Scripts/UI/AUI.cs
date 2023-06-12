@@ -6,6 +6,9 @@ public class AUI : MonoBehaviour
 { 
     protected Transform _child;
     public bool isOpen { get; protected set; }
+    [Header("Clips")]
+    [SerializeField] protected AudioClip _openClip;
+    [SerializeField] protected AudioClip _closeClip;
     public virtual void Initialize() {
         RegisterEvents();
         _child = transform.GetChild(0); 
@@ -19,20 +22,25 @@ public class AUI : MonoBehaviour
         gameObject.SetActive(true);
         isOpen = true;
 
+        if (_openClip)
+            AudioManager.PlaySound(_openClip, null, AudioManager.AudioVolume.ui, false);
+
         _child.gameObject.SetActive(true);
         _child.localPosition = new(0, -50, 0);
         _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc); 
 
         GetComponent<CanvasGroup>().alpha = 0;
-        GetComponent<CanvasGroup>().DOFade(1,1);  
+        GetComponent<CanvasGroup>().DOFade(1,1); 
     }
     public virtual void Close(float time = 0) {
-        isOpen = false;
+        isOpen = false; 
         if (time == 0) {
             gameObject.SetActive(false);
             _child.localPosition = new(0, 0, 0);
             return;
         }
+        if (_closeClip)
+            AudioManager.PlaySound(_closeClip, null, AudioManager.AudioVolume.ui, false);
         _child.localPosition = new(0, -50, 0);
         _child.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc);
          

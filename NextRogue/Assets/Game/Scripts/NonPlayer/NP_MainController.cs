@@ -1,9 +1,9 @@
 using System.Collections;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class NP_MainController : MonoBehaviour
 {
+    public bool isTest;
     public P_MainController Player { get; private set; }
     public GameObject AttackTarget { get; private set; }
     public Vector2 PatrolTarget { get; private set; }
@@ -18,6 +18,7 @@ public class NP_MainController : MonoBehaviour
     [SerializeField]
     NP_Stats _stats;
     public NP_Stats Stats { get; private set; }
+    public NP_Use_Skill UseSkill { get; private set; }
 
     [HideInInspector]
     public ANP_Target Target;
@@ -41,10 +42,10 @@ public class NP_MainController : MonoBehaviour
         if (!_isInit && !MainManager.Instance.GameManager.GamePaused) {
             _isInit = true;
 
-            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<P_MainController>();
-
+            SetPlayer(MainManager.Instance.Player.GetChild(0).GetComponent<P_MainController>());
             Rb = Rb == null ? GetComponent<Rigidbody2D>() : Rb;
             Animator = Animator == null ? GetComponent<Animator>() : Animator;
+            UseSkill = GetComponent<NP_Use_Skill>() as NP_Use_Skill;
 
             Health = GetComponent<Health>();
             Target = GetComponent<ANP_Target>();
@@ -54,12 +55,16 @@ public class NP_MainController : MonoBehaviour
 
             Stats.Initialize();
             Health.Initialize();
-            Target.Initialize(this);
-            Movement.Initialize(this);
-            Attack.Initialize(this);
+            if (isTest == false) {
+                Target.Initialize(this);
+                Movement.Initialize(this);
+                Attack.Initialize(this);
+                if (UseSkill != null)
+                    UseSkill.Initialize(this);
 
-            if (this.CompareTag("Summoned"))
-                Invoke("EndSummonLife", Stats.LifeSpan);
+                if (this.CompareTag("Summoned"))
+                    Invoke("EndSummonLife", Stats.LifeSpan);
+            }
         }
         yield return new WaitForEndOfFrame();
         if(!_isInit)
@@ -77,5 +82,8 @@ public class NP_MainController : MonoBehaviour
     }
     void EndSummonLife() {
         Health.GetDamage(10000,this.transform);
+    }
+    public void SetPlayer(P_MainController player) { 
+        Player = player;
     }
 }

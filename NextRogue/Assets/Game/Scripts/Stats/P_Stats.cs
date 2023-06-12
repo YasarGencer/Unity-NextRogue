@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Stats", menuName = "ScriptableObjects/Stats/PlayerStats", order = 0)]
@@ -25,6 +24,8 @@ public class P_Stats : AStats {
         MainManager.Instance.CanvasManager.Player_GUI_HUD.SetSecondary(value);
     }
     public void SetTutorial(int index = 0) {
+        if (GetTutorial() == true)
+            return;
         PlayerPrefs.SetInt(Name + "tutorial", index);
         Initialize(); 
     }

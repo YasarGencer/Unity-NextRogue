@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class EscapePortal : AInteract {
@@ -9,20 +7,25 @@ public class EscapePortal : AInteract {
     float _animationRange;
     protected override void OnStart() {
         base.OnStart();
-        _player = MainManager.Instance.Player.GetChild(0);
         StartCoroutine(Animation());
+    }
+    public void InteractPublic() {
+        Interact();
     }
     protected override void Interact() { 
         base.Interact();
         LevelSettings.SetIfTutorial();
         MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.SetTutorial(1);
-        MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.DeleteMainSpells();
+        //MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.DeleteMainSpells();
         MainManager.Instance.StartGame();
     }
     private void OnDrawGizmos() {
         UnityEngine.Gizmos.DrawWireSphere(transform.position, _animationRange);
     }
     IEnumerator Animation() {
+        if(_player == null) {
+            _player = MainManager.Instance.Player.GetChild(0);
+        }
         if (Vector2.Distance(_player.position, transform.position) <= _animationRange)
             _animator.SetBool("Open",true);
         else

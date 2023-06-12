@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
+  m_Name: BloodshaperDrainBolt
+  m_EditorClassIdentifier: 
+  _isInit: 1
+  Name: Drain Bolt
+  Description: Shoots a projectile that uses Cell Vial stacks as damage multiplier
+  Icon: {fileID: 21300000, guid: 1c0c72a85b58b5243b328f8b765e97b2, type: 3}
+  Sound: {fileID: 8300000, guid: 857243f2105b152429fc58a3b3dd7761, type: 3}
+  Spell: {fileID: 5042605276708465272, guid: dece9476437c6cd44a98b0058f86e4ef, type: 3}
+  Damage: 15
+  Speed: 450
+  CastingTime: 0
+  CooldownTime: 7
+  stopAudio: 1

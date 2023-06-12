@@ -36,7 +36,7 @@ public class MusicPlayer : MonoBehaviour {
         List<AudioClip> currentMusicList = musicLists[currentListIndex];
         audioSource.clip = currentMusicList[currentTrackIndex];
         audioSource.Play();
-        Debug.Log(audioSource.clip.name);
+        EventManager.RunOnTrackStart(audioSource.clip);
         FadeIn();
         isInit = true;
     }
@@ -86,7 +86,7 @@ public class MusicPlayer : MonoBehaviour {
         float elapsedTime = 0f;
         float targetVolume = 1;
 
-        while (elapsedTime < fadeDuration) {
+        while (elapsedTime < .1f) {
             elapsedTime += Time.deltaTime;
             activeVolume = Mathf.Lerp(0f, targetVolume, elapsedTime / fadeDuration);
             yield return null;

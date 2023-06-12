@@ -31,3 +31,4 @@ MonoBehaviour:
   DownRight: {fileID: 11400000, guid: c449bd29af164cc4c9ec64cffe4c3b02, type: 2}
   UpLeft: {fileID: 11400000, guid: afe09a4b680f4d142857060b6f6e9ce7, type: 2}
   UpRight: {fileID: 11400000, guid: d4569d37cc3f72a4fb13c8331733284a, type: 2}
+  BGColor: {r: 0.15294118, g: 0.078431375, b: 0.098039225, a: 1}

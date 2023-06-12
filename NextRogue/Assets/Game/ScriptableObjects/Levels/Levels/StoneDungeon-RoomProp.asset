@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec89901ad5584745a2640bc0a3e39e4, type: 3}
+  m_Name: StoneDungeon-RoomProp
+  m_EditorClassIdentifier: 
+  StartRoom:
+  - {fileID: 2490164145671031904, guid: 1eb0c13a139e57f45b2e723faf059d3d, type: 3}
+  EnemyRoom:
+  - {fileID: 4132714626760570076, guid: 468039ee243f04548affc342e83bcfe5, type: 3}
+  - {fileID: 8394055403656406473, guid: 0b06df10c2eb7b14383a1f5d078cc1bc, type: 3}
+  - {fileID: 1475517369619550120, guid: eaf9f7efabfd21144a6210564c20bd3b, type: 3}
+  ExitRoom:
+  - {fileID: 6820882171971817332, guid: 6e549e0cd1eba57479a3fe970edbcf74, type: 3}
+  CenterProps:
+  - {fileID: 6539400705794429565, guid: 9ab8f9739240a07479c522518b4c7605, type: 3}
+  - {fileID: 3940526239160631524, guid: 7ba46d4dc172dfb40a4164b8b55d11f4, type: 3}
+  WallProps: []

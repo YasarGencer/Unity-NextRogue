@@ -13,5 +13,6 @@ public class TilemapVisualizerData : ScriptableObject
     public TileBase Right, Left, Bottom, Full,
         CornerDownLeft, CornerDownRight,
         DownLeft, DownRight, UpLeft, UpRight;
+    public Color BGColor;
 
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Collections; 
 using UnityEngine;
 using UniRx;
 
@@ -8,22 +7,28 @@ public abstract class ANP_Attack : MonoBehaviour
     protected NP_MainController _mainController;
     protected IDisposable _updateRX;
     protected float _attackTime = 0;
+    protected bool _isAttacking = false;
     public virtual void Initialize(NP_MainController mainController) {
         _mainController = mainController;
         SetAttackTrue();
-        RegisterEvents();
+        RegisterEvents(); 
+        _isAttacking = false;
     }
     protected virtual void UpdateRX(long obj) {
         if (_mainController.Target.Target == null)
-            return; 
-        if (_attackTime <= 0)
-            if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
-                if (ShootRay())
-                    Attack();
+            return;
+        if (_isAttacking == false)
+            if (_attackTime <= 0)
+                if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
+                    if (ShootRay())
+                        Attack();
+
         AttackLimiter();
     }
     protected abstract void Attack();
-    protected virtual void AttackLimiter() { 
+    protected virtual void AttackLimiter() {
+        if (_isAttacking)
+            return;
         _attackTime -= Time.deltaTime * Time.timeScale;
     }
     public virtual void SetAttackFalse() {

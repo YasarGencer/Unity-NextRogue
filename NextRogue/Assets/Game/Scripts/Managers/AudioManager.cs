@@ -1,10 +1,10 @@
-using System;
-using System.Collections;
 using System.Collections.Generic; 
-using UnityEngine;
+using UnityEngine; 
 
 public class AudioManager : MonoBehaviour {
     public MusicPlayer MusicPlayer { get; private set; }
+    public List<AudioController> audioControllers = new();
+    int index = 0;
     public static float GetVolume(AudioVolume volumeType) {
         var multiplier = volumeType == AudioVolume.general? 1.0f : GetVolume(AudioVolume.general);
         return PlayerPrefs.GetFloat(GetString(volumeType), volumeType == AudioVolume.general ? 1.0f: .5f) * multiplier;
@@ -16,7 +16,11 @@ public class AudioManager : MonoBehaviour {
             case AudioVolume.music:
                 return "SOUND-MUSIC";
             case AudioVolume.sfx:
-                return "SOUND-SFX"; 
+                return "SOUND-SFX";
+            case AudioVolume.ui:
+                return "SOUND-UI";
+            case AudioVolume.environment:
+                return "SOUND-ENVIRONMENT";
         }
         return "a";
     }
@@ -26,15 +30,29 @@ public class AudioManager : MonoBehaviour {
     public enum AudioVolume {
         general,
         music,
-        sfx
+        sfx,
+        ui,
+        environment
     }
-    public static void PlaySound(AudioClip clip, Transform position = null, bool value = false) {
+    public static void PlaySound(AudioClip clip, Transform position = null, AudioManager.AudioVolume volumeType = AudioManager.AudioVolume.sfx, bool value = false) {
         if (clip == null)
             return;
+        AudioManager manager = GameObject.FindObjectOfType<AudioManager>();
+        if (manager.audioControllers.Count < 15) {
+            manager.CreateNew(clip, position);
+            manager.audioControllers[manager.index % manager.audioControllers.Count].Initialize(clip, volumeType, value);
+            manager.index++;
+        } else {
+            manager.audioControllers[manager.index % manager.audioControllers.Count].Initialize(clip, volumeType, value);
+            manager.index++;
+        }
+    }
+    void CreateNew(AudioClip clip, Transform position = null) {
         GameObject soundObject = new GameObject("sound");
-        soundObject.transform.position = position == null ? soundObject.transform.position : position.position; 
+        soundObject.transform.position = position == null ? soundObject.transform.position : position.position;
         AudioController controller = soundObject.AddComponent<AudioController>();
-        controller.Initialize(clip, value);
+        soundObject.transform.parent = transform;
+        audioControllers.Add(controller);
     }
     public static void CreateAudioManager() {
         if (GameObject.FindObjectOfType<AudioManager>())

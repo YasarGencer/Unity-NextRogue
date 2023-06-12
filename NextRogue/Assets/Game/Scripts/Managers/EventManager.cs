@@ -1,4 +1,3 @@
-using System; 
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
@@ -8,14 +7,17 @@ public class EventManager : MonoBehaviour
     public delegate void OnGameStart();
     public delegate void OnInteract();
     public delegate void OnPlayerInitialized();
+    public delegate void OnTrackStart(AudioClip clip);
 
     public event OnGamePuase onGamePause;
     public event OnGameUnPuase onGameUnPause;
     public event OnGameStart onGameStart;
     public event OnInteract onInteract;
     public event OnPlayerInitialized onPlayerInitialized;
+    public static event OnTrackStart onTrackStart;
 
     public void Initialize() {
+        onTrackStart = null;
     }
     public void RunOnGamePause() { 
         onGamePause();
@@ -31,5 +33,10 @@ public class EventManager : MonoBehaviour
     } 
     public void PlayerInitialized() {
         onPlayerInitialized();
+    }
+    public static void RunOnTrackStart(AudioClip clip) {
+        if (onTrackStart == null)
+            return;
+        onTrackStart(clip);
     }
 }

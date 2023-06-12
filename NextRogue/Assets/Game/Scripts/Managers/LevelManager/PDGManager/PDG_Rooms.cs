@@ -14,10 +14,11 @@ public class PDG_Rooms : MonoBehaviour
     public void Initialize() {
         MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer
             .SetTVData(MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.TilemapVisualizerData);
+        GameObject.Find("DungeonBG").GetComponent<SpriteRenderer>().color = MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.TilemapVisualizerData.BGColor;
         CreateRooms();
         SortRooms();
         RoomTypes();
-        DecorateRooms();
+        DecorateRooms(); 
     }
     public void SaveRoom(HashSet<Vector2Int> item) { _floorPoses.Add(item); }
     public void SaveCorridor(IEnumerable<Vector2Int> item) { _corridorPoses.Add(item); }
@@ -40,10 +41,13 @@ public class PDG_Rooms : MonoBehaviour
         }
         GameObject.FindObjectOfType<MapCamera>().GetTiles(allTiles);
         MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer.PaintFloorTiles(allTiles);
-        AllWalls = WallGenerator.CreateWalls(allTiles, MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer);
-
-        for (int i = 0; i < _floorPoses.Count; i++)
-            _rooms.Add(new(_floorPoses[i], _corridorPoses[i]));
+        AllWalls = WallGenerator.CreateWalls(allTiles, MainManager.Instance.LevelManager.PDGManager.TilemapVisualizer); 
+        for (int i = 0; i < _floorPoses.Count; i++) {
+            if(_corridorPoses.Count > i)
+                _rooms.Add(new(_floorPoses[i], _corridorPoses[i]));
+            else
+                _rooms.Add(new(_floorPoses[i], _corridorPoses[0]));
+        }
     }
     public void SortRooms() {
         _rooms = _rooms.OrderBy(x => x.Distance).ToList();
@@ -106,6 +110,8 @@ public class Room {
         _usedPos = new();
     }
     public void DecorateEnemyRoom(List<GameObject> props) {
+        if (props.Count <= 0)
+            return;
         int enemyCount = Random.Range(5, 10);
         for (int i = 0; i < enemyCount; i++) {
 
@@ -119,6 +125,8 @@ public class Room {
         }
     }
     public void DecorateExitRoom(List<GameObject> props) {
+        if (props.Count <= 0)
+            return;
         foreach (var item in props) {
             GameObject.Instantiate(
                 props[Random.Range(0, props.Count)],
@@ -127,6 +135,8 @@ public class Room {
         }
     }
     public void DecorateStartRoom(List<GameObject> props) {
+        if (props.Count <= 0)
+            return;
         foreach (var item in props) {
             GameObject.Instantiate(
                 props[Random.Range(0, props.Count)],
@@ -135,6 +145,8 @@ public class Room {
         }
     }
     public void DecorateCenter(List<GameObject> props, HashSet<Vector2Int> walls) {
+        if (props.Count <= 0)
+            return;
         int propCount = Random.Range(3,7);
         int activeCount = 0;
         while (propCount > activeCount) {
@@ -144,7 +156,7 @@ public class Room {
             Vector2Int pos = new(0, 0);
             do
                 pos = Floor.ElementAt(Random.Range(0, Floor.Count));
-            while (_usedPos.Contains(pos) && Corridor.Contains(pos));
+            while (_usedPos.Contains(pos) || Corridor.Contains(pos));
 
             //check if current position is beside walls
             foreach (var item in Direction2D.EightDirectionList) {
@@ -156,7 +168,7 @@ public class Room {
             //if not
             if (decorate) {
                 foreach (var item in Direction2D.CardinalDirectionList)
-                    if (Floor.Contains(pos + item * 3))
+                    if (Floor.Contains(pos + item * 2))
                         decorate = false;
                     else {
                         decorate = true;
@@ -173,6 +185,8 @@ public class Room {
         }
     }
     public void DecorateWalls(List<GameObject> props, HashSet<Vector2Int> walls) {
+        if (props.Count <= 0)
+            return;
         int propCount = Random.Range(4, 8);
         int activeCount = 0;
         while (propCount > activeCount) {
@@ -180,7 +194,7 @@ public class Room {
             Vector2Int pos = new();
             do
                 pos = Floor.ElementAt(Random.Range(0, Floor.Count));
-            while (_usedPos.Contains(pos) && Corridor.Contains(pos));
+            while (_usedPos.Contains(pos) || Corridor.Contains(pos));
             //spawn prop
             if(walls.Contains(pos + new Vector2Int(0, 1))) {
                 GameObject.Instantiate(props[Random.Range(0, props.Count)], new Vector3(pos.x, pos.y, 0), Quaternion.identity)

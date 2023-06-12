@@ -112,6 +112,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CHANGEPLAYER",
+                    "type": "Button",
+                    "id": "9575222a-d819-4db0-85f5-dbbd87dfff37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CHANGEMAP",
+                    "type": "Button",
+                    "id": "98954c88-8fc8-47a0-9217-7bb0f1302874",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -288,6 +306,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "INTERACT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a35bf38-e86b-4398-b8b3-df1f744320e6",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CHANGEPLAYER",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9fc9c3c2-22d2-42a8-9773-8ba0119dc16d",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CHANGEMAP",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

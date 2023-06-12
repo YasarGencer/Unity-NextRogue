@@ -85,6 +85,7 @@ public class MainManager : MonoBehaviour
         GameObject.FindObjectOfType<CameraTarget>().Initialize();
     }
     void OpeningAnim() {
+        _gameManager.PlayOpening();
         var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
         var defSize = cinemachine.m_Lens.OrthographicSize;
         float size = 2;

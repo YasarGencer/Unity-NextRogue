@@ -14,15 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - Name: Purple Dungeon
-    Description: First Room
+    Description: Purple Dungeon
+    DungeonLevel:
+      IsRandomDungeon: 1
+      SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
+      CorridorLength: 15
+      CorridorCount: 5
+      RoomPercent: 1
+      RoomProps: {fileID: 11400000, guid: 7399deefaf11161449f36422cfbcec0f, type: 2}
+      TilemapVisualizerData: {fileID: 11400000, guid: f68668e3de164594488b94ec184dc988, type: 2}
+    TutorialLevel:
+      IsTutorial: 0
+      TutorialMap: {fileID: 0}
+  - Name: Stone Dungeon
+    Description: Stone Dungeon
     DungeonLevel:
       IsRandomDungeon: 1
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
       CorridorLength: 15
       CorridorCount: 15
       RoomPercent: 1
-      RoomProps: {fileID: 11400000, guid: 7399deefaf11161449f36422cfbcec0f, type: 2}
-      TilemapVisualizerData: {fileID: 11400000, guid: f68668e3de164594488b94ec184dc988, type: 2}
+      RoomProps: {fileID: 11400000, guid: ee278f86ed1d4894a9f4032d83fb39c5, type: 2}
+      TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
     TutorialLevel:
       IsTutorial: 0
       TutorialMap: {fileID: 0}
@@ -40,8 +53,8 @@ MonoBehaviour:
     TutorialLevel:
       IsTutorial: 1
       TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
-  - Name: TUTORIAL - NECROMANCER
-    Description: NecromancerTutorial
+  - Name: TUTORIAL - BLOODSHAPER
+    Description: BloodshaperTutorial
     DungeonLevel:
       IsRandomDungeon: 0
       SRWData: {fileID: 0}
@@ -52,5 +65,5 @@ MonoBehaviour:
       TilemapVisualizerData: {fileID: 0}
     TutorialLevel:
       IsTutorial: 1
-      TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
-  activeLevelIndex: -1
+      TutorialMap: {fileID: 8208578824207541179, guid: 992cdb56a535a9145b8fc0042867247d, type: 3}
+  activeLevelIndex: 1

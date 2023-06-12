@@ -1,6 +1,5 @@
 using DG.Tweening;
 using TMPro;
-using UnityEditor;
 using UnityEngine; 
 using UnityEngine.UI; 
 
@@ -47,6 +46,6 @@ public class HUDMainmenuButton : MonoBehaviour
         });
     }
     void ClickSound() {
-        AudioManager.PlaySound(_clickSound);
+        AudioManager.PlaySound(_clickSound, null, AudioManager.AudioVolume.ui, false);
     }
 }

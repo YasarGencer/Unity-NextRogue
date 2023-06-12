@@ -7,6 +7,10 @@ public class P_SpellHandler : MonoBehaviour {
     ASpell[] _spellList;
     public ASpell[] SpellList { get { return _spellList; } }
     public void Initialize(P_MainController mainController) {
+        if(_spellList != null && _spellList.Length > 0)
+            foreach (var item in _spellList)
+                if(item != null && item.IsInit)
+                    item.RetrieveCooldown(); 
         if (_isInit)
             return;
         _isInit = true;
@@ -17,7 +21,7 @@ public class P_SpellHandler : MonoBehaviour {
         for (int i = 0; i < _mainController.Stats.Spells.Count(); i++)
             SetSpell(i, _mainController.Stats.Spells[i]); 
     }
-    public void Spell(int value) { 
+    public void Spell(int value) {
         _spellList[value]?.Initialize(_mainController, value); 
     }
     public void SetSpell(int keyIndex, ASpell spell) { 
@@ -59,4 +63,7 @@ public void SetSpell(int keyIndex, int spellIndex) {
    _mainController.UI.SetSkillIcon(_mainController.UI.spellIconList, keyIndex, _spellList[keyIndex]);
 }
 */
+    private void OnDestroy() {
+        
+    }
 }
