@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
-  m_Name: Archer
+  m_Name: Marksmen
   m_EditorClassIdentifier: 
-  Name: Archer
+  Name: Marksmen
   ShortDescription: x
   Description: x
   Corpse: {fileID: 3399919947845213643, guid: ace268c1027119443a94d0fa0ccad240, type: 3}

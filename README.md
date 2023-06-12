@@ -9,9 +9,16 @@
         - [Spells](#playerSpells)
       - [Playable Characters](#playableCharacters)
         - [Necromancer](#necromancer) 
-        - [Hemomancer](#hemomancer) 
+        - [Bloodshaper](#bloodshaper) 
         - [Rogue](#rogue) 
-      - [Non Players](#enemies)
+      - [Enemies](#enemies)
+        - [Humans](#humans)
+        - [Orcs](#orcs)
+        - [Other](#other)
+      - [Bosses](#bosses)
+        - [Human Boss](#humanboss)
+        - [Orc Boss](#orcboss)
+      - [Map System](#maps)
      - [Visuals](#visuals)
        - [User Interface](#UI)
  - [Development Flow](#developmentFlow)
@@ -172,7 +179,7 @@ Spell List :
             Attack Speed : .75
             Life Span : 5
 
-<h3 align = "center" id = "hemomancer"> HEMOMANCER</h3>  
+<h3 align = "center" id = "bloodshaper"> BLOODSHAPER</h3>  
   <p align = "center">
   <img src="" width="500" alt="imagepending">
   <p>
@@ -261,7 +268,48 @@ Spell List :
     -  
             Cooldown : 1
             Damage : 5
-<h3 align = "center" id = "enemies"> ENEMIES</h3>
+
+<h2 align = "center" id = "enemies"> ENEMIES</h2>
+
+
+<h3 align = "left" id = "humans"> HUMANS</h3> 
+
+- Crusader:
+    - Melee
+    - Follow
+    - Heals self when hp is lower than half. 5 secs cooldown.
+    - 
+          Health : 40
+          Movement Speed : 1.5
+          Attack Damage : 5
+          Attack Range : .75
+          Attack Speed : 1
+- Thief:
+    - Dash
+    - Keep Distance
+    - Tp's to behind the player. Hits. And Tp's back.
+    -
+          Health : 15
+          Movement Speed : 2.5
+          Attack Damage : 12
+          Attack Range : 3
+          Attack Speed : 3
+- Marksmen:
+    - Ranged
+    - Keep Distance
+    - Shoots three arrows on normal cooldown. After that waits for 3 times more as normal.
+    - 
+          Health : 25
+          Movement Speed : 2
+          Attack Damage : 13
+          Attack Range : 4
+          Attack Speed : 1
+
+<h3 align = "left" id = "orcs"> ORCS</h3> 
+
+Under-development
+
+<h3 align = "left" id = "other"> OTHER</h3> 
 
 - Hunter:
     - Melee
@@ -291,6 +339,97 @@ Spell List :
           Attack Range : 4
           Attack Speed : 2
   
+
+<h2 align = "center" id = "bosses"> BOSSES</h2> 
+
+<h3 align = "left" id = "humanboss"> HUMAN BOSS</h3> 
+
+- name
+    - Melee
+    - Follow
+    - 
+          Health : x
+          Movement Speed : x
+          Attack Damage : x
+          Attack Range : x
+          Attack Speed : x
+
+PHASE 1 SKILLS: 
+
+    - Arrow Rain:
+      - Boss will order the marksmen in the castle to shoot their arrows.
+          - Condition : 
+          - Cooldown :
+          - Arrow Damage :
+          - Arrow Count : 
+    - Cavalry Attack:
+      - Boss will order the cavalry on the sides to rush to the other side.
+      - The Cavalry will damage player if touches.
+          - Condition : 
+          - Cooldown :
+          - Cavalry Damage :
+          - Cavalry Count : 
+    - Tactical Repoisitioning:
+      - Boss will dash as Thief enemy to gain some space or get closer. 
+          - Condition : If boss has lots of health and too far away to the player or boss has low health and too close to the player.
+          - Cooldown :  
+
+An in-between phase will start when boss dies. Army on the castle will get down in a rage. The crusaders will healh him while player is occupied with the army. Inbetween pahse will end and the 2nd phase wwil start when player kills all of the enemies.
+
+Boss will be much more aggressive on this phase
+
+PHASE 2 SKILLS:    
+
+    - Oath of Honor :
+      - Boss will get stronger shouting an oath of honor. 
+          - Condition : One time use
+          - Cooldown :  One time use
+    - Guardian Shield :
+      - Boss will get a indestructable shield and become invincible for the time. 
+          - Condition : 
+          - Cooldown :  
+          - Shield Duration :  
+    - Ground Shaker : 
+      - Boss will use a slow and heavy attack to create sismic waves. 
+          - Condition : 
+          - Cooldown : 
+    - Sledgehammer Volley: 
+      - Boss will throw its weapon as a boomerang. 
+          - Condition : 
+          - Cooldown :   
+    - War Cry:
+      - Boss will shout and push the player away.
+      - It can resault with the player pressing some traps and loosing health.
+          - Condition : 
+          - Cooldown :    
+
+The castle doors will be lowered and player will get the portal inside after phase 2. From that portal game will contuniue in the orc controlled area.
+
+
+<h3 align = "left" id = "orcboss"> ORC BOSS</h3> 
+
+Under-development
+
+<h2 align = "center" id = "maps"> MAP SYSTEM</h2>
+
+There is 4 kinds of maps to design. 
+
+- Tutorials: 
+  - Every playable character has its own tutorial scene that only played on the first run of that character.
+  - It teaches the player how that character works.
+- Dungeons: 
+  - Normal rogue-like type of procedurally generated maps.
+- Shops:
+  - A safe place where player can buy new skills or some health before continuing the action.
+- Bosses:
+  - A boss fight room.
+  - Not procedurally generated.
+
+Every race has 3 rooms. First you go into the shop of that race. Than you proceed to the dungeon room. After that you will encounter the boos of that race.
+Every race's dungen will have its own unique enemies and traps.
+And the bosses will be design to represent that race as much as possible.
+
+
 <h1 align = "center" id = "visuals"> VISUALS </h1>
   <h2 align = "center" id = "UI"> GAME </h2>
   <p align = "center">
