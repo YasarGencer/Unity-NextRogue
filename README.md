@@ -369,7 +369,7 @@ PHASE 1 SKILLS:
           - Cooldown :
           - Cavalry Damage :
           - Cavalry Count : 
-    - Tactical Repoisitioning:
+    - Tactical Reposiitioning:
       - Boss will dash as Thief enemy to gain some space or get closer. 
           - Condition : If boss has lots of health and too far away to the player or boss has low health and too close to the player.
           - Cooldown :  
