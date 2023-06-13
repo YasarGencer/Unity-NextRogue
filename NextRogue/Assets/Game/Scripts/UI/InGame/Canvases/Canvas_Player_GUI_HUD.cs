@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine; 
 
 public class Canvas_Player_GUI_HUD : AUI
@@ -12,15 +14,25 @@ public class Canvas_Player_GUI_HUD : AUI
     public HUDSkillIcon[] spellIconList; 
 
     [Header("SPELL DESCRIPTION")]
-    public HUDSkillDescription Description; 
+    public HUDSkillDescription Description;
+    [SerializeField] TextMeshProUGUI _coinText;
+
+    
     public override void Initialize() {
         base.Initialize();
         Description.Hide();
         Close();
+        MainManager.Instance.EventManager.onCoinChange += CoinChange;
     }
+
+    private void CoinChange(int value) {
+        _coinText.SetText(value.ToString() + " g");
+    }
+
     protected override void OnGameStart() {
         base.OnGameStart();
         _mainController = MainManager.Instance.Player.GetComponentInChildren<P_MainController>();
+        CoinChange(_mainController.Stats.Coin);
         Description.Hide();
         SkillIconsVisibility(true); 
     }

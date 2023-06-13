@@ -1,6 +1,7 @@
 using UnityEngine;
 using UniRx;
-using System; 
+using System;
+using TMPro;
 
 public abstract class ASpell : ScriptableObject
 {
@@ -23,6 +24,7 @@ public abstract class ASpell : ScriptableObject
     public string Name;
     [TextArea]
     public string Description;
+    public int Price;
 
     public Sprite Icon;
 
@@ -42,8 +44,7 @@ public abstract class ASpell : ScriptableObject
     protected float _currentTimeCooldown;
     IDisposable _cooldownRX;
 
-    [SerializeField] protected bool stopAudio;
-
+    [SerializeField] protected bool stopAudio; 
 
     public virtual void Initialize(P_MainController mainController, int value) { 
         if (_isInit && _currentTimeCooldown < CooldownTime)

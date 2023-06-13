@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public abstract class AInteract : MonoBehaviour {
@@ -19,8 +20,7 @@ public abstract class AInteract : MonoBehaviour {
     }
     protected virtual void Interact() {
         Info(false);
-    }
-
+    } 
     private void OnDrawGizmos() { 
     }
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -31,8 +31,11 @@ public abstract class AInteract : MonoBehaviour {
         if (collision.CompareTag("Player"))
             Info(false);
     }
-    protected void Info(bool value) {
+    protected virtual void Info(bool value) {
         _isInteractable = value;
         _info.SetActive(value);
     } 
+    protected void InfoText(string text) {
+        _info.GetComponent<TextMeshProUGUI>().SetText(text);
+    }
 }

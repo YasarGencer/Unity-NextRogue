@@ -77,7 +77,9 @@ public class PDG_CorridorFirst : PDG_SimpleRandomWalk
         var currentPos = _startPos;
         potentialRoomPoses.Add(currentPos);
         for (int i = 0; i < MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.CorridorCount; i++) {
-            var corridor = PDGAlgorithms.RandomWalkCorridor(currentPos, MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.CorridorLength);
+            var corridor = PDGAlgorithms.RandomWalkCorridor(currentPos, 
+                MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.CorridorLength, 
+                MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.SRWData.isRandomizedDirections);
 
             MainManager.Instance.LevelManager.PDGManager.Rooms.SaveCorridor(corridor);
             

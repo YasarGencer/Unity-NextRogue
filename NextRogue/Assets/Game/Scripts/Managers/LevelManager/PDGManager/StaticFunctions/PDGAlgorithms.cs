@@ -16,9 +16,11 @@ public static class PDGAlgorithms
         }
         return path;
     }
-    public static List<Vector2Int> RandomWalkCorridor(Vector2Int startPos, int corridorLength) {
+    public static List<Vector2Int> RandomWalkCorridor(Vector2Int startPos, int corridorLength, bool isRandomDirections) {
         List<Vector2Int> corridor = new();
-        var direction = Direction2D.GetRandomCardinalDirection();
+        Vector2Int direction = Vector2Int.right;
+        if (isRandomDirections)
+            direction = Direction2D.GetRandomCardinalDirection();
         var currentPos = startPos;
         corridor.Add(currentPos);
         for (int i = 0; i < corridorLength; i++) {

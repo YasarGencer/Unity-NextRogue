@@ -13,6 +13,32 @@ MonoBehaviour:
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
   levels:
+  - Name: Human Shop
+    Description: Human Shop
+    DungeonLevel:
+      IsRandomDungeon: 1
+      SRWData: {fileID: 11400000, guid: 02045b0008b1ddd43b0edb943d00afa2, type: 2}
+      CorridorLength: 12
+      CorridorCount: 2
+      RoomPercent: 1
+      RoomProps: {fileID: 11400000, guid: 438cdd3e9663ca4449d18be1ac54d34c, type: 2}
+      TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
+    TutorialLevel:
+      IsTutorial: 0
+      TutorialMap: {fileID: 0}
+  - Name: Human Dungeon
+    Description: Human Dungeon
+    DungeonLevel:
+      IsRandomDungeon: 1
+      SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
+      CorridorLength: 15
+      CorridorCount: 15
+      RoomPercent: 1
+      RoomProps: {fileID: 11400000, guid: ee278f86ed1d4894a9f4032d83fb39c5, type: 2}
+      TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
+    TutorialLevel:
+      IsTutorial: 0
+      TutorialMap: {fileID: 0}
   - Name: Purple Dungeon
     Description: Purple Dungeon
     DungeonLevel:
@@ -23,19 +49,6 @@ MonoBehaviour:
       RoomPercent: 1
       RoomProps: {fileID: 11400000, guid: 7399deefaf11161449f36422cfbcec0f, type: 2}
       TilemapVisualizerData: {fileID: 11400000, guid: f68668e3de164594488b94ec184dc988, type: 2}
-    TutorialLevel:
-      IsTutorial: 0
-      TutorialMap: {fileID: 0}
-  - Name: Stone Dungeon
-    Description: Stone Dungeon
-    DungeonLevel:
-      IsRandomDungeon: 1
-      SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
-      CorridorLength: 15
-      CorridorCount: 15
-      RoomPercent: 1
-      RoomProps: {fileID: 11400000, guid: ee278f86ed1d4894a9f4032d83fb39c5, type: 2}
-      TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
     TutorialLevel:
       IsTutorial: 0
       TutorialMap: {fileID: 0}
@@ -66,4 +79,4 @@ MonoBehaviour:
     TutorialLevel:
       IsTutorial: 1
       TutorialMap: {fileID: 8208578824207541179, guid: 992cdb56a535a9145b8fc0042867247d, type: 3}
-  activeLevelIndex: 1
+  activeLevelIndex: 0

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec89901ad5584745a2640bc0a3e39e4, type: 3}
+  m_Name: StoneDungeon-Shop-RoomProp
+  m_EditorClassIdentifier: 
+  StartRoom:
+  - {fileID: 2490164145671031904, guid: 1eb0c13a139e57f45b2e723faf059d3d, type: 3}
+  EnemyRoom: []
+  ExitRoom:
+  - {fileID: 6820882171971817332, guid: 000d33cb214703d48914c512955410ec, type: 3}
+  CenterProps:
+  - {fileID: 2805337358431470271, guid: d48f4ee3fce031e49b88934b428389fd, type: 3}
+  WallProps: []

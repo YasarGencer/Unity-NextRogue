@@ -18,7 +18,8 @@ public class CanvasManager : AUI
     public Canvas_Skill_Selection SkillSelection { get { return _skillSelection; } }
 
     [SerializeField] CanvasGroup _track;
-    [SerializeField] TextMeshProUGUI _trackName, _trackLength; 
+    [SerializeField] TextMeshProUGUI _trackName, _trackLength;
+    [SerializeField] TextMeshProUGUI _textPopUp;
 
     public override void Initialize() {
         RegisterEvents();
@@ -48,15 +49,18 @@ public class CanvasManager : AUI
     protected override void OnPlayerInitialized() {
         base.OnPlayerInitialized();
 
+        OpenPlayerHud();
+        /*
         if (MainManager.Instance.IsTest == false &&MainManager.Instance.LevelManager.GetLevel() == 0 && MainManager.Instance.LevelManager.ActiveLevelSetting.TutorialLevel.IsTutorial == false)
             OpenSkillSelection();
         else
             OpenPlayerHud();
+        */
     }
-    public void OpenSkillSelection() {
+    public void OpenSkillSelection(GameObject gameObject, ShopItem shopitem) {
         MainManager.Instance.EventManager.RunOnGamePause(); 
         _pauseScreen.Close(); 
-        _skillSelection.Open();
+        _skillSelection.Open(gameObject, shopitem);
     }
     void OpenPlayerHud() {
         _playerHud.Open();
@@ -77,4 +81,8 @@ public class CanvasManager : AUI
         });
     }
 
+    public void TextPopUp(bool value, string text = "") { 
+        _textPopUp.gameObject.SetActive(value);
+        _textPopUp.SetText(text);
+    }
 }

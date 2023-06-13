@@ -936,12 +936,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Crusader_32: -1938722835
       Crusader_5: 2134825551
       Crusader_29: -521313507
       Crusader_7: 1194265460
       Crusader_20: 639675717
       Crusader_24: -1792130968
-      Crusader_8: -2017875953
       Crusader_37: -702744043
       Crusader_10: 1029083086
       Crusader_22: 1294943211
@@ -966,14 +966,14 @@ TextureImporter:
       Crusader_25: -209789082
       Crusader_3: 192965421
       Crusader_28: 567581341
-      Crusader_35: -1655124433
-      Crusader_16: 515506090
-      Crusader_13: -26412789
-      Crusader_31: -1069541367
-      Crusader_23: -88329088
-      Crusader_1: -1305045470
       Crusader_21: -199350434
-      Crusader_32: -1938722835
+      Crusader_35: -1655124433
+      Crusader_13: -26412789
+      Crusader_16: 515506090
+      Crusader_31: -1069541367
+      Crusader_1: -1305045470
+      Crusader_8: -2017875953
+      Crusader_23: -88329088
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

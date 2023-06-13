@@ -25,6 +25,6 @@ public class HUDSlotSelection : MonoBehaviour
         _icon.gameObject.SetActive(value);
     }
     public void OnClick() { 
-        MainManager.Instance.CanvasManager.SkillSelection.SaveButton(_keyIndex);
+        MainManager.Instance.CanvasManager.SkillSelection.Buy(_keyIndex);
     }
 }

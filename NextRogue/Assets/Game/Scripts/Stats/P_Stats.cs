@@ -8,7 +8,10 @@ public class P_Stats : AStats {
     public int SecondaryValue = 0; 
     [Header("Level")]
     public int Level;
-    public int EXP, EXPRequired; 
+    public int EXP, EXPRequired;
+    [Header("Coin")]
+    public int Coin;
+    
     public override void Initialize() {
         base.Initialize();
         foreach (var item in Spells)
@@ -17,7 +20,8 @@ public class P_Stats : AStats {
             SecondaryValue = 0;
         Level = 0;
         EXP = 0;
-        EXPRequired = 100; 
+        EXPRequired = 100;
+        Coin = 100;
     } 
     public void SetSecondaryValue(int value) {
         SecondaryValue = value;

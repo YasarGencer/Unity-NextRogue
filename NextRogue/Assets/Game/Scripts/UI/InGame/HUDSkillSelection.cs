@@ -17,7 +17,9 @@ public class HUDSkillSelection : MonoBehaviour {
         _descriptipon.text = _spell.Description; 
     }
     public void Save() {
+        /*
         if(isSpell)
             MainManager.Instance.CanvasManager.SkillSelection.SaveSelected(_spell);
+        */
     } 
 }

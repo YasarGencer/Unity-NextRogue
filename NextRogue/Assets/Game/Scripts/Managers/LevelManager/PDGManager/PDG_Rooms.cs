@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq; 
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class PDG_Rooms : MonoBehaviour
 {
@@ -146,42 +147,50 @@ public class Room {
     }
     public void DecorateCenter(List<GameObject> props, HashSet<Vector2Int> walls) {
         if (props.Count <= 0)
-            return;
-        int propCount = Random.Range(3,7);
-        int activeCount = 0;
-        while (propCount > activeCount) {
-            bool decorate = true;
+            return; 
+        if (props.Count != 1) {
+            int propCount = Random.Range(3, 7);
+            int activeCount = 0;
+            while (propCount > activeCount) {
+                bool decorate = true;
 
-            //do not spawn props on top of each other
-            Vector2Int pos = new(0, 0);
-            do
-                pos = Floor.ElementAt(Random.Range(0, Floor.Count));
-            while (_usedPos.Contains(pos) || Corridor.Contains(pos));
+                //do not spawn props on top of each other
+                Vector2Int pos = new(0, 0);
+                do
+                    pos = Floor.ElementAt(Random.Range(0, Floor.Count));
+                while (_usedPos.Contains(pos) || Corridor.Contains(pos));
 
-            //check if current position is beside walls
-            foreach (var item in Direction2D.EightDirectionList) {
-                if (walls.Contains(pos + item)) {
-                    decorate = false;
-                    break;
-                }
-            }
-            //if not
-            if (decorate) {
-                foreach (var item in Direction2D.CardinalDirectionList)
-                    if (Floor.Contains(pos + item * 2))
+                //check if current position is beside walls
+                foreach (var item in Direction2D.EightDirectionList) {
+                    if (walls.Contains(pos + item)) {
                         decorate = false;
-                    else {
-                        decorate = true;
                         break;
                     }
+                }
+                //if not
+                if (decorate) {
+                    foreach (var item in Direction2D.CardinalDirectionList)
+                        if (Floor.Contains(pos + item * 2))
+                            decorate = false;
+                        else {
+                            decorate = true;
+                            break;
+                        }
+                }
+                //spawn prop
+                if (decorate) {
+                    GameObject.Instantiate(props[Random.Range(0, props.Count)], new Vector3(pos.x, pos.y, 0), Quaternion.identity)
+                        .transform.parent = MainManager.Instance.Enviroment;
+                    activeCount++;
+                    _usedPos.Add(pos);
+                }
             }
-            //spawn prop
-            if (decorate) {
-                GameObject.Instantiate(props[Random.Range(0, props.Count)], new Vector3(pos.x, pos.y, 0), Quaternion.identity)
-                    .transform.parent = MainManager.Instance.Enviroment;
-                activeCount++;
-                _usedPos.Add(pos);
-            }
+        }
+        else if (props.Count == 1) {
+            Vector2Int pos = Center;
+            GameObject.Instantiate(props[0], new Vector3(pos.x, pos.y, 0), Quaternion.identity)
+                        .transform.parent = MainManager.Instance.Enviroment; 
+            _usedPos.Add(pos);
         }
     }
     public void DecorateWalls(List<GameObject> props, HashSet<Vector2Int> walls) {

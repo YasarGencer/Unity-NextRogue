@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EventManager : MonoBehaviour
     public delegate void OnInteract();
     public delegate void OnPlayerInitialized();
     public delegate void OnTrackStart(AudioClip clip);
+    public delegate void OnCoinChange(int value);
 
     public event OnGamePuase onGamePause;
     public event OnGameUnPuase onGameUnPause;
@@ -15,6 +17,7 @@ public class EventManager : MonoBehaviour
     public event OnInteract onInteract;
     public event OnPlayerInitialized onPlayerInitialized;
     public static event OnTrackStart onTrackStart;
+    public event OnCoinChange onCoinChange;
 
     public void Initialize() {
         onTrackStart = null;
@@ -38,5 +41,9 @@ public class EventManager : MonoBehaviour
         if (onTrackStart == null)
             return;
         onTrackStart(clip);
+    }
+    public void RunOnCoinChange(int value) {
+        MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin -= value;
+        onCoinChange(MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin);
     }
 }

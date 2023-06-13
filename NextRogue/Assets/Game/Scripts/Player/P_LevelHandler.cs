@@ -20,6 +20,6 @@ public class P_LevelHandler : MonoBehaviour {
     public void LevelUp() {
         _mainController.Stats.EXP -= _mainController.Stats.EXPRequired;
         _mainController.Stats.Level++;
-        MainManager.Instance.CanvasManager.OpenSkillSelection();
+        //MainManager.Instance.CanvasManager.OpenSkillSelection();
     }
 }
