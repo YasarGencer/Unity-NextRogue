@@ -29,6 +29,7 @@ public class P_Movement : MonoBehaviour {
         _audioSource.Play();
 
         _animator = _mainController.Animator;
+        _direction = Vector2.zero;
     }
     public void MoveRX(long l) {
         if (_mainController.canPlay)
@@ -53,10 +54,12 @@ public class P_Movement : MonoBehaviour {
     }
     void OnGamePause() {
         _moveRX?.Dispose();
+        _direction = Vector2.zero;
     }
     void OnGameUnPause() {
         _moveRX?.Dispose();
         _moveRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(MoveRX);
+        _direction = Vector2.zero;
     }
     protected void WalkSound(Vector2 direction) {
         if (_audioSource.clip == null)

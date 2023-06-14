@@ -4461,7 +4461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177733644}
   m_Layer: 0
-  m_Name: ----- ENVIROMENT -----
+  m_Name: ----- ENVIRONMENT -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5035,6 +5035,10 @@ PrefabInstance:
       objectReference: {fileID: 915536358}
     - target: {fileID: 7597306064917146075, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: _enviroment
+      value: 
+      objectReference: {fileID: 1177733644}
+    - target: {fileID: 7597306064917146075, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
+      propertyPath: _environment
       value: 
       objectReference: {fileID: 1177733644}
     - target: {fileID: 7597306065813284823, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}

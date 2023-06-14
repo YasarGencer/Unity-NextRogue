@@ -54,6 +54,8 @@ public class LevelSetting {
     [Space(10f)] 
     public DungeonLevel DungeonLevel;
     [Space(10f)] 
+    public ShopLevel ShopLevel;
+    [Space(10f)] 
     public TutorialLevel TutorialLevel;
 }
 [System.Serializable]
@@ -70,6 +72,11 @@ public struct DungeonLevel {
     public PDG_RoomProps RoomProps;
     [Header("TilemapVisualizerData")]
     public TilemapVisualizerData TilemapVisualizerData;
+}
+[System.Serializable]
+public struct ShopLevel {
+    public bool IsShop;
+    public GameObject ShopMap;
 }
 [System.Serializable]
 public struct TutorialLevel {

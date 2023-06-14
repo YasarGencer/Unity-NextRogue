@@ -38,7 +38,9 @@ public class LevelManager : MonoBehaviour
 
         if (ActiveLevelSetting.DungeonLevel.IsRandomDungeon) {
             _PDGManager?.Initialize();
-        }else if (ActiveLevelSetting.TutorialLevel.IsTutorial) {
+        }else if (ActiveLevelSetting.ShopLevel.IsShop) {
+            activeMap = Instantiate(ActiveLevelSetting.ShopLevel.ShopMap);
+        } else if (ActiveLevelSetting.TutorialLevel.IsTutorial) {
             activeMap = Instantiate(ActiveLevelSetting.TutorialLevel.TutorialMap);
         }
     }

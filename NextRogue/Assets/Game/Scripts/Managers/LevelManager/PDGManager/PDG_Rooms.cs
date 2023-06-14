@@ -131,7 +131,7 @@ public class Room {
         foreach (var item in props) {
             GameObject.Instantiate(
                 props[Random.Range(0, props.Count)],
-                MainManager.Instance.Enviroment
+                MainManager.Instance.Environment
                 ).transform.position = new(Center.x, Center.y, 0);
         }
     }
@@ -141,7 +141,7 @@ public class Room {
         foreach (var item in props) {
             GameObject.Instantiate(
                 props[Random.Range(0, props.Count)],
-                MainManager.Instance.Enviroment
+                MainManager.Instance.Environment
                 ).transform.position = new(Center.x, Center.y, 0);
         }
     }
@@ -180,7 +180,7 @@ public class Room {
                 //spawn prop
                 if (decorate) {
                     GameObject.Instantiate(props[Random.Range(0, props.Count)], new Vector3(pos.x, pos.y, 0), Quaternion.identity)
-                        .transform.parent = MainManager.Instance.Enviroment;
+                        .transform.parent = MainManager.Instance.Environment;
                     activeCount++;
                     _usedPos.Add(pos);
                 }
@@ -189,7 +189,7 @@ public class Room {
         else if (props.Count == 1) {
             Vector2Int pos = Center;
             GameObject.Instantiate(props[0], new Vector3(pos.x, pos.y, 0), Quaternion.identity)
-                        .transform.parent = MainManager.Instance.Enviroment; 
+                        .transform.parent = MainManager.Instance.Environment; 
             _usedPos.Add(pos);
         }
     }
@@ -207,7 +207,7 @@ public class Room {
             //spawn prop
             if(walls.Contains(pos + new Vector2Int(0, 1))) {
                 GameObject.Instantiate(props[Random.Range(0, props.Count)], new Vector3(pos.x, pos.y, 0), Quaternion.identity)
-                    .transform.parent = MainManager.Instance.Enviroment;
+                    .transform.parent = MainManager.Instance.Environment;
                 activeCount++;
                 _usedPos.Add(pos);
             }

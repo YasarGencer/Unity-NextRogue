@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -1924,7 +1924,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       ShopCards_12: 1157492401
-      ShopCards_71: 724227325
+      ShopCards_15: -487370294
       ShopCards_38: -286667486
       ShopCards_48: 1477003238
       ShopCards_77: 1069677987
@@ -2007,7 +2007,7 @@ TextureImporter:
       ShopCards_30: -2034180963
       ShopCards_55: -1450926915
       ShopCards_62: -2085414453
-      ShopCards_15: -487370294
+      ShopCards_71: 724227325
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

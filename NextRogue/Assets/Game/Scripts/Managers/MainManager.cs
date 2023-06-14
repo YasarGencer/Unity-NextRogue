@@ -39,13 +39,13 @@ public class MainManager : MonoBehaviour
     [SerializeField]
     private Transform _player;
     [SerializeField]
-    private Transform _enviroment;
+    private Transform _environment;
     [SerializeField]
     private Transform _enemies;
     public Transform Managers { get { return _managers; } }
     public Transform Utilities { get { return _utilities; } }
     public Transform Player { get { return _player; } }
-    public Transform Enviroment { get { return _enviroment; } }
+    public Transform Environment { get { return _environment; } }
     public Transform Enemies { get { return _enemies; } }
     private void Awake() {
         Initialize();
@@ -65,9 +65,9 @@ public class MainManager : MonoBehaviour
         if(Enemies!= null)
             for (int i = 0; i < Enemies.childCount; i++)
                 Destroy(Enemies.GetChild(i).gameObject);
-        if (Enviroment != null)
-            for (int i = 0; i < Enviroment.childCount; i++)
-                Destroy(Enviroment.GetChild(i).gameObject);
+        if (Environment != null)
+            for (int i = 0; i < Environment.childCount; i++)
+                Destroy(Environment.GetChild(i).gameObject);
 
         _canvasManager?.Initialize();
         _player?.GetComponentInChildren<P_MainController>().Initialize();

@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class NPC : AInteract {
+    [TextArea, SerializeField] List<string> _npcTalk;
+    protected override void OnStart() {
+        base.OnStart(); 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void InteractPublic() {
+        Interact();
+    }
+    protected override void Interact() { 
+        InfoText(_npcTalk[Random.Range(0, _npcTalk.Count)]);
+    }
+    protected override void Info(bool value) {
+        base.Info(value);
+        InfoText(_npcTalk[Random.Range(0, _npcTalk.Count)]);
     }
 }

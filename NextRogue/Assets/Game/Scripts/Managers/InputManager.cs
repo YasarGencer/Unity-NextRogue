@@ -119,9 +119,12 @@ public class InputManager : MonoBehaviour
     void Direction(Vector2 direction) {
         if (MainManager.Instance.GameManager.GamePaused)
             return;
-        if (_mainController.canPlay)
-            if (_mainController.Movement)
+        if(_mainController != null) {
+            if (_mainController.canPlay)
                 _mainController.Movement.SetDirection(direction);
+            else
+                _mainController.Movement.SetDirection(Vector2.zero);
+        } 
     }
     void Spell(int value) {
         if (MainManager.Instance.GameManager.GamePaused)
