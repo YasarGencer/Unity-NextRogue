@@ -4824,6 +4824,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2588097169407579758, guid: f19f672b16d6cd4478e27899eb821aa7, type: 3}
+      propertyPath: circles.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2588097169677214036, guid: f19f672b16d6cd4478e27899eb821aa7, type: 3}
       propertyPath: m_Name
       value: ----- UTILITIES -----
@@ -5103,7 +5107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597306066266471212, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: chooseLevel
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7597306066266471212, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: chooseTutorial

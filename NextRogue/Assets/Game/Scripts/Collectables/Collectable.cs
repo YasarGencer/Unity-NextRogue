@@ -19,7 +19,9 @@ public class Collectable : MonoBehaviour {
     }
     private void Start() {
         _player = GameObject.FindGameObjectWithTag("Player").transform; 
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>() as AudioSource;
+        if(_audioSource == null)
+            _audioSource = gameObject.AddComponent<AudioSource>(); 
         _audioSource.volume = AudioManager.GetVolume(AudioManager.AudioVolume.sfx);
     }
     protected virtual void Update() {
@@ -40,7 +42,8 @@ public class Collectable : MonoBehaviour {
             case Type.EXP:
                 _player.GetComponent<P_MainController>().Level.GainEXP((int)amount);
                 break;
-            case Type.COIN: 
+            case Type.COIN:
+                MainManager.Instance.EventManager.RunOnCoinChange((int)amount);
                 break;
             default:
                 break;

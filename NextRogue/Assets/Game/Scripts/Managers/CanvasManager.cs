@@ -23,12 +23,11 @@ public class CanvasManager : AUI
 
     public override void Initialize() {
         RegisterEvents();
-
-        _playerHud.Initialize();
-        _pauseScreen.Initialize();
-        _skillSelection.Initialize();
-
+         
         if (!_isInit) {
+            _playerHud.Initialize();
+            _pauseScreen.Initialize();
+            _skillSelection.Initialize();
             EventManager.onTrackStart += ShowTackInfo; 
         } 
         _track.DOFade(0, 0);

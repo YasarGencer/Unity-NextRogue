@@ -70,6 +70,10 @@ public class AProjectile : MonoBehaviour
     }
 
     void DestroyRX(long obj) {
+        if (gameObject == null) {
+            _destroyRX?.Dispose();
+            return;
+        }
         if (_currentTime <= 0) {
             Destroy(gameObject);
             return;

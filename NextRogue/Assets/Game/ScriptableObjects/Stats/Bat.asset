@@ -19,7 +19,7 @@ MonoBehaviour:
   MaxHealth: 10
   Health: -35
   HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
-  EXPOrb: {fileID: 7945365704232343530, guid: be95fc16fbc389f48a04613702f0cd2a, type: 3}
+  EXPOrb: {fileID: 9009034806741881388, guid: 8a5cb29e5834bbe43bad35d833dc90be, type: 3}
   HitSound: {fileID: 8300000, guid: c8c4dc9ec4fab6945a661946c9441b1d, type: 3}
   HealSound: {fileID: 0}
   AttackSound: {fileID: 0}

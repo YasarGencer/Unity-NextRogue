@@ -41,7 +41,9 @@ public class NP_Attack_Ranged : ANP_Attack {
         if (_mainController == null)
             return;
         _mainController.Animator.speed = 1;
-        GameObject projectile = Instantiate(_projectile, transform.position, Quaternion.identity); 
+        GameObject projectile = Instantiate(_projectile, transform.position, Quaternion.identity);
+        if (projectile == null)
+            return;
         projectile.GetComponent<AProjectile>().Initialize(_mainController.Target.Target.transform.position, _mainController.Stats.AttackDamage, _mainController.Stats.AttackSpeed * 0.75f, _mainController.Stats.ProjectileSpeed);
     }
 }

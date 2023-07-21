@@ -23,8 +23,7 @@ public abstract class ASpell : ScriptableObject
     //public bool IsBasic;
     public string Name;
     [TextArea]
-    public string Description;
-    public int Price;
+    public string Description; 
 
     public Sprite Icon;
 

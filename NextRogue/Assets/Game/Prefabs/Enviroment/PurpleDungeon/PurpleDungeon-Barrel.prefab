@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 23c14be6675a0e340886fcdf29e52984, type: 3}
   _drops:
-  - {fileID: 7945365704232343530, guid: be95fc16fbc389f48a04613702f0cd2a, type: 3}
+  - {fileID: 9009034806741881388, guid: 8a5cb29e5834bbe43bad35d833dc90be, type: 3}
   _dropRate: 0.3
 --- !u!114 &9126180832688793934
 MonoBehaviour:
