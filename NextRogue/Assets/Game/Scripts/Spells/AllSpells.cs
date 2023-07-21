@@ -4,32 +4,20 @@ using System.Linq;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Spells", menuName = "ScriptableObjects/Spells/SpellList", order = 0)]
 public class AllSpells : ScriptableObject
-{
-    [SerializeField] ASpell[] SpellList;
-    
+{ 
+    [SerializeField] SpellHolder[] SpellHolderList;
     int indexer = 0;
     public ASpell GetSpell(int index) {
-        return SpellList[index];
+        return SpellHolderList[index].Spell;
+    }  
+    public SpellHolder[] GetSpellHolderList() {
+        return SpellHolderList;
     }
-    public ASpell[] GetAllSpells() {
-        return SpellList;
-    }
-    public int GetSpellCount() { return SpellList.Length; } 
-    public ASpell GetRandomSpell() {
-        List<ASpell> aSpells = new List<ASpell>();
+    public List<SpellHolder> GetRandomSpell(int value) {
+        List<SpellHolder> aSpells = new List<SpellHolder>();
 
-        foreach (var item in GetAllSpells())
-            if (item.IsInit == false)
-                aSpells.Add(item);
-
-        var random = UnityEngine.Random.Range(0, aSpells.Count);
-        return aSpells[random];
-    }
-    public List<ASpell> GetRandomSpell(int value) {
-        List<ASpell> aSpells = new List<ASpell>();
-
-        foreach (var item in GetAllSpells())
-            if (item.IsChoosen == false)
+        foreach (var item in SpellHolderList)
+            if (item.Spell.IsChoosen == false)
                 aSpells.Add(item); 
 
         List<int> count = new List<int>();
@@ -37,18 +25,37 @@ public class AllSpells : ScriptableObject
             count.Add(i);  
         var random = count.OrderBy(a => Guid.NewGuid()).ToList();
 
-        List<ASpell> bSpells = new List<ASpell>();
+        List<SpellHolder> bSpells = new List<SpellHolder>();
         for (int i = 0; i < 3; i++)
             bSpells.Add(aSpells[random.ElementAt(i)]);
         return bSpells;
     }
     public void Initialize() {
-        foreach (var item in SpellList) {
-            item.IsInit = false;
-            item.IsChoosen= false;
+        foreach (var item in SpellHolderList) {
+            ASpell spell = item.Spell;
+            spell.IsInit = false;
+            spell.IsChoosen= false;
             item.Index = indexer;
-            item.KeyIndex = -1;
+            spell.KeyIndex = -1;
             indexer++;
         }
     }
+}
+[System.Serializable]
+public class SpellHolder { 
+    public int Index;
+    public ASpell Spell;
+    public ASpell EnhancedSpell;
+    public SpellType Type;
+    public bool IsChallangeDone;
+}
+public enum SpellType {
+    BerserkerThrow,
+    DualShot,
+    HealingWard,
+    IceBarrage,
+    Overclock,
+    SubjugateWill,
+    ImpailingShot,
+    SpikeTrap
 }

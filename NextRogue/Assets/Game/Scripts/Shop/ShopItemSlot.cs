@@ -7,7 +7,7 @@ public class ShopItemSlot : AInteract
 {
     [SerializeField] AudioClip _notEnoughMoney;
     public ShopItem ShopItem { get ; private set; } 
-    public void Initialize(ASpell spell, GameObject item) {
+    public void Initialize(SpellHolder spell, GameObject item) {
         ShopItem = Instantiate(item, this.transform).GetComponent<ShopItem>();
         ShopItem.Initialize(spell); 
     }

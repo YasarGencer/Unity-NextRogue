@@ -8,12 +8,10 @@ public abstract class ASpell : ScriptableObject
     protected P_MainController _mainController;
     public P_MainController MainController { get { return _mainController; } }
 
-    int _index;
     int _keyIndex;
     [SerializeField]
     bool _isInit = false;
     bool _isChoosen = false;
-    public int Index { get { return _index; } set { _index = value; } }
     public int KeyIndex { get { return _keyIndex; } set { _keyIndex = value; } }
     public bool IsInit { get { return _isInit; } set { _isInit = value; } }
     public bool IsChoosen { get { return _isChoosen; } set { _isChoosen = value; } }

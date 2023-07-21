@@ -12,6 +12,6 @@ public class ShopController : MonoBehaviour
         var spells = MainManager.Instance.GameManager.AllSpells.GetRandomSpell(slots.Length);
         for (int i = 0; i < slots.Length; i++)
             if (spells[i] != null)
-                slots[i].Initialize(spells[i], ShopItem); 
+                slots[i].Initialize(spells[i], ShopItem);
     }
 }

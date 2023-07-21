@@ -12,12 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91351112aaebb9c4e96c489074708a4c, type: 3}
   m_Name: _AllSpells
   m_EditorClassIdentifier: 
-  SpellList:
-  - {fileID: 11400000, guid: 716a5e747e7883e4eb1262009fff95ec, type: 2}
-  - {fileID: 11400000, guid: 0a8d89b82f2e2ac4ca17eb1f72af12f0, type: 2}
-  - {fileID: 11400000, guid: afd3d228ee924fa44a90e8d4a17adca3, type: 2}
-  - {fileID: 11400000, guid: 3aaada23fb2520747a3258313c0d337b, type: 2}
-  - {fileID: 11400000, guid: 6ef58b0776118d54d809df52171a5fc3, type: 2}
-  - {fileID: 11400000, guid: 2784f4e84850be347b79cf23f31260cb, type: 2}
-  - {fileID: 11400000, guid: ed78adf94bf515c4091ef97139086c46, type: 2}
-  - {fileID: 11400000, guid: b91878e39e2eda54eacd4b430a8264ee, type: 2}
+  SpellHolderList:
+  - Index: 0
+    Spell: {fileID: 11400000, guid: 716a5e747e7883e4eb1262009fff95ec, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: 716a5e747e7883e4eb1262009fff95ec, type: 2}
+    Type: 0
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: 0a8d89b82f2e2ac4ca17eb1f72af12f0, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: 0a8d89b82f2e2ac4ca17eb1f72af12f0, type: 2}
+    Type: 1
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: afd3d228ee924fa44a90e8d4a17adca3, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: afd3d228ee924fa44a90e8d4a17adca3, type: 2}
+    Type: 2
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: 3aaada23fb2520747a3258313c0d337b, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: 3aaada23fb2520747a3258313c0d337b, type: 2}
+    Type: 3
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: ed78adf94bf515c4091ef97139086c46, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: ed78adf94bf515c4091ef97139086c46, type: 2}
+    Type: 6
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: 6ef58b0776118d54d809df52171a5fc3, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: 6ef58b0776118d54d809df52171a5fc3, type: 2}
+    Type: 4
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: b91878e39e2eda54eacd4b430a8264ee, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: b91878e39e2eda54eacd4b430a8264ee, type: 2}
+    Type: 7
+    IsChallangeDone: 0
+  - Index: 0
+    Spell: {fileID: 11400000, guid: 2784f4e84850be347b79cf23f31260cb, type: 2}
+    EnhancedSpell: {fileID: 11400000, guid: 2784f4e84850be347b79cf23f31260cb, type: 2}
+    Type: 5
+    IsChallangeDone: 0
