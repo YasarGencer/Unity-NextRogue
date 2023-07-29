@@ -31,12 +31,17 @@ public class AllSpells : ScriptableObject
         return bSpells;
     }
     public void Initialize() {
+        indexer = 0;
         foreach (var item in SpellHolderList) {
             ASpell spell = item.Spell;
+            ASpell spell2 = item.EnhancedSpell;
             spell.IsInit = false;
             spell.IsChoosen= false;
-            item.Index = indexer;
             spell.KeyIndex = -1;
+            spell2.IsInit = false;
+            spell2.IsChoosen = false;
+            spell2.KeyIndex = -1;
+            item.Index = indexer;
             indexer++;
         }
     }

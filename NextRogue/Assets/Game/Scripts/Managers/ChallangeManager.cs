@@ -1,4 +1,4 @@
-using UnityEngine;
+using UnityEngine; 
 
 public class ChallangeManager : MonoBehaviour
 {
@@ -9,10 +9,7 @@ public class ChallangeManager : MonoBehaviour
                 item.IsChallangeDone = true;
             else
                 item.IsChallangeDone = false;
-        }
-        RegisterChallangeDone(SpellType.ImpailingShot);
-        RegisterChallangeDone(SpellType.DualShot);
-        RegisterChallangeDone(SpellType.HealingWard);
+        } 
     }
     public void RegisterChallangeDone(SpellType type) {
         foreach (var item in _spells.GetSpellHolderList()) {

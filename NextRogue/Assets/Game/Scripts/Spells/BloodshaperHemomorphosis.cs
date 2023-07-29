@@ -30,7 +30,7 @@ public class BloodshaperHemomorphosis : ASpell {
             _mainController.Stats.SetSecondaryValue(0);
         } else {
             color.a = 1f;
-            _mainController.Stats.Speed = _speedHolder;
+            _mainController.Stats.Speed -= _speed + _speedMultiplier * _mainController.Stats.SecondaryValue;
         }
         _mainController.GetComponentInChildren<SpriteRenderer>().color = color;
     }

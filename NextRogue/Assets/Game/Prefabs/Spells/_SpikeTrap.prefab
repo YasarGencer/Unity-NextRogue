@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 8410827680077400460}
   - component: {fileID: 8410827680077400459}
   m_Layer: 0
-  m_Name: _sprite (2)
+  m_Name: _sprite (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,3 +459,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   stopAnim: 1
+  _setActiveOnCollision: 1

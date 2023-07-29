@@ -117,14 +117,14 @@ public abstract class ASpell : ScriptableObject
     }
 
     //EVENTS
-    void RegisterEvents() { 
+    protected virtual void RegisterEvents() { 
         MainManager.Instance.EventManager.onGamePause += OnGamePause;   
         MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause; 
     }
-    void OnGamePause() {
+    protected virtual void OnGamePause() {
         _cooldownRX?.Dispose(); 
     }
-    void OnGameUnPause() {
+    protected virtual void OnGameUnPause() {
         StartCooldown();
     } 
 }

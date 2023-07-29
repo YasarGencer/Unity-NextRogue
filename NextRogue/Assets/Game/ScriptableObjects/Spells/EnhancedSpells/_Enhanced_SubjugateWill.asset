@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7791df81b7a344aa1dd35e61e258e6, type: 3}
+  m_Name: _Enhanced_SubjugateWill
+  m_EditorClassIdentifier: 
+  _isInit: 0
+  Name: Domination Aura
+  Description: enchants the will of the closest enemy to get them to their side
+  Icon: {fileID: 21300000, guid: 7e378ecc96da60647b7a6775a47ada6e, type: 3}
+  Sound: {fileID: 8300000, guid: c42d803fcd5d56248be5f0bb55b6786b, type: 3}
+  Spell: {fileID: 6772048588485438942, guid: 1f85bb087310ab44fa6fcdae11a7b3a8, type: 3}
+  Damage: 0
+  Speed: 0
+  CastingTime: 0
+  CooldownTime: 30
+  stopAudio: 1
+  _subjugateCount: 2
+  _subhugateHeader: {fileID: 9173291971978604375, guid: 520dadc0557bd5f4c9ae5049de928cd9, type: 3}

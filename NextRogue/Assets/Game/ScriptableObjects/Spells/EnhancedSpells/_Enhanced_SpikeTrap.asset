@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
+  m_Name: _Enhanced_SpikeTrap
+  m_EditorClassIdentifier: 
+  _isInit: 0
+  Name: Iron Spike
+  Description: Sets up a spike trap that damages everything
+  Icon: {fileID: 21300000, guid: ccc4176fc57ab354c96af24d9a8116ab, type: 3}
+  Sound: {fileID: 8300000, guid: d2b8d915400b3a143bfe635bcb7f0200, type: 3}
+  Spell: {fileID: 8410827680362039746, guid: 4ccdbc70bb1da83468fc60639e84c7c7, type: 3}
+  Damage: 20
+  Speed: 0
+  CastingTime: 0
+  CooldownTime: 10
+  stopAudio: 1
