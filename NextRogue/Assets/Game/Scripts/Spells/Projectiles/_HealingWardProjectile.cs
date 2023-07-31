@@ -6,6 +6,8 @@ public class _HealingWardProjectile : AP_Projectile
 {
     [SerializeField] int time;
     [SerializeField] bool isInvincable;
+
+    public static int numberOfBlockedAttack=0;
     Transform _player;
     IDisposable _followRX;
     public override void Initialize(Vector3 mousePos, float damage, float time, float speed) {
@@ -41,6 +43,14 @@ public class _HealingWardProjectile : AP_Projectile
             Destroy(collision.gameObject);
             _player.GetComponent<P_MainController>().Health.GainHealth(_damage);
             PlaySound();
+            numberOfBlockedAttack = PlayerPrefs.GetInt(nameof(numberOfBlockedAttack));
+            numberOfBlockedAttack++;
+            PlayerPrefs.SetInt(nameof(numberOfBlockedAttack), numberOfBlockedAttack);
+        }
+        if (PlayerPrefs.GetInt(nameof(numberOfBlockedAttack)) >= 1)
+        {
+            MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.HealingWard);
+
         }
     }
 }

@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 8410827680362039744}
   - component: {fileID: 8410827680362039773}
   - component: {fileID: 8426334332346295538}
+  - component: {fileID: 6454939660907975522}
   m_Layer: 0
   m_Name: _SpikeTrap
   m_TagString: Untagged
@@ -460,3 +461,15 @@ MonoBehaviour:
   clip: {fileID: 0}
   stopAnim: 1
   _setActiveOnCollision: 1
+--- !u!114 &6454939660907975522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410827680362039746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1ecf92e73edcf44ab9a28ee4f43883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

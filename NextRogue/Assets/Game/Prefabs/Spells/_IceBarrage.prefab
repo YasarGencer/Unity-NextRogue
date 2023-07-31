@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1195071985193175927}
   - component: {fileID: 1195071985193175928}
   - component: {fileID: 1195071985193175929}
+  - component: {fileID: 2058438885979074167}
   m_Layer: 6
   m_Name: shard
   m_TagString: Untagged
@@ -107,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 84dd4ec51b120f041a9b0c6c911ab17f, type: 3}
+  stopAnim: 0
+  _setActiveOnCollision: 0
 --- !u!114 &1195071985193175929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +120,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2058438885979074167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195071985193175930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11953697a3ac2c4aba1cc7a121c5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195071985698565550
@@ -169,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
+  stopAnim: 0
 --- !u!1 &1195071985972993648
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +283,7 @@ GameObject:
   - component: {fileID: 1195071986165236458}
   - component: {fileID: 1195071986165236459}
   - component: {fileID: 1195071986165236460}
+  - component: {fileID: 8945420747064289152}
   m_Layer: 6
   m_Name: shard
   m_TagString: Untagged
@@ -360,6 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 84dd4ec51b120f041a9b0c6c911ab17f, type: 3}
+  stopAnim: 0
+  _setActiveOnCollision: 0
 --- !u!114 &1195071986165236460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +389,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8945420747064289152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195071986165236461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11953697a3ac2c4aba1cc7a121c5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195071986292917243
@@ -386,6 +417,7 @@ GameObject:
   - component: {fileID: 1195071986292917240}
   - component: {fileID: 1195071986292917241}
   - component: {fileID: 1195071986292917242}
+  - component: {fileID: 2906241983757026785}
   m_Layer: 6
   m_Name: shard
   m_TagString: Untagged
@@ -479,6 +511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 84dd4ec51b120f041a9b0c6c911ab17f, type: 3}
+  stopAnim: 0
+  _setActiveOnCollision: 0
 --- !u!114 &1195071986292917242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +523,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2906241983757026785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195071986292917243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11953697a3ac2c4aba1cc7a121c5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195071986414553469
@@ -589,6 +635,7 @@ GameObject:
   - component: {fileID: 1195071986513219833}
   - component: {fileID: 1195071986513219834}
   - component: {fileID: 1195071986513219835}
+  - component: {fileID: 5421115004282447273}
   m_Layer: 6
   m_Name: shard
   m_TagString: Untagged
@@ -682,6 +729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 84dd4ec51b120f041a9b0c6c911ab17f, type: 3}
+  stopAnim: 0
+  _setActiveOnCollision: 0
 --- !u!114 &1195071986513219835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +741,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5421115004282447273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195071986513219836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11953697a3ac2c4aba1cc7a121c5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195071986518582160
@@ -792,6 +853,7 @@ GameObject:
   - component: {fileID: 1195071986610296187}
   - component: {fileID: 1195071986610296183}
   - component: {fileID: 1195071986610296184}
+  - component: {fileID: 9137763139423056105}
   m_Layer: 6
   m_Name: shard
   m_TagString: Untagged
@@ -885,6 +947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 84dd4ec51b120f041a9b0c6c911ab17f, type: 3}
+  stopAnim: 0
+  _setActiveOnCollision: 0
 --- !u!114 &1195071986610296184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,6 +959,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9137763139423056105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195071986610296189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11953697a3ac2c4aba1cc7a121c5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195071986646278312
