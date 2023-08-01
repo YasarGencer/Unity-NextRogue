@@ -31,7 +31,7 @@ public class _Overclock : ASpell {
         }
         if (coolDownedSpellCounter==8) 
         {
-            MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.Overclock);
+            MainManager.Instance.GameManager.ChallangeManager.RegisterChallangeDone(SpellType.Overclock);
             Debug.Log("oldu");
         }
            

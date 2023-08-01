@@ -49,7 +49,7 @@ public class _HealingWardProjectile : AP_Projectile
         }
         if (PlayerPrefs.GetInt(nameof(numberOfBlockedAttack)) >= 1)
         {
-            MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.HealingWard);
+            MainManager.Instance.GameManager.ChallangeManager.RegisterChallangeDone(SpellType.HealingWard);
 
         }
     }

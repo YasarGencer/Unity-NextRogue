@@ -14,8 +14,7 @@ public class MainManager : MonoBehaviour
     private EventManager _eventManager;
     [SerializeField]
     private GameManager _gameManager;
-    [SerializeField]
-    private ChallangeManager _challangeManager;
+    
     [SerializeField]
     private LevelManager _levelManager;
     [SerializeField]
@@ -27,7 +26,6 @@ public class MainManager : MonoBehaviour
 
     public TestManager TestManager { get { return _testManager; } }
     public GameManager GameManager { get { return _gameManager; } }
-    public ChallangeManager ChallangeManager { get { return _challangeManager; } }
     public EventManager EventManager { get { return _eventManager; } }
     public LevelManager LevelManager { get { return _levelManager; } }
     public CanvasManager CanvasManager { get { return _canvasManager; } } 
@@ -61,7 +59,6 @@ public class MainManager : MonoBehaviour
 
         _gameManager?.Initialize(); 
         _eventManager?.Initialize();
-        _challangeManager?.Initialize();
         _levelManager?.Initialize();
         StartGame();
     }

@@ -18,7 +18,7 @@ public class DualShotChallenge : MonoBehaviour
 
             if (PlayerPrefs.GetInt(nameof(destructedObjects)) <= 101)
             {
-                MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.DualShot);
+                MainManager.Instance.GameManager.ChallangeManager.RegisterChallangeDone(SpellType.DualShot);
             }
         }
     }

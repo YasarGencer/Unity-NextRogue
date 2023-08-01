@@ -20,7 +20,7 @@ public class ImpailingShotsChallenge : MonoBehaviour
         }
         if (killCounterImpailingShot<=3)
         {
-            MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.ImpailingShot);
+            MainManager.Instance.GameManager.ChallangeManager.RegisterChallangeDone(SpellType.ImpailingShot);
         }
     }
 }

@@ -22,7 +22,7 @@ public class IceBarrageChallange : MonoBehaviour
             }
             if (killCounterIceBarrage >= 5)
             {
-                MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.IceBarrage);
+                MainManager.Instance.GameManager.ChallangeManager.RegisterChallangeDone(SpellType.IceBarrage);
             }
         }
     }

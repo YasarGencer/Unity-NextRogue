@@ -12,7 +12,7 @@ public class SpikeTrapChallenge : MonoBehaviour
             float playerHealth = collision.gameObject.GetComponent<P_MainController>().Stats.Health;
             if (playerHealth <= 0)
             {
-                MainManager.Instance.ChallangeManager.RegisterChallangeDone(SpellType.SpikeTrap);
+                MainManager.Instance.GameManager.ChallangeManager.RegisterChallangeDone(SpellType.SpikeTrap);
             }
         }
     }
