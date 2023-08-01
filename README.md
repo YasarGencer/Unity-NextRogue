@@ -6,11 +6,12 @@
     - [Game Details](#gameDetails)
     - [Gameplay Elements](#gameplayElements)
       - [Player Mechanics](#playermechanics)
-        - [Spells](#playerSpells)
       - [Playable Characters](#playableCharacters)
         - [Necromancer](#necromancer) 
         - [Bloodshaper](#bloodshaper) 
         - [Rogue](#rogue) 
+      - [Spells](#playerSpells) 
+      - [Damage Over Time](#DOT) 
       - [Enemies](#enemies)
         - [Humans](#humans)
         - [Orcs](#orcs)
@@ -52,91 +53,12 @@ Actives :
 There are no strict restrictions on passives so they will have different and quite unique passives. 
 
 
-<h3 align = "center" id = "playerSpells">SPELLS</h3>
-
-And there is spells. Any character has 5 skill slots which player can attach different spells on each run. Player will find new spells while on chests or they will be given on after boss fights.
-
-Oher characters attacks might be used as spells in game.
-
-Spell List :
-
-  - Dual Shot
-    - Shoots a dual projectile that explodes and give AoE on contact eachother
-    - 
-            Cooldown : 15
-            Damage : 50
-  - Ice Barrage
-    - Throws 5 ice pieces in a few inches between them
-    - 
-            Cooldown : 20
-            Damage : 15
-  - Healing Ward
-    - Deflects all projectiles for 1 second and heals player
-    - 
-            Cooldown : 15
-            Heal Per Hit : 2 
-  - Berserk Throw
-    - Throws an axe
-    - Can pick it up to reset cooldown
-    -  
-            Cooldown : 10
-            Damage : 10
-  - Overclock
-    - Reesets all cooldowns
-    -  
-            Cooldown : 30 
-  - Stitched Fortress
-    - Creates a wall
-    -  
-            Cooldown : 15
-            LifeSpan : 5
-  - Subjugate Will
-    - Enchant targets will to get it to your side
-    -  
-            Cooldown : 20  
-
-  - Arcane Infusion
-    - Reduce cooldown and increase power of character skills
-    -  
-            Cooldown : 20
-            Cooldown Reduce : %25
-            Power Increase : %15
-            Time : 10
-
-  - Shrapnel Strike
-    - Shoot a projectile that turns into little ones on impact
-    -  
-            Cooldown : 15
-            Damage : 10
-            Shard Damage : 2
-
-  - Celestial Blast 
-    - Create a shield if it does not break on time it explodes
-    -  
-            Cooldown : 20
-            Shield Health : 25
-            Damage : 5
-            Lifespan : 5 
-
-  - Impailing Shot
-    - Shoot a piercing projetile
-    -  
-            Cooldown : 15
-            Damage : 25
-
-  - Spike Trap
-    - Create spikes to damage enemies
-    -  
-            Cooldown : 10
-            Damage : 10
-
 <h2 align = "center" id = "playableCharacters"> PLAYABLE CHARACTERS</h2>
-
 
 <h3 align = "center" id = "necromancer"> NECROMANCER</h3> 
 
   <p align = "center">
-  <img src="" width="500" alt="imagepending">
+  <img src="img/NecromancerNew.png" width="500" alt="imagepending">
   <p>
 
     Health : 75
@@ -181,7 +103,7 @@ Spell List :
 
 <h3 align = "center" id = "bloodshaper"> BLOODSHAPER</h3>  
   <p align = "center">
-  <img src="" width="500" alt="imagepending">
+  <img src="img/BloodShaperNew.png" width="500" alt="imagepending">
   <p>
 
     Health : 100
@@ -269,8 +191,152 @@ Spell List :
             Cooldown : 1
             Damage : 5
 
-<h2 align = "center" id = "enemies"> ENEMIES</h2>
+<h2 align = "center" id = "playerSpells">SPELLS</h2>
 
+And there is spells. Any character has 5 skill slots which player can attach different spells on each run. Player will find new spells while on chests or they will be given on after boss fights.
+
+Oher characters attacks might be used as spells in game.
+
+There is a challange for every spell in the game. When player comptletes that challange that spell will be replaced for the enhanced version for the rest of the game (not run!).
+
+Spell List :
+
+  - Dual Shot
+    - Shoots a dual projectile that explodes and give AoE on contact eachother
+    - 
+            Cooldown : 15
+            Damage : 50
+    - Challange : Destroy 100 objects in total
+    - Reward : 
+      - Triple Shot (Enhanced)
+          - Shoots a three dual projectile that explodes and give AoE on contact eachother
+          - 
+                Cooldown : 15
+                Damage : 50
+  - Ice Barrage
+    - Throws 5 ice pieces in a few inches between them
+    - 
+            Cooldown : 20
+            Damage : 15
+    - Challange : Hit different enemies with every ice piece
+    - Reward : 
+      - Froststorm Barrage (Enhanced)
+        - Throws 8 ice pieces in a few inches between them
+        - 
+                Cooldown : 20
+                Damage : 25 
+  - Healing Ward
+    - Deflects all projectiles for 1 second and heals player
+    - 
+            Cooldown : 15
+            Heal Per Hit : 2 
+    - Challange : Deflect 100 projectiles in total
+    - Reward : 
+      - Shielding Ward (Enhanced)
+        - Deflects all projectiles for 2 second and heals player
+        - Player becomes invincable at when shielded.
+        - 
+                Cooldown : 15
+                Heal Per Hit : 2 
+  - Berserk Throw
+    - Throws an axe
+    - Can pick it up to reset cooldown
+    -  
+            Cooldown : 10
+            Damage : 10
+    - Challange : Kill a druid with it.
+    - Reward : 
+      - Savage Hurl (Enhanced)
+       - Throws a golden axe
+       - Can pick it up to reset cooldown
+       -  
+               Cooldown : 10
+               Damage : 20
+  - Overclock
+    - Resets all cooldowns
+    -  
+            Cooldown : 30 
+    - Challange : Reset 8 cooldowns at once.
+    - Reward : 
+      - Hyperdrive (Enhanced)
+        - Resets all cooldowns
+        - Speeds player up for 2 seconds
+        -  
+                Cooldown : 20 
+
+  - Subjugate Will
+    - Enchants one enemy to get it to your side
+    -  
+            Cooldown : 30  
+    - Challange : -
+    - Reward : 
+      - Domination Aura (Enhanced)
+        - Enchant two enemies to get it to your side
+        -  
+                Cooldown : 25  
+
+  - Impailing Shot
+    - Shoot a piercing projetile
+    -  
+            Cooldown : 15
+            Damage : 25
+    - Challange : Kill 5 enemies at once
+    - Reward : 
+      - Impailiing Bolt (Enhanced)
+        - Shoot a piercing projetile
+        -  
+                Cooldown : 15
+                Damage : 35
+
+  - Spike Trap
+    - Create spikes to damage enemies
+    -  
+            Cooldown : 10
+            Damage : 10
+    - Challange : Die to the trap
+    - Reward : 
+      - Iron Spike (Enhanced)
+        - Create spikes to damage enemies
+        -  
+                Cooldown : 10
+                Damage : 20
+
+  - Arcane Infusion
+    - Reduce cooldown and increase power of character skills
+    -  
+            Cooldown : 20
+            Cooldown Reduce : %25
+            Power Increase : %15
+            Time : 10
+
+  - Stitched Fortress
+    - Creates a wall
+    -  
+            Cooldown : 15
+            LifeSpan : 5
+
+  - Shrapnel Strike
+    - Shoot a projectile that turns into little ones on impact
+    -  
+            Cooldown : 15
+            Damage : 10
+            Shard Damage : 2
+
+  - Celestial Blast 
+    - Create a shield if it does not break on time it explodes
+    -  
+            Cooldown : 20
+            Shield Health : 25
+            Damage : 5
+            Lifespan : 5 
+
+
+<h2 align = "center" id = "DOT">DAMAGE OVER TIME</h2>
+
+Under-Development
+
+
+<h2 align = "center" id = "enemies"> ENEMIES</h2>
 
 <h3 align = "left" id = "humans"> HUMANS</h3> 
 
@@ -307,8 +373,7 @@ Spell List :
 
 <h3 align = "left" id = "orcs"> ORCS</h3> 
 
-Under-development
-
+Under-development 
 <h3 align = "left" id = "other"> OTHER</h3> 
 
 - Hunter:
@@ -431,7 +496,7 @@ And the bosses will be design to represent that race as much as possible.
 
 
 <h1 align = "center" id = "visuals"> VISUALS </h1>
-  <h2 align = "center" id = "UI"> GAME </h2>
+  <h2 align = "center" id = "GAME"> GAME </h2>
   <p align = "center">
   <img src="img/start%20area.jpg" width="500">
   <p>

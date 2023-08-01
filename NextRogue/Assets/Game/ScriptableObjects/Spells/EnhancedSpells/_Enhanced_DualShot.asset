@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: _Enhanced_DualShot
   m_EditorClassIdentifier: 
   _isInit: 0
-  Name: DUAL SHOT
+  Name: Triple Shot
   Description: Shoot dual projictiles that damages area on contact
   Icon: {fileID: 21300000, guid: 14efa31e450cb884fa5d54b12740a9c9, type: 3}
   Sound: {fileID: 8300000, guid: c662c266d0c49864e8174875222bcdbc, type: 3}

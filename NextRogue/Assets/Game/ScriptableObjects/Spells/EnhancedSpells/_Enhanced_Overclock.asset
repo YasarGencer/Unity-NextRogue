@@ -21,8 +21,9 @@ MonoBehaviour:
   Damage: 0
   Speed: 0
   CastingTime: 0
-  CooldownTime: 15
+  CooldownTime: 20
   stopAudio: 1
   _isEnhanced: 1
   _timer: 2
   _speedBoost: 2
+  coolDownedSpellCounter: 0

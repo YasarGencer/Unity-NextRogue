@@ -21,7 +21,7 @@ MonoBehaviour:
   Damage: 0
   Speed: 0
   CastingTime: 0
-  CooldownTime: 30
+  CooldownTime: 25
   stopAudio: 1
   _subjugateCount: 2
   _subhugateHeader: {fileID: 9173291971978604375, guid: 520dadc0557bd5f4c9ae5049de928cd9, type: 3}
