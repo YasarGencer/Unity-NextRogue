@@ -454,7 +454,6 @@ MonoBehaviour:
   _testManager: {fileID: 0}
   _eventManager: {fileID: 7597306066357559927}
   _gameManager: {fileID: 7597306065820569327}
-  _challangeManager: {fileID: 0}
   _levelManager: {fileID: 7597306066266471212}
   _PDGManager: {fileID: 7597306066393023317}
   _canvasManager: {fileID: 7597306064675202950}
@@ -656,6 +655,7 @@ GameObject:
   - component: {fileID: 7597306065820569326}
   - component: {fileID: 7597306065820569327}
   - component: {fileID: 2586453986865844680}
+  - component: {fileID: 7034284448514345515}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -690,6 +690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a6cfacb4f279d489ebe37cc1f5867a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _challangeManager: {fileID: 2586453986865844680}
+  _dotManager: {fileID: 7034284448514345515}
   _spellList: {fileID: 11400000, guid: d24fdf3907467e64babc3dc1db8c1819, type: 2}
   _playerList: {fileID: 11400000, guid: d212aff23c33ec24cbd51210ad4728ee, type: 2}
   _openingClip: {fileID: 8300000, guid: 0b057835f96970c47bad4325ff5859f5, type: 3}
@@ -705,6 +707,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a81a6f011a0f4b4f99c31c99f56e400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7034284448514345515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7597306065820569325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff7e9473efa1114093c239634cc3382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cycleTime: 2
 --- !u!1 &7597306066263947105
 GameObject:
   m_ObjectHideFlags: 0
