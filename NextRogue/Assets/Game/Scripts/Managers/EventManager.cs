@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     public delegate void OnPlayerInitialized();
     public delegate void OnTrackStart(AudioClip clip);
     public delegate void OnCoinChange(int value);
+    public delegate void OnDOTCycle();
 
     public event OnGamePuase onGamePause;
     public event OnGameUnPuase onGameUnPause;
@@ -18,6 +19,7 @@ public class EventManager : MonoBehaviour
     public event OnPlayerInitialized onPlayerInitialized;
     public static event OnTrackStart onTrackStart;
     public event OnCoinChange onCoinChange;
+    public event OnDOTCycle onDOTCycle;
 
     public void Initialize() {
         onTrackStart = null;
@@ -45,5 +47,10 @@ public class EventManager : MonoBehaviour
     public void RunOnCoinChange(int value) {
         MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin += value;
         onCoinChange(MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin);
+    }
+    public void RunOnDOTCycle() {
+        if (onDOTCycle == null)
+            return;
+        onDOTCycle();
     }
 }

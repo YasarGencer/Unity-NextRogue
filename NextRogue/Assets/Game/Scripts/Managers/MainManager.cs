@@ -71,6 +71,7 @@ public class MainManager : MonoBehaviour
                 Destroy(Environment.GetChild(i).gameObject);
 
         _canvasManager?.Initialize();
+        _gameManager?.DOTManager?.Initialize();
         _player?.GetComponentInChildren<P_MainController>().Initialize();
          
         _levelManager?.NextLevel();  

@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
     
     [SerializeField]
     private ChallangeManager _challangeManager;
+    [SerializeField]
+    private DOTManager _dotManager;
 
     [SerializeField] AllSpells _spellList;
     [SerializeField] PlayerList _playerList;
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public AllSpells AllSpells { get { return _spellList; }}
     public PlayerList PlayerList { get { return _playerList; }}
     public ChallangeManager ChallangeManager { get { return _challangeManager; } }
+    public DOTManager DOTManager { get { return _dotManager; } }
 
     public void Initialize() { 
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
@@ -24,6 +27,8 @@ public class GameManager : MonoBehaviour {
             item.Stat.Initialize();
 
         _challangeManager?.Initialize();
+        _dotManager?.Initialize();
+
         if (MainManager.Instance.IsTest)
             return;
 
