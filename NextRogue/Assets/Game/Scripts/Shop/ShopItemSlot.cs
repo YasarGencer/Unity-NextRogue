@@ -32,12 +32,13 @@ public class ShopItemSlot : AInteract
             InfoText("not enough coins");
         }
         base.Info(value);
-        if (ShopItem.Animator == null)
+
+        if (ShopItem.Shake == null)
             return;
         if (value) {
-            ShopItem.Animator.SetTrigger("OnArea");
+            ShopItem.Shake.StartMovement();
         } else { 
-            ShopItem.Animator.SetTrigger("Idle");
+            ShopItem.Shake.StopMovement();
         }
     } 
     bool CanBuy() {

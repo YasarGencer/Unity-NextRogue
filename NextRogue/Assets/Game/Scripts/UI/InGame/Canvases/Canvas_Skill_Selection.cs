@@ -11,6 +11,35 @@ public class Canvas_Skill_Selection : AUI
     ASpell _spell;
 
     GameObject _shopFront;
+
+    public InputActions.GameActions _input;
+    P_MainController _mainController;
+
+    private void Awake()
+    {
+        var input = new InputActions();
+        _input = input.Game;
+        InGame();
+    }
+    #region ENABLES
+    private void OnEnable()
+    {
+        _input.Enable();
+    }
+    private void OnDisable()
+    {
+        _input.Disable();
+    }
+    #endregion
+    private void InGame()
+    {
+        _input.SPELL1.performed += inGame => _slotSelection[0].OnClick();
+        _input.SPELL2.performed += inGame => _slotSelection[1].OnClick();
+        _input.SPELL3.performed += inGame => _slotSelection[2].OnClick();
+        _input.SPELL4.performed += inGame => _slotSelection[3].OnClick();
+        _input.SPELL5.performed += inGame => _slotSelection[4].OnClick();
+    }
+
     public override void Initialize() {
         base.Initialize(); 
         _child1 = transform.GetChild(1);
@@ -77,6 +106,5 @@ public class Canvas_Skill_Selection : AUI
         MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.SetSpell(value + 4, _spell);
         MainManager.Instance.EventManager.RunOnGameUnPuase();
         _shopFront.GetComponent<ShopItemSlot>().Buy();
-
     }
 }

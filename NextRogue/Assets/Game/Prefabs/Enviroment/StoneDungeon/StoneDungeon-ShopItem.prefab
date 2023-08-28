@@ -227,7 +227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8109975353246123296}
   - component: {fileID: 8724163904282117671}
-  - component: {fileID: 5090839184496911124}
   m_Layer: 0
   m_Name: StoneDungeon-ShopItem
   m_TagString: Untagged
@@ -264,30 +263,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 233802389755443067}
-  name: {fileID: 872185531240554261}
+  _name: {fileID: 872185531240554261}
   price: {fileID: 8521232263625330567}
   defBG: {fileID: 958364106473078039}
   enhBG: {fileID: 7475239305732787747}
---- !u!95 &5090839184496911124
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865019170639413160}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d305b887e7416944b2e10e16e998060, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  shake: {fileID: 3204815304511641337}
 --- !u!1 &4076828104618273107
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983076056522526476}
+  - component: {fileID: 3204815304511641337}
   m_Layer: 5
   m_Name: AnimationParent
   m_TagString: Untagged
@@ -326,6 +307,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3204815304511641337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076828104618273107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be4142456677d748a780d0e4785fb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDuration: 1
+  stopDuration: 0.25
+  moveDistance: 0.23
 --- !u!1 &4212082491291357077
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class NPC : AInteract {
     }
     protected override void Info(bool value) {
         base.Info(value);
-        InfoText(_npcTalk[Random.Range(0, _npcTalk.Count)]);
+        if(value)
+            InfoText(_npcTalk[Random.Range(0, _npcTalk.Count)]);
     }
 }
