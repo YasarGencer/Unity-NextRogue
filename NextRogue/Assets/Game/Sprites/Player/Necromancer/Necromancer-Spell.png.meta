@@ -133,8 +133,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 682.6667
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Necromancer-Spell_1
       rect:
         serializedVersion: 2
-        x: 682
+        x: 1080
         y: 0
-        width: 682.6667
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Necromancer-Spell_2
       rect:
         serializedVersion: 2
-        x: 1364
+        x: 2160
         y: 0
-        width: 682.6667
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Necromancer-Spell_3
       rect:
         serializedVersion: 2
-        x: 2046
+        x: 3240
         y: 0
-        width: 682.6667
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Necromancer-Spell_4
       rect:
         serializedVersion: 2
-        x: 2728
+        x: 4320
         y: 0
-        width: 682.6667
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Necromancer-Spell_5
       rect:
         serializedVersion: 2
-        x: 3410
+        x: 5400
         y: 0
-        width: 682.6667
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

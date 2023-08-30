@@ -133,8 +133,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Necromancer-Die_1
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1080
         y: 0
-        width: 1024
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Necromancer-Die_2
       rect:
         serializedVersion: 2
-        x: 2048
+        x: 2160
         y: 0
-        width: 1024
-        height: 1714
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,6 +186,48 @@ TextureImporter:
       bones: []
       spriteID: d785db6cfa4c0b149b6683dbc5dfbaca
       internalID: -1436959161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer-Die_3
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d11d0e87f841744a12017020487141
+      internalID: 1548116489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer-Die_4
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed81d4767fdc23341996881e19826f04
+      internalID: 453381997
       vertices: []
       indices: 
       edges: []
@@ -202,8 +244,10 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Necromancer-Die_0: 2094748595
+      Necromancer-Die_3: 1548116489
       Necromancer-Die_2: -1436959161
       Necromancer-Die_1: -1037668048
+      Necromancer-Die_4: 453381997
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

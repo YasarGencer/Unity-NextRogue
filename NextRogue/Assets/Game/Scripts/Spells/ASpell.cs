@@ -62,12 +62,10 @@ public abstract class ASpell : ScriptableObject
         _isInit = true;
     }
     public virtual void ActivateSpell() {
-
-        if (_keyIndex <= 0) { }
-        else if (_keyIndex <= 3)
-            _mainController.Animator.SetTrigger("basic");
+        if (_keyIndex <= 3)
+            _mainController.Animator.SetTrigger(_keyIndex.ToString());
         else
-            _mainController.Animator.SetTrigger("spell"); 
+            _mainController.Animator.SetTrigger("4"); 
 
         if(Sound)
             AudioManager.PlaySound(Sound, _mainController.transform, AudioManager.AudioVolume.sfx, stopAudio);

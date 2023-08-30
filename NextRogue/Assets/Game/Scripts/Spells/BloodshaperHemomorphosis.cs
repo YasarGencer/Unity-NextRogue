@@ -23,14 +23,15 @@ public class BloodshaperHemomorphosis : ASpell {
         var color = _mainController.GetComponentInChildren<SpriteRenderer>().color;
         _mainController.Stats.IsInvincable = value;
         if (value) {
-            color.a = 0.3f;
+            //color.a = 0.3f;
             _speedHolder = _mainController.Stats.Speed;
             _mainController.Stats.Speed += _speed + _speedMultiplier * _mainController.Stats.SecondaryValue;
             _mainController.Health.GainHealth(_mainController.Stats.SecondaryValue * _healMultiplier);
             _mainController.Stats.SetSecondaryValue(0);
         } else {
-            color.a = 1f;
+            //color.a = 1f;
             _mainController.Stats.Speed -= _speed + _speedMultiplier * _mainController.Stats.SecondaryValue;
+            _mainController.Animator.SetTrigger("0Next");
         }
         _mainController.GetComponentInChildren<SpriteRenderer>().color = color;
     }
