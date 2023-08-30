@@ -3,12 +3,13 @@ using UnityEngine;
 public class Spike : MonoBehaviour
 { 
     [SerializeField] int damage;
+    [SerializeField] DOTInfo dotInfo;
     Animator animator;
     void Start() {
         MainManager.Instance.EventManager.onGamePause += Pause;
         MainManager.Instance.EventManager.onGameUnPause += UnPause;
         animator = GetComponent<Animator>();
-        GetComponent<Damager>().Initialize(damage); 
+        GetComponent<Damager>().Initialize(damage, dotInfo); 
         UnPause();
     }
     private void UnPause() { 

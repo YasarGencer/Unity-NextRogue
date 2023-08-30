@@ -31,7 +31,8 @@ public abstract class ASpell : ScriptableObject
     protected GameObject Instantiated;
 
     public float Damage;
-    public float Speed;
+    public float Speed; 
+    public DOTInfo DOTInfo;
 
     public float CastingTime;
     float _currentTimeCast;
@@ -103,7 +104,7 @@ public abstract class ASpell : ScriptableObject
             );
         projectile.GetComponent<AProjectile>()
             .Initialize(MainManager.Instance.InputManager.GetMouseWolrdPos(),
-            Damage, CooldownTime, Speed);
+            Damage, CooldownTime, Speed, DOTInfo);
         return projectile;
     }
     public void RetrieveCooldown() {

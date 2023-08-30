@@ -10,18 +10,21 @@ public class DOTManager : MonoBehaviour
     float _cycleTimer;
     public void Initialize() { 
         MainManager.Instance.EventManager.onGamePause += OnGamePause;
-        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause;
-
+        MainManager.Instance.EventManager.onGameUnPause += OnGameUnPause; 
+        _cycleRX?.Dispose();
+        _cycleRX = Observable.EveryUpdate().TakeUntilDisable(this).Subscribe(CycleRX);
         ClearAllDOT();
     } 
     public void Register(DOTReciever reciever) {
         MainManager.Instance.EventManager.onDOTCycle += reciever.RecieveDOTDamage;
     }
+    public void UnRegister(DOTReciever reciever) {
+        MainManager.Instance.EventManager.onDOTCycle -= reciever.RecieveDOTDamage;
+    }
     void CycleRX(long obj) {
         if(_cycleTimer <= 0) {
 
-            MainManager.Instance.EventManager.RunOnDOTCycle();
-            Debug.Log(Time.time + "   DOT");
+            MainManager.Instance.EventManager.RunOnDOTCycle(); 
             ResetTimer();
         }
         _cycleTimer -= Time.deltaTime;
@@ -41,4 +44,5 @@ public class DOTManager : MonoBehaviour
             item.ClearDOT();
         }
     }
+
 }

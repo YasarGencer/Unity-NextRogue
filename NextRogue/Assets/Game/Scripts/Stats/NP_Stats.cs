@@ -9,6 +9,7 @@ public class NP_Stats : AStats {
     public float AttackRange;
     public float AttackSpeed;
     public float ProjectileSpeed;
+    public DOTInfo DOTInfo;
     [Header("ONLY FOR SUMMONS")]
     public float LifeSpan;
     public override void Initialize() {

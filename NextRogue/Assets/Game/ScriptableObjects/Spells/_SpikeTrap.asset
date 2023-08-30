@@ -20,6 +20,10 @@ MonoBehaviour:
   Spell: {fileID: 8410827680362039746, guid: 8bfeace985a0fe24cae86f220287a1a7, type: 3}
   Damage: 10
   Speed: 0
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 2
+    CycleTime: 5
   CastingTime: 0
   CooldownTime: 10
   stopAudio: 1

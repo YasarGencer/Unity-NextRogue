@@ -10,6 +10,7 @@ public class SawBlade : MonoBehaviour
     [SerializeField] Transform startPoint, endPoint;
     [SerializeField] Damager sawBlade;
     [SerializeField] int damage;
+    [SerializeField] DOTInfo dotInfo;
     [SerializeField] LayerMask layers;
     [SerializeField] float minReachTime, maxReachTime;
     [SerializeField] float minSize, maxSize;
@@ -25,7 +26,7 @@ public class SawBlade : MonoBehaviour
         MainManager.Instance.EventManager.onGamePause += Pause;
         MainManager.Instance.EventManager.onGameUnPause += UnPause;
         sawBlade.transform.localScale *= UnityEngine.Random.Range(minSize, maxSize);
-        sawBlade.Initialize(damage);
+        sawBlade.Initialize(damage, dotInfo); 
         sawBlade.GetComponent<Rigidbody2D>().AddTorque(350);
         endPoint.position = CheckForEndPoint();
         line = GetComponent<LineRenderer>();

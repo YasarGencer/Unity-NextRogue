@@ -2,15 +2,15 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class __InitializeChildProjectile : AP_Projectile {  
-    public override void Initialize(Vector3 targetPos, float damage, float time, float speed) {
-        base.Initialize(targetPos, damage, time, speed);
+    public override void Initialize(Vector3 targetPos, float damage, float time, float speed, DOTInfo dotInfo) {
+        base.Initialize(targetPos, damage, time, speed, dotInfo);
         if (CompareTag("EnemyProjectile"))
             gameObject.layer = 13;
         else
             gameObject.layer = 6;
-        InitChilds(Vector3.zero, damage, time, speed);
+        InitChilds(Vector3.zero, damage, time, speed, dotInfo);
     }
-    async void InitChilds(Vector3 targetPos, float damage, float time, float speed) {
+    async void InitChilds(Vector3 targetPos, float damage, float time, float speed, DOTInfo dotInfo) {
 
         var count = transform.childCount;
         for (int i = 0; i < count; i++) {
@@ -27,7 +27,7 @@ public class __InitializeChildProjectile : AP_Projectile {
                     projectile.tag = "PlayerProjectile";
                 }
 
-                projectile.Initialize(targetPos, damage, time, speed);
+                projectile.Initialize(targetPos, damage, time, speed, dotInfo);
                 projectile.transform.SetParent(null);
             }
         }

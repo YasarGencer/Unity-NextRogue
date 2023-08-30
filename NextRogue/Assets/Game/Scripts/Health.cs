@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
     bool _isInit;
     bool _isPlayer;
-    AStats _stats; 
+    AStats _stats;
+    DOTReciever _dotReciever;
+    public DOTReciever DOTReciever { get { return _dotReciever;} }
     public void Initialize() {
         if (_isInit)
             return;
         _isInit = true;
 
         _isPlayer = gameObject.CompareTag("Player");
-        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats; 
+        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats;
+        _dotReciever = gameObject.AddComponent<DOTReciever>();
+        _dotReciever.Initialize(this);
     }
     public void GetDamage(float value, Transform source) {
         if(GetComponent<Destructable>() != null) {

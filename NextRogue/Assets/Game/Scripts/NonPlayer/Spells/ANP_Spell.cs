@@ -26,6 +26,8 @@ public abstract class ANP_Spell : ScriptableObject {
     public float Speed;
     public float UseRange;
 
+    public DOTInfo DOTInfo;
+
     public float CastingTime;
     float _currentTimeCast;
     IDisposable _castRX;
@@ -96,7 +98,7 @@ public abstract class ANP_Spell : ScriptableObject {
         if(projectile.GetComponent<AProjectile>() != null) {
             projectile.GetComponent<AProjectile>()
                     .Initialize(_mainController.transform.position,
-                    Damage, CooldownTime, Speed);
+                    Damage, CooldownTime, Speed, DOTInfo);
         }
         return projectile;
     }  

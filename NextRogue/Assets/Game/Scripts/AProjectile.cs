@@ -15,6 +15,7 @@ public class AProjectile : MonoBehaviour
 
     protected bool _isInit = false;
     protected float _damage;
+    protected DOTInfo _dotInfo;
     protected float _time;
     protected float _currentTime;
     protected float _speed;
@@ -23,11 +24,11 @@ public class AProjectile : MonoBehaviour
     private void Awake() {
         RegisterEvents(); 
     }
-    public virtual void Initialize(Vector3 targetPos, float damage, float time, float speed) {
-        StartCoroutine(Init(targetPos, damage, time, speed));
+    public virtual void Initialize(Vector3 targetPos, float damage, float time, float speed, DOTInfo dotInfo) {
+        StartCoroutine(Init(targetPos, damage, time, speed, dotInfo));
     }
 
-    protected IEnumerator Init(Vector3 targetPos, float damage, float time, float speed) {
+    protected IEnumerator Init(Vector3 targetPos, float damage, float time, float speed, DOTInfo dotInfo) {
         if (!_isInit && !MainManager.Instance.GameManager.GamePaused)
             _isInit = true;
 
@@ -39,6 +40,7 @@ public class AProjectile : MonoBehaviour
             _speed = speed;
             _time = time >= 1 ? time / 2 : 1;
             _damage = damage;
+            _dotInfo = dotInfo;
             _currentTime = _time;
 
             _destroyRX?.Dispose();
@@ -47,7 +49,7 @@ public class AProjectile : MonoBehaviour
             if (_damage > 0) {
                 Damager damager = GetComponent<Damager>() as Damager;
                 if (damager)
-                    GetComponent<Damager>().Initialize(_damage);
+                    GetComponent<Damager>().Initialize(_damage, _dotInfo);
             }
             if (targetPos != Vector3.zero)
                 SetRotation(targetPos);
@@ -57,7 +59,7 @@ public class AProjectile : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         if(!_isInit)
-            StartCoroutine(Init(targetPos, damage, time, speed)); 
+            StartCoroutine(Init(targetPos, damage, time, speed, dotInfo)); 
     }
     void SetRotation(Vector3 targetPos) {
         targetPos.z = 0f;
