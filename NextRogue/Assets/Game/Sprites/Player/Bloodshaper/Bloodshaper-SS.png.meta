@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 83
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -133,7 +133,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 833.3333
+        width: 1000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,9 +152,9 @@ TextureImporter:
       name: Bloodshaper-SS_1
       rect:
         serializedVersion: 2
-        x: 833
+        x: 1000
         y: 0
-        width: 833.3333
+        width: 1000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: Bloodshaper-SS_2
       rect:
         serializedVersion: 2
-        x: 1666
+        x: 2000
         y: 0
-        width: 833.3333
+        width: 1000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -194,9 +194,9 @@ TextureImporter:
       name: Bloodshaper-SS_3
       rect:
         serializedVersion: 2
-        x: 2499
+        x: 3000
         y: 0
-        width: 833.3333
+        width: 1000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,9 +215,9 @@ TextureImporter:
       name: Bloodshaper-SS_4
       rect:
         serializedVersion: 2
-        x: 3332
+        x: 4000
         y: 0
-        width: 833.3333
+        width: 1000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,9 +236,9 @@ TextureImporter:
       name: Bloodshaper-SS_5
       rect:
         serializedVersion: 2
-        x: 4165
+        x: 5000
         y: 0
-        width: 833.3333
+        width: 1000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
