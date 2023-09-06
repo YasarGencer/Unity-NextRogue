@@ -15,6 +15,7 @@ MonoBehaviour:
   levels:
   - Name: Human Shop
     Description: Human Shop
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
     DungeonLevel:
       IsRandomDungeon: 0
       SRWData: {fileID: 11400000, guid: 02045b0008b1ddd43b0edb943d00afa2, type: 2}
@@ -31,6 +32,7 @@ MonoBehaviour:
       TutorialMap: {fileID: 0}
   - Name: Human Dungeon
     Description: Human Dungeon
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
     DungeonLevel:
       IsRandomDungeon: 1
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
@@ -47,6 +49,7 @@ MonoBehaviour:
       TutorialMap: {fileID: 0}
   - Name: Purple Dungeon
     Description: Purple Dungeon
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
     DungeonLevel:
       IsRandomDungeon: 1
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
@@ -64,6 +67,7 @@ MonoBehaviour:
   tutorialLevels:
   - Name: TUTORIAL - NECROMANCER
     Description: NecromancerTutorial
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
     DungeonLevel:
       IsRandomDungeon: 0
       SRWData: {fileID: 0}
@@ -80,6 +84,7 @@ MonoBehaviour:
       TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
   - Name: TUTORIAL - BLOODSHAPER
     Description: BloodshaperTutorial
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
     DungeonLevel:
       IsRandomDungeon: 0
       SRWData: {fileID: 0}
@@ -94,4 +99,4 @@ MonoBehaviour:
     TutorialLevel:
       IsTutorial: 1
       TutorialMap: {fileID: 8208578824207541179, guid: 992cdb56a535a9145b8fc0042867247d, type: 3}
-  activeLevelIndex: 0
+  activeLevelIndex: -1

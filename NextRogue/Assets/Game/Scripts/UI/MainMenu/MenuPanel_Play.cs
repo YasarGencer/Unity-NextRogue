@@ -19,13 +19,16 @@ public class MenuPanel_Play : AUI {
 
     int _index = 0;
     GameObject _player;
-    PlayerList _playerList;
-    public void Initialize(PlayerList list, UnityAction back) {
+    PlayerList _playerList; 
+    UnityAction _loading;
+    public void Initialize(PlayerList list, UnityAction back, UnityAction loading)
+    {
         _child = transform.GetChild(0);
 
         _index = 0;
         _cam.orthographicSize = _camScale.x;
         _playerList = list;
+        _loading = loading;
 
         _backButton.onClick.AddListener(back); 
         _prevButton.onClick.AddListener(PrevIndex);
@@ -87,16 +90,16 @@ public class MenuPanel_Play : AUI {
         DestroyPlayer();
         _prevButton.interactable = false;
         _nextButton.interactable = false;
-        Invoke("CreatePlayer", .5f);
-        Invoke("ButtonInteractables", .5f);
+        Invoke(nameof(CreatePlayer), .5f);
+        Invoke(nameof(ButtonInteractables), .5f);
     }
     void ButtonInteractables() {
         _prevButton.interactable = true;
         _nextButton.interactable = true;
     }
-
-    void StartGame() {
+    void StartGame()
+    {
         GameManager.SetPlayerIndex(_index);
-        SceneManager.LoadScene(1);
+        _loading();
     }
 }

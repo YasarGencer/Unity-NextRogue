@@ -1,13 +1,18 @@
-using UnityEngine;  
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] PlayerList _playerStatList;
+    [SerializeField] List<LoaderElement> _loaderSettings;
     public PlayerList PlayerStatList { get { return _playerStatList; } }
     [Header("PANELS")]
     [SerializeField] MenuPanel_Start _startPanel;
     [SerializeField] MenuPanel_Play _playPanel;
     [SerializeField] MenuPanel_Options _optionsPanel;
+    [SerializeField] LoadingManager _loadingPanel;
     CurrentPanel _currentPanel;
     enum CurrentPanel {
         START,
@@ -19,8 +24,9 @@ public class MenuManager : MonoBehaviour
         _currentPanel = CurrentPanel.START;
 
         _startPanel.Initialize(Play, Options, Quit);
-        _playPanel.Initialize(_playerStatList, Back);
+        _playPanel.Initialize(_playerStatList, Back, Loading);
         _optionsPanel.Initialize(Back);
+        _loadingPanel.Initialize();
         _startPanel.Open();
         _playPanel.gameObject.SetActive(false);
 
@@ -38,6 +44,12 @@ public class MenuManager : MonoBehaviour
 
         _startPanel.Close();
         _optionsPanel.Open(); 
+    }
+    void Loading()
+    {
+        _playPanel.Close();
+
+        _loadingPanel.Open(_loaderSettings[GameManager.GetPlayerIndex()], () => { SceneManager.LoadScene(1); });
     }
     void Back() {
         switch (_currentPanel) {

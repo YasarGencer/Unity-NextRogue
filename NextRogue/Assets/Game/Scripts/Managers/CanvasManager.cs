@@ -13,9 +13,12 @@ public class CanvasManager : AUI
     Canvas_Pause_Screen _pauseScreen;
     [SerializeField]
     Canvas_Skill_Selection _skillSelection;
+    [SerializeField]
+    LoadingManager _loading;
     public Canvas_Player_GUI_HUD Player_GUI_HUD { get { return _playerHud; } }
     public Canvas_Pause_Screen PauseScreen { get { return _pauseScreen; } }
     public Canvas_Skill_Selection SkillSelection { get { return _skillSelection; } }
+    public LoadingManager Loading { get { return _loading; } }
 
     [SerializeField] CanvasGroup _track;
     [SerializeField] TextMeshProUGUI _trackName, _trackLength;
@@ -28,6 +31,7 @@ public class CanvasManager : AUI
             _playerHud.Initialize();
             _pauseScreen.Initialize();
             _skillSelection.Initialize();
+            _loading.Initialize();
             EventManager.onTrackStart += ShowTackInfo; 
         } 
         _track.DOFade(0, 0);

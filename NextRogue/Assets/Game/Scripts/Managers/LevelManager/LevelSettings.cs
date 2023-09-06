@@ -25,7 +25,7 @@ public class LevelSettings : ScriptableObject {
         return PlayerPrefs.GetInt("tutorialLevel", 0);
     } 
     public static bool GetIfTutorial() {
-        return PlayerPrefs.GetInt("isTutorial",0) == 0? false : true;
+        return PlayerPrefs.GetInt("isTutorial", 0) != 0;
     }
     public static void SetIfTutorial(int index = -1) {
         if(index == -1)
@@ -51,6 +51,7 @@ public class LevelSetting {
     public string Name;
     [TextArea]
     public string Description;
+    public LoaderElement Loader;
     [Space(10f)] 
     public DungeonLevel DungeonLevel;
     [Space(10f)] 
