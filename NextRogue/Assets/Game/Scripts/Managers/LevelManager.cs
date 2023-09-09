@@ -51,15 +51,15 @@ public class LevelManager : MonoBehaviour
     }
     void NextLevelSegment()
     {
-        if (ActiveLevelSetting.DungeonLevel.IsRandomDungeon)
+        if (ActiveLevelSetting.MyType == DisplayOption.Dungeon)
         {
             _PDGManager?.Initialize();
         }
-        else if (ActiveLevelSetting.ShopLevel.IsShop)
+        else if (ActiveLevelSetting.MyType == DisplayOption.Shop)
         {
             activeMap = Instantiate(ActiveLevelSetting.ShopLevel.ShopMap);
         }
-        else if (ActiveLevelSetting.TutorialLevel.IsTutorial)
+        else if (ActiveLevelSetting.MyType == DisplayOption.Tutorial)
         {
             activeMap = Instantiate(ActiveLevelSetting.TutorialLevel.TutorialMap);
         }

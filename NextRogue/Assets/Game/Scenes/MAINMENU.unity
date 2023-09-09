@@ -10043,7 +10043,7 @@ MonoBehaviour:
   percentText: {fileID: 6441962003620694421}
   speedRange: {x: 0.5, y: 3}
   timeRange: {x: 0.05, y: 0.1}
-  skipLoading: 1
+  skipLoading: 0
 --- !u!224 &7741805931731344724
 RectTransform:
   m_ObjectHideFlags: 0

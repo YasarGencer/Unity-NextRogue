@@ -4822,6 +4822,7 @@ MonoBehaviour:
   percentText: {fileID: 529234913}
   speedRange: {x: 0.5, y: 3}
   timeRange: {x: 0.05, y: 0.1}
+  skipLoading: 0
 --- !u!225 &1466072832
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5501,7 +5502,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10000
   m_TargetDisplay: 0
 --- !u!1001 &2588097169971746993
 PrefabInstance:
@@ -5635,6 +5636,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2852240931620700615, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3051055561387732269, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5681,6 +5686,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319853892371296861, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865922347516765739, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865922347516765742, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5834770138938219130, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7411485475292078284, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}

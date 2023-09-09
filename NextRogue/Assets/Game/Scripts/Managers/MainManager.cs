@@ -1,5 +1,5 @@
 using Cinemachine;
-using DG.Tweening; 
+using DG.Tweening;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
@@ -75,9 +75,12 @@ public class MainManager : MonoBehaviour
 
         _canvasManager?.Initialize();
         _gameManager?.DOTManager?.Initialize();
-        _player?.GetComponentInChildren<P_MainController>().Initialize();
 
-        _levelManager?.NextLevel(showLoading);
+        //await Task.Run(() => {
+             _levelManager?.NextLevel(showLoading);
+        //});
+
+        _player?.GetComponentInChildren<P_MainController>().Initialize();
 
         _eventManager?.RunOnGameStart();
 
