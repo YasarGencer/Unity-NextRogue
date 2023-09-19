@@ -11,6 +11,7 @@
         - [Bloodshaper](#bloodshaper) 
         - [Rogue](#rogue) 
       - [Spells](#playerSpells) 
+        - [Spells To Do](#playerSpellsToDo)   
       - [Damage Over Time](#DOT) 
       - [Enemies](#enemies)
         - [Humans](#humans)
@@ -85,6 +86,10 @@ There are no strict restrictions on passives so they will have different and qui
     -  
             Cooldown : 2
             Damage : 10
+            DOT :
+               Type: Bleed
+               Damage: 3
+               Turn: 3
 
   - SA: Summon Aid
     - Summon 4 Axe Skeleton to help the player
@@ -226,15 +231,14 @@ Spell List :
                 Cooldown : 20
                 Damage : 25 
   - Healing Ward
-    - Deflects all projectiles for 1 second and heals player
+    - Puts a ward that creates a projectile shield for 1 second
     - 
             Cooldown : 15
             Heal Per Hit : 2 
     - Challange : Deflect 100 projectiles in total
     - Reward : 
       - Shielding Ward (Enhanced)
-        - Deflects all projectiles for 2 second and heals player
-        - Player becomes invincable at when shielded.
+        -  Player becomes invincible while in the shield zone and it lasts 2 seconds
         - 
                 Cooldown : 15
                 Heal Per Hit : 2 
@@ -301,6 +305,80 @@ Spell List :
                 Cooldown : 10
                 Damage : 20
 
+
+<h2 align = "center" id = "playerSpellsToDo">SPELLS TO DO</h2>
+
+  - Cleanse
+    - Removes all DOT effects
+    -  
+            Cooldown : 10
+            Damage : 10
+    - Challange : Clear an effect that deals 10 per turn in total
+    - Reward : 
+      - Cleanse Infusion
+        - Removes all DOT effects and gains speed for 1 seconds
+        -  
+                Cooldown : 10
+                Speed Boost : x1.25
+
+  - Shrapnel Shot
+    - Shoot a projectile from a gun, that turns into little ones on impact
+    -  
+            Cooldown : 15
+            Damage : 10
+            Shard Damage : 2   
+    - Challange : Kill 3 enemies from one shots shards.
+    -Reward : 
+      - Shrapnel Strike
+        - Shoot 4 directions
+        -  
+                Cooldown : 10
+                Speed Boost : x1.25
+
+  - Chain Lightning
+    - Fire a lightning bolt at the target, which, upon impact, creates a cascading electric shock that spreads to nearby enemies.
+    - 
+            Cooldown: 14 
+            Spread Count: 3
+            Lightning Damage: 5
+            DOT :
+              Type: Shock
+              Damage: 5
+              Turn: 3
+    - Challenge: Kill 3 enemies with a one shock.
+    - Reward:
+      - Tempest Surge
+      -      
+            Cooldown: 20 
+            Spread Count: 6
+            Lightning Damage: 7
+            DOT :
+              Type: Shock
+              Damage: 7
+              Turn: 3
+
+  - Venomous Plague
+    - Create a toxic aura at the player position, forming a poison-infested region over time. 
+    - Player can't get damaged.
+    - 
+            Cooldown: 12 
+            Area duration: 3
+            DOT :
+              Type: Poison
+              Damage: 2
+              Turn: 5   
+    - Challenge: Give total 2500 damage on poison.
+    - Reward:
+      - Noxious Proliferation
+        - Aura follows Player
+        -      
+                Cooldown: 20 
+                Area duration: 5
+                DOT :
+                  Type: Poison
+                  Damage: 5
+                  Turn: 5   
+
   - Arcane Infusion
     - Reduce cooldown and increase power of character skills
     -  
@@ -313,14 +391,7 @@ Spell List :
     - Creates a wall
     -  
             Cooldown : 15
-            LifeSpan : 5
-
-  - Shrapnel Strike
-    - Shoot a projectile that turns into little ones on impact
-    -  
-            Cooldown : 15
-            Damage : 10
-            Shard Damage : 2
+            LifeSpan : 5  
 
   - Celestial Blast 
     - Create a shield if it does not break on time it explodes
