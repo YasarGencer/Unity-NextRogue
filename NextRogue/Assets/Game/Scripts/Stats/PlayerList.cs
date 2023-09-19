@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 [CreateAssetMenu(fileName = "PlayerList", menuName = "ScriptableObjects/PlayerList", order = 0)]
 
 public class PlayerList : ScriptableObject

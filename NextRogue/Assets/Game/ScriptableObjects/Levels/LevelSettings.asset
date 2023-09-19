@@ -15,8 +15,9 @@ MonoBehaviour:
   levels:
   - Name: Human Shop
     Description: Human Shop
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    MyType: 1
     DungeonLevel:
-      IsRandomDungeon: 0
       SRWData: {fileID: 11400000, guid: 02045b0008b1ddd43b0edb943d00afa2, type: 2}
       CorridorLength: 12
       CorridorCount: 2
@@ -24,15 +25,15 @@ MonoBehaviour:
       RoomProps: {fileID: 11400000, guid: 438cdd3e9663ca4449d18be1ac54d34c, type: 2}
       TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
     ShopLevel:
-      IsShop: 1
       ShopMap: {fileID: 8208578824207541179, guid: 8b6777fb9016b0c4a877d758bfa5ea37, type: 3}
     TutorialLevel:
-      IsTutorial: 0
       TutorialMap: {fileID: 0}
+    showme: 0
   - Name: Human Dungeon
     Description: Human Dungeon
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    MyType: 0
     DungeonLevel:
-      IsRandomDungeon: 1
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
       CorridorLength: 15
       CorridorCount: 15
@@ -40,15 +41,15 @@ MonoBehaviour:
       RoomProps: {fileID: 11400000, guid: ee278f86ed1d4894a9f4032d83fb39c5, type: 2}
       TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
     ShopLevel:
-      IsShop: 0
       ShopMap: {fileID: 0}
     TutorialLevel:
-      IsTutorial: 0
       TutorialMap: {fileID: 0}
+    showme: 0
   - Name: Purple Dungeon
     Description: Purple Dungeon
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    MyType: 0
     DungeonLevel:
-      IsRandomDungeon: 1
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
       CorridorLength: 15
       CorridorCount: 5
@@ -56,42 +57,41 @@ MonoBehaviour:
       RoomProps: {fileID: 11400000, guid: 7399deefaf11161449f36422cfbcec0f, type: 2}
       TilemapVisualizerData: {fileID: 11400000, guid: f68668e3de164594488b94ec184dc988, type: 2}
     ShopLevel:
-      IsShop: 0
       ShopMap: {fileID: 0}
     TutorialLevel:
-      IsTutorial: 0
       TutorialMap: {fileID: 0}
+    showme: 0
   tutorialLevels:
-  - Name: TUTORIAL - NECROMANCER
+  - Name: Tutorial - Necromancer
     Description: NecromancerTutorial
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    MyType: 2
     DungeonLevel:
-      IsRandomDungeon: 0
       SRWData: {fileID: 0}
       CorridorLength: 0
       CorridorCount: 0
-      RoomPercent: 0
+      RoomPercent: 0.1
       RoomProps: {fileID: 0}
       TilemapVisualizerData: {fileID: 0}
     ShopLevel:
-      IsShop: 0
       ShopMap: {fileID: 0}
     TutorialLevel:
-      IsTutorial: 1
       TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
-  - Name: TUTORIAL - BLOODSHAPER
+    showme: 0
+  - Name: Tutorial - Bloodshaper
     Description: BloodshaperTutorial
+    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    MyType: 2
     DungeonLevel:
-      IsRandomDungeon: 0
       SRWData: {fileID: 0}
       CorridorLength: 0
       CorridorCount: 0
-      RoomPercent: 0
+      RoomPercent: 0.1
       RoomProps: {fileID: 0}
       TilemapVisualizerData: {fileID: 0}
     ShopLevel:
-      IsShop: 0
       ShopMap: {fileID: 0}
     TutorialLevel:
-      IsTutorial: 1
       TutorialMap: {fileID: 8208578824207541179, guid: 992cdb56a535a9145b8fc0042867247d, type: 3}
+    showme: 0
   activeLevelIndex: 0

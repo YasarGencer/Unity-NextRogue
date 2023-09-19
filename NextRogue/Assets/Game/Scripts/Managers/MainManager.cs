@@ -1,6 +1,6 @@
 using Cinemachine;
-using DG.Tweening; 
-using UnityEngine; 
+using DG.Tweening;
+using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class MainManager : MonoBehaviour
     private EventManager _eventManager;
     [SerializeField]
     private GameManager _gameManager;
-    
+
     [SerializeField]
     private LevelManager _levelManager;
     [SerializeField]
@@ -28,8 +28,8 @@ public class MainManager : MonoBehaviour
     public GameManager GameManager { get { return _gameManager; } }
     public EventManager EventManager { get { return _eventManager; } }
     public LevelManager LevelManager { get { return _levelManager; } }
-    public CanvasManager CanvasManager { get { return _canvasManager; } } 
-    public InputManager InputManager { get { return _inputManager; } } 
+    public CanvasManager CanvasManager { get { return _canvasManager; } }
+    public InputManager InputManager { get { return _inputManager; } }
 
     [Space(15f)]
     [Header("Scene Managers")]
@@ -48,22 +48,25 @@ public class MainManager : MonoBehaviour
     public Transform Player { get { return _player; } }
     public Transform Environment { get { return _environment; } }
     public Transform Enemies { get { return _enemies; } }
-    private void Awake() {
+    private void Awake()
+    {
         Initialize();
         OpeningAnim();
     }
-    public void Initialize() { 
+    public void Initialize()
+    {
         AudioManager.CreateAudioManager();
 
         _instance = this;
 
-        _gameManager?.Initialize(); 
+        _gameManager?.Initialize();
         _eventManager?.Initialize();
         _levelManager?.Initialize();
-        StartGame();
+        StartGame(false);
     }
-    public void StartGame() { 
-        if(Enemies!= null)
+    public void StartGame(bool showLoading = true)
+    {
+        if (Enemies != null)
             for (int i = 0; i < Enemies.childCount; i++)
                 Destroy(Enemies.GetChild(i).gameObject);
         if (Environment != null)
@@ -72,27 +75,33 @@ public class MainManager : MonoBehaviour
 
         _canvasManager?.Initialize();
         _gameManager?.DOTManager?.Initialize();
+
+        //await Task.Run(() => {
+             _levelManager?.NextLevel(showLoading);
+        //});
+
         _player?.GetComponentInChildren<P_MainController>().Initialize();
-         
-        _levelManager?.NextLevel();  
 
         _eventManager?.RunOnGameStart();
 
         _testManager?.Initialize();
-    } 
-    public void PlayerInitialized() {
+    }
+    public void PlayerInitialized()
+    {
         MainManager.Instance.EventManager.PlayerInitialized();
         GameObject.FindObjectOfType<TutorialManager>()?.OnPlayerInitialized();
         _inputManager.Initialize();
         GameObject.FindObjectOfType<CameraTarget>().Initialize();
     }
-    void OpeningAnim() {
+    void OpeningAnim()
+    {
         _gameManager.PlayOpening();
         var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
         var defSize = cinemachine.m_Lens.OrthographicSize;
         float size = 2;
         DOTween.To(() => size, x => size = x, defSize, 2)
-        .OnUpdate(() => {
+        .OnUpdate(() =>
+        {
             cinemachine.m_Lens.OrthographicSize = size;
         }).SetEase(Ease.InCirc);
     }
