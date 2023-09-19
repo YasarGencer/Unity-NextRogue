@@ -311,8 +311,7 @@ Spell List :
   - Cleanse
     - Removes all DOT effects
     -  
-            Cooldown : 10
-            Damage : 10
+            Cooldown : 15 
     - Challange : Clear an effect that deals 10 per turn in total
     - Reward : 
       - Cleanse Infusion
