@@ -276,7 +276,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475517369619550120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926ec5eedfa124d47a968a0ac86b54ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 7af3388a1c89f9b4ba7316af74022c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isTest: 0
@@ -285,8 +285,6 @@ MonoBehaviour:
   Health: {fileID: 0}
   _stats: {fileID: 11400000, guid: 41e14485c20989a4fa551b3a7315ea8f, type: 2}
   Target: {fileID: 0}
-  Movement: {fileID: 0}
-  Attack: {fileID: 0}
 --- !u!114 &1475517369619550114
 MonoBehaviour:
   m_ObjectHideFlags: 0

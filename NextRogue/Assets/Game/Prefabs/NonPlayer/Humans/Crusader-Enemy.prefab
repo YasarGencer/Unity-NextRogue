@@ -193,16 +193,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4132714626760570076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926ec5eedfa124d47a968a0ac86b54ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 7af3388a1c89f9b4ba7316af74022c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTest: 0
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}
   _stats: {fileID: 11400000, guid: b7285673a73b1174084d430c9bb2991d, type: 2}
   Target: {fileID: 0}
-  Movement: {fileID: 0}
-  Attack: {fileID: 0}
 --- !u!114 &4132714626760570070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb856506dedcba4cac93ab3b95920cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spell: {fileID: 11400000, guid: ff537f40b8adcca4fabc8c1e3b02d55b, type: 2}
+  _spell:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!82 &2647679920057744074
 AudioSource:
   m_ObjectHideFlags: 0

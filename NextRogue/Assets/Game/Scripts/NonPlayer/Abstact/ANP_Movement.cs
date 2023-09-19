@@ -5,11 +5,11 @@ using UniRx;
 
 public abstract class ANP_Movement : MonoBehaviour
 {
-    protected NP_MainController _mainController;
+    protected ANP_MainController _mainController;
     protected IDisposable _updateRX;
     protected Vector2 _patrolPosition;
     protected AudioSource _audioSource;
-    public virtual void Initialize(NP_MainController mainController) {
+    public virtual void Initialize(ANP_MainController mainController) {
         _mainController = mainController;
         _audioSource = GetComponent<AudioSource>();
         _audioSource.clip = _mainController.Stats.WalkSound != null? _mainController.Stats.WalkSound: null;

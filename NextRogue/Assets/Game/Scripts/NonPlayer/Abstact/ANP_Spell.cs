@@ -3,14 +3,23 @@ using UniRx;
 using UnityEngine;
 
 public abstract class ANP_Spell : ScriptableObject {
-    protected NP_MainController _mainController;
-    public NP_MainController MainController { get { return _mainController; } set { _mainController = value; } }
+    protected ANP_MainController _mainController;
+    public ANP_MainController MainController { get { return _mainController; } set { _mainController = value; } }
  
     [SerializeField]
     bool _isInit = false; 
-    public bool IsInit { get { return _isInit; } set { _isInit = value; } } 
+    public bool IsInit { get { return _isInit; } set { _isInit = value; } }
 
+    [SerializeField]
+    float _waitTimeAfterUse = 1f;
+    [SerializeField]
+    bool _canMoveWhileWait = false;
+    [SerializeField]
+    bool _canNormalAttackWhileWait = false;
 
+    public float WaitTimeAfterUse { get { return _waitTimeAfterUse; } }
+    public bool CanMoveWhileWait { get { return _canMoveWhileWait; } }
+    public bool CanNormalAttackWhileWait { get { return _canNormalAttackWhileWait; } }
 
     //public bool IsBasic;
     public string Name;
@@ -39,9 +48,7 @@ public abstract class ANP_Spell : ScriptableObject {
     [SerializeField] protected bool stopAudio;
 
 
-    public virtual void Initialize(NP_MainController mainController) { 
-        if (_isInit && _currentTimeCooldown < CooldownTime)
-            return;
+    public virtual void Initialize(ANP_MainController mainController) {  
         RegisterEvents();
 
         _mainController = mainController;
@@ -56,7 +63,17 @@ public abstract class ANP_Spell : ScriptableObject {
             ActivateSpell();
         _isInit = true;
     }
-    public abstract bool CheckConditions();
+    public virtual bool CheckConditions() {
+        if (_isInit == false)
+            return true;
+        if (_mainController == null)
+            return false;
+        if (_mainController.Target.Target == null)
+            return false; 
+        if (_currentTimeCooldown > 0)
+            return false;
+        return true;
+    }
     public virtual void ActivateSpell() { 
         _mainController.Animator.SetTrigger("spell"); 
         if (Sound)
@@ -81,7 +98,7 @@ public abstract class ANP_Spell : ScriptableObject {
         }
         _currentTimeCooldown -= Time.deltaTime; 
     }
-    public GameObject JustCast(Vector3 pos, bool follow) {
+    public GameObject JustCast(Vector3 pos, bool follow = false) {
         GameObject projectile;
         if (follow) {
             projectile = Instantiate(
@@ -95,9 +112,9 @@ public abstract class ANP_Spell : ScriptableObject {
                 Quaternion.identity
                 ); 
         }
-        if(projectile.GetComponent<AProjectile>() != null) {
-            projectile.GetComponent<AProjectile>()
-                    .Initialize(_mainController.transform.position,
+        if(projectile.GetComponent<ANP_Projectile>() != null) {
+            projectile.GetComponent<ANP_Projectile>()
+                    .Initialize(pos,
                     Damage, CooldownTime, Speed, DOTInfo);
         }
         return projectile;

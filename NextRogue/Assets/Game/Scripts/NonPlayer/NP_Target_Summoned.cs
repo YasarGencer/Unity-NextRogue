@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NP_Target_Summoned : ANP_Target
 {
-    public override void Initialize(NP_MainController mainController) {
+    public override void Initialize(ANP_MainController mainController) {
         base.Initialize(mainController);
         StartCoroutine(ChangeTargetRec());
     }

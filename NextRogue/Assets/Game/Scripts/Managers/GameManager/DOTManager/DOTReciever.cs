@@ -20,14 +20,16 @@ public class DOTReciever : MonoBehaviour
     public void RecieveDOTDamage() {
         if (_health == null || _dotList.Count <= 0)
             return;
-        Debug.Log("CYCLE");
+        //Debug.Log("CYCLE");
         for (int i = 0; i < _dotList.Count; i++) {
             DOTInfo item = _dotList[i];
-            Debug.Log(i+ ". eleman tipi => " + item.DOTType.ToString() + "   kalan süresi =>" + item.CycleTime.ToString());
-            _health.GetDamage(item.CycleDamage, null);
-            item.CycleTime -= 1;
             if (item.CycleTime <= 0)
                 _dotList.Remove(item);
+            else {
+                //Debug.Log(i + ". eleman tipi => " + item.DOTType.ToString() + "   kalan süresi =>" + item.CycleTime.ToString());
+                _health.GetDamage(item.CycleDamage, null);
+                item.CycleTime -= 1;
+            }
         } 
     }
     public void ClearDOT() {

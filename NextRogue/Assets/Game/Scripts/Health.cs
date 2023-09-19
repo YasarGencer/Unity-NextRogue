@@ -14,7 +14,7 @@ public class Health : MonoBehaviour {
         _isInit = true;
 
         _isPlayer = gameObject.CompareTag("Player");
-        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<NP_MainController>().Stats;
+        _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<ANP_MainController>().Stats;
         _dotReciever = gameObject.AddComponent<DOTReciever>();
         _dotReciever.Initialize(this);
     }

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public abstract class ANP_Target : MonoBehaviour
 {
-    protected NP_MainController _mainController;
+    protected ANP_MainController _mainController;
     [HideInInspector]
     public GameObject Target;
-    public virtual void Initialize(NP_MainController mainController) {
+    public virtual void Initialize(ANP_MainController mainController) {
         _mainController = mainController;
     }
     public GameObject[] FindEnemies() {

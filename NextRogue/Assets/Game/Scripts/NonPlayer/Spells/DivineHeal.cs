@@ -1,13 +1,10 @@
-using UniRx.Triggers;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DivineHeal", menuName = "ScriptableObjects/EnemySpells/DivineHeal")]
 public class DivineHeal : ANP_Spell
 {
     public override bool CheckConditions() {
-        if (_mainController == null)
-            return false;
-        if (_mainController.Target.Target == null)
+        if(base.CheckConditions() == false)
             return false;
         if (_mainController.Distance(_mainController.Target.Target.transform) > UseRange)
             return false;
