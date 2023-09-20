@@ -10,6 +10,8 @@ public class NP_Target_Summoned : ANP_Target
     void ChangeTarget() {
         float dist = 1000;
         foreach (var item in FindEnemies()) {
+            if (item.gameObject.activeSelf == false)
+                continue;
             if (dist > _mainController.Distance(item.transform)) {
                 dist = _mainController.Distance(item.transform);
                 Target = item;

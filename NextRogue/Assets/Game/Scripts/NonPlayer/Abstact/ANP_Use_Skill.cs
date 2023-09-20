@@ -62,7 +62,7 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
         SetRestirectionDataFromSpell(GetSpell(index));
     }
     protected bool CheckConditions(int index) {
-        return GetSpell(index).CheckConditions();
+        return GetSpell(index).CheckConditions(_mainController);
     }
     public void SetRestirectionDataFromSpell(ANP_Spell spell) {
         IsUsingSpell = true;

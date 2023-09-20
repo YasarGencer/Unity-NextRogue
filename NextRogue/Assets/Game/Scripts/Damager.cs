@@ -22,7 +22,7 @@ public class Damager : MonoBehaviour
     public void Damage(Health health) {
         health.GetDamage(_value, transform); 
 
-        if (health)
+        if (health != null && health.DOTReciever != null)
             health.DOTReciever.RecieveDOT(_dotInfo); 
     }
 } 

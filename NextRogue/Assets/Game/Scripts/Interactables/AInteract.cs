@@ -5,10 +5,12 @@ using UnityEngine;
 public abstract class AInteract : MonoBehaviour {
 
     protected bool _isInteractable; 
+    protected bool _canUse = true; 
     [SerializeField]
     protected GameObject _info;
     protected Animator _animator;
     private Tweener currentTween;
+   
 
     private void Start() => OnStart();
     protected virtual void OnStart() {
@@ -35,6 +37,8 @@ public abstract class AInteract : MonoBehaviour {
     }
     protected virtual void Info(bool value)
     {
+        if (_canUse == false)
+            return;
         _isInteractable = value;
         if (value)
         {

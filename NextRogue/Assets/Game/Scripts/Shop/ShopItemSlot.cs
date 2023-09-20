@@ -33,13 +33,13 @@ public class ShopItemSlot : AInteract
         }
         base.Info(value);
 
-        if (ShopItem.Shake == null)
-            return;
-        if (value) {
-            ShopItem.Shake.StartMovement();
-        } else { 
-            ShopItem.Shake.StopMovement();
-        }
+        //if (ShopItem.Shake == null)
+        //    return;
+        //if (value) {
+        //    ShopItem.Shake.StartMovement();
+        //} else { 
+        //    ShopItem.Shake.StopMovement();
+        //}
     } 
     bool CanBuy() {
         return MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin >= ShopItem.Price;

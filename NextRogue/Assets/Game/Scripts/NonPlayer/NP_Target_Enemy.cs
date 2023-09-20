@@ -10,6 +10,8 @@ public class NP_Target_Enemy : ANP_Target
     void ChangeTarget() {
         float dist = 1000;
         foreach (var item in FindFriends()) {
+            if (item.gameObject.activeSelf == false)
+                continue;
             if(dist > _mainController.Distance(item.transform)) {
                 dist = _mainController.Distance(item.transform);
                 Target = item;
@@ -18,7 +20,7 @@ public class NP_Target_Enemy : ANP_Target
     }
     IEnumerator ChangeTargetRec() {
         ChangeTarget();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.25f);
         StartCoroutine(ChangeTargetRec());
     }
 }

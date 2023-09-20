@@ -24,6 +24,7 @@ public abstract class ASpell : ScriptableObject
     public string Description; 
 
     public Sprite Icon;
+    public Sprite ShopIcon;
 
     public AudioClip Sound;
 

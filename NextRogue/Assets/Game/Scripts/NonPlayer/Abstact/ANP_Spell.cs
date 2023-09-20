@@ -7,7 +7,7 @@ public abstract class ANP_Spell : ScriptableObject {
     public ANP_MainController MainController { get { return _mainController; } set { _mainController = value; } }
  
     [SerializeField]
-    bool _isInit = false; 
+    protected bool _isInit = false; 
     public bool IsInit { get { return _isInit; } set { _isInit = value; } }
 
     [SerializeField]
@@ -63,15 +63,16 @@ public abstract class ANP_Spell : ScriptableObject {
             ActivateSpell();
         _isInit = true;
     }
-    public virtual bool CheckConditions() {
-        if (_isInit == false)
-            return true;
+    public virtual bool CheckConditions(ANP_MainController mainController) {
+        _mainController = _mainController == null ? mainController : _mainController;
         if (_mainController == null)
-            return false;
+            return false; 
         if (_mainController.Target.Target == null)
             return false; 
+        if (_isInit == false)
+            return true; 
         if (_currentTimeCooldown > 0)
-            return false;
+            return false; 
         return true;
     }
     public virtual void ActivateSpell() { 

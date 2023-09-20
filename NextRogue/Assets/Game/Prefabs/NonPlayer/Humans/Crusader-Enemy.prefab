@@ -201,7 +201,6 @@ MonoBehaviour:
   Rb: {fileID: 0}
   Health: {fileID: 0}
   _stats: {fileID: 11400000, guid: b7285673a73b1174084d430c9bb2991d, type: 2}
-  Target: {fileID: 0}
 --- !u!114 &4132714626760570070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,9 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spell:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ff537f40b8adcca4fabc8c1e3b02d55b, type: 2}
+  _firstSpellWaitTimer: 2
 --- !u!82 &2647679920057744074
 AudioSource:
   m_ObjectHideFlags: 0

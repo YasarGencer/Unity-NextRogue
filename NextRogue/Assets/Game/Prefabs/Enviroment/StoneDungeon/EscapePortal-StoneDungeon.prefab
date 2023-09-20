@@ -928,6 +928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info: {fileID: 6820882171406547983}
   _animationRange: 4
+  canReverseEnter: 0
+  range: 0
 --- !u!58 &6820882171971817328
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -7,17 +7,14 @@ public class ShopItem : MonoBehaviour
 {
     public ASpell Spell { get; private set; }
     [SerializeField] Image icon;
-    [SerializeField] TextMeshProUGUI _name, price;
-    [SerializeField] Image defBG, enhBG;
-    public int Price { get; private set; }
-    [SerializeField] ShopItemShake shake;
-    public ShopItemShake Shake { get; private set; }
+    [SerializeField] TextMeshProUGUI _name, price; 
+    public int Price { get; private set; }  
 
     public void Initialize(SpellHolder spell) {
-        Shake = shake;
+        //Shake = shake;
         Spell = spell.IsChallangeDone == true? spell.EnhancedSpell: spell.Spell;
-        defBG.gameObject.SetActive(!spell.IsChallangeDone);
-        enhBG.gameObject.SetActive(spell.IsChallangeDone);
+        //defBG.gameObject.SetActive(!spell.IsChallangeDone);
+        //enhBG.gameObject.SetActive(spell.IsChallangeDone);
         icon.sprite = Spell.Icon;
         _name.SetText(Spell.Name);
         var multiplier = MainManager.Instance.LevelManager.GetLevel() == 0 ? 1 : MainManager.Instance.LevelManager.GetLevel();
