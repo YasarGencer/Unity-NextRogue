@@ -63,7 +63,7 @@ public class AProjectile : MonoBehaviour
     }
     void SetRotation(Vector3 targetPos) {
         targetPos.z = 0f;
-
+        //burdan devam
         targetPos.x -= transform.position.x;
         targetPos.y -= transform.position.y;
 
