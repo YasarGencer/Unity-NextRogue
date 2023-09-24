@@ -16,10 +16,15 @@ MonoBehaviour:
   Name: ImpailingShot
   Description: A projectile that pierces through enemies
   Icon: {fileID: 21300000, guid: b89e32b16f5f5554cb815ccf8c149fdf, type: 3}
+  ShopIcon: {fileID: 21300000, guid: 4d228e2e4fe547f4c8511904e849b086, type: 3}
   Sound: {fileID: 8300000, guid: f357b5e2da3616441872d7b6f48e1bba, type: 3}
   Spell: {fileID: 2479547150415471430, guid: 238e8e5226189ba448a74a0eec5a5e46, type: 3}
   Damage: 25
   Speed: 500
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
   CastingTime: 0
   CooldownTime: 15
   stopAudio: 1

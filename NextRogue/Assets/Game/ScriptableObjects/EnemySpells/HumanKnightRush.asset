@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: HumanKnightRush
   m_EditorClassIdentifier: 
   _isInit: 0
-  _waitTimeAfterUse: 1
-  _canMoveWhileWait: 0
-  _canNormalAttackWhileWait: 0
+  _waitTimeAfterUse: 15
+  _canMoveWhileWait: 1
+  _canNormalAttackWhileWait: 1
   Name: Knight Rush
   Description: x
-  Sound: {fileID: 0}
+  Sound: {fileID: 8300000, guid: f8b9c4ec92b463f40a5d18976815377e, type: 3}
   Spell: {fileID: 4454479859340302060, guid: 8359c52572feecf42bbfab15708aa445, type: 3}
-  Damage: 50
+  Damage: 20
   Speed: 0
   UseRange: 25
   DOTInfo:
@@ -28,5 +28,5 @@ MonoBehaviour:
     CycleDamage: 0
     CycleTime: 0
   CastingTime: 0
-  CooldownTime: 15
+  CooldownTime: 35
   stopAudio: 0

@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: Spike Trap
   Description: Sets up a spike trap that damages everything
   Icon: {fileID: 21300000, guid: 5d024eedf279ccb45903682b84bf0b1c, type: 3}
+  ShopIcon: {fileID: 21300000, guid: 4d228e2e4fe547f4c8511904e849b086, type: 3}
   Sound: {fileID: 8300000, guid: d2b8d915400b3a143bfe635bcb7f0200, type: 3}
   Spell: {fileID: 8410827680362039746, guid: 8bfeace985a0fe24cae86f220287a1a7, type: 3}
   Damage: 10

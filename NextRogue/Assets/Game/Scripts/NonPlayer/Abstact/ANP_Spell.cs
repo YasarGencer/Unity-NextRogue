@@ -63,7 +63,7 @@ public abstract class ANP_Spell : ScriptableObject {
             ActivateSpell();
         _isInit = true;
     }
-    public virtual bool CheckConditions(ANP_MainController mainController) {
+    public virtual bool CheckConditions(ANP_MainController mainController) { 
         _mainController = _mainController == null ? mainController : _mainController;
         if (_mainController == null)
             return false; 
@@ -71,7 +71,7 @@ public abstract class ANP_Spell : ScriptableObject {
             return false; 
         if (_isInit == false)
             return true; 
-        if (_currentTimeCooldown > 0)
+        if (_currentTimeCooldown < CooldownTime)
             return false; 
         return true;
     }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class B_MovementController : ANP_Movement
@@ -9,7 +8,14 @@ public class B_MovementController : ANP_Movement
         STAY,
         FOLLOW,
         KEEP_DISTANCE
-    } 
+    }
+    public async override void Initialize(ANP_MainController mainController) {
+        base.Initialize(mainController);
+
+
+        await Task.Delay(250);
+        MovementState = movementState.FOLLOW;
+    }
     protected override void UpdateRX(long obj) {
         if (_mainController.UseSkill.IsUsingSpell && _mainController.UseSkill.CanMoveWhileWait == false)
             return;

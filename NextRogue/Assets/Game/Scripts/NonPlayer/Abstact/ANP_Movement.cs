@@ -1,7 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UniRx; 
+using UniRx;
+using System.Threading.Tasks;
 
 public abstract class ANP_Movement : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public abstract class ANP_Movement : MonoBehaviour
     protected IDisposable _updateRX;
     protected Vector2 _patrolPosition;
     protected AudioSource _audioSource;
-    public virtual void Initialize(ANP_MainController mainController) {
+    public virtual async void Initialize(ANP_MainController mainController) {
         _mainController = mainController;
         _audioSource = GetComponent<AudioSource>();
         _audioSource.clip = _mainController.Stats.WalkSound != null? _mainController.Stats.WalkSound: null;

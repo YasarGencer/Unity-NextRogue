@@ -16,10 +16,15 @@ MonoBehaviour:
   Name: SUBJUGATE WILL
   Description: enchants the will of the closest enemy to get them to their side
   Icon: {fileID: 21300000, guid: 83d1c8bcb90b4cd4992c4092bf31e0e8, type: 3}
+  ShopIcon: {fileID: 21300000, guid: 4d228e2e4fe547f4c8511904e849b086, type: 3}
   Sound: {fileID: 8300000, guid: c42d803fcd5d56248be5f0bb55b6786b, type: 3}
   Spell: {fileID: 6772048588485438942, guid: 1f85bb087310ab44fa6fcdae11a7b3a8, type: 3}
   Damage: 0
   Speed: 0
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
   CastingTime: 0
   CooldownTime: 20
   stopAudio: 1

@@ -50,8 +50,10 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
             return;
         }
         for (int i = 0; i < _spell.Count; i++) {
-            if (CheckConditions(i))
+            if (CheckConditions(i)) {
                 PlaySpell(i);
+                return;
+            }
         }
     }
     protected virtual ANP_Spell GetSpell(int index) {

@@ -15,7 +15,7 @@ public class ShopItem : MonoBehaviour
         Spell = spell.IsChallangeDone == true? spell.EnhancedSpell: spell.Spell;
         //defBG.gameObject.SetActive(!spell.IsChallangeDone);
         //enhBG.gameObject.SetActive(spell.IsChallangeDone);
-        icon.sprite = Spell.Icon;
+        icon.sprite = Spell.ShopIcon;
         _name.SetText(Spell.Name);
         var multiplier = MainManager.Instance.LevelManager.GetLevel() == 0 ? 1 : MainManager.Instance.LevelManager.GetLevel();
         Price = 100 * multiplier;

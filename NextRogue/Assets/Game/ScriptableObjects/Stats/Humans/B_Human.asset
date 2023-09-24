@@ -27,7 +27,7 @@ MonoBehaviour:
   Speed: 1.5
   SpeelHolder: 0
   IsInvincable: 0
-  NoticeRange: 6
+  NoticeRange: 60
   AttackDamage: 5
   AttackRange: 0.75
   AttackSpeed: 1

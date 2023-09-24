@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf6a53f73999db40ad5a63311702a13, type: 3}
+  m_Name: HumanArrowRain
+  m_EditorClassIdentifier: 
+  _isInit: 0
+  _waitTimeAfterUse: 10
+  _canMoveWhileWait: 1
+  _canNormalAttackWhileWait: 1
+  Name: Arrow Rain
+  Description: x
+  Sound: {fileID: 0}
+  Spell: {fileID: 2520566755188143607, guid: 07b56aa0348b0574790a93ef3a8b9718, type: 3}
+  Damage: 20
+  Speed: 0
+  UseRange: 25
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
+  CastingTime: 0
+  CooldownTime: 25
+  stopAudio: 0

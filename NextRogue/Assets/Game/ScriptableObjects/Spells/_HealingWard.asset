@@ -16,10 +16,15 @@ MonoBehaviour:
   Name: HEALING WARD
   Description: Creates a shield that heals from enemy projectile for 1 second
   Icon: {fileID: 21300000, guid: c9010005c13c1ab47a59f0c42603ed2a, type: 3}
+  ShopIcon: {fileID: 21300000, guid: 4d228e2e4fe547f4c8511904e849b086, type: 3}
   Sound: {fileID: 8300000, guid: 648b92c07c315b54090f23d80bb8dc71, type: 3}
   Spell: {fileID: 4222805922244990525, guid: f53e5922a3e6f694c95f0912eeb87c3b, type: 3}
   Damage: 2
   Speed: 0
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
   CastingTime: 0
   CooldownTime: 15
   stopAudio: 1
