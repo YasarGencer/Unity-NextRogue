@@ -109,13 +109,28 @@ public class InputManager : MonoBehaviour
     }
 
     #endregion
-    public Vector3 GetMouseWolrdPos() {
-        Vector3 pos = Mouse.current.position.ReadValue();
-        return new Vector3(Camera.main.ScreenToWorldPoint(pos).x, Camera.main.ScreenToWorldPoint(pos).y, 0);
+    
+    public Vector3 GetMouseWorldPos()
+{
+    Vector2 aimInput = Vector2.zero;
+
+    // Gamepad kullanılıyorsa sağ analog girişini al
+    if (Gamepad.current != null)
+    {
+            aimInput = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
+            return new Vector2(aimInput.x+MainManager.Instance.Player.GetChild(0).position.x, aimInput.y + MainManager.Instance.Player.GetChild(0).position.y);
     }
-    public Vector3 GetMouseScreenPos() {
-        return Mouse.current.position.ReadValue();
+    else
+    {
+        // Fare kullanılıyorsa fare pozisyonunu al
+        aimInput = Mouse.current.position.ReadValue();
+            Vector3 screenPos = new Vector3(aimInput.x, aimInput.y, 0f);
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+            return new Vector3(worldPos.x, worldPos.y, 0f);
     }
+
+    // Dünya pozisyonunu hesapla
+}
     void Direction(Vector2 direction) {
         if (MainManager.Instance.GameManager.GamePaused)
             return;

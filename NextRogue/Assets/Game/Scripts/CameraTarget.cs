@@ -13,7 +13,7 @@ public class CameraTarget : MonoBehaviour
         if (follow == false)
             return; 
         var range = AccessibilityManager.GetValue(AccessibilityManager.AccessibilityType.cameramouserange);
-        var maousePos = MainManager.Instance.InputManager.GetMouseWolrdPos();
+        var maousePos = MainManager.Instance.InputManager.GetMouseWorldPos();
         var targetPos = (Player.position + maousePos) / 2f;
 
         targetPos.x = Mathf.Clamp(targetPos.x, -range + Player.position.x, range + Player.position.x);
