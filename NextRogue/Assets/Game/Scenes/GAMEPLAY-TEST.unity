@@ -496,10 +496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spells:
-  - {fileID: 11400000, guid: 3fff4aa1b01733842ac7354ec8191132, type: 2}
+  - {fileID: 11400000, guid: 0567f7fab45a7454baedff62eba51331, type: 2}
+  - {fileID: 11400000, guid: daf422e2e88ab4d49b9b0033fca1e415, type: 2}
   - {fileID: 11400000, guid: 41df5129c73d13f4f88d0991212fdb9b, type: 2}
-  - {fileID: 11400000, guid: d4825c27c52600342a036e6adbd9a659, type: 2}
-  - {fileID: 11400000, guid: 19d3798f8826d664084a93a6c38cc8aa, type: 2}
 --- !u!1001 &1379887410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2080,6 +2079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTest: 0
+  InitOnStart: 1
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}

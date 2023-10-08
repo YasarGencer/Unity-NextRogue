@@ -66,6 +66,8 @@ public class MainManager : MonoBehaviour
     }
     public void StartGame(bool showLoading = true)
     {
+        _player?.GetComponentInChildren<P_MainController>().CantPlay();
+
         if (Enemies != null)
             for (int i = 0; i < Enemies.childCount; i++)
                 Destroy(Enemies.GetChild(i).gameObject);
@@ -75,15 +77,17 @@ public class MainManager : MonoBehaviour
 
         _canvasManager?.Initialize();
         _gameManager?.DOTManager?.Initialize();
-
-        //await Task.Run(() => {
-             _levelManager?.NextLevel(showLoading);
-        //});
-
-        _player?.GetComponentInChildren<P_MainController>().Initialize();
-
-        _eventManager?.RunOnGameStart();
-
+         
+        _levelManager?.NextLevel(showLoading);
+        if(_testManager != null) {
+            SecondPhase();
+        }
+    }public void SecondPhase() {
+        //BOSS ODASINDA BOSS MANAGER BASLATIR OYUNU
+        if(_levelManager?.ActiveLevelSetting.MyType != DisplayOption.Boss) {
+            _player?.GetComponentInChildren<P_MainController>().Initialize();
+            OpeningAnim();
+        } 
         _testManager?.Initialize();
     }
     public void PlayerInitialized()
@@ -93,9 +97,10 @@ public class MainManager : MonoBehaviour
         _inputManager.Initialize();
         GameObject.FindObjectOfType<CameraTarget>().Initialize();
     }
-    void OpeningAnim()
-    {
+    public void OpeningAnim() {
+        _eventManager?.RunOnGameStart();
         _gameManager.PlayOpening();
+
         var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
         var defSize = cinemachine.m_Lens.OrthographicSize;
         float size = 2;

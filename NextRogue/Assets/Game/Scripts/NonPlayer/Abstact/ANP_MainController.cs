@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ANP_MainController : MonoBehaviour {
     public bool isTest;
+    public bool InitOnStart = true;
     public P_MainController Player { get; private set; }
     public GameObject AttackTarget { get; private set; }
 
@@ -24,6 +25,8 @@ public class ANP_MainController : MonoBehaviour {
 
     protected bool _isInit = false;
     private void Start() {
+        if(InitOnStart == false)
+            return;
         Initialize(2f);
     }
     public void Initialize() {

@@ -189,6 +189,8 @@ public class LevelSettingsEditor : Editor
                 else if (currentLevel.MyType == DisplayOption.Tutorial)
                 {
                     currentLevel.TutorialLevel = ShowTutorialProperties(currentLevel.TutorialLevel);
+                } else if(currentLevel.MyType == DisplayOption.Boss) {
+                    currentLevel.BossLevel = ShowBossProperties(currentLevel.BossLevel);
                 }
 
                 GUILayout.Space(10);
@@ -319,6 +321,25 @@ public class LevelSettingsEditor : Editor
 
         EditorGUILayout.EndVertical();
         return tutorialLevel;
+    }
+    private BossLevel ShowBossProperties(BossLevel bossLevel) {
+        GUIStyle propertyLabelStyle = new GUIStyle(EditorStyles.boldLabel);
+        propertyLabelStyle.fontSize = 14;
+
+        GUILayout.Space(10);
+
+        EditorGUILayout.BeginVertical("box");
+
+        EditorGUILayout.LabelField("BossMap", propertyLabelStyle);
+
+        EditorGUI.indentLevel++;
+
+        bossLevel.BossMap = (GameObject)EditorGUILayout.ObjectField("Boss Map", bossLevel.BossMap, typeof(GameObject), true);
+
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.EndVertical();
+        return bossLevel;
     }
 
 }

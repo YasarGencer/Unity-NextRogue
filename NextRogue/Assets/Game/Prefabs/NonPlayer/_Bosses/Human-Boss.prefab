@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTest: 0
+  InitOnStart: 0
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}

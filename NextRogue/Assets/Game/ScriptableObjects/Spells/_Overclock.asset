@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Overclock
   Description: Resets cooldowns of every other skill
   Icon: {fileID: 21300000, guid: eb8a423bc9a440b4da39ee14dbb34c00, type: 3}
-  ShopIcon: {fileID: 21300000, guid: 4d228e2e4fe547f4c8511904e849b086, type: 3}
+  ShopIcon: {fileID: 21300000, guid: a6d71f5290b960b41b556af778281902, type: 3}
   Sound: {fileID: 8300000, guid: 2a2701ec6b96065438a970d19fe91a2f, type: 3}
   Spell: {fileID: 6772048588485438942, guid: 036172622b70c614a8879eaef6ac66c2, type: 3}
   Damage: 0
@@ -30,5 +30,5 @@ MonoBehaviour:
   stopAudio: 1
   _isEnhanced: 0
   _timer: 2
-  _speedBoost: 2
+  _speedBoost: 0.5
   coolDownedSpellCounter: 0

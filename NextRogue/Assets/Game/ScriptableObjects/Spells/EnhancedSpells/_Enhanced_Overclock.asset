@@ -16,14 +16,18 @@ MonoBehaviour:
   Name: Hyperdrive
   Description: Resets cooldowns of every other skill
   Icon: {fileID: 21300000, guid: d70cfd1219e600347b9613f5a5408a8b, type: 3}
+  ShopIcon: {fileID: 21300000, guid: 70798eb9d89c4ba4fa0036b8ba7e5e3f, type: 3}
   Sound: {fileID: 8300000, guid: 2a2701ec6b96065438a970d19fe91a2f, type: 3}
   Spell: {fileID: 6772048588485438942, guid: 036172622b70c614a8879eaef6ac66c2, type: 3}
   Damage: 0
   Speed: 0
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
   CastingTime: 0
   CooldownTime: 20
   stopAudio: 1
-  _isEnhanced: 1
   _timer: 2
-  _speedBoost: 2
-  coolDownedSpellCounter: 0
+  _speedBoost: 1
+  coolDownedSpellCounter: 2

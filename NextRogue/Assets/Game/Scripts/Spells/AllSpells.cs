@@ -62,5 +62,6 @@ public enum SpellType {
     Overclock,
     SubjugateWill,
     ImpailingShot,
-    SpikeTrap
+    SpikeTrap,
+    Cleanse
 }

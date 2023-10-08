@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Canvas_Player_GUI_HUD : AUI
 { 
-    P_MainController _mainController;
+    P_MainController _mainController { get { return MainManager.Instance.Player.GetComponentInChildren<P_MainController>(); } }
 
     [SerializeField]
     HUDSlider _health, _level, _secondary;
@@ -25,16 +25,7 @@ public class Canvas_Player_GUI_HUD : AUI
         MainManager.Instance.EventManager.onCoinChange += CoinChange;
     }
 
-    private void CoinChange(int value) {
-        _coinText.SetText(value.ToString() + " g");
-    }
-
-    protected override void OnGameStart() {
-        base.OnGameStart();
-        _mainController = MainManager.Instance.Player.GetComponentInChildren<P_MainController>();
-        CoinChange(_mainController.Stats.Coin);
-        Description.Hide();
-        SkillIconsVisibility(true); 
+    protected override void OnGameStart() { 
     }
     public override void Open() {
         base.Open();
@@ -43,11 +34,17 @@ public class Canvas_Player_GUI_HUD : AUI
         base.Close(time);
     }
     protected override void OnPlayerInitialized() {
-        SetKeys();
+        CoinChange(_mainController.Stats.Coin);
+        Description.Hide();
+        SkillIconsVisibility(true);
+        //SetKeys();
         _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth, 0);
         _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
         if (_mainController.Stats.SecondaryBar)
             InitializeSecondary(0, 1, 0);
+    } 
+    private void CoinChange(int value) {
+        _coinText.SetText(value.ToString() + " g");
     }
     void SetKeys() {
         var text = MainManager.Instance.InputManager    .GetKeyInfo();

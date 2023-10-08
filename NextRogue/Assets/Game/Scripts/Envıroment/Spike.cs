@@ -12,6 +12,10 @@ public class Spike : MonoBehaviour
         GetComponent<Damager>().Initialize(damage, dotInfo); 
         UnPause();
     }
+    private void OnDestroy() {
+        MainManager.Instance.EventManager.onGamePause -= Pause;
+        MainManager.Instance.EventManager.onGameUnPause -= UnPause;
+    }
     private void UnPause() { 
         animator.speed= .5f;
     }

@@ -51,17 +51,15 @@ public class LevelManager : MonoBehaviour
     }
     void NextLevelSegment()
     {
-        if (ActiveLevelSetting.MyType == DisplayOption.Dungeon)
-        {
+        MainManager.Instance.SecondPhase();
+        if (ActiveLevelSetting.MyType == DisplayOption.Dungeon) {
             _PDGManager?.Initialize();
-        }
-        else if (ActiveLevelSetting.MyType == DisplayOption.Shop)
-        {
+        }else if (ActiveLevelSetting.MyType == DisplayOption.Shop) {
             activeMap = Instantiate(ActiveLevelSetting.ShopLevel.ShopMap);
-        }
-        else if (ActiveLevelSetting.MyType == DisplayOption.Tutorial)
-        {
+        }else if (ActiveLevelSetting.MyType == DisplayOption.Tutorial) {
             activeMap = Instantiate(ActiveLevelSetting.TutorialLevel.TutorialMap);
+        } else if(ActiveLevelSetting.MyType == DisplayOption.Boss) {
+            activeMap = Instantiate(ActiveLevelSetting.BossLevel.BossMap);
         }
 
         MainManager.Instance.CanvasManager.Loading.Close();

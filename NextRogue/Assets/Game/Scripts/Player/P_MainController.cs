@@ -1,5 +1,8 @@
 using System.Collections;
+using UnityEditor.TextCore.Text;
 using UnityEngine;
+using UnityEngine.Rendering;
+
 public class P_MainController : MonoBehaviour {
     public bool canPlay { get; private set;}
     [HideInInspector]
@@ -67,5 +70,6 @@ public class P_MainController : MonoBehaviour {
 
         MainManager.Instance?.PlayerInitialized();
     }
+    public void CantPlay() => canPlay = false;
  
 }

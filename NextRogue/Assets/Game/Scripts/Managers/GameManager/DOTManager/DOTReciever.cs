@@ -35,6 +35,9 @@ public class DOTReciever : MonoBehaviour
     public void ClearDOT() {
         _dotList.Clear();
     }
+    public List<DOTInfo> GetDOT() {
+        return _dotList;
+    }
     public void ClearByType(DOTType type) {
         foreach (var item in _dotList) {
             if(item.DOTType== type) {

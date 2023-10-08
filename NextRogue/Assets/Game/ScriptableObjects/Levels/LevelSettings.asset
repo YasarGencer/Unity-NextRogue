@@ -28,10 +28,12 @@ MonoBehaviour:
       ShopMap: {fileID: 8208578824207541179, guid: 8b6777fb9016b0c4a877d758bfa5ea37, type: 3}
     TutorialLevel:
       TutorialMap: {fileID: 0}
+    BossLevel:
+      BossMap: {fileID: 0}
     showme: 0
   - Name: Human Dungeon
     Description: Human Dungeon
-    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    Loader: {fileID: 11400000, guid: 47cd05d177443e5428b64cfa1967d578, type: 2}
     MyType: 0
     DungeonLevel:
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
@@ -44,27 +46,31 @@ MonoBehaviour:
       ShopMap: {fileID: 0}
     TutorialLevel:
       TutorialMap: {fileID: 0}
+    BossLevel:
+      BossMap: {fileID: 0}
     showme: 0
-  - Name: Purple Dungeon
-    Description: Purple Dungeon
-    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
-    MyType: 0
+  - Name: Human Boss
+    Description: Human Boss
+    Loader: {fileID: 11400000, guid: f4f906ed35ce20f47857171b1a486b42, type: 2}
+    MyType: 3
     DungeonLevel:
-      SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
-      CorridorLength: 15
-      CorridorCount: 5
-      RoomPercent: 1
-      RoomProps: {fileID: 11400000, guid: 7399deefaf11161449f36422cfbcec0f, type: 2}
-      TilemapVisualizerData: {fileID: 11400000, guid: f68668e3de164594488b94ec184dc988, type: 2}
+      SRWData: {fileID: 0}
+      CorridorLength: 0
+      CorridorCount: 0
+      RoomPercent: 0.1
+      RoomProps: {fileID: 0}
+      TilemapVisualizerData: {fileID: 0}
     ShopLevel:
       ShopMap: {fileID: 0}
     TutorialLevel:
       TutorialMap: {fileID: 0}
-    showme: 0
+    BossLevel:
+      BossMap: {fileID: 8208578824207541179, guid: cbbddc874f245ee468fdccfe5f58d7ae, type: 3}
+    showme: 1
   tutorialLevels:
   - Name: Tutorial - Necromancer
     Description: NecromancerTutorial
-    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    Loader: {fileID: 11400000, guid: abe2755e09db2b6408bffb9829547894, type: 2}
     MyType: 2
     DungeonLevel:
       SRWData: {fileID: 0}
@@ -77,10 +83,12 @@ MonoBehaviour:
       ShopMap: {fileID: 0}
     TutorialLevel:
       TutorialMap: {fileID: 8208578824207541179, guid: 6b9b0126d3764364b9b9e86b6a9bef4a, type: 3}
-    showme: 0
+    BossLevel:
+      BossMap: {fileID: 0}
+    showme: 1
   - Name: Tutorial - Bloodshaper
     Description: BloodshaperTutorial
-    Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    Loader: {fileID: 11400000, guid: 343cb80640a7ed74faaf74bf4edc4671, type: 2}
     MyType: 2
     DungeonLevel:
       SRWData: {fileID: 0}
@@ -93,5 +101,7 @@ MonoBehaviour:
       ShopMap: {fileID: 0}
     TutorialLevel:
       TutorialMap: {fileID: 8208578824207541179, guid: 992cdb56a535a9145b8fc0042867247d, type: 3}
-    showme: 0
+    BossLevel:
+      BossMap: {fileID: 0}
+    showme: 1
   activeLevelIndex: 0

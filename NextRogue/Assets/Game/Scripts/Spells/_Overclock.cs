@@ -3,8 +3,7 @@ using UniRx;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Overclock", menuName = "ScriptableObjects/Spells/Overclock")]
-public class _Overclock : ASpell {
-    [SerializeField] bool _isEnhanced;
+public class _Overclock : ASpell { 
     [SerializeField] float _timer = 2;
     [SerializeField] float _speedBoost = 2;
     float _time;
@@ -37,14 +36,14 @@ public class _Overclock : ASpell {
            
         _updateRX?.Dispose();
         _updateRX = Observable.EveryUpdate().TakeUntilDisable(_mainController).Subscribe(UpdateRX); 
-        _mainController.Stats.Speed *= _speedBoost;
+        _mainController.Stats.Speed += _speedBoost;
         _time = _timer;
     }
     void UpdateRX(long obj) {
         _time -= Time.deltaTime;
         if (_time <= 0) {
             _updateRX?.Dispose();
-            _mainController.Stats.Speed /= _speedBoost;
+            _mainController.Stats.Speed -= _speedBoost;
         }
     }
     protected override void OnGamePause() {

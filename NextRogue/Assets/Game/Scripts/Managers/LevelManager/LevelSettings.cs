@@ -74,6 +74,7 @@ public class LevelSetting
     public DungeonLevel DungeonLevel;
     public ShopLevel ShopLevel;
     public TutorialLevel TutorialLevel;
+    public BossLevel BossLevel;
 
     public bool showme = true;
 }
@@ -103,10 +104,15 @@ public struct TutorialLevel
 {
     public GameObject TutorialMap;
 }
+[System.Serializable]
+public struct BossLevel {
+    public GameObject BossMap;
+}
 
 public enum DisplayOption
 {
     Dungeon,
     Shop,
-    Tutorial
+    Tutorial,
+    Boss
 }

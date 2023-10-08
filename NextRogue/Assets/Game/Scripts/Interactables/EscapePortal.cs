@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
-using UniRx;
-using Unity.VisualScripting;
+using UniRx; 
 using UnityEngine;
 
 public class EscapePortal : AInteract {

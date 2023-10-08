@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour {
             case AudioVolume.environment:
                 return "SOUND-ENVIRONMENT";
         }
+
         return "a";
     }
     public static void SetVolume(AudioVolume volumeType, float value) { 

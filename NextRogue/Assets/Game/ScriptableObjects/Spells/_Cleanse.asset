@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6edcd2199ba03246b4cbafd5af2605c, type: 3}
+  m_Name: _Cleanse
+  m_EditorClassIdentifier: 
+  _isInit: 0
+  Name: Cleanse
+  Description: Remove All DOT Effects
+  Icon: {fileID: 21300000, guid: 8cca9e2b0d8aaa141a35819adc82b598, type: 3}
+  ShopIcon: {fileID: 21300000, guid: 4d228e2e4fe547f4c8511904e849b086, type: 3}
+  Sound: {fileID: 0}
+  Spell: {fileID: 6772048588485438942, guid: 4ed2b4ed8da4eb141aa9f772d80995ab, type: 3}
+  Damage: 0
+  Speed: 0
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
+  CastingTime: 0
+  CooldownTime: 15
+  stopAudio: 1
+  _isEnhanced: 0
+  _timer: 2
+  _speedBoost: 0
+  coolDownedSpellCounter: 0
