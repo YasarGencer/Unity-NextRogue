@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UniRx;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -112,22 +114,26 @@ public class InputManager : MonoBehaviour
     
     public Vector3 GetMouseWorldPos()
 {
-    Vector2 aimInput = Vector2.zero;
-
-    // Gamepad kullanılıyorsa sağ analog girişini al
-    if (Gamepad.current != null)
-    {
+        //mousePose= Mouse.current.position.ReadValue();
+        Vector2 aimInput = Vector2.zero;
+        // Gamepad kullanılıyorsa sağ analog girişini al
+        if (Gamepad.current!=null)
+        {
             aimInput = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
+        }
+        if (aimInput != Vector2.zero)
+        {
             return new Vector2(aimInput.x+MainManager.Instance.Player.GetChild(0).position.x, aimInput.y + MainManager.Instance.Player.GetChild(0).position.y);
-    }
-    else
-    {
-        // Fare kullanılıyorsa fare pozisyonunu al
-        aimInput = Mouse.current.position.ReadValue();
+        }
+        else
+        {
+            // Fare kullanılıyorsa fare pozisyonunu al
+            aimInput = Mouse.current.position.ReadValue();
             Vector3 screenPos = new Vector3(aimInput.x, aimInput.y, 0f);
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
             return new Vector3(worldPos.x, worldPos.y, 0f);
-    }
+            
+        }
 
     // Dünya pozisyonunu hesapla
 }
