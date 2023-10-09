@@ -102,7 +102,7 @@ public class MainManager : MonoBehaviour
         _gameManager.PlayOpening();
 
         var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();
-        var defSize = cinemachine.m_Lens.OrthographicSize;
+        var defSize = LevelManager.ActiveLevelSetting.CameraLens;
         float size = 2;
         DOTween.To(() => size, x => size = x, defSize, 2)
         .OnUpdate(() =>

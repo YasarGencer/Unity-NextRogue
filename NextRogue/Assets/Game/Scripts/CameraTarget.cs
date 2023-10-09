@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class CameraTarget : MonoBehaviour
@@ -20,5 +21,9 @@ public class CameraTarget : MonoBehaviour
         targetPos.y = Mathf.Clamp(targetPos.y, -range + Player.position.y, range + Player.position.y);
 
         transform.position = targetPos;
+    }
+    public void Shake() {
+        follow = false;
+        transform.DOShakePosition(.25f, 2, 2).OnComplete(() => follow = true);
     }
 }

@@ -36,8 +36,11 @@ public class Health : MonoBehaviour {
 
         GetComponent<Animator>().SetTrigger("hit");
 
-        if (_isPlayer)
+        if (_isPlayer) {
             MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
+            GameObject.FindObjectOfType<CameraTarget>().Shake();
+        }
+
         if (_stats.Health <= 0) 
             Die(); 
     }

@@ -16,6 +16,7 @@ MonoBehaviour:
   - Name: Human Shop
     Description: Human Shop
     Loader: {fileID: 11400000, guid: fa6587044ebef964491fa14211221dfb, type: 2}
+    CameraLens: 3
     MyType: 1
     DungeonLevel:
       SRWData: {fileID: 11400000, guid: 02045b0008b1ddd43b0edb943d00afa2, type: 2}
@@ -30,10 +31,11 @@ MonoBehaviour:
       TutorialMap: {fileID: 0}
     BossLevel:
       BossMap: {fileID: 0}
-    showme: 0
+    showme: 1
   - Name: Human Dungeon
     Description: Human Dungeon
     Loader: {fileID: 11400000, guid: 47cd05d177443e5428b64cfa1967d578, type: 2}
+    CameraLens: 4
     MyType: 0
     DungeonLevel:
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
@@ -48,10 +50,11 @@ MonoBehaviour:
       TutorialMap: {fileID: 0}
     BossLevel:
       BossMap: {fileID: 0}
-    showme: 0
+    showme: 1
   - Name: Human Boss
     Description: Human Boss
     Loader: {fileID: 11400000, guid: f4f906ed35ce20f47857171b1a486b42, type: 2}
+    CameraLens: 4
     MyType: 3
     DungeonLevel:
       SRWData: {fileID: 0}
@@ -71,6 +74,7 @@ MonoBehaviour:
   - Name: Tutorial - Necromancer
     Description: NecromancerTutorial
     Loader: {fileID: 11400000, guid: abe2755e09db2b6408bffb9829547894, type: 2}
+    CameraLens: 0
     MyType: 2
     DungeonLevel:
       SRWData: {fileID: 0}
@@ -89,6 +93,7 @@ MonoBehaviour:
   - Name: Tutorial - Bloodshaper
     Description: BloodshaperTutorial
     Loader: {fileID: 11400000, guid: 343cb80640a7ed74faaf74bf4edc4671, type: 2}
+    CameraLens: 0
     MyType: 2
     DungeonLevel:
       SRWData: {fileID: 0}

@@ -23,8 +23,9 @@ public class ShopItemSlot : AInteract
         Destroy(transform.GetComponentInChildren<ShopItem>().gameObject);  
         GameObject.FindObjectOfType<CanvasManager>().TextPopUp(false);
         MainManager.Instance.EventManager.RunOnCoinChange(-ShopItem.Price);
-    }
+    } 
     protected override void Info(bool value) { 
+        ShopItem.Shake.Shake(value);
         if (CanBuy()) {
             InfoText("press e to buy");
         } else {

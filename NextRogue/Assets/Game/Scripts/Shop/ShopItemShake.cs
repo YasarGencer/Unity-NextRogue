@@ -26,29 +26,30 @@ public class ShopItemShake : MonoBehaviour
         Path[2] = originalPosition + new Vector3(0, -moveDistance, 0);
         Path[3] = originalPosition;
     }
+    public void Shake(bool value) {
+        switch (value) {
+            case true:
+                if (onMove) { return; }
 
-    public void StartMovement()
-    {
-        if (onMove) { return; }
+                onMove = true;
+                currentTween = transform.DOPath(Path, moveDuration)
+                    .SetEase(Ease.Linear)
+                    .SetLoops(-1)
+                    .OnKill(() => { onMove = false; currentTween = null; });
+                break;
+            case false:
+                if (currentTween != null) {
+                    if (currentTween.IsActive()) {
+                        currentTween.Kill();
 
-        onMove = true;
-        currentTween = transform.DOPath(Path, moveDuration)
-            .SetEase(Ease.Linear)
-            .SetLoops(-1)
-            .OnKill(() => { onMove = false; currentTween = null; });
-    }
-
-    public void StopMovement()
-    {
-        if (currentTween != null)
-        {
-            if (currentTween.IsActive())
-            {
-                currentTween.Kill();
-
-            }
+                    }
+                }
+                transform.DOMoveY(originalPosition.y, stopDuration)
+                    .SetEase(Ease.Linear);
+                break; 
         }
-        transform.DOMoveY(originalPosition.y, stopDuration)
-            .SetEase(Ease.Linear);
+    }
+    private void OnDestroy() {
+        currentTween.Kill();
     }
 }

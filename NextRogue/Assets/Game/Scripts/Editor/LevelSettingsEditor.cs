@@ -142,6 +142,8 @@ public class LevelSettingsEditor : Editor
                 EditorGUILayout.LabelField("Desription");
                 currentLevel.Description = EditorGUILayout.TextArea(currentLevel.Description, GUILayout.Height(EditorGUIUtility.singleLineHeight * 2));
 
+                currentLevel.CameraLens = EditorGUILayout.FloatField("Camera Lens", currentLevel.CameraLens); 
+
                 EditorGUILayout.Space(5);
                 currentLevel.Loader = (LoaderElement)EditorGUILayout.ObjectField("Loader", currentLevel.Loader, typeof(LoaderElement), true);
 
@@ -256,6 +258,8 @@ public class LevelSettingsEditor : Editor
         EditorGUI.indentLevel--;
 
         EditorGUILayout.EndVertical();
+
+        dungeonLevel.Difficulty = EditorGUILayout.Slider("Difficulty", dungeonLevel.Difficulty, 0.5f, 5f);
 
         EditorGUILayout.Space(5);
         EditorGUILayout.BeginVertical("box");

@@ -20,7 +20,7 @@ public class NP_Target_Summoned : ANP_Target
     }
     IEnumerator ChangeTargetRec() {
         ChangeTarget();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         StartCoroutine(ChangeTargetRec());
     }
 }

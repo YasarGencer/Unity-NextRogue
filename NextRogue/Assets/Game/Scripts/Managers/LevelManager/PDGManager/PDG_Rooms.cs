@@ -112,7 +112,9 @@ public class Room {
     public void DecorateEnemyRoom(List<GameObject> props) {
         if (props.Count <= 0)
             return;
-        int enemyCount = Random.Range(5, 10);
+        float difficulty = Random.Range(5, 10);
+        difficulty *= MainManager.Instance.LevelManager.ActiveLevelSetting.DungeonLevel.Difficulty;
+        int enemyCount = (int)difficulty;
         for (int i = 0; i < enemyCount; i++) {
 
             NP_MainController mainController = GameObject.Instantiate(

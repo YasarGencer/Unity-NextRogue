@@ -7,7 +7,9 @@ public class ShopItem : MonoBehaviour
 {
     public ASpell Spell { get; private set; }
     [SerializeField] Image icon;
-    [SerializeField] TextMeshProUGUI _name, price; 
+    [SerializeField] TextMeshProUGUI _name, price;
+    [SerializeField] ShopItemShake _shake;
+    public ShopItemShake Shake { get { return _shake; } }
     public int Price { get; private set; }  
 
     public void Initialize(SpellHolder spell) {

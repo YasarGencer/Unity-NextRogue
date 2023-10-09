@@ -68,6 +68,7 @@ public class LevelSetting
     [TextArea]
     public string Description;
     public LoaderElement Loader;
+    public float CameraLens = 4;
 
     public DisplayOption MyType;
 
@@ -87,6 +88,7 @@ public struct DungeonLevel
     public int CorridorLength;
     public int CorridorCount;
     [Range(0.1f, 1f)] public float RoomPercent;
+    [Range(0.5f, 3f)] public float Difficulty;
 
     public PDG_RoomProps RoomProps;
 

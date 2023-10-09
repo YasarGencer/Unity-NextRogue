@@ -496,9 +496,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spells:
+  - {fileID: 11400000, guid: 19c334f8c41621b49b6b20ba4e1332cc, type: 2}
   - {fileID: 11400000, guid: 0567f7fab45a7454baedff62eba51331, type: 2}
-  - {fileID: 11400000, guid: daf422e2e88ab4d49b9b0033fca1e415, type: 2}
-  - {fileID: 11400000, guid: 41df5129c73d13f4f88d0991212fdb9b, type: 2}
+  - {fileID: 11400000, guid: 6127089bc9c623e4ca03359e20250521, type: 2}
+  - {fileID: 11400000, guid: 40deaedcb0243704a82fba3fdffe4311, type: 2}
+  - {fileID: 11400000, guid: 7cf36fee5f9483b4088a1b15c75332d5, type: 2}
 --- !u!1001 &1379887410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1913,7 +1915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5973965897868893890
 Transform:
   m_ObjectHideFlags: 0
