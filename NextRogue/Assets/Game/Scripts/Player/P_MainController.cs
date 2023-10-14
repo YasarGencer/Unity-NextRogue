@@ -19,6 +19,7 @@ public class P_MainController : MonoBehaviour {
     public P_SpellHandler Spells { get; private set; } 
     public P_LevelHandler Level { get; private set; } 
     public Canvas_Player_GUI_HUD UI { get; private set; }
+    public P_CursorIcon CursorIcon { get; private set; }
 
     GameObject _child;  
     public void Initialize() => StartCoroutine(InitializeCoroutine());
@@ -49,8 +50,10 @@ public class P_MainController : MonoBehaviour {
             Spells = GetComponent<P_SpellHandler>();
         if (this.UI == null)
             UI = MainManager.Instance.CanvasManager.Player_GUI_HUD;
-         
-         
+        if (this.CursorIcon == null)
+            CursorIcon=GetComponent<P_CursorIcon>();
+
+
 
         yield return new WaitForSeconds(1.5f); 
 
@@ -65,6 +68,7 @@ public class P_MainController : MonoBehaviour {
         Movement.Initialize(this);
         Spells.Initialize(this);
         Health.Initialize();
+        CursorIcon.Initialize(this);
 
         yield return new WaitForSeconds(.25f);
 

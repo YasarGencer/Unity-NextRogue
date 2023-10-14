@@ -31,9 +31,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e77875f3e1e841478ba505003688070, type: 2}
   - {fileID: 11400000, guid: 24d6a5ea040a3db4dbcaef5879dae8b5, type: 2}
   - {fileID: 11400000, guid: 54de0d267eea7a644b4dba55019e0a15, type: 2}
-  - {fileID: 11400000, guid: 9d4e38721e630ea47b25209e648bffe2, type: 2}
+  - {fileID: 11400000, guid: e9c017d5044fb374a9d6cea5c9626333, type: 2}
   SecondaryBar: 0
   SecondaryValue: 0
   Level: 0
   EXP: 0
   EXPRequired: 100
+  Coin: 100

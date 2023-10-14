@@ -9,17 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 469d953010b8bbb47beaee255a09a348, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e24f6dfbf4b4344387b9812089b2520, type: 3}
   m_Name: NecromancerSummonAid
   m_EditorClassIdentifier: 
-  _isInit: 0
+  _isInit: 1
   Name: SUMMON AID
   Description: Summons friendly cratures to help you
   Icon: {fileID: 21300000, guid: 165de5415dd5eb047a985658dcdf0d1e, type: 3}
+  ShopIcon: {fileID: 0}
   Sound: {fileID: 8300000, guid: 37fbcec211780a146b01e59844c6290f, type: 3}
   Spell: {fileID: 6545523380471205849, guid: 1367c888a109ee8418e5ab87935b0236, type: 3}
   Damage: 0
   Speed: 0
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
   CastingTime: 0
   CooldownTime: 10
   stopAudio: 1
