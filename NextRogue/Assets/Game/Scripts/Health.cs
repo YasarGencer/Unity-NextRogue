@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
     bool _isInit;
     bool _isPlayer;
+    [SerializeField]
+    bool _isScaleChanged;
     AStats _stats;
     DOTReciever _dotReciever;
     public DOTReciever DOTReciever { get { return _dotReciever;} }
@@ -22,6 +24,7 @@ public class Health : MonoBehaviour {
             GetComponent<Destructable>().Destruct();
             return;
         }
+
         if (!_stats)
             return;
         if (_stats.IsInvincable)
@@ -40,7 +43,10 @@ public class Health : MonoBehaviour {
             MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
             GameObject.FindObjectOfType<CameraTarget>().Shake();
         }
-
+        if (_isScaleChanged)
+        {
+            transform.localScale = Vector3.one * (_stats.Health / 20);
+        }
         if (_stats.Health <= 0) 
             Die(); 
     }
