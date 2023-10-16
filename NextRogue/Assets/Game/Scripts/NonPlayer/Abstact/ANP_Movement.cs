@@ -59,9 +59,9 @@ public abstract class ANP_Movement : MonoBehaviour
     }
     public void Rotate(float posX) {
         if (posX > transform.position.x + 0.1f)
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), Mathf.Abs(transform.localScale.y), Mathf.Abs(transform.localScale.z));
         else if (posX < transform.position.x - 0.1f)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, Mathf.Abs(transform.localScale.y), Mathf.Abs(transform.localScale.z));
     }
     public virtual void Die() {
         _updateRX?.Dispose();
