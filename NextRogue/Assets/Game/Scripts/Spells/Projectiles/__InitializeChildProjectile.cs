@@ -1,7 +1,8 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class __InitializeChildProjectile : AP_Projectile {  
+public class __InitializeChildProjectile : AP_Projectile {
+    [SerializeField] int delay = 50;
     public override void Initialize(Vector3 targetPos, float damage, float time, float speed, DOTInfo dotInfo) {
         base.Initialize(targetPos, damage, time, speed, dotInfo);
         if (CompareTag("EnemyProjectile"))
@@ -14,7 +15,7 @@ public class __InitializeChildProjectile : AP_Projectile {
 
         var count = transform.childCount;
         for (int i = 0; i < count; i++) {
-            await Task.Delay(50);
+            await Task.Delay(delay);
             if (transform.childCount > 0) {
                 var projectile = transform.GetChild(0).GetComponent<AProjectile>();
                 projectile.gameObject.SetActive(true);
