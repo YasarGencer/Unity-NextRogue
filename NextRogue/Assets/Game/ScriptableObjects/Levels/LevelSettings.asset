@@ -23,6 +23,7 @@ MonoBehaviour:
       CorridorLength: 12
       CorridorCount: 2
       RoomPercent: 1
+      Difficulty: 0
       RoomProps: {fileID: 11400000, guid: 438cdd3e9663ca4449d18be1ac54d34c, type: 2}
       TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
     ShopLevel:
@@ -42,6 +43,7 @@ MonoBehaviour:
       CorridorLength: 15
       CorridorCount: 15
       RoomPercent: 1
+      Difficulty: 0.5
       RoomProps: {fileID: 11400000, guid: ee278f86ed1d4894a9f4032d83fb39c5, type: 2}
       TilemapVisualizerData: {fileID: 11400000, guid: 3c69a6cdc3467004288282e57c2f7801, type: 2}
     ShopLevel:
@@ -61,6 +63,7 @@ MonoBehaviour:
       CorridorLength: 0
       CorridorCount: 0
       RoomPercent: 0.1
+      Difficulty: 0
       RoomProps: {fileID: 0}
       TilemapVisualizerData: {fileID: 0}
     ShopLevel:
@@ -69,6 +72,26 @@ MonoBehaviour:
       TutorialMap: {fileID: 0}
     BossLevel:
       BossMap: {fileID: 8208578824207541179, guid: cbbddc874f245ee468fdccfe5f58d7ae, type: 3}
+    showme: 0
+  - Name: BloodShaper Dungeon
+    Description: 
+    Loader: {fileID: 11400000, guid: 343cb80640a7ed74faaf74bf4edc4671, type: 2}
+    CameraLens: 4
+    MyType: 0
+    DungeonLevel:
+      SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
+      CorridorLength: 15
+      CorridorCount: 15
+      RoomPercent: 1
+      Difficulty: 0.75
+      RoomProps: {fileID: 11400000, guid: 81ec89f1eaf7d00498d18daba8f14023, type: 2}
+      TilemapVisualizerData: {fileID: 11400000, guid: 37069c5bc92647e4a9e89550edbba672, type: 2}
+    ShopLevel:
+      ShopMap: {fileID: 0}
+    TutorialLevel:
+      TutorialMap: {fileID: 0}
+    BossLevel:
+      BossMap: {fileID: 0}
     showme: 1
   tutorialLevels:
   - Name: Tutorial - Necromancer
@@ -81,6 +104,7 @@ MonoBehaviour:
       CorridorLength: 0
       CorridorCount: 0
       RoomPercent: 0.1
+      Difficulty: 0
       RoomProps: {fileID: 0}
       TilemapVisualizerData: {fileID: 0}
     ShopLevel:
@@ -100,6 +124,7 @@ MonoBehaviour:
       CorridorLength: 0
       CorridorCount: 0
       RoomPercent: 0.1
+      Difficulty: 0
       RoomProps: {fileID: 0}
       TilemapVisualizerData: {fileID: 0}
     ShopLevel:

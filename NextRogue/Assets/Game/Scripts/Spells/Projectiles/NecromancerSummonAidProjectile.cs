@@ -7,7 +7,7 @@ public class NecromancerSummonAidProjectile : AP_Projectile {
     [SerializeField] int summonCount;
     int summoned = 0;
     public override void Initialize(Vector3 mousePos, float damage, float time, float speed, DOTInfo dotInfo) {
-        base.Initialize(mousePos, damage, time, speed, dotInfo);
+        base.Initialize(Vector3.zero, damage, time, speed, dotInfo);
         summoned = 0;
         Invoke("Summon", .5f);
     }

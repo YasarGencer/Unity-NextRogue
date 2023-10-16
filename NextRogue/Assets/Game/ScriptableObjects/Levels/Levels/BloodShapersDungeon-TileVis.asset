@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e700bbfef266dd647bbb75f1b8d7843d, type: 3}
+  m_Name: BloodShapersDungeon-TileVis
+  m_EditorClassIdentifier: 
+  FloorTile:
+  - {fileID: 11400000, guid: 318e7ab39fc721946a900a1b95a0ebfd, type: 2}
+  - {fileID: 11400000, guid: 3d9d3b0617eacdf49b1578a2d846ffd7, type: 2}
+  - {fileID: 11400000, guid: 21c36616b63ea434a83830bafb2de0ca, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  - {fileID: 11400000, guid: 7d755e2f7d390a047acaecc5eb7dbe1c, type: 2}
+  MinimapTile: {fileID: 11400000, guid: 4d95c7272e368dc49af52d10b8fdde42, type: 2}
+  Top: {fileID: 11400000, guid: f29cdf0df1e82084094970342226fde7, type: 2}
+  Right: {fileID: 11400000, guid: 9211913926ac13f45a0c7a72a67c701f, type: 2}
+  Left: {fileID: 11400000, guid: ffc77fa4572e43841b9c9ca5bcd753bd, type: 2}
+  Bottom: {fileID: 11400000, guid: 72377a29632674c4fbc80eee846e31b3, type: 2}
+  Full: {fileID: 11400000, guid: 1fa2bf355e8dbed479fa8cbbe7a27128, type: 2}
+  CornerDownLeft: {fileID: 11400000, guid: fdf4a95f1aca8e247b04b6b2523f25ec, type: 2}
+  CornerDownRight: {fileID: 11400000, guid: d39796dc9d6725441a2a07864eb9fa85, type: 2}
+  DownLeft: {fileID: 11400000, guid: b33374658d815f548907f2546f239bfe, type: 2}
+  DownRight: {fileID: 11400000, guid: bba61757d1cf73e4c98012467b450f7d, type: 2}
+  UpLeft: {fileID: 11400000, guid: f48905ab32b2d0344be7790cf592146f, type: 2}
+  UpRight: {fileID: 11400000, guid: eb4f546b6b8bbde47a6ac9564005160c, type: 2}
+  BGColor: {r: 0.21568629, g: 0.23137257, b: 0.24705884, a: 1}

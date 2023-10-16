@@ -16,6 +16,7 @@ public abstract class AInteract : MonoBehaviour {
     protected virtual void OnStart() {
         MainManager.Instance.EventManager.onInteract += CheckInteraction;
         _animator = GetComponent<Animator>();
+        _info.SetActive(false);
     }
     protected void CheckInteraction() {
         if (!MainManager.Instance.GameManager.GamePaused)
@@ -40,30 +41,33 @@ public abstract class AInteract : MonoBehaviour {
         if (_canUse == false)
             return;
         _isInteractable = value;
+
+        if (currentTween != null)
+            currentTween.Kill(); 
+        TextMeshProUGUI text = _info.GetComponent<TextMeshProUGUI>();
+
         if (value)
         {
             _info.SetActive(true);
+
+            currentTween = text.DOFade(1f, 0.5f)
+                .SetEase(Ease.OutQuad);
         }
         else
         {
-            TextMeshProUGUI text = _info.GetComponent<TextMeshProUGUI>();
 
-            if (text != null)
-            {
-                text.alpha = 1.0f;
+            if (text != null) {
                 currentTween = text.DOFade(0.0f, 0.5f)
                     .SetEase(Ease.OutQuad).
-                    OnComplete(() =>
-                    {
+                    OnComplete(() => {
                         _info.SetActive(false);
-                    });
-
+                    }); 
             }
-            else
-            {
+            else { 
                 _info.SetActive(false);
             }
         }
+        currentTween.Play();
     }
     protected void InfoText(string str) {
         TextMeshProUGUI text = _info.GetComponent<TextMeshProUGUI>();

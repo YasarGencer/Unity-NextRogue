@@ -68,7 +68,7 @@ public class P_MainController : MonoBehaviour {
         Movement.Initialize(this);
         Spells.Initialize(this);
         Health.Initialize();
-        CursorIcon.Initialize(this);
+        CursorIcon?.Initialize(this);
 
         yield return new WaitForSeconds(.25f);
 
