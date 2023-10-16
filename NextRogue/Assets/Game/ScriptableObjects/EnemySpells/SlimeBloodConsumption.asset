@@ -28,7 +28,7 @@ MonoBehaviour:
     CycleDamage: 0
     CycleTime: 0
   CastingTime: 0
-  CooldownTime: 0.1
+  CooldownTime: 0.0001
   stopAudio: 0
   MaxCell: 10
   BloodRange: 2
