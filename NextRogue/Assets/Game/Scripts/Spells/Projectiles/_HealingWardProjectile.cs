@@ -6,14 +6,16 @@ public class _HealingWardProjectile : AP_Projectile
 {
     [SerializeField] int time;
     [SerializeField] bool isInvincable;
+    [SerializeField] bool isFollow;
 
     public static int numberOfBlockedAttack=0;
     Transform _player;
     IDisposable _followRX;
     public override void Initialize(Vector3 mousePos, float damage, float time, float speed, DOTInfo dotInfo) {
-        base.Initialize(mousePos, damage, this.time, speed, dotInfo);
+        base.Initialize(Vector3.zero, damage, this.time, speed, dotInfo);
         _player = GameObject.FindGameObjectWithTag("Player").transform;
-        StartFollow();
+        if (isFollow)
+            StartFollow();
     }
     void StartFollow() {
         _followRX?.Dispose();

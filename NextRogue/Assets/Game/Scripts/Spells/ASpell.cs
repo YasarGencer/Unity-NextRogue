@@ -57,7 +57,9 @@ public abstract class ASpell : ScriptableObject
         _currentTimeCast = CastingTime;
         _currentTimeCooldown= CooldownTime;
 
-        if(CastingTime > 0)
+        MainManager.Instance.EventManager.RunOnSpellUsed();
+
+        if (CastingTime > 0)
             StartCasting();
         else
             ActivateSpell();

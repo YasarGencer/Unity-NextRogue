@@ -99,6 +99,8 @@ public class MainManager : MonoBehaviour
     }
     public void OpeningAnim() {
         _eventManager?.RunOnGameStart();
+        if (TestManager != null)
+            return;
         _gameManager.PlayOpening();
 
         var cinemachine = Utilities.GetChild(1).GetComponent<CinemachineVirtualCamera>();

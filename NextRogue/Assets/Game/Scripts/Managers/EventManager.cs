@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
     public delegate void OnTrackStart(AudioClip clip);
     public delegate void OnCoinChange(int value);
     public delegate void OnDOTCycle();
+    public delegate void OnSpellUsed();
 
     public event OnGamePuase onGamePause;
     public event OnGameUnPuase onGameUnPause;
@@ -20,6 +21,7 @@ public class EventManager : MonoBehaviour
     public static event OnTrackStart onTrackStart;
     public event OnCoinChange onCoinChange;
     public event OnDOTCycle onDOTCycle;
+    public event OnSpellUsed onSpellUsed;
 
     public void Initialize() {
         onTrackStart = null;
@@ -52,5 +54,11 @@ public class EventManager : MonoBehaviour
         if (onDOTCycle == null)
             return;
         onDOTCycle();
+    }
+    public void RunOnSpellUsed() {
+        if (onSpellUsed == null)
+            return;
+        onSpellUsed();
+        
     }
 }
