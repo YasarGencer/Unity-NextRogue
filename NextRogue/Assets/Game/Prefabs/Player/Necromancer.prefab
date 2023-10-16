@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 6753497417659572071}
   - component: {fileID: 331086094214727345}
   - component: {fileID: 7066462742864464883}
+  - component: {fileID: 3455044308872027652}
   m_Layer: 3
   m_Name: Necromancer
   m_TagString: Player
@@ -511,6 +512,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3455044308872027652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753497417659572115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5521732097f45f4d81c27bbec44c5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorImg: {fileID: 0}
 --- !u!1001 &2542718626789965586
 PrefabInstance:
   m_ObjectHideFlags: 0

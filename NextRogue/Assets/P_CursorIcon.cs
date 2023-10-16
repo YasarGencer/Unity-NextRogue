@@ -12,6 +12,10 @@ public class P_CursorIcon : MonoBehaviour
     {
         _mainController = mainController;
     }
+    private void Start()
+    {
+        cursorImg = MainManager.Instance.Utilities.transform.Find("CursorParent").gameObject;
+    }
     private void Update()
     {
         cursorImg.transform.position=MainManager.Instance.Player.GetChild(0).transform.position;
