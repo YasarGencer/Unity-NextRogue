@@ -36,7 +36,7 @@ public class NP_Attack_Dash : ANP_Attack {
                 float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
                 Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 
-                _mainController.Rb.AddForce(dir * 30000 * Time.fixedDeltaTime);
+                _mainController.Rb.AddForce(dir * _mainController.Stats.ProjectileSpeed * Time.fixedDeltaTime);
                 
             }
             yield return new WaitForSeconds(.6f);
