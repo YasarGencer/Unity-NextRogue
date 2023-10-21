@@ -7,7 +7,9 @@ public class Canvas_Skill_Selection : AUI
     Transform _child1;
      
     [SerializeField]
-    HUDSlotSelection[] _slotSelection; 
+    HUDSkillSelection[] _skillSelection;
+    [SerializeField]
+    HUDSlotSelection[] _slotSelection;
     ASpell _spell;
 
     GameObject _shopFront;
@@ -43,22 +45,63 @@ public class Canvas_Skill_Selection : AUI
     public override void Initialize() {
         base.Initialize(); 
         _child1 = transform.GetChild(1);
-        _child1.gameObject.SetActive(false);
+        _child1.gameObject.SetActive(false); 
         Close();
     }
-    public void Open(GameObject gameObject, ShopItem shopitem) {
+    public void Open(GameObject shopFront) {
+        _shopFront = shopFront;
         this.gameObject.SetActive(true); 
-        _child.gameObject.SetActive(false);
-        _child1.gameObject.SetActive(true);
-        _shopFront = gameObject;
+
+        _child.gameObject.SetActive(true);
+        _child1.gameObject.SetActive(false); 
 
         if (_openClip)
             AudioManager.PlaySound(_openClip, null, AudioManager.AudioVolume.ui, false);
+
+        var spells = MainManager.Instance.GameManager.AllSpells.GetRandomSpell(_skillSelection.Length);
+        for (int i = 0; i < _skillSelection.Length; i++) {
+            _skillSelection[i].Initialize(spells[i].IsChallangeDone ? spells[i].EnhancedSpell : spells[i].Spell);
+        }
 
         //alpha 
         GetComponent<CanvasGroup>().alpha = 0; 
         GetComponent<CanvasGroup>().DOFade(1,1); 
 
+        //headers
+        var header = _child.GetChild(0).GetComponent<RectTransform>();
+        var header1 = _child.GetChild(1).GetComponent<RectTransform>();
+        var value = 0;
+        DOTween.To(() => value, x => value = x, 1250, 1)
+        .OnUpdate(() => {
+            header.sizeDelta = new Vector2(value, header.sizeDelta.y);
+            header1.sizeDelta = new Vector2(value, header.sizeDelta.y);
+        }).SetEase(Ease.InCirc);
+        //skills
+        var spellSlots = _child.GetChild(1);
+        spellSlots.localPosition = new(0, -100, 0);
+        spellSlots.DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InCirc);
+        var alpha = spellSlots.GetComponent<CanvasGroup>();
+        float alphaValue = 0;
+        alpha.alpha = 0;
+        DOTween.To(() => alphaValue, x => alphaValue = x, 1, 1)
+        .OnUpdate(() => {
+            alpha.alpha = alphaValue;
+        }).SetEase(Ease.InCirc);
+
+
+        //_spell = shopitem.Spell;
+        if (_selectedSkill)
+            AudioManager.PlaySound(_selectedSkill, null, AudioManager.AudioVolume.ui, false);
+        SetSlots();  
+    }
+    public override void Close(float time = 0) {
+        base.Close(time);
+    }
+    public void SaveSelected(ASpell spell) {
+        _spell = spell; 
+
+        _child.gameObject.SetActive(false);
+        _child1.gameObject.SetActive(true);
         //headers
         var header = _child1.GetChild(0).GetComponent<RectTransform>();
         var header1 = _child1.GetChild(1).GetComponent<RectTransform>();
@@ -79,16 +122,6 @@ public class Canvas_Skill_Selection : AUI
         .OnUpdate(() => {
             alpha.alpha = alphaValue;
         }).SetEase(Ease.InCirc);
-
-
-        _spell = shopitem.Spell;
-        if (_selectedSkill)
-            AudioManager.PlaySound(_selectedSkill, null, AudioManager.AudioVolume.ui, false);
-        SetSlots(); 
-
-    }
-    public override void Close(float time = 0) {
-        base.Close(time);
     }
     void SetSlots() {
         for (int i = 0; i < 5; i++) {

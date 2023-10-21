@@ -20,7 +20,7 @@ public class HUDSkillSelection : MonoBehaviour {
 
         if (isSpell)
         {
-            //MainManager.Instance.CanvasManager.SkillSelection.SaveSelected(_spell);
+            MainManager.Instance.CanvasManager.SkillSelection.SaveSelected(_spell);
         }
     } 
 }

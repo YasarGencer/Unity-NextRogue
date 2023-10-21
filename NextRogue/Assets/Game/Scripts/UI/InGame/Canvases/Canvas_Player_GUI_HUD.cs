@@ -47,7 +47,7 @@ public class Canvas_Player_GUI_HUD : AUI
         _coinText.SetText(value.ToString() + " g");
     }
     void SetKeys() {
-        var text = MainManager.Instance.InputManager    .GetKeyInfo();
+        var text = MainManager.Instance.InputManager.GetKeyInfo();
         var textPart = text.Split("/");
         for (int i = 0; i < textPart.Length - 1; i++)
             spellIconList[i].SetKey(textPart[i]);  

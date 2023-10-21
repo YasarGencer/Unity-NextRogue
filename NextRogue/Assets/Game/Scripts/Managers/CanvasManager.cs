@@ -60,10 +60,10 @@ public class CanvasManager : AUI
             OpenPlayerHud();
         */
     }
-    public void OpenSkillSelection(GameObject gameObject, ShopItem shopitem) {
+    public void OpenSkillSelection(GameObject shopFront) {
         MainManager.Instance.EventManager.RunOnGamePause(); 
         _pauseScreen.Close(); 
-        _skillSelection.Open(gameObject, shopitem);
+        _skillSelection.Open(shopFront);
     }
     void OpenPlayerHud() {
         _playerHud.Open();

@@ -6,15 +6,15 @@ public class ShopItemSlot : AInteract
 {
     [SerializeField] AudioClip _notEnoughMoney;
     public ShopItem ShopItem { get ; private set; } 
-    public void Initialize(SpellHolder spell, GameObject item) {
+    public void Initialize(GameObject item) {
         ShopItem = Instantiate(item, this.transform).GetComponent<ShopItem>();
-        ShopItem.Initialize(spell); 
+        ShopItem.Initialize(); 
     }
 
     protected override void Interact() {
         if (CanBuy()) {
             base.Interact();
-            GameObject.FindObjectOfType<CanvasManager>().OpenSkillSelection(this.gameObject, ShopItem);
+            MainManager.Instance.CanvasManager.OpenSkillSelection(gameObject);
         } else {
             AudioManager.PlaySound(_notEnoughMoney, transform, AudioManager.AudioVolume.sfx);
         }
