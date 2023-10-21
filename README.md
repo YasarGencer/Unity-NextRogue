@@ -440,6 +440,16 @@ Under-Development
           Attack Damage : 13
           Attack Range : 4
           Attack Speed : 1
+  - Consumer Slime:
+    - Melee
+    - Follow
+    - Heals self with blood cells.
+    - 
+          Health : 20
+          Movement Speed : 1
+          Attack Damage : 10
+          Attack Range : 2
+          Attack Speed : 3
 
 <h3 align = "left" id = "orcs"> ORCS</h3> 
 

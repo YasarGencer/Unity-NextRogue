@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
+  m_Name: Slime
+  m_EditorClassIdentifier: 
+  Name: Slime
+  ShortDescription: Slime that steal our blood and scale with them
+  Description: 
+  Corpse: {fileID: 7547977874472956111, guid: 8b97520fa6e3a09439f9c1243ad7ff96, type: 3}
+  MaxHealth: 20
+  Health: 0
+  HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
+  EXPOrb: {fileID: 9009034806741881388, guid: 8a5cb29e5834bbe43bad35d833dc90be, type: 3}
+  HitSound: {fileID: 8300000, guid: c8c4dc9ec4fab6945a661946c9441b1d, type: 3}
+  HealSound: {fileID: 0}
+  AttackSound: {fileID: 0}
+  WalkSound: {fileID: 0}
+  Speed: 1
+  SpeelHolder: 0
+  IsInvincable: 0
+  NoticeRange: 8
+  AttackDamage: 10
+  AttackRange: 2
+  AttackSpeed: 3
+  ProjectileSpeed: 15000
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
+  LifeSpan: 5
