@@ -104,7 +104,7 @@ public class InputManager : MonoBehaviour
         }
     }
     public string GetAnyKey(InputAction action) {
-        return action.GetBindingDisplayString();
+        return action.GetBindingDisplayString().Split('|')[Gamepad.current != null? 1: 0];
     }
     public void SetAnyKey(InputAction action, Key key) {
         action.ChangeBinding(key.ToString()); 

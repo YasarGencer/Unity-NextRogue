@@ -37,7 +37,7 @@ public class Canvas_Player_GUI_HUD : AUI
         CoinChange(_mainController.Stats.Coin);
         Description.Hide();
         SkillIconsVisibility(true);
-        //SetKeys();
+        SetKeys();
         _health.Initialize(_mainController.Stats.Health, _mainController.Stats.MaxHealth, 0);
         _level.Initialize(_mainController.Stats.EXP, _mainController.Stats.EXPRequired, _mainController.Stats.Level);
         if (_mainController.Stats.SecondaryBar)
