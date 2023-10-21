@@ -7732,6 +7732,7 @@ MonoBehaviour:
   - {fileID: 9106764893758671753}
   - {fileID: 1643851443175378864}
   SpellItem: {fileID: 3865019170639413160, guid: 9107d18ae163f9e4caf45a088919d56d, type: 3}
+  PotionItem: {fileID: 3865019170639413160, guid: 0e38f01a26b0a1d479af199ab9d2aaa6, type: 3}
 --- !u!1 &2580032430075223415
 GameObject:
   m_ObjectHideFlags: 0
@@ -15604,6 +15605,7 @@ MonoBehaviour:
   - {fileID: 2399304353579607410}
   - {fileID: 682505649993124359}
   SpellItem: {fileID: 0}
+  PotionItem: {fileID: 0}
 --- !u!1 &6333053944400285439
 GameObject:
   m_ObjectHideFlags: 0

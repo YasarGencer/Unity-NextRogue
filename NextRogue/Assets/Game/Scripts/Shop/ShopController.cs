@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShopController : MonoBehaviour
 {
     [SerializeField] ShopItemSlot[] slots;
-    [SerializeField] GameObject SpellItem;
+    [SerializeField] GameObject SpellItem, PotionItem;
 
     private void Start() {
         //var spells = MainManager.Instance.GameManager.AllSpells.GetRandomSpell(slots.Length);
@@ -16,6 +16,6 @@ public class ShopController : MonoBehaviour
 
         slots[0].Initialize(SpellItem);
         slots[1].Initialize(SpellItem);
-        slots[2].Initialize(SpellItem);
+        slots[2].Initialize(PotionItem);
     }
 }
