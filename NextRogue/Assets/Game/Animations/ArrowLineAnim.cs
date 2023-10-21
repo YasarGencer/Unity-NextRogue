@@ -14,17 +14,21 @@ public class ArrowLineAnim : MonoBehaviour
             item.color = color;
         }
         for (int i = 0; i < arrows.Count; i++) {
-            await Task.Delay(50); 
-            Color color= arrows[i].color;
-            color.a = 1;
-            arrows[i].DOColor(color,.5f);
+            if (arrows[i] != null) {
+                Color color = arrows[i].color;
+                color.a = 1;
+                arrows[i].DOColor(color, .5f);
+                await Task.Delay(50);
+            }
         }
         await Task.Delay(1000);
         for (int i = 0; i < arrows.Count; i++) {
-            await Task.Delay(10);
-            Color color = arrows[i].color;
-            color.a = 0;
-            arrows[i].DOColor(color, .05f);
+            if (arrows[i] != null) {
+                Color color = arrows[i].color;
+                color.a = 0;
+                arrows[i].DOColor(color, .05f);
+                await Task.Delay(10);
+            }
         }
     } 
 }

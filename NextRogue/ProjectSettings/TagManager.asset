@@ -16,6 +16,7 @@ TagManager:
   - Collectable
   - Blood
   - Minimap
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -13,10 +13,12 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
     [SerializeField] float _firstSpellWaitTimer = 5f;
     //for last used spell
     public bool IsUsingSpell { get; private set; }
+    public float WaitTimeAfterUseForOtherSpells { get ; private set; }
     public float WaitTimeAfterUse { get ; private set; }
     public bool CanMoveWhileWait { get ; private set; }
     public bool CanNormalAttackWhileWait { get ; private set; }
     float _cureentTime = 0f;
+    float _cureentTimeForOtherSpells = 0f;
 
 
     public virtual void Initialize(ANP_MainController mainController) {
@@ -49,10 +51,14 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
             _cureentTime-= Time.deltaTime;
             return;
         }
-        for (int i = 0; i < _spell.Count; i++) {
-            if (CheckConditions(i)) {
-                PlaySpell(i);
-                return;
+        if(_cureentTimeForOtherSpells > 0)
+            _cureentTimeForOtherSpells -= Time.deltaTime;
+        else {
+            for (int i = 0; i < _spell.Count; i++) {
+                if (CheckConditions(i)) {
+                    PlaySpell(i);
+                    return;
+                }
             }
         }
     }
@@ -62,16 +68,20 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
     protected virtual void PlaySpell(int index) {
         GetSpell(index).Initialize(_mainController);
         SetRestirectionDataFromSpell(GetSpell(index));
+        _mainController.Animator.SetTrigger(index.ToString());
     }
     protected bool CheckConditions(int index) {
         return GetSpell(index).CheckConditions(_mainController);
     }
     public void SetRestirectionDataFromSpell(ANP_Spell spell) {
         IsUsingSpell = true;
+        WaitTimeAfterUseForOtherSpells = spell.WaitTimeAfterUseForOtherSpells;
+        WaitTimeAfterUse = spell.WaitTimeAfterUse;
         WaitTimeAfterUse = spell.WaitTimeAfterUse;
         CanMoveWhileWait = spell.CanMoveWhileWait;
         CanNormalAttackWhileWait = spell.CanNormalAttackWhileWait;
         _cureentTime = WaitTimeAfterUse;
+        _cureentTimeForOtherSpells = WaitTimeAfterUseForOtherSpells;
     }
     // EVENTS 
     void RegisterEvents() {

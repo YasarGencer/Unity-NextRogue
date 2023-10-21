@@ -56,7 +56,7 @@ MonoBehaviour:
   - Name: Human Boss
     Description: Human Boss
     Loader: {fileID: 11400000, guid: f4f906ed35ce20f47857171b1a486b42, type: 2}
-    CameraLens: 4
+    CameraLens: 3.5
     MyType: 3
     DungeonLevel:
       SRWData: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
       TutorialMap: {fileID: 0}
     BossLevel:
       BossMap: {fileID: 8208578824207541179, guid: cbbddc874f245ee468fdccfe5f58d7ae, type: 3}
-    showme: 0
+    showme: 1
   - Name: BloodShaper Dungeon
     Description: 
     Loader: {fileID: 11400000, guid: 343cb80640a7ed74faaf74bf4edc4671, type: 2}

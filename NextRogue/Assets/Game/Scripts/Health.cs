@@ -8,6 +8,11 @@ public class Health : MonoBehaviour {
     bool _isScaleChanged;
     AStats _stats;
     DOTReciever _dotReciever;
+    
+
+    BossManager _bossManager;
+    CameraTarget _cameraTarget;
+    Canvas_Player_GUI_HUD _hud { get { return MainManager.Instance.CanvasManager.Player_GUI_HUD; } }
     public DOTReciever DOTReciever { get { return _dotReciever;} }
     public void Initialize() {
         if (_isInit)
@@ -18,6 +23,11 @@ public class Health : MonoBehaviour {
         _stats = _isPlayer ? GetComponent<P_MainController>().Stats : GetComponent<ANP_MainController>().Stats;
         _dotReciever = gameObject.AddComponent<DOTReciever>();
         _dotReciever.Initialize(this);
+
+        if (gameObject.CompareTag("Boss"))
+            _bossManager = GameObject.FindObjectOfType<BossManager>() as BossManager;
+        if (_isPlayer)
+            _cameraTarget = GameObject.FindObjectOfType<CameraTarget>();
     }
     public void GetDamage(float value, Transform source) {
         if(GetComponent<Destructable>() != null) {
@@ -29,19 +39,20 @@ public class Health : MonoBehaviour {
             return;
         if (_stats.IsInvincable)
             return;
+        _bossManager?.UpdateHealthBar();
 
         _stats.Health -= value;
 
         AudioManager.PlaySound(_stats.HitSound, transform);
 
-        MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(true, value.ToString(), transform.position);
+        _hud.DamageText(true, value.ToString(), transform.position);
         Destroy(Instantiate(_stats.HitParticle, transform.position, Quaternion.identity), 5f);
 
         GetComponent<Animator>().SetTrigger("hit");
 
         if (_isPlayer) {
-            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
-            GameObject.FindObjectOfType<CameraTarget>().Shake();
+            _hud.SetHealth();
+            _cameraTarget.Shake();
         }
         if (_isScaleChanged)
         {
@@ -53,9 +64,9 @@ public class Health : MonoBehaviour {
     public void GainHealth(float value) {
         _stats.Health += value;
         _stats.Health = _stats.Health > _stats.MaxHealth ? _stats.MaxHealth : _stats.Health;
-        MainManager.Instance.CanvasManager.Player_GUI_HUD.DamageText(false, value.ToString(), transform.position);
+        _hud.DamageText(false, value.ToString(), transform.position);
         if (_isPlayer)
-            MainManager.Instance.CanvasManager.Player_GUI_HUD.SetHealth();
+            _hud.SetHealth();
     }
     public void Die() {
         if (transform.CompareTag("Player")) { 

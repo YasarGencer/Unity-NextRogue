@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 6753497417659572071}
   - component: {fileID: 331086094214727345}
   - component: {fileID: 2853797788428080065}
+  - component: {fileID: -8836895936625528941}
   m_Layer: 3
   m_Name: Bloodshaper
   m_TagString: Player
@@ -391,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2cf239e302e6045a3ac79a0d0c0d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isScaleChanged: 0
 --- !u!114 &6753497417659572071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +513,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8836895936625528941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753497417659572115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5521732097f45f4d81c27bbec44c5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorImg: {fileID: 0}
 --- !u!1001 &8558061979351234982
 PrefabInstance:
   m_ObjectHideFlags: 0
