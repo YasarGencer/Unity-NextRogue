@@ -12,7 +12,7 @@ public class Canvas_Skill_Selection : AUI
     HUDSlotSelection[] _slotSelection;
     ASpell _spell;
 
-    GameObject _shopFront;
+    ShopItemSlot _shopFront;
 
     public InputActions.GameActions _input;
     P_MainController _mainController;
@@ -48,7 +48,7 @@ public class Canvas_Skill_Selection : AUI
         _child1.gameObject.SetActive(false); 
         Close();
     }
-    public void Open(GameObject shopFront) {
+    public void Open(ShopItemSlot shopFront) {
         _shopFront = shopFront;
         this.gameObject.SetActive(true); 
 
@@ -138,6 +138,6 @@ public class Canvas_Skill_Selection : AUI
             AudioManager.PlaySound(_selectedSkill, null, AudioManager.AudioVolume.ui, false);
         MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.SetSpell(value + 4, _spell);
         MainManager.Instance.EventManager.RunOnGameUnPuase();
-        _shopFront.GetComponent<ShopItemSlot>().Buy();
+        _shopFront.Buy();
     }
 }

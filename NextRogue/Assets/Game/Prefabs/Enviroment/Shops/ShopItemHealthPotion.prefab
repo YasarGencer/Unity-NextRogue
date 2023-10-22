@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8109975353246123296}
-  - component: {fileID: 8724163904282117671}
+  - component: {fileID: 595516957145310589}
   m_Layer: 0
   m_Name: ShopItemHealthPotion
   m_TagString: Untagged
@@ -229,7 +229,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8724163904282117671
+--- !u!114 &595516957145310589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,10 +238,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3865019170639413160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c486583a43317144495b431f09f4e668, type: 3}
+  m_Script: {fileID: 11500000, guid: 3107beefe0b9493479cf03997cad788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyShopItemType: 1
   price: {fileID: 4882695361885518579}
   _shake: {fileID: 4423754988721011538}
 --- !u!1 &7628395821127228335

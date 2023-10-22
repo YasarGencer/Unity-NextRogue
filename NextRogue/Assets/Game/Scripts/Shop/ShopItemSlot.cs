@@ -14,7 +14,7 @@ public class ShopItemSlot : AInteract
     protected override void Interact() {
         if (CanBuy()) {
             base.Interact();
-            ShopItem.Interact(gameObject);
+            ShopItem.Interact(this);
         } else {
             AudioManager.PlaySound(_notEnoughMoney, transform, AudioManager.AudioVolume.sfx);
         }
