@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using UniRx;
+using UniRx; 
 using UnityEngine; 
 
 public class AProjectile : MonoBehaviour
@@ -87,7 +87,10 @@ public class AProjectile : MonoBehaviour
     }
     protected virtual void Move(float speed) { 
         _rb?.AddForce(transform.right * _rb.mass * speed);
-    }  
+    }
+    protected virtual void SetVelocity(Vector2 velocity) {
+        _rb?.velocity.Set(velocity.x, velocity.y);
+    }
     // EVENTS
     void RegisterEvents() {
         MainManager.Instance.EventManager.onGamePause += OnGamePause;

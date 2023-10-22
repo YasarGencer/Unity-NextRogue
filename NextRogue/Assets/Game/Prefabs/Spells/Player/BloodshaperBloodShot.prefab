@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 5042605276708465275}
   - component: {fileID: 5042605276708465276}
   - component: {fileID: 5738410627739543901}
-  - component: {fileID: 5738410627739543900}
+  - component: {fileID: 6747027472285568453}
   m_Layer: 6
   m_Name: BloodshaperBloodShot
   m_TagString: PlayerProjectile
@@ -4919,7 +4919,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c448ae771919e9940bd0a438d0495978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5738410627739543900
+  _dotInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
+--- !u!114 &6747027472285568453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4928,6 +4932,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5042605276708465272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07271c3e452a00488707b29c2c072a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 63ab73b3f96d0314386aabb2a748f307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
+  stopAnim: 0

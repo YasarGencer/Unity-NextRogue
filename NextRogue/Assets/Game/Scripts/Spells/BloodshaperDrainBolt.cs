@@ -7,6 +7,10 @@ public class BloodshaperDrainBolt : AProjectile {
         base.Initialize(mousePos, damage * cellVial, time, speed, dotInfo);
     }
     private void OnCollisionEnter2D(Collision2D collision) {
-        Destroy(gameObject, .05F);
+        PlaySound();
+        SetVelocity(Vector2.zero);
+        Destroy(_rb);
+        Destroy(GetComponent<CircleCollider2D>());
+        Destroy(gameObject, .35f);
     } 
 }
