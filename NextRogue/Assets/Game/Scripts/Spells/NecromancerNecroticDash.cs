@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "NecromancerNecroticDash", menuName = "ScriptableObjects/Spells/NecromancerNecroticDash")]
 public class NecromancerNecroticDash : ASpell
@@ -16,7 +17,12 @@ public class NecromancerNecroticDash : ASpell
     }
     public override void ActivateSpell() {
         base.ActivateSpell();
-        Vector2 direction = MainManager.Instance.InputManager.GetMouseWorldPos();
+        Vector2 direction;
+        if (Gamepad.current != null) {
+            direction = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
+        } else {
+            direction = MainManager.Instance.InputManager.GetMouseWorldPos();
+        }
 
         var count = CheckCorpses();
         var rb = _mainController.Rb;
