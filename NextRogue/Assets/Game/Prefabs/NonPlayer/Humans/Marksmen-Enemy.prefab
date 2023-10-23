@@ -280,11 +280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTest: 0
+  InitOnStart: 1
   Animator: {fileID: 0}
   Rb: {fileID: 0}
   Health: {fileID: 0}
   _stats: {fileID: 11400000, guid: 41e14485c20989a4fa551b3a7315ea8f, type: 2}
-  Target: {fileID: 0}
 --- !u!114 &1475517369619550114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2cf239e302e6045a3ac79a0d0c0d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isScaleChanged: 0
 --- !u!114 &6283443059144430554
 MonoBehaviour:
   m_ObjectHideFlags: 0

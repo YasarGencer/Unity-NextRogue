@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb2cc70a11b8ac4e81f59208ca29c46, type: 3}
+  m_Name: GolemAreaAttack
+  m_EditorClassIdentifier: 
+  _isInit: 0
+  _waitTimeAfterUse: 1
+  _canMoveWhileWait: 0
+  _canNormalAttackWhileWait: 0
+  Name: 
+  Description: 
+  Sound: {fileID: 0}
+  Spell: {fileID: 0}
+  Damage: 0
+  Speed: 0
+  UseRange: 5
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
+  CastingTime: 2
+  CooldownTime: 5
+  stopAudio: 0
+  Particle: {fileID: 7699052144895814316, guid: a1514c54efe269b43a6ad3c8ec618019, type: 3}

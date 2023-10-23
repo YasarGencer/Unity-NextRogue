@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdd2b54907aa4e49bb04eb40706eac3, type: 3}
+  m_Name: Golem
+  m_EditorClassIdentifier: 
+  Name: Golem
+  ShortDescription: Tank Golem
+  Description: 
+  Corpse: {fileID: 0}
+  MaxHealth: 100
+  Health: 0
+  HitParticle: {fileID: 3955868922285827117, guid: c8c1863d3c040004d8a912562c6c7851, type: 3}
+  EXPOrb: {fileID: 9009034806741881388, guid: 8a5cb29e5834bbe43bad35d833dc90be, type: 3}
+  HitSound: {fileID: 8300000, guid: b8515d5110b8b634ebc67681503d0b64, type: 3}
+  HealSound: {fileID: 0}
+  AttackSound: {fileID: 8300000, guid: 9dbe1a81b1163ff48a687273c8f02e19, type: 3}
+  WalkSound: {fileID: 8300000, guid: 7edc9a71c19cb5648ab7db9475f6b4a5, type: 3}
+  Speed: 0.5
+  SpeelHolder: 0
+  IsInvincable: 0
+  NoticeRange: 10
+  AttackDamage: 15
+  AttackRange: 1
+  AttackSpeed: 1
+  ProjectileSpeed: 15000
+  DOTInfo:
+    DOTType: 0
+    CycleDamage: 0
+    CycleTime: 0
+  LifeSpan: 5
