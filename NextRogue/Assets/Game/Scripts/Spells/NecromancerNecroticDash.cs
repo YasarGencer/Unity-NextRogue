@@ -19,9 +19,9 @@ public class NecromancerNecroticDash : ASpell
         base.ActivateSpell();
         Vector2 direction;
         if (Gamepad.current != null) {
-            direction = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
+            direction = MainManager.Instance.InputManager.GetGamepadLocalPos();
         } else {
-            direction = MainManager.Instance.InputManager.GetMouseWorldPos();
+            direction = MainManager.Instance.InputManager.GetWorlPos();
         }
 
         var count = CheckCorpses();

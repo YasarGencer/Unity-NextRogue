@@ -112,7 +112,7 @@ public class InputManager : MonoBehaviour
 
     #endregion
     static Vector2 LastPos;
-    public Vector3 GetMouseWorldPos()
+    public Vector3 GetWorlPos()
 {
         //mousePose= Mouse.current.position.ReadValue();
         Vector2 aimInput = Vector2.zero;
@@ -121,16 +121,7 @@ public class InputManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            aimInput = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
-            if (aimInput!=Vector2.zero) 
-            { 
-                LastPos = aimInput;
-            }
-            Debug.Log("girdim");
-            if (aimInput==Vector2.zero)
-            {
-                return new Vector2(LastPos.x + MainManager.Instance.Player.GetChild(0).position.x, LastPos.y + MainManager.Instance.Player.GetChild(0).position.y);
-            }
+            aimInput = GetGamepadLocalPos();
             return new Vector2(aimInput.x + MainManager.Instance.Player.GetChild(0).position.x, aimInput.y + MainManager.Instance.Player.GetChild(0).position.y);
 
         }
@@ -151,6 +142,15 @@ public class InputManager : MonoBehaviour
 
     // Dünya pozisyonunu hesapla
 }
+    public Vector3 GetGamepadLocalPos() {
+        Vector2 aimInput = Vector2.zero;
+        aimInput = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
+        if (aimInput != Vector2.zero)
+            LastPos = aimInput; 
+        if (aimInput == Vector2.zero)
+            return LastPos;
+        return aimInput;  
+    }
     void Direction(Vector2 direction) {
         if (MainManager.Instance.GameManager.GamePaused)
             return;
