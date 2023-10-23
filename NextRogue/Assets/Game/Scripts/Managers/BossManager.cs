@@ -2,7 +2,7 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEngine; 
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -15,10 +15,10 @@ public class BossManager : MonoBehaviour {
     int activePhaseCount = -1;
     int currentFrame = -1;
     bool onComicScene = false;
-    Phase activePhase { get { return phases[activePhaseCount]; } }
+    public Phase ActivePhase { get { return phases[activePhaseCount]; } }
 
     [System.Serializable]
-    struct Phase {
+    public struct Phase {
         public GameObject Map;
         public B_MainController Boss;
         public Animator Animator;
@@ -27,7 +27,12 @@ public class BossManager : MonoBehaviour {
         public GameObject CinemachineCamera;
     }
     private void Awake() {
-        MainManager.Instance.EventManager.onInteract += ComicSceneNextStep;
+#if UNITY_EDITOR
+        MainManager.Instance.EventManager.onComicUpdate += ComicSceneNextStep;
+#endif
+        foreach (var item in phases) {
+            item.Map.SetActive(false);
+        }
         NextPhase();
     }
     async void Initialize() {
@@ -35,27 +40,31 @@ public class BossManager : MonoBehaviour {
         onComicScene = false;
         player.Initialize();
         CloseAllMaps();
-        activePhase.Map.SetActive(true);
-        activePhase.ComicCanvas.SetActive(false);
+        ActivePhase.Map.SetActive(true);
+        ActivePhase.ComicCanvas.SetActive(false);
         bossSliderObject.DOFade(0, 0);
         await Task.Delay(1000);
-        activePhase.CinemachineCamera.SetActive(false);
-        activePhase.Boss.Initialize();
+        ActivePhase.CinemachineCamera.SetActive(false);
+        ActivePhase.Boss.Initialize();
         bossSliderObject.DOFade(1, 1);
         bossSlider.maxValue = 1;
         bossSlider.value = 0;
         bossSlider.DOValue(1, 2f);
     }
-    public void NextPhase() {
+    public static void StaticNextPhase() {
+        GameObject.FindObjectOfType<BossManager>().NextPhase();
+    }
+    public void NextPhase() { 
         activePhaseCount++;
         currentFrame = 0;
         onComicScene = true;
+        ActivePhase.Animator.gameObject.SetActive(true);
     }
     public void ComicSceneNextStep() {
         if(onComicScene == false)
             return;
-        if(activePhase.ComicFrameCount > currentFrame) {
-            activePhase.Animator.SetTrigger("Next");
+        if(ActivePhase.ComicFrameCount > currentFrame) {
+            ActivePhase.Animator.SetTrigger("Next");
             currentFrame++;
         } else {
             ComicSceneEnd();
@@ -64,17 +73,21 @@ public class BossManager : MonoBehaviour {
     public void ComicSceneEnd() {
         Initialize();
     }
+#if UNITY_EDITOR
     private void Update() {
-        if(Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current.eKey.wasPressedThisFrame || Gamepad.current.dpad.up.wasPressedThisFrame)
             ComicSceneNextStep();
     }
+#endif
     void CloseAllMaps() {
         foreach(var item in phases) {
-            item.Map.SetActive(false);
+            item.Animator.gameObject.SetActive(false);
         }
     }
     public void UpdateHealthBar() {
-        bossSlider.maxValue = activePhase.Boss.Stats.MaxHealth;
-        bossSlider.value = activePhase.Boss.Stats.Health;
+        if (ActivePhase.Boss.Stats == null)
+            return;
+        bossSlider.maxValue = ActivePhase.Boss.Stats.MaxHealth;
+        bossSlider.value = ActivePhase.Boss.Stats.Health;
     }
 }

@@ -177,9 +177,10 @@ public class InputManager : MonoBehaviour
         }
     }
     private void RunInteract() {
-        if(_mainController.canPlay)
+        MainManager.Instance.EventManager.RunOnComicUpdate();
+        if (_mainController.canPlay)
             MainManager.Instance.EventManager.RunOnInteract();
-    }
+    } 
     void ChangeMap() {
 #if UNITY_EDITOR 
         GameObject.FindObjectOfType<EscapePortal>().InteractPublic();

@@ -39,7 +39,10 @@ public class Health : MonoBehaviour {
             return;
         if (_stats.IsInvincable)
             return;
-        _bossManager?.UpdateHealthBar();
+        if(_bossManager != null) {
+            _bossManager?.UpdateHealthBar();
+            _bossManager.ActivePhase.Boss.PhaseController?.HealthPhaser();
+        }
 
         _stats.Health -= value;
 

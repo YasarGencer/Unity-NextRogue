@@ -1,12 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
-{
+{ 
+
     public delegate void OnGamePuase();
     public delegate void OnGameUnPuase();
     public delegate void OnGameStart();
     public delegate void OnInteract();
+    public delegate void OnComicUpdate();
     public delegate void OnPlayerInitialized();
     public delegate void OnTrackStart(AudioClip clip);
     public delegate void OnCoinChange(int value);
@@ -17,6 +18,7 @@ public class EventManager : MonoBehaviour
     public event OnGameUnPuase onGameUnPause;
     public event OnGameStart onGameStart;
     public event OnInteract onInteract;
+    public event OnComicUpdate onComicUpdate;
     public event OnPlayerInitialized onPlayerInitialized;
     public static event OnTrackStart onTrackStart;
     public event OnCoinChange onCoinChange;
@@ -60,5 +62,10 @@ public class EventManager : MonoBehaviour
             return;
         onSpellUsed();
         
+    }
+    public void RunOnComicUpdate() {
+        if (onComicUpdate == null)
+            return;
+        onComicUpdate();
     }
 }
