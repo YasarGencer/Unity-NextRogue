@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 public class OpenPanelAndSelectFirst : MonoBehaviour
 {
     public GameObject firstSelectedObject; // Ýlk seçilen nesneyi buraya sürükleyin
+
+    private void OnEnable()
+    {
+        EventSystem eventSystem = EventSystem.current;
+
+        eventSystem.SetSelectedGameObject(null);
+        // Ýlk seçilen nesneyi ayarlayýn
+        eventSystem.SetSelectedGameObject(firstSelectedObject);
+    }
     private void Start()
     {
       
@@ -15,6 +24,7 @@ public class OpenPanelAndSelectFirst : MonoBehaviour
         eventSystem.SetSelectedGameObject(null);
         // Ýlk seçilen nesneyi ayarlayýn
         eventSystem.SetSelectedGameObject(firstSelectedObject);
+
     }
     public async void SelectThisObject(GameObject selectedGameObject)
     {
