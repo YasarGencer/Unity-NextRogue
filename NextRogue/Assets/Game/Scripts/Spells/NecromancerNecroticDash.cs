@@ -19,7 +19,7 @@ public class NecromancerNecroticDash : ASpell
         base.ActivateSpell();
         Vector2 direction;
         if (Gamepad.current != null) {
-            direction = MainManager.Instance.InputManager.GetGamepadLocalPos();
+            direction = MainManager.Instance.InputManager.GetGamepadLocalPos().normalized;
         } else {
             direction = MainManager.Instance.InputManager.GetWorlPos();
         }
