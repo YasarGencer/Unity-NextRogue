@@ -16,7 +16,7 @@ public class NecromancerNecroticDash : ASpell
     }
     public override void ActivateSpell() {
         base.ActivateSpell();
-        Vector2 direction = _mainController.Movement.Direction == Vector2.zero ? new Vector2(1, 0) : _mainController.Movement.Direction;
+        Vector2 direction = MainManager.Instance.InputManager.GetMouseWorldPos();
 
         var count = CheckCorpses();
         var rb = _mainController.Rb;
