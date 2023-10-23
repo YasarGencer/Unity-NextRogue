@@ -24,6 +24,10 @@ public class GolemAreaAttack : ANP_Spell
         base.ActivateSpell();
 
     }
+    void StoneSmash()
+    {
+       // Collider[] colliders = Physics.OverlapSphere();
+    }
     
 
 }
