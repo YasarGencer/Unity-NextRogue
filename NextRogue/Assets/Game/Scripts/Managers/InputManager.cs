@@ -111,7 +111,7 @@ public class InputManager : MonoBehaviour
     }
 
     #endregion
-    
+    static Vector2 LastPos;
     public Vector3 GetMouseWorldPos()
 {
         //mousePose= Mouse.current.position.ReadValue();
@@ -119,18 +119,32 @@ public class InputManager : MonoBehaviour
         // Gamepad kullanılıyorsa sağ analog girişini al
         if (Gamepad.current!=null)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             aimInput = Gamepad.current.rightStick.ReadValue() == Vector2.zero ? Gamepad.current.leftStick.ReadValue() : Gamepad.current.rightStick.ReadValue();
+            if (aimInput!=Vector2.zero) 
+            { 
+                LastPos = aimInput;
+            }
+            Debug.Log("girdim");
+            if (aimInput==Vector2.zero)
+            {
+                return new Vector2(LastPos.x + MainManager.Instance.Player.GetChild(0).position.x, LastPos.y + MainManager.Instance.Player.GetChild(0).position.y);
+            }
+            return new Vector2(aimInput.x + MainManager.Instance.Player.GetChild(0).position.x, aimInput.y + MainManager.Instance.Player.GetChild(0).position.y);
+
         }
-        if (aimInput != Vector2.zero)
-        {
-            return new Vector2(aimInput.x+MainManager.Instance.Player.GetChild(0).position.x, aimInput.y + MainManager.Instance.Player.GetChild(0).position.y);
-        }
+    
         else
         {
             // Fare kullanılıyorsa fare pozisyonunu al
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             aimInput = Mouse.current.position.ReadValue();
             Vector3 screenPos = new Vector3(aimInput.x, aimInput.y, 0f);
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+            Debug.Log("girmedim");
+
             return new Vector3(worldPos.x, worldPos.y, 0f);
             
         }
