@@ -81,7 +81,7 @@ MonoBehaviour:
     DungeonLevel:
       SRWData: {fileID: 11400000, guid: 08127fc647cf66b49b8c26ba1de59994, type: 2}
       CorridorLength: 15
-      CorridorCount: 15
+      CorridorCount: 30
       RoomPercent: 1
       Difficulty: 0.75
       RoomProps: {fileID: 11400000, guid: 81ec89f1eaf7d00498d18daba8f14023, type: 2}
