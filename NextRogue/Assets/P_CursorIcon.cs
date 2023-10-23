@@ -19,11 +19,11 @@ public class P_CursorIcon : MonoBehaviour
     private void Update()
     {
         cursorImg.transform.position=MainManager.Instance.Player.GetChild(0).transform.position;
-        SetRotation(MainManager.Instance.InputManager.GetMouseWorldPos());
+        SetRotation(MainManager.Instance.InputManager.GetWorlPos());
     }
     public void Aim()
     {     
-        cursorImg.transform.position = (MainManager.Instance.InputManager.GetMouseWorldPos());
+        cursorImg.transform.position = (MainManager.Instance.InputManager.GetWorlPos());
          
     }
     void SetRotation(Vector3 targetPos)
