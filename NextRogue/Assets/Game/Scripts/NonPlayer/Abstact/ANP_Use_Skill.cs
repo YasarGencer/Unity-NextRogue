@@ -13,12 +13,15 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
     [SerializeField] float _firstSpellWaitTimer = 5f;
     //for last used spell
     public bool IsUsingSpell { get; private set; }
-    public float WaitTimeAfterUseForOtherSpells { get ; private set; }
-    public float WaitTimeAfterUse { get ; private set; }
-    public bool CanMoveWhileWait { get ; private set; }
-    public bool CanNormalAttackWhileWait { get ; private set; }
-    float _cureentTime = 0f;
-    float _cureentTimeForOtherSpells = 0f;
+     
+    float _spellTimer = 0f; 
+    float _moveTimer = 0f; 
+    float _attackTimer = 0f;
+
+    public bool SpellTimer { get { return _spellTimer > 0; } }
+    public bool MoveTimer { get { return _moveTimer > 0; } }
+    public bool AttackTimer { get { return _attackTimer > 0; } }
+     
 
 
     public virtual void Initialize(ANP_MainController mainController) {
@@ -42,18 +45,16 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
         if (_firstSpellWaitTimer > 0f) {
             _firstSpellWaitTimer -= Time.deltaTime;
             return;
-        }
-        if (IsUsingSpell) {
-            if(_cureentTime <= 0f) {
-                IsUsingSpell = false;
-                return;
-            }
-            _cureentTime-= Time.deltaTime;
-            return;
-        }
-        if(_cureentTimeForOtherSpells > 0)
-            _cureentTimeForOtherSpells -= Time.deltaTime;
+        } 
+        if(_moveTimer > -1)
+            _moveTimer -= Time.deltaTime;
+        if(_attackTimer > -1)
+            _attackTimer -= Time.deltaTime;
+        if (_spellTimer > -1)
+            _spellTimer -= Time.deltaTime;
         else {
+            if (_mainController.Attack.IsAttacking)
+                return;
             for (int i = 0; i < _spell.Count; i++) {
                 if (CheckConditions(i)) {
                     PlaySpell(i);
@@ -75,13 +76,9 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
     }
     public void SetRestirectionDataFromSpell(ANP_Spell spell) {
         IsUsingSpell = true;
-        WaitTimeAfterUseForOtherSpells = spell.WaitTimeAfterUseForOtherSpells;
-        WaitTimeAfterUse = spell.WaitTimeAfterUse;
-        WaitTimeAfterUse = spell.WaitTimeAfterUse;
-        CanMoveWhileWait = spell.CanMoveWhileWait;
-        CanNormalAttackWhileWait = spell.CanNormalAttackWhileWait;
-        _cureentTime = WaitTimeAfterUse;
-        _cureentTimeForOtherSpells = WaitTimeAfterUseForOtherSpells;
+        _spellTimer = spell.SpellTimer;
+        _moveTimer = spell.MoveTimer;
+        _attackTimer = spell.AttackTimer;  
     }
     // EVENTS 
     void RegisterEvents() {

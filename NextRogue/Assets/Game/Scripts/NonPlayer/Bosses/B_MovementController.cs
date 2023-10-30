@@ -17,7 +17,7 @@ public class B_MovementController : ANP_Movement
         MovementState = movementState.FOLLOW;
     }
     protected override void UpdateRX(long obj) {
-        if (_mainController.UseSkill.IsUsingSpell && _mainController.UseSkill.CanMoveWhileWait == false)
+        if (_mainController.UseSkill.MoveTimer == false)
             return;
         //if to far away from the target or no target
         if (_mainController.Target.Target == null) {

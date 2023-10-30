@@ -7651,7 +7651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597306066266471212, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: chooseLevel
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7597306066266471212, guid: a75b48b257972cb4ab82ee80e1cdac9a, type: 3}
       propertyPath: chooseTutorial

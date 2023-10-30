@@ -75,7 +75,7 @@ public class BossManager : MonoBehaviour {
     }
 #if UNITY_EDITOR
     private void Update() {
-        if (Keyboard.current.eKey.wasPressedThisFrame || Gamepad.current.dpad.up.wasPressedThisFrame)
+        if ((Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) || (Gamepad.current != null && Gamepad.current.dpad.up.wasPressedThisFrame))
             ComicSceneNextStep();
     }
 #endif

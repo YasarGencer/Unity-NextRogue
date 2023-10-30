@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2eb167260f0089443833568fb3bd0cf8
+guid: 61cd52917ba95ec4092d161b89a91327
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumanBoss-Attack1_0
+      name: HumanBoss-Attack2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c1d48ed7f23988469e5eef03612d244
-      internalID: -192007974
+      spriteID: 1d957170a6a290543977b6271836e922
+      internalID: -1950110023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanBoss-Attack1_1
+      name: HumanBoss-Attack2_1
       rect:
         serializedVersion: 2
         x: 1200
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d73903f04c420974e92a52bbf71c6de8
-      internalID: 2069811396
+      spriteID: 888673aae499b2842952df04c374e017
+      internalID: 1537140976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanBoss-Attack1_2
+      name: HumanBoss-Attack2_2
       rect:
         serializedVersion: 2
         x: 2400
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcd21d3f344bd8c46bea72ae6fbbac4d
-      internalID: 1822700116
+      spriteID: 94a40ca3e18269f49947f4356aa35d69
+      internalID: 1798118936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanBoss-Attack1_3
+      name: HumanBoss-Attack2_3
       rect:
         serializedVersion: 2
         x: 3600
@@ -193,29 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5151e5169c4bd1d49af1f65f430c3543
-      internalID: -1478663639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumanBoss-Attack1_4
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dba9fef7f9a6f1a42a0daedabf0abb02
-      internalID: 197984135
+      spriteID: 9326e8565287a664d93dc8ba8fb44bf3
+      internalID: 989855553
       vertices: []
       indices: 
       edges: []
@@ -231,11 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HumanBoss-Attack1_0: -192007974
-      HumanBoss-Attack1_4: 197984135
-      HumanBoss-Attack1_3: -1478663639
-      HumanBoss-Attack1_1: 2069811396
-      HumanBoss-Attack1_2: 1822700116
+      HumanBoss-Attack2_1: 1537140976
+      HumanBoss-Attack2_2: 1798118936
+      HumanBoss-Attack2_3: 989855553
+      HumanBoss-Attack2_0: -1950110023
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

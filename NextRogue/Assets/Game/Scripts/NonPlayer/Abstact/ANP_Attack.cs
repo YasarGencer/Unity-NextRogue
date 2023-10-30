@@ -4,11 +4,12 @@ using UniRx;
 
 public abstract class ANP_Attack : MonoBehaviour
 {
-    protected NP_MainController _mainController;
+    protected ANP_MainController _mainController;
     protected IDisposable _updateRX;
     protected float _attackTime = 0;
     protected bool _isAttacking = false;
-    public virtual void Initialize(NP_MainController mainController) {
+    public bool IsAttacking {  get { return _isAttacking; } }
+    public virtual void Initialize(ANP_MainController mainController) {
         _mainController = mainController;
         SetAttackTrue();
         RegisterEvents(); 
@@ -59,6 +60,14 @@ public abstract class ANP_Attack : MonoBehaviour
         var targetPos = _mainController.Target.Target.transform.position;
         var direction = targetPos - transform.position;
         return direction;
+    }
+    protected bool IsUsýngSpell() { 
+        if (_mainController.UseSkill != null)
+            if (_mainController.UseSkill.AttackTimer == false) {
+                _isAttacking = false;
+                return true;
+            }
+        return false;
     }
     // EVENTS 
     void RegisterEvents() {

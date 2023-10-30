@@ -6,7 +6,7 @@ public class NP_Attack_Ranged : ANP_Attack {
     [SerializeField] bool _hasSerialAttacks;
     [SerializeField] int _serialAttackAmount;
     int _counter = 0;
-    public override void Initialize(NP_MainController mainController) {
+    public override void Initialize(ANP_MainController mainController) {
         base.Initialize(mainController);
         _counter = 0;
     }

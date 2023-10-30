@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: HumanArrowRain
   m_EditorClassIdentifier: 
   _isInit: 0
-  _waitTimeAfterUseForOtherSpells: 5
-  _waitTimeAfterUse: 1
-  _canMoveWhileWait: 0
-  _canNormalAttackWhileWait: 0
+  _spellTimer: 5
+  _moveTimer: 1
+  _attackTimer: 2
   Name: Arrow Rain
   Description: x
   Sound: {fileID: 0}

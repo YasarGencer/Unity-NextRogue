@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Threading.Tasks;
 
 public class NP_Attack_Melee : ANP_Attack {
+    [Range(0,1000), Tooltip("Hitting frame time")]
+    [SerializeField] int hitCheckDelay = 250;
     protected override void UpdateRX(long obj) {
         base.UpdateRX(obj);
     }
@@ -13,8 +15,12 @@ public class NP_Attack_Melee : ANP_Attack {
         CheckHit();
         _mainController.Animator.SetTrigger("attack");
     } 
-    async void CheckHit() { 
-        await Task.Delay(250); 
+    async void CheckHit() {
+        if (IsUsýngSpell())
+            return;
+        await Task.Delay(hitCheckDelay);
+        if (IsUsýngSpell())
+            return;
         if (_mainController.Target.Target == null)
             return; 
         if(_mainController == null)  

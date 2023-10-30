@@ -134,7 +134,7 @@ public class InputManager : MonoBehaviour
             aimInput = Mouse.current.position.ReadValue();
             Vector3 screenPos = new Vector3(aimInput.x, aimInput.y, 0f);
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
-            Debug.Log("girmedim");
+            //Debug.Log("girmedim");
 
             return new Vector3(worldPos.x, worldPos.y, 0f);
             

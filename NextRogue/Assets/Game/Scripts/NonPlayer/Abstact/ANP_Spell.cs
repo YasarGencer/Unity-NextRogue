@@ -11,18 +11,15 @@ public abstract class ANP_Spell : ScriptableObject {
     public bool IsInit { get { return _isInit; } set { _isInit = value; } }
 
     [SerializeField]
-    float _waitTimeAfterUseForOtherSpells = 1f;
+    float _spellTimer = 1f;
     [SerializeField]
-    float _waitTimeAfterUse = 1f;
+    float _moveTimer = 1f;
     [SerializeField]
-    bool _canMoveWhileWait = false;
-    [SerializeField]
-    bool _canNormalAttackWhileWait = false;
+    float _attackTimer = 1f;
 
-    public float WaitTimeAfterUseForOtherSpells { get { return _waitTimeAfterUseForOtherSpells; } }
-    public float WaitTimeAfterUse { get { return _waitTimeAfterUse; } }
-    public bool CanMoveWhileWait { get { return _canMoveWhileWait; } }
-    public bool CanNormalAttackWhileWait { get { return _canNormalAttackWhileWait; } }
+    public float SpellTimer { get { return _spellTimer; } }
+    public float MoveTimer { get { return _moveTimer; } }
+    public float AttackTimer { get { return _attackTimer; } } 
 
     //public bool IsBasic;
     public string Name;
