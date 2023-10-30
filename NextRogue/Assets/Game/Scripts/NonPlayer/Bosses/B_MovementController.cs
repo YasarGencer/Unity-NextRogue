@@ -17,6 +17,7 @@ public class B_MovementController : ANP_Movement
         MovementState = movementState.FOLLOW;
     }
     protected override void UpdateRX(long obj) {
+        Debug.Log(_mainController.UseSkill.MoveTimer);
         if (_mainController.UseSkill.MoveTimer == false)
             return;
         //if to far away from the target or no target

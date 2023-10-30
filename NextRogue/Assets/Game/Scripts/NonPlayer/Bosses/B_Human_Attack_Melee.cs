@@ -1,7 +1,8 @@
-using UnityEngine;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine;
 
-public class NP_Attack_Melee : ANP_Attack {
+public class B_Human_Attack_Melee : ANP_Attack { 
     protected override void UpdateRX(long obj) {
         base.UpdateRX(obj);
     }
@@ -13,7 +14,7 @@ public class NP_Attack_Melee : ANP_Attack {
         if (IsUsýngSpell())
             return;
         _mainController.Animator.SetTrigger("attack");
-    }
+    } 
     public async void Hit() {
         if (IsUsýngSpell())
             return;
@@ -28,16 +29,14 @@ public class NP_Attack_Melee : ANP_Attack {
             if (_mainController == null)
                 return;
         }
+        _mainController.Movement.UnFreeze();
+        _attackTime = _mainController.Stats.AttackSpeed;
+        _isAttacking = false;
         if (_mainController.Target.Target == null || _mainController == null)
             return;
         if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
             _mainController.Target.Target.GetComponent<Health>().GetDamage(_mainController.Stats.AttackDamage, transform);
         if (_mainController.Stats.AttackSound != null)
             AudioManager.PlaySound(_mainController.Stats.AttackSound);
-    } 
-    public void End() {
-        _mainController.Movement.UnFreeze();
-        _attackTime = _mainController.Stats.AttackSpeed;
-        _isAttacking = false;
     }
 }

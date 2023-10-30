@@ -18,9 +18,9 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
     float _moveTimer = 0f; 
     float _attackTimer = 0f;
 
-    public bool SpellTimer { get { return _spellTimer > 0; } }
-    public bool MoveTimer { get { return _moveTimer > 0; } }
-    public bool AttackTimer { get { return _attackTimer > 0; } }
+    public bool SpellTimer { get { return _spellTimer <= 0; } }
+    public bool MoveTimer { get { return _moveTimer <= 0; } }
+    public bool AttackTimer { get { return _attackTimer <= 0; } }
      
 
 

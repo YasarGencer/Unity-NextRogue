@@ -11,7 +11,7 @@ public class B_MainController : ANP_MainController {
         UseSkill = GetComponent<B_Human_UseSkill>() as B_Human_UseSkill;
         Movement = GetComponent<B_MovementController>() as B_MovementController;
         PhaseController = GetComponent<B_PhaseController>() as B_PhaseController;
-        Attack = GetComponent<NP_Attack_Melee>() as NP_Attack_Melee; 
+        Attack = GetComponent<ANP_Attack>() as ANP_Attack; 
 
         if (isTest == false) {
             Movement.Initialize(this);
