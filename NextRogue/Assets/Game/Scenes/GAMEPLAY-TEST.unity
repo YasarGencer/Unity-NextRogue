@@ -205,7 +205,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &439138550
 PrefabInstance:
@@ -216,7 +216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8835839532873218566, guid: aeddebbc662532444b9135e19630436b, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8835839532873218566, guid: aeddebbc662532444b9135e19630436b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2588097169677214039, guid: f19f672b16d6cd4478e27899eb821aa7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2588097169677214039, guid: f19f672b16d6cd4478e27899eb821aa7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -537,6 +537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Coff\u0131n (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 891835793881875139, guid: 10a2112abf33694498aaf048b174a7a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a2112abf33694498aaf048b174a7a5, type: 3}
 --- !u!1001 &1015776559
@@ -548,7 +552,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 891835793881875137, guid: 10a2112abf33694498aaf048b174a7a5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 891835793881875137, guid: 10a2112abf33694498aaf048b174a7a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1656,7 +1660,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8835839532873218566, guid: aeddebbc662532444b9135e19630436b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8835839532873218566, guid: aeddebbc662532444b9135e19630436b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1715,9 +1719,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vampire-Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2137917541159107826, guid: bdc3c910158d69346bdab964b4d37661, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2137917541159107835, guid: bdc3c910158d69346bdab964b4d37661, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2137917541159107835, guid: bdc3c910158d69346bdab964b4d37661, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1829,21 +1837,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 789000492, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4879549228936876109, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_Name
       value: Golem-Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4879549228936876145, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4879549228936876145, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.005687775
+      value: 0.672
       objectReference: {fileID: 0}
     - target: {fileID: 4879549228936876145, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.10662036
+      value: 4.33
       objectReference: {fileID: 0}
     - target: {fileID: 4879549228936876145, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1877,7 +1889,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4879549228936876151, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879549229729144981, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 50f96066fd6f7a8499cf9f3599431b13, type: 3}
+    m_RemovedComponents:
+    - {fileID: 789000492, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
 --- !u!4 &5186836775362588704
 Transform:
@@ -2068,7 +2089,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1475517369619550118, guid: eaf9f7efabfd21144a6210564c20bd3b, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1475517369619550118, guid: eaf9f7efabfd21144a6210564c20bd3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2135,7 +2156,7 @@ Transform:
   - {fileID: 5973965897868893890}
   - {fileID: 5186836775362588704}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5973965897356261506
 Rigidbody2D:
@@ -2341,6 +2362,14 @@ PrefabInstance:
     - target: {fileID: 8097433989717243004, guid: f6d874c645ca52040afcc6999b39cf28, type: 3}
       propertyPath: m_Name
       value: Slime-Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097433989717243004, guid: f6d874c645ca52040afcc6999b39cf28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097433990021661904, guid: f6d874c645ca52040afcc6999b39cf28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d874c645ca52040afcc6999b39cf28, type: 3}

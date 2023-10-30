@@ -13,21 +13,20 @@ MonoBehaviour:
   m_Name: GolemAreaAttack
   m_EditorClassIdentifier: 
   _isInit: 0
-  _waitTimeAfterUse: 1
-  _canMoveWhileWait: 0
-  _canNormalAttackWhileWait: 0
+  _spellTimer: 1
+  _moveTimer: 3.5
+  _attackTimer: 1
   Name: 
   Description: 
-  Sound: {fileID: 0}
-  Spell: {fileID: 0}
-  Damage: 0
-  Speed: 0
-  UseRange: 5
+  Sound: {fileID: 8300000, guid: 0c441208f50a5dc4d90345cc2c27056a, type: 3}
+  Spell: {fileID: 3161102259295241948, guid: 97df115ea6c456946af499460a677421, type: 3}
+  Damage: 1
+  Speed: 1
+  UseRange: 4
   DOTInfo:
     DOTType: 0
     CycleDamage: 0
     CycleTime: 0
-  CastingTime: 2
-  CooldownTime: 5
+  CastingTime: 0
+  CooldownTime: 10
   stopAudio: 0
-  Particle: {fileID: 7699052144895814316, guid: a1514c54efe269b43a6ad3c8ec618019, type: 3}

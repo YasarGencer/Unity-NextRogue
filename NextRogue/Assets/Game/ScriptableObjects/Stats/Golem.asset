@@ -22,14 +22,14 @@ MonoBehaviour:
   EXPOrb: {fileID: 9009034806741881388, guid: 8a5cb29e5834bbe43bad35d833dc90be, type: 3}
   HitSound: {fileID: 8300000, guid: b8515d5110b8b634ebc67681503d0b64, type: 3}
   HealSound: {fileID: 0}
-  AttackSound: {fileID: 8300000, guid: 9dbe1a81b1163ff48a687273c8f02e19, type: 3}
-  WalkSound: {fileID: 8300000, guid: 7edc9a71c19cb5648ab7db9475f6b4a5, type: 3}
+  AttackSound: {fileID: 8300000, guid: 0c441208f50a5dc4d90345cc2c27056a, type: 3}
+  WalkSound: {fileID: 0}
   Speed: 0.5
   SpeelHolder: 0
   IsInvincable: 0
   NoticeRange: 10
   AttackDamage: 15
-  AttackRange: 1
+  AttackRange: 2
   AttackSpeed: 1
   ProjectileSpeed: 15000
   DOTInfo:
