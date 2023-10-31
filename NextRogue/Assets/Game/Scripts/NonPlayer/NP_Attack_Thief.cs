@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Threading.Tasks;  
 
-public class NP_Attack_InAndOutTPSequence : ANP_Attack {
+public class NP_Attack_Thief : ANP_Attack {
     [SerializeField] GameObject _dashParticle;
     [SerializeField] AudioClip _dashIn, _dashOut;
     [SerializeField] LayerMask environmentLayer;
