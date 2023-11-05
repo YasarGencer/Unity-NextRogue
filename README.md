@@ -9,13 +9,13 @@
       - [Playable Characters](#playableCharacters)
         - [Necromancer](#necromancer) 
         - [Bloodshaper](#bloodshaper) 
-        - [Rogue](#rogue) 
+        - [Bandit](#bandit) 
       - [Spells](#playerSpells) 
         - [Spells To Do](#playerSpellsToDo)   
       - [Damage Over Time](#DOT) 
       - [Enemies](#enemies)
-        - [Humans](#humans)
-        - [Orcs](#orcs)
+        - [Deep Castle](#deepCastle)
+        - [Bloody Mansion](#bloodyMansion)
         - [Other](#other)
       - [Bosses](#bosses)
         - [Human Boss](#humanboss)
@@ -150,7 +150,7 @@ There are no strict restrictions on passives so they will have different and qui
               - Max Damage : 75
 
 
-<h3 align = "center" id = "rogue"> ROGUE</h3>  
+<h3 align = "center" id = "bandit"> BANDIT</h3>  
 
   <p align = "center">
   <img src="" width="500" alt="imagepending">
@@ -305,9 +305,6 @@ Spell List :
                 Cooldown : 10
                 Damage : 20
 
-
-<h2 align = "center" id = "playerSpellsToDo">SPELLS TO DO</h2>
-
   - Cleanse
     - Removes all DOT effects
     -  
@@ -319,6 +316,9 @@ Spell List :
         -  
                 Cooldown : 10
                 Speed Boost : x1.25
+
+<h2 align = "center" id = "playerSpellsToDo">SPELLS TO DO</h2>
+
 
   - Shrapnel Shot
     - Shoot a projectile from a gun, that turns into little ones on impact
@@ -403,12 +403,22 @@ Spell List :
 
 <h2 align = "center" id = "DOT">DAMAGE OVER TIME</h2>
 
-Under-Development
+Some spells or enemies can create damage over time effects to the target.
+
+- DOT TYPES:
+  - Bleed
+  - Burn   
+  - Poison
 
 
 <h2 align = "center" id = "enemies"> ENEMIES</h2>
 
-<h3 align = "left" id = "humans"> HUMANS</h3> 
+<h3 align = "left" id = "deepCastle"> DEEP CASTLE</h3> 
+ 
+
+<p align = "center">
+<img src="img/Crusader.png" width="300" alt="Crusader">
+<p>
 
 - Crusader:
     - Melee
@@ -420,6 +430,10 @@ Under-Development
           Attack Damage : 5
           Attack Range : .75
           Attack Speed : 1
+<p align = "center">
+<img src="img/Thief.png" width="300" alt="Thief">
+<p>
+
 - Thief:
     - Dash
     - Keep Distance
@@ -430,6 +444,11 @@ Under-Development
           Attack Damage : 12
           Attack Range : 3
           Attack Speed : 3
+
+<p align = "center">
+<img src="img/Marksman.png" width="300" alt="Marksman">
+<p>
+
 - Marksman:
     - Ranged
     - Keep Distance
@@ -440,8 +459,15 @@ Under-Development
           Attack Damage : 13
           Attack Range : 4
           Attack Speed : 1
-  - Consumer Slime:
-    - Melee
+
+<h3 align = "left" id = "bloodyMansion">BLOODY MANSION</h3> 
+
+<p align = "center">
+<img src="img/ConsumerSlug.png" width="300" alt="imagepending">
+<p>
+
+  - Consumer Slug:
+    - Dash
     - Follow
     - Heals self with blood cells.
     - 
@@ -450,8 +476,48 @@ Under-Development
           Attack Damage : 10
           Attack Range : 2
           Attack Speed : 3
+  <p align = "center">
+  <img src="img/RedBandit.png" width="300" alt="imagepending">
+  <p>
 
-<h3 align = "left" id = "orcs"> ORCS</h3> 
+  - Red Bandit:
+    - Melee
+    - Follow
+    - Steals and drops money on hit.
+    - 
+          Health : 10
+          Movement Speed : 3
+          Attack Damage : 5
+          Attack Range : 1.25
+          Attack Speed : 1.25
+  <p align = "center">
+  <img src="" width="300" alt="imagepending">
+  <p>
+
+  - Blood Golem:
+    - Melee
+    - Follow
+    - Slams the ground and shakes player.
+    - 
+          Health : x
+          Movement Speed : x
+          Attack Damage : x
+          Attack Range : x
+          Attack Speed : x
+  <p align = "center">
+  <img src="" width="300" alt="imagepending">
+  <p>
+
+  - Ranged enemy:
+    - Ranged
+    - Keeps Distance
+    - x.
+    - 
+          Health : x
+          Movement Speed : x
+          Attack Damage : x
+          Attack Range : x
+          Attack Speed : x
 
 Under-development 
 <h3 align = "left" id = "other"> OTHER</h3> 
