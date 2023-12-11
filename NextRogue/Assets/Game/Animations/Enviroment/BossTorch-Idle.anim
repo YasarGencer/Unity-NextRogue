@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HumanBoss-Hit
+  m_Name: BossTorch-Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,14 +20,18 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1025706338, guid: 5f2067f92397caa4f939af90a7ec987d, type: 3}
-    - time: 0.5
-      value: {fileID: 1267516811, guid: 5f2067f92397caa4f939af90a7ec987d, type: 3}
+      value: {fileID: 1392684922, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
+    - time: 0.125
+      value: {fileID: -1043381652, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
+    - time: 0.25
+      value: {fileID: 1145139350, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
+    - time: 0.375
+      value: {fileID: 110520055, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
     attribute: m_Sprite
     path: _sprite
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 2
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -42,14 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1025706338, guid: 5f2067f92397caa4f939af90a7ec987d, type: 3}
-    - {fileID: 1267516811, guid: 5f2067f92397caa4f939af90a7ec987d, type: 3}
+    - {fileID: 1392684922, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
+    - {fileID: -1043381652, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
+    - {fileID: 1145139350, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
+    - {fileID: 110520055, guid: 91c9dd86cba7e124797bf38f81ddee4a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -21,7 +21,7 @@ public class ArrowLineAnim : MonoBehaviour
                 await Task.Delay(50);
             }
         }
-        await Task.Delay(1000);
+        await Task.Delay(1500);
         for (int i = 0; i < arrows.Count; i++) {
             if (arrows[i] != null) {
                 Color color = arrows[i].color;

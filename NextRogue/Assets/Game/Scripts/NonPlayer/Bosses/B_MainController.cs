@@ -16,7 +16,7 @@ public class B_MainController : ANP_MainController {
         if (isTest == false) {
             Movement.Initialize(this);
             UseSkill.Initialize(this);
-            PhaseController.Initialize(this);
+            PhaseController?.Initialize(this);
             Attack.Initialize(this);
 
             if (this.CompareTag("Summoned"))

@@ -12,6 +12,6 @@ public class HumanKnightRush : ANP_Spell {
     }
     public override void ActivateSpell() {
         base.ActivateSpell();
-        JustCast(new Vector3(0, MainManager.Instance.Player.GetChild(0).transform.position.y, MainManager.Instance.Player.GetChild(0).transform.position.z));
+        JustCast(Vector2.zero);
     }
 }

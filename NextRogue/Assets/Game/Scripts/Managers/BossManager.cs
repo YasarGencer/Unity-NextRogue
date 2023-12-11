@@ -59,6 +59,7 @@ public class BossManager : MonoBehaviour {
         currentFrame = 0;
         onComicScene = true;
         ActivePhase.Animator.gameObject.SetActive(true);
+        ActivePhase.ComicCanvas.SetActive(true);
     }
     public void ComicSceneNextStep() {
         if(onComicScene == false)

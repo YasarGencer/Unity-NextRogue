@@ -19,7 +19,7 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
     float _attackTimer = 0f;
 
     public bool SpellTimer { get { return _spellTimer <= 0; } }
-    public bool MoveTimer { get { return _moveTimer <= 0; } }
+    public bool MoveTimer { get { /*Debug.Log(_moveTimer);*/ return _moveTimer <= 0; } }
     public bool AttackTimer { get { return _attackTimer <= 0; } }
      
 
@@ -46,11 +46,11 @@ public abstract class ANP_Use_Skill : MonoBehaviour {
             _firstSpellWaitTimer -= Time.deltaTime;
             return;
         } 
-        if(_moveTimer > -1)
+        if(_moveTimer > 0)
             _moveTimer -= Time.deltaTime;
-        if(_attackTimer > -1)
+        if(_attackTimer > 0)
             _attackTimer -= Time.deltaTime;
-        if (_spellTimer > -1)
+        if (_spellTimer > 0)
             _spellTimer -= Time.deltaTime;
         else {
             if (_mainController.Attack.IsAttacking)
