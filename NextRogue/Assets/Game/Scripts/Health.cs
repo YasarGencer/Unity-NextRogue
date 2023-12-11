@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -51,7 +52,8 @@ public class Health : MonoBehaviour {
         _hud.DamageText(true, value.ToString(), transform.position);
         Destroy(Instantiate(_stats.HitParticle, transform.position, Quaternion.identity), 5f);
 
-        GetComponent<Animator>().SetTrigger("hit");
+        //GetComponent<Animator>().SetTrigger("hit");
+        transform.DOPunchScale(Vector3.one * .25f, .25f);
 
         if (_isPlayer) {
             _hud.SetHealth();

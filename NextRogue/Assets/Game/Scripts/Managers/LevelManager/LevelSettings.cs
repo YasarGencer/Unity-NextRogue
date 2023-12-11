@@ -67,17 +67,12 @@ public class LevelSetting
     public string Name;
     [TextArea]
     public string Description;
-    public LoaderElement Loader;
     public float CameraLens = 4;
 
     public DisplayOption MyType;
 
     public DungeonLevel DungeonLevel;
-    public ShopLevel ShopLevel;
-    public TutorialLevel TutorialLevel;
-    public BossLevel BossLevel;
-
-    public bool showme = true;
+    public NonDungeonLevel NonDungeonLevel;
 }
 
 [System.Serializable]
@@ -96,19 +91,9 @@ public struct DungeonLevel
 }
 
 [System.Serializable]
-public struct ShopLevel
+public struct NonDungeonLevel
 {
-    public GameObject ShopMap;
-}
-
-[System.Serializable]
-public struct TutorialLevel
-{
-    public GameObject TutorialMap;
-}
-[System.Serializable]
-public struct BossLevel {
-    public GameObject BossMap;
+    public GameObject Map;
 }
 
 public enum DisplayOption

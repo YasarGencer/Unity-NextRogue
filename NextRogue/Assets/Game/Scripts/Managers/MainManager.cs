@@ -62,9 +62,9 @@ public class MainManager : MonoBehaviour
         _gameManager?.Initialize();
         _eventManager?.Initialize();
         _levelManager?.Initialize();
-        StartGame(false);
+        StartGame();
     }
-    public void StartGame(bool showLoading = true)
+    public void StartGame()
     {
         _player?.GetComponentInChildren<P_MainController>().CantPlay();
 
@@ -78,7 +78,7 @@ public class MainManager : MonoBehaviour
         _canvasManager?.Initialize();
         _gameManager?.DOTManager?.Initialize();
          
-        _levelManager?.NextLevel(showLoading);
+        _levelManager?.NextLevel();
         if(_testManager != null) {
             SecondPhase();
         }

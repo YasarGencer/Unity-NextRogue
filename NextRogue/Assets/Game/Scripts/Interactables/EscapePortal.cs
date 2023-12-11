@@ -33,7 +33,7 @@ public class EscapePortal : AInteract {
         LevelSettings.SetIfTutorial();
         MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.SetTutorial(1);
         //MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Spells.DeleteMainSpells();
-        MainManager.Instance.StartGame(false);
+        MainManager.Instance.StartGame();
     }
     private void OnDrawGizmos() {
         UnityEngine.Gizmos.DrawWireSphere(transform.position, _animationRange);

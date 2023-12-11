@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         _levelSettings.SetLevel(level);
     }
-    public void NextLevel(bool showLoading)
+    public void NextLevel()
     {
         _levelSettings.NexlLevel();
 
@@ -38,30 +38,14 @@ public class LevelManager : MonoBehaviour
             Destroy(activeMap);
 
         ActiveLevelSetting = _levelSettings.GetLevelSettings();
-
-        if (showLoading)
-        {
-            LoaderElement _loader = ActiveLevelSetting.Loader;
-            MainManager.Instance.CanvasManager.Loading.Open(_loader, NextLevelSegment);
-        }
-        else
-        {
-            NextLevelSegment();
-        }
+        NextLevelSegment();
     }
     void NextLevelSegment()
     {
         MainManager.Instance.SecondPhase();
         if (ActiveLevelSetting.MyType == DisplayOption.Dungeon) {
             _PDGManager?.Initialize();
-        }else if (ActiveLevelSetting.MyType == DisplayOption.Shop) {
-            activeMap = Instantiate(ActiveLevelSetting.ShopLevel.ShopMap);
-        }else if (ActiveLevelSetting.MyType == DisplayOption.Tutorial) {
-            activeMap = Instantiate(ActiveLevelSetting.TutorialLevel.TutorialMap);
-        } else if(ActiveLevelSetting.MyType == DisplayOption.Boss) {
-            activeMap = Instantiate(ActiveLevelSetting.BossLevel.BossMap);
-        }
-
-        MainManager.Instance.CanvasManager.Loading.Close();
+        }else 
+            activeMap = Instantiate(ActiveLevelSetting.NonDungeonLevel.Map);
     }
 }
