@@ -11,6 +11,7 @@ public class GroundSlam_Projectile : ANP_Projectile
 
     private SpriteRenderer maxAttackSprite;
     private SpriteRenderer currentAttackSprite;
+    private Material golemSkillMaterial;
     private Vector3 oldScale;
     private bool smashing;
 
@@ -30,6 +31,8 @@ public class GroundSlam_Projectile : ANP_Projectile
             maxAttackSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         if (currentAttackSprite == null)
             currentAttackSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        if (golemSkillMaterial == null)
+            golemSkillMaterial = currentAttackSprite.material;
         currentAttackSprite.enabled = false;
         maxAttackSprite.enabled = false;
         oldScale = currentAttackSprite.transform.localScale;
@@ -50,7 +53,7 @@ public class GroundSlam_Projectile : ANP_Projectile
             timer += Time.deltaTime;
             float t = timer / duration;
             currentAttackSprite.transform.localScale = Vector3.Lerp(oldScale, maxAttackSprite.transform.localScale, t);
-
+            golemSkillMaterial.SetFloat("_percent", currentAttackSprite.transform.localScale.x/10f);
             if (timer >= 2 && soundPlayed == false)
             {
                 PlaySound();
@@ -61,6 +64,7 @@ public class GroundSlam_Projectile : ANP_Projectile
             {
                 timer = 0f;
                 currentAttackSprite.transform.localScale = oldScale;
+                golemSkillMaterial.SetFloat("_percent", currentAttackSprite.transform.localScale.x);
                 currentAttackSprite.enabled = false;
                 maxAttackSprite.enabled = false;
                 smashing = false;
