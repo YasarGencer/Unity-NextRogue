@@ -49,7 +49,14 @@ public class EventManager : MonoBehaviour
         onTrackStart(clip);
     }
     public void RunOnCoinChange(int value) {
-        MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin += value;
+        if (MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin<=0)
+        {
+            MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin =0;
+        }
+        else
+        {
+            MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin += value;
+        }
         onCoinChange(MainManager.Instance.Player.GetComponentInChildren<P_MainController>().Stats.Coin);
     }
     public void RunOnDOTCycle() {

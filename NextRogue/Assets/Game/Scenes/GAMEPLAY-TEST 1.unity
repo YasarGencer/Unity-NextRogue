@@ -1658,6 +1658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vampire-Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2137917541159107826, guid: bdc3c910158d69346bdab964b4d37661, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2137917541159107835, guid: bdc3c910158d69346bdab964b4d37661, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1763,6 +1767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crusader-Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8796386727653206098, guid: 468039ee243f04548affc342e83bcfe5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a5d17db261d83484b8a56fabb0ccb8e0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468039ee243f04548affc342e83bcfe5, type: 3}
 --- !u!1001 &4879549229391786002
@@ -1775,6 +1783,10 @@ PrefabInstance:
     - target: {fileID: 4879549228936876109, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_Name
       value: Golem-Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879549228936876109, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4879549228936876145, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
       propertyPath: m_RootOrder
@@ -2230,6 +2242,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &7843363129691160916
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7843363129678416045, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_Name
+      value: RedBandit-Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.681
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.918
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.232319
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843363129678416727, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
 --- !u!1001 &8097433990332708883
 PrefabInstance:
   m_ObjectHideFlags: 0
