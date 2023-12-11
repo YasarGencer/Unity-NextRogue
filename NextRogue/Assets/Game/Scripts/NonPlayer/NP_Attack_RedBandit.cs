@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 public class NP_Attack_RedBandit : NP_Attack_Melee
 {
-
+    [SerializeField]
+    
+    public GameObject sprite;
     public async override void Hit()
     {
         if (IsUsýngSpell())
@@ -28,7 +30,11 @@ public class NP_Attack_RedBandit : NP_Attack_Melee
         if (_mainController.Distance(_mainController.Target.Target.transform) < _mainController.Stats.AttackRange)
         {
             _mainController.Target.Target.GetComponent<Health>().GetDamage(_mainController.Stats.AttackDamage, transform);
+            
             MainManager.Instance.EventManager.RunOnCoinChange(-1);
+            Instantiate(sprite, _mainController.Target.Target.transform.position,Quaternion.identity);
+            
+
 
         }
         if (_mainController.Stats.AttackSound != null)
