@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isInit: 0
   _spellTimer: 1
-  _moveTimer: 3.5
+  _moveTimer: 3
   _attackTimer: 1
   Name: 
   Description: 
@@ -22,11 +22,11 @@ MonoBehaviour:
   Spell: {fileID: 3161102259295241948, guid: 97df115ea6c456946af499460a677421, type: 3}
   Damage: 1
   Speed: 1
-  UseRange: 4
+  UseRange: 2
   DOTInfo:
     DOTType: 0
     CycleDamage: 0
     CycleTime: 0
   CastingTime: 0
-  CooldownTime: 10
+  CooldownTime: 7
   stopAudio: 0

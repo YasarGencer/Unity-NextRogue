@@ -29,7 +29,7 @@ MonoBehaviour:
   IsInvincable: 0
   NoticeRange: 10
   AttackDamage: 15
-  AttackRange: 2
+  AttackRange: 1.5
   AttackSpeed: 1
   ProjectileSpeed: 15000
   DOTInfo:
