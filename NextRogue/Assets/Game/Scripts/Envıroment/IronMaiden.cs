@@ -33,7 +33,7 @@ public class IronMaiden : MonoBehaviour {
                 Open();
         } 
     }
-    async void Open() {
+    void Open() {
         opened.SetActive(true);
         closed.SetActive(false); 
         isOpen = true;
