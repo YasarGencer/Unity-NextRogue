@@ -9,7 +9,8 @@ public class Health : MonoBehaviour {
     bool _isScaleChanged;
     AStats _stats;
     DOTReciever _dotReciever;
-    Tween tween;
+    
+
     BossManager _bossManager;
     CameraTarget _cameraTarget;
     Canvas_Player_GUI_HUD _hud { get { return MainManager.Instance.CanvasManager.Player_GUI_HUD; } }
@@ -52,12 +53,7 @@ public class Health : MonoBehaviour {
         Destroy(Instantiate(_stats.HitParticle, transform.position, Quaternion.identity), 5f);
 
         //GetComponent<Animator>().SetTrigger("hit");
-        if(tween != null){
-            tween.Kill();
-            transform.localScale = Vector3.one;
-        }
-        tween = transform.DOPunchScale(Vector3.one * .25f, .25f);
-        tween.Play();
+        transform.DOPunchScale(Vector3.one * .25f, .25f);
 
         if (_isPlayer) {
             _hud.SetHealth();
