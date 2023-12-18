@@ -15,9 +15,10 @@ MonoBehaviour:
   StartRoom:
   - {fileID: 2490164145671031904, guid: 1eb0c13a139e57f45b2e723faf059d3d, type: 3}
   EnemyRoom:
-  - {fileID: 4132714626760570076, guid: 468039ee243f04548affc342e83bcfe5, type: 3}
-  - {fileID: 8394055403656406473, guid: 0b06df10c2eb7b14383a1f5d078cc1bc, type: 3}
-  - {fileID: 1475517369619550120, guid: eaf9f7efabfd21144a6210564c20bd3b, type: 3}
+  - {fileID: 7843363129678416045, guid: 9f4b43a4d3f787945aa6c144fea91dc7, type: 3}
+  - {fileID: 8097433989717243004, guid: f6d874c645ca52040afcc6999b39cf28, type: 3}
+  - {fileID: 3555108631967935561, guid: c28656bac4fe52e49b64abf652617d86, type: 3}
+  - {fileID: 4879549228936876109, guid: 043d744e1e07b5a4f9ea4e6d41b5648d, type: 3}
   ExitRoom:
   - {fileID: 6820882171971817332, guid: 000d33cb214703d48914c512955410ec, type: 3}
   CenterProps:
