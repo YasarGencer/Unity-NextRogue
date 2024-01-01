@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -850809628990673537}
   - component: {fileID: -7895146156253890219}
   m_Layer: 13
-  m_Name: SmashArea
+  m_Name: GolemSmashArea
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 0c441208f50a5dc4d90345cc2c27056a, type: 3}
   stopAnim: 0
   Particle: {fileID: 0}
+  skillDuration: 3
 --- !u!114 &-850809628990673537
 MonoBehaviour:
   m_ObjectHideFlags: 0

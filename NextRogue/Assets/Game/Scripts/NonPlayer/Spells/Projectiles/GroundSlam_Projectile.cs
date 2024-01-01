@@ -15,7 +15,7 @@ public class GroundSlam_Projectile : ANP_Projectile
     private Vector3 oldScale;
     private bool smashing;
 
-    private float duration = 2f;
+    public float skillDuration = 2f;
     private float timer = 0f;
     private bool soundPlayed;
 
@@ -51,16 +51,17 @@ public class GroundSlam_Projectile : ANP_Projectile
         if (smashing == true)
         {
             timer += Time.deltaTime;
-            float t = timer / duration;
+            float t = timer / skillDuration;
             currentAttackSprite.transform.localScale = Vector3.Lerp(oldScale, maxAttackSprite.transform.localScale, t);
             golemSkillMaterial.SetFloat("_percent", currentAttackSprite.transform.localScale.x/10f);
-            if (timer >= 2 && soundPlayed == false)
+            if (timer >= (skillDuration-0.9f) && soundPlayed == false)
             {
+                Debug.Log("Ses oynatmawk");
                 PlaySound();
                 //AudioManager.PlaySound(Sound, _mainController.transform, AudioManager.AudioVolume.sfx, stopAudio);
                 soundPlayed = true;
             }
-            if (timer >= duration)
+            if (timer >= skillDuration)
             {
                 timer = 0f;
                 currentAttackSprite.transform.localScale = oldScale;
